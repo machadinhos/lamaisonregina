@@ -1,4 +1,4 @@
-import { Lang } from "./lang";
+import Lang from "./lang.json";
 
 export enum LangEnum {
   PT = "pt",

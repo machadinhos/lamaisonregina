@@ -1,16 +1,12 @@
-import Header from "@/components/globals/Header";
 import { LangEnum } from "@i18n/lang-selector";
-import Footer from "@/components/globals/Footer";
-import Main from "@/components/globals/Main";
-import { Typography } from "@mui/material";
-import Home from "@/components/page-components/Home";
 import PageContent from "@/components/globals/PageContent";
+import About from "@/components/page-components/About";
 
-export default function HomePage({ language }: { language: LangEnum }) {
+export default function AboutPage({ language }: { language: LangEnum }) {
   console.log(language);
   return (
     <PageContent lang={language}>
-      <Home lang={language} />
+      <About lang={language} />
     </PageContent>
   );
 }
