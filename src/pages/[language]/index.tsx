@@ -1,8 +1,4 @@
-import Header from "@/components/globals/Header";
 import { LangEnum } from "@i18n/lang-selector";
-import Footer from "@/components/globals/Footer";
-import Main from "@/components/globals/Main";
-import { Typography } from "@mui/material";
 import Home from "@/components/page-components/Home";
 import PageContent from "@/components/globals/PageContent";
 
@@ -25,10 +21,6 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({
-  params,
-}: {
-  params: { language: LangEnum };
-}) {
+export async function getStaticProps({ params }: { params: { language: LangEnum } }) {
   return { props: { language: params.language } };
 }
