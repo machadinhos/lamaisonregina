@@ -58,7 +58,9 @@ function LanguageSelector({ lang }: { lang: LangEnum }) {
       <HeaderLink href={`/pt/${path.substring(4)}`} currentLanguage={currentLang} selectedLanguage={"pt"}>
         PT
       </HeaderLink>
-      <Typography variant={"h5"}>{" | "}</Typography>
+      <Typography sx={{ userSelect: "none" }} variant={"h5"}>
+        {" | "}
+      </Typography>
       <HeaderLink href={`/en/${path.substring(4)}`} currentLanguage={currentLang} selectedLanguage={"en"}>
         EN
       </HeaderLink>
@@ -82,6 +84,7 @@ export default function Header({ lang }: Props) {
         backgroundColor: primaryColor,
         position: "relative",
       }}
+      id={"header"}
     >
       <LanguageSelector lang={lang} />
       <Link href={`/${lang}/`}>

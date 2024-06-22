@@ -1,6 +1,6 @@
 import { LangEnum } from "@i18n/lang-selector";
 import Gallery from "@/components/page-components/Gallery";
-import PageContent from "@/components/globals/PageContent";
+import PageContent from "@/components/global-components/PageContent";
 
 export default function GalleryPage({ language }: { language: LangEnum }) {
   console.log(language);

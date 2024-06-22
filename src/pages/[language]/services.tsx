@@ -1,5 +1,5 @@
 import { LangEnum } from "@i18n/lang-selector";
-import PageContent from "@/components/globals/PageContent";
+import PageContent from "@/components/global-components/PageContent";
 import Services from "@/components/page-components/Services";
 
 export default function ServicesPage({ language }: { language: LangEnum }) {

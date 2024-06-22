@@ -11,7 +11,7 @@ interface Props {
 export default function Main({ children }: Props) {
   return (
     <main>
-      <Container sx={{ position: "relative", mt: "5rem", mb: "8rem" }}>
+      <Container sx={{ position: "relative", mb: "8rem" }}>
         {children}
         <Box sx={{ position: "fixed", bottom: "2rem", left: "0.8rem" }}>
           <Link

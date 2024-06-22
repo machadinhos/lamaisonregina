@@ -5,7 +5,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { primaryColor, secondaryColor } from "@/styles/globals";
-import { absolutePathToPage } from "next/dist/shared/lib/page-path/absolute-path-to-page";
 
 interface Props {
   lang: LangEnum;

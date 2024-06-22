@@ -7,6 +7,13 @@
     src: url("../../public/fonts/elipses-caps.otf") format('truetype');
 }
 
+::selection {
+    background: #e0bc7c;
+    color: black;
+    text-shadow: none;
+}
+
+
 html {
     overflow: hidden;
     height: 100%;

@@ -1,6 +1,6 @@
 import { LangEnum } from "@i18n/lang-selector";
 import Contacts from "@/components/page-components/Contacts";
-import PageContent from "@/components/globals/PageContent";
+import PageContent from "@/components/global-components/PageContent";
 
 export default function ContactsPage({ language }: { language: LangEnum }) {
   console.log(language);

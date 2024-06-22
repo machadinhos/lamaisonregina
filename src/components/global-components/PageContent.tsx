@@ -1,8 +1,8 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
 import { ReactNode } from "react";
-import Header from "@/components/globals/Header";
-import Main from "@/components/globals/Main";
-import Footer from "@/components/globals/Footer";
+import Header from "@/components/global-components/Header";
+import Main from "@/components/global-components/Main";
+import Footer from "@/components/global-components/Footer";
 import Link from "next/link";
 
 interface Props {

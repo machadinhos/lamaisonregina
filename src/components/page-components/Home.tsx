@@ -1,20 +1,55 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Typography } from "@mui/material";
+import { SxProps, Theme, Typography } from "@mui/material";
+import Carousel from "@/components/shared-components/carousel";
+import { useHeaderHeight } from "@/hooks/header-height";
 
 interface Props {
   lang: LangEnum;
 }
 
+const TitleTypography = ({
+  children,
+  variant,
+  sx,
+}: {
+  children: string;
+  variant: "h4" | "h1" | "h5";
+  sx?: SxProps<Theme>;
+}) => {
+  return (
+    <Typography variant={variant} sx={{ ...sx, color: "#fff", userSelect: "none" }}>
+      {children}
+    </Typography>
+  );
+};
 export default function Home({ lang }: Props) {
   return (
     <>
-      <section>
-        <Typography variant="h4">{selectLang(lang, "home-welcome-1")}</Typography>
-        <Typography variant="h1" sx={{ fontWeight: "bold" }}>
+      <section
+        style={{
+          height: `calc(100vh - ${useHeaderHeight()}px)`,
+          width: "100%",
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Carousel
+          sources={[
+            "https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+          ]}
+        />
+        <TitleTypography variant="h4">{selectLang(lang, "home-welcome-1")}</TitleTypography>
+        <TitleTypography variant="h1" sx={{ fontWeight: "bold" }}>
           La Maison Regina
-        </Typography>
-        <Typography variant="h4">{selectLang(lang, "home-welcome-2")}</Typography>
-        <Typography variant="h5">{selectLang(lang, "home-slogan")}</Typography>
+        </TitleTypography>
+        <TitleTypography variant="h4">{selectLang(lang, "home-welcome-2")}</TitleTypography>
+        <TitleTypography variant="h5">{selectLang(lang, "home-slogan")}</TitleTypography>
       </section>
       <section>
         <Typography variant="body1">{selectLang(lang, "home-text-1")}</Typography>
