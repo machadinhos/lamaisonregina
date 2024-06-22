@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { primaryColor } from "@/styles/globals";
 
 function HeaderListItem({ children, href }: { children: ReactNode | ReactNode[]; href: string }) {
   return (
@@ -13,7 +14,24 @@ function HeaderListItem({ children, href }: { children: ReactNode | ReactNode[];
   );
 }
 
-function HeaderLink({ href, children }: { href: string; children: ReactNode | ReactNode[] }) {
+function HeaderLink({
+  href,
+  children,
+  currentLanguage,
+  selectedLanguage,
+}: {
+  href: string;
+  children: ReactNode | ReactNode[];
+  currentLanguage?: string;
+  selectedLanguage?: string;
+}) {
+  if (currentLanguage && selectedLanguage && currentLanguage === selectedLanguage) {
+    return (
+      <Typography variant={"h6"} sx={{ fontWeight: "bold", userSelect: "none" }}>
+        {children}
+      </Typography>
+    );
+  }
   return (
     <Link href={href}>
       <Typography variant={"h6"}>{children}</Typography>
@@ -24,6 +42,7 @@ function HeaderLink({ href, children }: { href: string; children: ReactNode | Re
 function LanguageSelector({ lang }: { lang: LangEnum }) {
   const router = useRouter();
   const path = router.asPath;
+  const currentLang = path.substring(1, 3);
   return (
     <Box
       sx={{
@@ -36,9 +55,13 @@ function LanguageSelector({ lang }: { lang: LangEnum }) {
         alignItems: "center",
       }}
     >
-      <HeaderLink href={`/pt/${path.substring(4)}`}>PT</HeaderLink>
+      <HeaderLink href={`/pt/${path.substring(4)}`} currentLanguage={currentLang} selectedLanguage={"pt"}>
+        PT
+      </HeaderLink>
       <Typography variant={"h5"}>{" | "}</Typography>
-      <HeaderLink href={`/en/${path.substring(4)}`}>EN</HeaderLink>
+      <HeaderLink href={`/en/${path.substring(4)}`} currentLanguage={currentLang} selectedLanguage={"en"}>
+        EN
+      </HeaderLink>
     </Box>
   );
 }
@@ -56,10 +79,14 @@ export default function Header({ lang }: Props) {
         flexDirection: "column",
         justifyContent: "start",
         alignItems: "center",
+        backgroundColor: primaryColor,
+        position: "relative",
       }}
     >
       <LanguageSelector lang={lang} />
-      <Image alt={"logo"} src={"/logo.png"} width={150} height={150} />
+      <Link href={`/${lang}/`}>
+        <Image alt={"logo"} src={"/logo.png"} width={150} height={150} />
+      </Link>
       <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "60vw" }}>
         <List sx={{ display: "flex", width: "80vw", justifyContent: "space-evenly" }}>
           <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")} </HeaderListItem>

@@ -9,10 +9,12 @@ export default function Home({ lang }: Props) {
   return (
     <>
       <section>
-        <Typography variant="h3">{selectLang(lang, "home-welcome-1")}</Typography>
-        <Typography variant="h1">La Maison Regina</Typography>
-        <Typography variant="h3">{selectLang(lang, "home-welcome-2")}</Typography>
-        <Typography variant="h2">{selectLang(lang, "home-slogan")}</Typography>
+        <Typography variant="h4">{selectLang(lang, "home-welcome-1")}</Typography>
+        <Typography variant="h1" sx={{ fontWeight: "bold" }}>
+          La Maison Regina
+        </Typography>
+        <Typography variant="h4">{selectLang(lang, "home-welcome-2")}</Typography>
+        <Typography variant="h5">{selectLang(lang, "home-slogan")}</Typography>
       </section>
       <section>
         <Typography variant="body1">{selectLang(lang, "home-text-1")}</Typography>
