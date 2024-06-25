@@ -40,6 +40,7 @@ export default function Carousel({ sources }: Props) {
 
   const moveImages = useCallback(
     (forward: boolean) => {
+      console.log("Moving images ", forward ? "forward" : "backward");
       if (!moving) {
         setMoving(true);
         setCurrentImage((prevState) => moveImage(prevState, forward));
@@ -82,7 +83,6 @@ export default function Carousel({ sources }: Props) {
   };
   useEffect(() => {
     const interval = setInterval(() => moveImages(true), 5000);
-    console.log(images);
     return () => clearInterval(interval);
   }, [moveImages]);
   if (images.length < 1) {
@@ -90,7 +90,7 @@ export default function Carousel({ sources }: Props) {
   }
   return (
     <>
-      <Box position={"absolute"} top={0} left={0} width={"100%"} height={"100%"} zIndex={-1}>
+      <Box position={"absolute"} top={0} left={0} width={"100%"} height={"100%"}>
         <Box
           width={"100%"}
           height={"100%"}
@@ -98,7 +98,6 @@ export default function Carousel({ sources }: Props) {
           maxHeight={"90vw"}
           overflow={"hidden"}
           position={"relative"}
-          sx={{ backgroundColor: "primary.main" }}
           display={"flex"}
           alignItems={"center"}
         >
@@ -115,6 +114,7 @@ export default function Carousel({ sources }: Props) {
                 top: 0,
                 left: 0,
               }}
+              zIndex={-1}
             >
               <Box width={"100%"} height={"100%"} position={"relative"}>
                 <Image fill src={image.src} alt={image.src} />
@@ -130,7 +130,7 @@ export default function Carousel({ sources }: Props) {
           </IconButton>
           <IconButton
             color={"secondary"}
-            sx={{ position: "absolute", left: 0, "&:hover": { cursor: "pointer" } }}
+            sx={{ position: "absolute", right: 0, "&:hover": { cursor: "pointer" } }}
             onClick={() => moveImages(true)}
           >
             <ArrowForward />
