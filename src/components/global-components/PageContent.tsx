@@ -8,13 +8,14 @@ import Link from "next/link";
 interface Props {
   lang: LangEnum;
   children: ReactNode | ReactNode[];
+  isHome?: boolean;
 }
 
-export default function PageContent({ lang, children }: Props) {
+export default function PageContent({ lang, children, isHome }: Props) {
   return (
     <>
       <Header lang={lang} />
-      <Main>{children}</Main>
+      <Main isHome={isHome}>{children}</Main>
       <Footer lang={lang} />
     </>
   );

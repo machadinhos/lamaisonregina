@@ -8,6 +8,7 @@ interface Props {
 export default function Gallery({ lang }: Props) {
   return (
     <>
+      <Typography variant={"h1"}>{selectLang(lang, "gallery")}</Typography>
       <section>
         <Typography variant="h3">{selectLang(lang, "gallery-title-1")}</Typography>
         <Typography variant="body1">{selectLang(lang, "gallery-text-1")}</Typography>

@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+import { useCallback, useEffect, useState } from "react";
+import { Box, IconButton } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import Image from "next/image";
-import { log } from "node:util";
 
 interface Props {
   sources: string[];
@@ -18,11 +17,11 @@ const generateImages = (sources: string[]) => {
 export default function Carousel({ sources }: Props) {
   const [images] = useState(generateImages(sources));
   const [leftImage, setLeftImage] = useState(images.length - 1);
-  const [rightProduct, setRightProduct] = useState(1);
-  const [currentProduct, setCurrentProduct] = useState(0);
+  const [rightImage, setRightImage] = useState(1);
+  const [currentImage, setCurrentImage] = useState(0);
   const [movingForward, setMovingForward] = useState(true);
   const [moving, setMoving] = useState(false);
-  const moveProduct = useCallback(
+  const moveImage = useCallback(
     (position: number, forward: boolean) => {
       setMovingForward(forward);
       if (forward) {
@@ -43,23 +42,23 @@ export default function Carousel({ sources }: Props) {
     (forward: boolean) => {
       if (!moving) {
         setMoving(true);
-        setCurrentProduct((prevState) => moveProduct(prevState, forward));
-        setLeftImage((prevState) => moveProduct(prevState, forward));
-        setRightProduct((prevState) => moveProduct(prevState, forward));
+        setCurrentImage((prevState) => moveImage(prevState, forward));
+        setLeftImage((prevState) => moveImage(prevState, forward));
+        setRightImage((prevState) => moveImage(prevState, forward));
         setTimeout(() => setMoving(false), 500);
       }
     },
-    [moving, moveProduct],
+    [moving, moveImage],
   );
 
   const isLeftImage = (id: string) => {
     return id === images[leftImage]._id;
   };
   const isRightImage = (id: string) => {
-    return id === images[rightProduct]._id;
+    return id === images[rightImage]._id;
   };
   const isCurrentImage = (id: string) => {
-    return id === images[currentProduct]._id;
+    return id === images[currentImage]._id;
   };
 
   const resolveTransform = (id: string) => {
@@ -122,10 +121,18 @@ export default function Carousel({ sources }: Props) {
               </Box>
             </Box>
           ))}
-          <IconButton color={"secondary"} sx={{ position: "absolute", left: 0 }} onClick={() => moveImages(false)}>
+          <IconButton
+            color={"secondary"}
+            sx={{ position: "absolute", left: 0, "&:hover": { cursor: "pointer" } }}
+            onClick={() => moveImages(false)}
+          >
             <ArrowBack />
           </IconButton>
-          <IconButton color={"secondary"} sx={{ position: "absolute", right: 0 }} onClick={() => moveImages(true)}>
+          <IconButton
+            color={"secondary"}
+            sx={{ position: "absolute", left: 0, "&:hover": { cursor: "pointer" } }}
+            onClick={() => moveImages(true)}
+          >
             <ArrowForward />
           </IconButton>
         </Box>

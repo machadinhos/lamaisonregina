@@ -17,7 +17,7 @@ const TitleTypography = ({
   sx?: SxProps<Theme>;
 }) => {
   return (
-    <Typography variant={variant} sx={{ ...sx, color: "#fff", userSelect: "none" }}>
+    <Typography variant={variant} sx={{ ...sx, color: "#fff" /*, userSelect: "none"*/ }}>
       {children}
     </Typography>
   );
@@ -27,7 +27,8 @@ export default function Home({ lang }: Props) {
     <>
       <section
         style={{
-          height: `calc(100vh - ${useHeaderHeight()}px)`,
+          marginTop: "0",
+          height: "500px",
           width: "100%",
           position: "relative",
           display: "flex",

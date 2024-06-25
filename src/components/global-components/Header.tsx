@@ -92,8 +92,9 @@ export default function Header({ lang }: Props) {
       </Link>
       <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "60vw" }}>
         <List sx={{ display: "flex", width: "80vw", justifyContent: "space-evenly" }}>
-          <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")} </HeaderListItem>
-          <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")} </HeaderListItem>
+          <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>
+          <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")}</HeaderListItem>
+          <HeaderListItem href={`/${lang}/catering`}>Catering</HeaderListItem>
           <HeaderListItem href={`/${lang}/gallery`}>{selectLang(lang, "gallery")}</HeaderListItem>
           <HeaderListItem href={`/${lang}/contacts`}>{selectLang(lang, "contacts")}</HeaderListItem>
           <HeaderListItem href={`/${lang}/faq`}>FAQ</HeaderListItem>

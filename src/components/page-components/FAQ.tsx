@@ -9,6 +9,7 @@ interface Props {
 export default function FAQ({ lang }: Props) {
   return (
     <>
+      <Typography variant={"h1"}>FAQ</Typography>
       <Typography variant="h3">{selectLang(lang, "faq-main-title")}</Typography>
       <ol>
         <li>

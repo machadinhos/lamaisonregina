@@ -16,6 +16,7 @@ function ContactTypography({ children, variant }: { variant: "h4" | "body1"; chi
 export default function Contacts({ lang }: Props) {
   return (
     <>
+      <Typography variant={"h1"}>{selectLang(lang, "contacts")}</Typography>
       <section>
         <ContactTypography variant="body1">{selectLang(lang, "contacts-text-1")}</ContactTypography>
         <ContactTypography variant="body1">{selectLang(lang, "contacts-text-2")}</ContactTypography>

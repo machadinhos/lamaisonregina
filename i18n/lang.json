@@ -2,7 +2,6 @@
   "pt": {
     "home": "Início",
     "services": "Serviços",
-    "catering": "Catering",
     "gallery": "Galeria",
     "contacts": "Contatos",
     "footer-follow": "Segue-nos",
@@ -121,7 +120,6 @@
   "en": {
     "home": "Home",
     "services": "Services",
-    "catering": "Catering",
     "gallery": "Gallery",
     "contacts": "Contacts",
     "footer-follow": "Follow us",
@@ -145,9 +143,9 @@
     "services-text-2": "La Maison Regina offers several advantages for the realization of your events. In a space with a capacity of up to 200 people that uniquely mixes a modern and refined rural environment, you will find all the conditions for the most important day of your life or for an unforgettable party.",
     "services-sep-1": "Turnkey Event",
     "services-sep-2": "Leave it to those who know and relax...",
-    "services-text-3": "We organize the entire event in a personalized way according to the needs of each client.",
-    "services-text-4": "Because we know that every detail counts and makes a difference, we present a proposal for decoration (towels, flowers and service) personalized and suitable for the type of event, ensuring the most complete exclusivity and privacy.",
-    "services-text-5": "Let's toast to joy, romance and family - let us take care of every detail so you can fully experience every magical moment.",
+    "services-text-3": "In our space, with capacity for up to 200 people, we organize your event in a personalized way, meeting all your needs, from catering to entertainment. We know that every detail is essential and makes all the difference. Therefore, we create tailor-made proposals, guaranteeing a perfect setting for an idyllic experience on the most important day of your life or for a party at the same time.",
+    "services-text-4": "This consultancy is ideal for couples who live abroad or who want ease in managing their wedding organization. We offer complete packages, ranging from decoration selection; including managing the photographer and videographer; DJ orchestration, music and entertainment, transport, makeup and hair guidance, accommodation, babysitting service, among others.",
+    "services-text-5": "Let's raise a toast to joy, romance and family - let us take care of every detail so we can fully experience every magical moment.",
     "gallery-title-1": "Enchanted Garden",
     "gallery-text-1": "Enjoy a charming atmosphere in our meticulously maintained garden, where brides and guests can relax. We highlight the water mirror, a magical place for cutting the cake, and the bandstand, especially used for wedding ceremonies. The chirping of birds and the cozy decoration make this space ideal for canapés and welcome cocktails.",
     "gallery-title-2": "Pergola for Banquet",

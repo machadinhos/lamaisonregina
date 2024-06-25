@@ -8,6 +8,7 @@ interface Props {
 export default function Catering({ lang }: Props) {
   return (
     <>
+      <Typography variant={"h1"}>Catering</Typography>
       <section>
         <Typography variant="h4">{selectLang(lang, "catering-title-1")}</Typography>
         <Typography variant="body1">{selectLang(lang, "catering-text-1")}</Typography>
