@@ -3,7 +3,7 @@ import { Box, IconButton, Typography } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import Image from "next/image";
 interface Props {
-  products: { image: string; _id: string }[];
+  sources: { image: string; _id: string }[];
 }
 
 export default function ProductCarousel() {

@@ -1,5 +1,5 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { SxProps, Theme, Typography } from "@mui/material";
+import { Box, SxProps, Theme, Typography } from "@mui/material";
 import Carousel from "@/components/shared-components/carousel";
 import { useHeaderHeight } from "@/hooks/header-height";
 
@@ -22,14 +22,32 @@ const TitleTypography = ({
     </Typography>
   );
 };
-export default function Home({ lang }: Props) {
+
+const HomeCarousel = ({ lang }: Props) => {
   return (
-    <>
+    <Box
+      sx={{
+        my: "0",
+        padding: "0",
+        xs: {
+          width: "100vw",
+          ml: "-16px",
+        },
+        sm: {
+          ml: "-24px",
+        },
+        lg: {
+          width: "100%",
+        },
+        height: "75vh",
+      }}
+    >
       <section
         style={{
           marginTop: "0",
-          height: "75vh",
+          marginBottom: "0",
           width: "100%",
+          height: "100%",
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -52,6 +70,14 @@ export default function Home({ lang }: Props) {
         <TitleTypography variant="h4">{selectLang(lang, "home-welcome-2")}</TitleTypography>
         <TitleTypography variant="h5">{selectLang(lang, "home-slogan")}</TitleTypography>
       </section>
+    </Box>
+  );
+};
+
+export default function Home({ lang }: Props) {
+  return (
+    <>
+      <HomeCarousel lang={lang} />
       <section>
         <Typography variant="body1">{selectLang(lang, "home-text-1")}</Typography>
         <Typography variant="body1">{selectLang(lang, "home-text-2")}</Typography>
