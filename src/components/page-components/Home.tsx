@@ -1,7 +1,7 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
 import { Box, SxProps, Theme, Typography } from "@mui/material";
 import Carousel from "@/components/shared-components/carousel";
-import { useHeaderHeight } from "@/hooks/header-height";
+import useScreenWidth from "@/hooks/use-screen-width";
 
 interface Props {
   lang: LangEnum;
@@ -29,17 +29,10 @@ const HomeCarousel = ({ lang }: Props) => {
       sx={{
         my: "0",
         padding: "0",
-        xs: {
-          width: "100vw",
-          ml: "-16px",
-        },
-        sm: {
-          ml: "-24px",
-        },
-        lg: {
-          width: "100%",
-        },
-        height: "75vh",
+        width: "100vw",
+        maxWidth: "1536px",
+        ml: "-96px",
+        height: useScreenWidth() < 600 ? "85vh" : "75vh",
       }}
     >
       <section

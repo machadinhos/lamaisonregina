@@ -13,7 +13,23 @@ interface Props {
 export default function Main({ children, isHome }: Props) {
   return (
     <main>
-      <Container sx={{ position: "relative", mb: "6rem", mt: isHome ? 0 : "5rem" }}>
+      <Container
+        sx={{
+          position: "relative",
+          mb: "6rem",
+          mt: isHome ? 0 : "5rem",
+          maxWidth: {
+            lg: "1536px",
+          },
+          px: {
+            xs: "96px",
+            sm: "96px",
+            md: "96px",
+            lg: "96px",
+            xl: "96px",
+          },
+        }}
+      >
         {children}
         <Box sx={{ position: "fixed", bottom: "2rem", left: "0.8rem" }}>
           <Link

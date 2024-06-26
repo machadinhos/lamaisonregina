@@ -5,6 +5,11 @@ import { ReactNode } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { primaryColor } from "@/styles/globals";
+import useScreenWidth from "@/hooks/use-screen-width";
+
+interface Props {
+  lang: LangEnum;
+}
 
 function HeaderListItem({ children, href }: { children: ReactNode | ReactNode[]; href: string }) {
   return (
@@ -41,7 +46,7 @@ function HeaderLink({
   );
 }
 
-function LanguageSelector({ lang }: { lang: LangEnum }) {
+function LanguageSelector() {
   const router = useRouter();
   const path = router.asPath;
   const currentLang = path.substring(1, 3);
@@ -70,8 +75,42 @@ function LanguageSelector({ lang }: { lang: LangEnum }) {
   );
 }
 
-interface Props {
-  lang: LangEnum;
+function MobileMenu({ lang }: Props) {
+  const spanStyle = {
+    width: "25px",
+    height: "3px",
+    backgroundColor: "black",
+  };
+  return (
+    <Box
+      position={"absolute"}
+      top={40}
+      left={30}
+      display={"flex"}
+      flexDirection={"column"}
+      gap={"5px"}
+      justifyContent={"center"}
+    >
+      <span style={spanStyle}></span>
+      <span style={spanStyle}></span>
+      <span style={spanStyle}></span>
+    </Box>
+  );
+}
+
+function DesktopMenu({ lang }: Props) {
+  return (
+    <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "60vw" }}>
+      <List sx={{ display: "flex", width: "80vw", justifyContent: "space-evenly" }}>
+        <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>
+        <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")}</HeaderListItem>
+        <HeaderListItem href={`/${lang}/catering`}>Catering</HeaderListItem>
+        <HeaderListItem href={`/${lang}/gallery`}>{selectLang(lang, "gallery")}</HeaderListItem>
+        <HeaderListItem href={`/${lang}/contacts`}>{selectLang(lang, "contacts")}</HeaderListItem>
+        <HeaderListItem href={`/${lang}/faq`}>FAQ</HeaderListItem>
+      </List>
+    </Container>
+  );
 }
 
 export default function Header({ lang }: Props) {
@@ -85,26 +124,17 @@ export default function Header({ lang }: Props) {
         alignItems: "center",
         backgroundColor: primaryColor,
         position: "relative",
-        height: "25vh",
+        height: useScreenWidth() < 600 ? "15vh" : "25vh",
       }}
       id={"header"}
     >
-      <LanguageSelector lang={lang} />
+      <LanguageSelector />
       <Link href={`/${lang}/`}>
         <Box position={"relative"} mt={"1rem"} width={"100px"} sx={{ aspectRatio: "1.3/1" }}>
           <Image alt={"logo"} src={"/logo.png"} fill />
         </Box>
       </Link>
-      <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "60vw" }}>
-        <List sx={{ display: "flex", width: "80vw", justifyContent: "space-evenly" }}>
-          <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>
-          <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")}</HeaderListItem>
-          <HeaderListItem href={`/${lang}/catering`}>Catering</HeaderListItem>
-          <HeaderListItem href={`/${lang}/gallery`}>{selectLang(lang, "gallery")}</HeaderListItem>
-          <HeaderListItem href={`/${lang}/contacts`}>{selectLang(lang, "contacts")}</HeaderListItem>
-          <HeaderListItem href={`/${lang}/faq`}>FAQ</HeaderListItem>
-        </List>
-      </Container>
+      {useScreenWidth() < 600 ? <MobileMenu lang={lang} /> : <DesktopMenu lang={lang} />}
     </Container>
   );
 }

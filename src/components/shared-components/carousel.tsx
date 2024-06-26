@@ -94,8 +94,6 @@ export default function Carousel({ sources }: Props) {
         <Box
           width={"100%"}
           height={"100%"}
-          maxWidth={"90vw"}
-          maxHeight={"90vw"}
           overflow={"hidden"}
           position={"relative"}
           display={"flex"}
@@ -117,7 +115,7 @@ export default function Carousel({ sources }: Props) {
               zIndex={-1}
             >
               <Box width={"100%"} height={"100%"} position={"relative"}>
-                <Image fill src={image.src} alt={image.src} />
+                <Image fill src={image.src} alt={image.src} style={{ objectFit: "cover" }} />
               </Box>
             </Box>
           ))}
