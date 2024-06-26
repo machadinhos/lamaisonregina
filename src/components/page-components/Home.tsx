@@ -28,7 +28,7 @@ export default function Home({ lang }: Props) {
       <section
         style={{
           marginTop: "0",
-          height: "500px",
+          height: "75vh",
           width: "100%",
           position: "relative",
           display: "flex",

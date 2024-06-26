@@ -27,14 +27,16 @@ function HeaderLink({
 }) {
   if (currentLanguage && selectedLanguage && currentLanguage === selectedLanguage) {
     return (
-      <Typography variant={"h6"} sx={{ fontWeight: "bold", userSelect: "none" }}>
+      <Typography variant={"h6"} sx={{ fontWeight: "bold", userSelect: "none", fontSize: "1.2rem" }}>
         {children}
       </Typography>
     );
   }
   return (
     <Link href={href}>
-      <Typography variant={"h6"}>{children}</Typography>
+      <Typography variant={"h6"} sx={{ fontSize: "1.2rem" }}>
+        {children}
+      </Typography>
     </Link>
   );
 }
@@ -83,12 +85,15 @@ export default function Header({ lang }: Props) {
         alignItems: "center",
         backgroundColor: primaryColor,
         position: "relative",
+        height: "25vh",
       }}
       id={"header"}
     >
       <LanguageSelector lang={lang} />
       <Link href={`/${lang}/`}>
-        <Image alt={"logo"} src={"/logo.png"} width={150} height={150} />
+        <Box position={"relative"} mt={"1rem"} width={"100px"} sx={{ aspectRatio: "1.3/1" }}>
+          <Image alt={"logo"} src={"/logo.png"} fill />
+        </Box>
       </Link>
       <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "60vw" }}>
         <List sx={{ display: "flex", width: "80vw", justifyContent: "space-evenly" }}>

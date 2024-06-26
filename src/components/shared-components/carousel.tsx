@@ -122,15 +122,13 @@ export default function Carousel({ sources }: Props) {
             </Box>
           ))}
           <IconButton
-            color={"secondary"}
-            sx={{ position: "absolute", left: 0, "&:hover": { cursor: "pointer" } }}
+            sx={{ position: "absolute", left: 0, "&:hover": { cursor: "pointer" }, color: "white" }}
             onClick={() => moveImages(false)}
           >
             <ArrowBack />
           </IconButton>
           <IconButton
-            color={"secondary"}
-            sx={{ position: "absolute", right: 0, "&:hover": { cursor: "pointer" } }}
+            sx={{ position: "absolute", right: 0, "&:hover": { cursor: "pointer" }, color: "white" }}
             onClick={() => moveImages(true)}
           >
             <ArrowForward />
