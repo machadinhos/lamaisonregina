@@ -1,7 +1,7 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
 import { Box, Container, List, ListItem, Typography } from "@mui/material";
 import Link from "next/link";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { primaryColor } from "@/styles/globals";
@@ -75,25 +75,61 @@ function LanguageSelector() {
   );
 }
 
-function MobileMenu({ lang }: Props) {
+function MobileMenu({
+  lang,
+  setIsActive,
+  isActive,
+}: {
+  lang: LangEnum;
+  setIsActive: (value: boolean) => void;
+  isActive: boolean;
+}) {
   const spanStyle = {
     width: "25px",
     height: "3px",
     backgroundColor: "black",
   };
   return (
+    <>
+      <Box
+        position={"absolute"}
+        top={40}
+        left={30}
+        display={{ xs: "flex", sm: "none" }}
+        flexDirection={"column"}
+        gap={"5px"}
+        justifyContent={"center"}
+        onClick={() => setIsActive(!isActive)}
+      >
+        <span style={spanStyle}></span>
+        <span style={spanStyle}></span>
+        <span style={spanStyle}></span>
+      </Box>
+      <MobileSlider lang={lang} isActive={isActive} />
+    </>
+  );
+}
+
+function MobileSlider({ lang, isActive }: { lang: LangEnum; isActive: boolean }) {
+  return (
     <Box
-      position={"absolute"}
-      top={40}
-      left={30}
-      display={{ xs: "flex", sm: "none" }}
-      flexDirection={"column"}
-      gap={"5px"}
-      justifyContent={"center"}
+      sx={{
+        display: { xs: "flex", sm: "none" },
+        backgroundColor: primaryColor,
+        zIndex: 20,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "fixed",
+        top: "120px",
+        left: 0,
+        width: "100vw",
+        height: "calc(100vh - 120px)",
+        transform: isActive ? "translateX(0)" : "translateX(-100vw)",
+        transition: "transform 0.5s ease-in-out",
+      }}
     >
-      <span style={spanStyle}></span>
-      <span style={spanStyle}></span>
-      <span style={spanStyle}></span>
+      <HeaderMenu lang={lang} isMobile />
     </Box>
   );
 }
@@ -109,41 +145,60 @@ function DesktopMenu({ lang }: Props) {
         width: "60vw",
       }}
     >
-      <List sx={{ display: "flex", width: "80vw", justifyContent: "space-evenly" }}>
-        <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>
-        <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")}</HeaderListItem>
-        <HeaderListItem href={`/${lang}/catering`}>Catering</HeaderListItem>
-        <HeaderListItem href={`/${lang}/gallery`}>{selectLang(lang, "gallery")}</HeaderListItem>
-        <HeaderListItem href={`/${lang}/contacts`}>{selectLang(lang, "contacts")}</HeaderListItem>
-        <HeaderListItem href={`/${lang}/faq`}>FAQ</HeaderListItem>
-      </List>
+      <HeaderMenu lang={lang} />
     </Container>
   );
 }
 
-export default function Header({ lang }: Props) {
+function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) {
   return (
-    <Container
-      maxWidth={false}
+    <List
       sx={{
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "start",
-        alignItems: "center",
-        backgroundColor: primaryColor,
-        position: "relative",
-        height: { xs: "120px", sm: "150px" },
+        ...(isMobile && { flexDirection: "column", alignItems: "center" }),
+        width: "80vw",
+        justifyContent: "space-evenly",
       }}
-      id={"header"}
     >
-      <LanguageSelector />
-      <Link href={`/${lang}/`}>
-        <Box position={"relative"} mt={"1rem"} width={"100px"} sx={{ aspectRatio: "1.3/1" }}>
-          <Image alt={"logo"} src={"/logo.png"} fill />
-        </Box>
-      </Link>
-      <MobileMenu lang={lang} />
-      <DesktopMenu lang={lang} />
-    </Container>
+      <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>
+      <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")}</HeaderListItem>
+      <HeaderListItem href={`/${lang}/catering`}>Catering</HeaderListItem>
+      <HeaderListItem href={`/${lang}/gallery`}>{selectLang(lang, "gallery")}</HeaderListItem>
+      <HeaderListItem href={`/${lang}/contacts`}>{selectLang(lang, "contacts")}</HeaderListItem>
+      <HeaderListItem href={`/${lang}/faq`}>FAQ</HeaderListItem>
+    </List>
+  );
+}
+
+export default function Header({ lang }: Props) {
+  const [isActive, setIsActive] = useState(false);
+  return (
+    <>
+      {isActive && <Box width={"100vw"} height={"120px"} />}
+      <Container
+        maxWidth={false}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "start",
+          alignItems: "center",
+          backgroundColor: primaryColor,
+          position: isActive ? "fixed" : "relative",
+          ...(isActive && { top: 0, left: 0 }),
+          height: { xs: "120px", sm: "150px" },
+          zIndex: 20,
+        }}
+        id={"header"}
+      >
+        <LanguageSelector />
+        <Link href={`/${lang}/`}>
+          <Box position={"relative"} mt={"1rem"} width={"100px"} sx={{ aspectRatio: "1.3/1" }}>
+            <Image alt={"logo"} src={"/logo.png"} fill />
+          </Box>
+        </Link>
+        <MobileMenu setIsActive={setIsActive} isActive={isActive} lang={lang} />
+        <DesktopMenu lang={lang} />
+      </Container>
+    </>
   );
 }
