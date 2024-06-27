@@ -86,7 +86,7 @@ function MobileMenu({ lang }: Props) {
       position={"absolute"}
       top={40}
       left={30}
-      display={"flex"}
+      display={{ xs: "flex", sm: "none" }}
       flexDirection={"column"}
       gap={"5px"}
       justifyContent={"center"}
@@ -100,7 +100,15 @@ function MobileMenu({ lang }: Props) {
 
 function DesktopMenu({ lang }: Props) {
   return (
-    <Container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "60vw" }}>
+    <Container
+      sx={{
+        display: { xs: "none", sm: "flex" },
+        flexDirection: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "60vw",
+      }}
+    >
       <List sx={{ display: "flex", width: "80vw", justifyContent: "space-evenly" }}>
         <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>
         <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")}</HeaderListItem>
@@ -124,7 +132,7 @@ export default function Header({ lang }: Props) {
         alignItems: "center",
         backgroundColor: primaryColor,
         position: "relative",
-        height: useScreenWidth() < 600 ? "15vh" : "25vh",
+        height: { xs: "120px", sm: "150px" },
       }}
       id={"header"}
     >
@@ -134,7 +142,8 @@ export default function Header({ lang }: Props) {
           <Image alt={"logo"} src={"/logo.png"} fill />
         </Box>
       </Link>
-      {useScreenWidth() < 600 ? <MobileMenu lang={lang} /> : <DesktopMenu lang={lang} />}
+      <MobileMenu lang={lang} />
+      <DesktopMenu lang={lang} />
     </Container>
   );
 }

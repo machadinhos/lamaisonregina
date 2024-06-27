@@ -32,7 +32,7 @@ const HomeCarousel = ({ lang }: Props) => {
         width: "100vw",
         maxWidth: "1536px",
         ml: "-96px",
-        height: useScreenWidth() < 600 ? "85vh" : "75vh",
+        height: { xs: "calc(100vh - 120px)", sm: "calc(100vh - 150px)" },
       }}
     >
       <section
