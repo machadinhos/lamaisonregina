@@ -1,18 +1,20 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
-import { Box, Container, Typography } from "@mui/material";
-import { primaryColor } from "@/styles/globals";
-import { selectLang } from "@i18n/lang-selector";
+import { Box, Container } from "@mui/material";
+import { LangEnum } from "@i18n/lang-selector";
+import { HomeCarousel } from "@/components/page-components/Home";
 
 interface Props {
   children: ReactNode | ReactNode[];
   isHome?: boolean;
+  lang: LangEnum;
 }
 
-export default function Main({ children, isHome }: Props) {
+export default function Main({ children, isHome, lang }: Props) {
   return (
     <main>
+      {isHome && <HomeCarousel lang={lang} />}
       <Container
         sx={{
           position: "relative",

@@ -1,7 +1,6 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
 import { Box, SxProps, Theme, Typography } from "@mui/material";
 import Carousel from "@/components/shared-components/carousel";
-import useScreenWidth from "@/hooks/use-screen-width";
 
 interface Props {
   lang: LangEnum;
@@ -23,15 +22,15 @@ const TitleTypography = ({
   );
 };
 
-const HomeCarousel = ({ lang }: Props) => {
+export const HomeCarousel = ({ lang }: Props) => {
   return (
     <Box
       sx={{
         my: "0",
         padding: "0",
         width: "100vw",
-        maxWidth: "1536px",
-        ml: "-96px",
+        // maxWidth: "1536px",
+        // ml: "-96px",
         height: { xs: "calc(100vh - 120px)", sm: "calc(100vh - 150px)" },
       }}
     >
@@ -70,7 +69,6 @@ const HomeCarousel = ({ lang }: Props) => {
 export default function Home({ lang }: Props) {
   return (
     <>
-      <HomeCarousel lang={lang} />
       <section>
         <Typography variant="body1">{selectLang(lang, "home-text-1")}</Typography>
         <Typography variant="body1">{selectLang(lang, "home-text-2")}</Typography>
