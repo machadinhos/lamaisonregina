@@ -1,5 +1,5 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Box, Grid, List, ListItem, ListSubheader, Typography, useTheme } from "@mui/material";
+import { Box, Grid, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
@@ -63,13 +63,19 @@ export default function Footer({ lang }: Props) {
           <Typography sx={{ color: primaryColor }}>{selectLang(lang, "footer-follow")}</Typography>
           <List sx={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center" }}>
             <ListItem>
-              <FacebookIcon />
+              <Link href={""}>
+                <FacebookIcon />
+              </Link>
             </ListItem>
             <ListItem>
-              <WhatsappIcon />
+              <Link href={""}>
+                <WhatsappIcon />
+              </Link>
             </ListItem>
             <ListItem>
-              <InstagramIcon />
+              <Link href={""}>
+                <InstagramIcon />
+              </Link>
             </ListItem>
           </List>
         </Box>

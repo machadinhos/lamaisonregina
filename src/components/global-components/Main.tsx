@@ -19,12 +19,13 @@ export default function Main({ children, isHome, lang }: Props) {
         sx={{
           position: "relative",
           mb: "6rem",
-          mt: isHome ? 0 : "5rem",
+          mt: { xs: "2rem", sm: "4rem", md: "4rem", lg: "4rem", xl: "4rem" },
           maxWidth: {
             lg: "1536px",
           },
+          textAlign: "justify",
           px: {
-            xs: "96px",
+            xs: "1.25rem",
             sm: "96px",
             md: "96px",
             lg: "96px",

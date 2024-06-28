@@ -53,12 +53,40 @@ export const HomeCarousel = ({ lang }: Props) => {
             "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
           ]}
         />
-        <TitleTypography variant="h4">{selectLang(lang, "home-welcome-1")}</TitleTypography>
-        <TitleTypography variant="h1" sx={{ fontWeight: "bold" }}>
+        <TitleTypography
+          sx={{
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+          }}
+          variant="h4"
+        >
+          {selectLang(lang, "home-welcome-1")}
+        </TitleTypography>
+        <TitleTypography
+          variant="h1"
+          sx={{
+            fontWeight: "bold",
+            fontSize: { xs: "3rem", sm: "3.5rem", md: "4rem", lg: "5rem" },
+          }}
+        >
           La Maison Regina
         </TitleTypography>
-        <TitleTypography variant="h4">{selectLang(lang, "home-welcome-2")}</TitleTypography>
-        <TitleTypography variant="h5">{selectLang(lang, "home-slogan")}</TitleTypography>
+        <TitleTypography
+          sx={{
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+            marginBottom: "1.5rem",
+          }}
+          variant="h4"
+        >
+          {selectLang(lang, "home-welcome-2")}
+        </TitleTypography>
+        <TitleTypography
+          sx={{
+            fontSize: { xs: "1rem", sm: "1.5rem", md: "2rem", lg: "2.5rem" },
+          }}
+          variant="h5"
+        >
+          {selectLang(lang, "home-slogan")}
+        </TitleTypography>
       </section>
     </Box>
   );
@@ -72,19 +100,43 @@ export default function Home({ lang }: Props) {
         <Typography variant="body1">{selectLang(lang, "home-text-2")}</Typography>
         <Typography variant="body1">{selectLang(lang, "home-text-3")}</Typography>
         <Typography variant="body1">{selectLang(lang, "home-text-4")}</Typography>
-        <Typography variant="h3">{selectLang(lang, "home-sep-1")}</Typography>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            marginTop: "1.5rem",
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+          }}
+          variant="h3"
+        >
+          {selectLang(lang, "home-sep-1")}
+        </Typography>
         <Typography variant="body1">{selectLang(lang, "home-text-5")}</Typography>
         <Typography variant="body1">{selectLang(lang, "home-text-6")}</Typography>
-        <Typography variant="h3">{selectLang(lang, "home-sep-2")}</Typography>
-        <ul>
-          {selectLang(lang, "home-sep-2-list")
-            .split(" | ")
-            .map((item, index) => (
-              <li key={index}>
-                <Typography variant={"body1"}>{item}</Typography>
-              </li>
-            ))}
-        </ul>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            marginTop: "1.5rem",
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+          }}
+          variant="h3"
+        >
+          {selectLang(lang, "home-sep-2")}
+        </Typography>
+        <Box
+          sx={{
+            px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
+          }}
+        >
+          <ul>
+            {selectLang(lang, "home-sep-2-list")
+              .split(" | ")
+              .map((item, index) => (
+                <li key={index}>
+                  <Typography variant={"body1"}>{item}</Typography>
+                </li>
+              ))}
+          </ul>
+        </Box>
       </section>
     </>
   );
