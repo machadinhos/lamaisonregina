@@ -1,9 +1,8 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { ReactNode } from "react";
 import { primaryColor } from "@/styles/globals";
-import { minHeight } from "@mui/system";
 
 interface Props {
   lang: LangEnum;
@@ -15,7 +14,7 @@ const ServiceText = ({ children }: { children: string }) => {
       variant={"body1"}
       sx={{
         textAlign: "justify",
-        fontSize: "1.5rem",
+        // fontSize: "1.5rem",
       }}
     >
       {children}
@@ -110,9 +109,9 @@ export default function Services({ lang }: Props) {
       <Typography variant={"h1"}>{selectLang(lang, "services")}</Typography>
       <section style={{ height: "auto", minHeight: "unset" }}>
         <Typography
-          variant={"h5"}
+          variant={"body1"}
           sx={{
-            textAlign: "center",
+            textAlign: { xs: "justify", md: "center" },
             mb: "2rem",
           }}
         >
@@ -140,8 +139,25 @@ export default function Services({ lang }: Props) {
       <section>
         <ServiceText>{selectLang(lang, "services-text-2")}</ServiceText>
         <Box sx={{ mt: "4rem" }}>
-          <Typography variant={"h3"}>{selectLang(lang, "services-sep-1")}</Typography>
-          <Typography variant={"h4"}>{selectLang(lang, "services-sep-2")}</Typography>
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              marginTop: "1.5rem",
+              fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
+            }}
+            variant={"h3"}
+          >
+            {selectLang(lang, "services-sep-1")}
+          </Typography>
+          <Typography
+            sx={{
+              fontWeight: "bold",
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+            }}
+            variant={"h4"}
+          >
+            {selectLang(lang, "services-sep-2")}
+          </Typography>
         </Box>
         <ServiceText>{selectLang(lang, "services-text-3")}</ServiceText>
         <ServiceText>{selectLang(lang, "services-text-4")}</ServiceText>

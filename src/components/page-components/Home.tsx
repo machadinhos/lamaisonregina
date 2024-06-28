@@ -104,7 +104,7 @@ export default function Home({ lang }: Props) {
           sx={{
             fontWeight: "bold",
             marginTop: "1.5rem",
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
           }}
           variant="h3"
         >
@@ -116,7 +116,7 @@ export default function Home({ lang }: Props) {
           sx={{
             fontWeight: "bold",
             marginTop: "1.5rem",
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
           }}
           variant="h3"
         >
