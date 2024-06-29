@@ -34,13 +34,19 @@ function HeaderLink({
   currentLanguage,
   selectedLanguage,
   isMobile,
+  isLanguageSelector,
 }: {
   href: string;
   children: ReactNode | ReactNode[];
   currentLanguage?: string;
   selectedLanguage?: string;
   isMobile?: boolean;
+  isLanguageSelector?: boolean;
 }) {
+  const redirect = (href: string) => {
+    window.location.href = href;
+  };
+
   if (currentLanguage && selectedLanguage && currentLanguage === selectedLanguage) {
     return (
       <Typography
@@ -51,7 +57,11 @@ function HeaderLink({
       </Typography>
     );
   }
-  return (
+  return isLanguageSelector ? (
+    <Typography onClick={() => redirect(href)} variant={"h6"} sx={{ fontSize: isMobile ? "2rem" : "1.2rem" }}>
+      {children}
+    </Typography>
+  ) : (
     <Link href={href}>
       <Typography variant={"h6"} sx={{ fontSize: isMobile ? "2rem" : "1.2rem" }}>
         {children}
@@ -80,6 +90,7 @@ function LanguageSelector() {
         href={`/pt/${path.substring(4).replace("header", "").replace("#", "")}`}
         currentLanguage={currentLang}
         selectedLanguage={"pt"}
+        isLanguageSelector
       >
         PT
       </HeaderLink>
@@ -90,6 +101,7 @@ function LanguageSelector() {
         href={`/en/${path.substring(4).replace("header", "").replace("#", "")}`}
         currentLanguage={currentLang}
         selectedLanguage={"en"}
+        isLanguageSelector
       >
         EN
       </HeaderLink>
