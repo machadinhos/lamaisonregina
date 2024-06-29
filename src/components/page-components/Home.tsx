@@ -128,11 +128,14 @@ export default function Home({ lang }: Props) {
             px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
           }}
         >
-          <List sx={{ textAlign: "center" }}>
+          <List sx={{ textAlign: "center", padding: "0", margin: "0" }}>
             {selectLang(lang, "home-sep-2-list")
               .split(" | ")
               .map((item, index) => (
-                <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} key={index}>
+                <ListItem
+                  sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 0, margin: 0 }}
+                  key={index}
+                >
                   <Typography variant={"body1"}>{item}</Typography>
                 </ListItem>
               ))}

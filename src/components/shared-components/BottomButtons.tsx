@@ -13,7 +13,7 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
       position={"sticky"}
       bottom={0}
       left={0}
-      width={"100vw"}
+      width={"100%"}
       height={"5rem"}
       sx={{ backgroundColor: primaryColor }}
       zIndex={10}
@@ -48,7 +48,7 @@ export function DesktopBottomButtons() {
       top={"calc(100dvh - 6rem)"}
       mb={"-6rem"}
       left={0}
-      width={"100vw"}
+      width={"100%"}
       height={"6rem"}
       zIndex={10}
     >

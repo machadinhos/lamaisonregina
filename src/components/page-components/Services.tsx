@@ -151,6 +151,7 @@ export default function Services({ lang }: Props) {
           </Typography>
           <Typography
             sx={{
+              mt: "1rem",
               fontWeight: "bold",
               fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
             }}

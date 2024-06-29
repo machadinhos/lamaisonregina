@@ -130,9 +130,9 @@ function MobileSlider({ lang, isActive }: { lang: LangEnum; isActive: boolean })
         position: "fixed",
         top: "120px",
         left: 0,
-        width: "100vw",
+        width: "100%",
         height: "calc(100vh - 120px)",
-        transform: isActive ? "translateX(0)" : "translateX(-100vw)",
+        transform: isActive ? "translateX(0)" : "translateX(-100%)",
         transition: "transform 0.5s ease-in-out",
       }}
     >
@@ -181,7 +181,7 @@ export default function Header({ lang }: Props) {
   const [isActive, setIsActive] = useState(false);
   return (
     <>
-      {isActive && <Box width={"100vw"} height={"120px"} />}
+      {isActive && <Box width={"100%"} height={"120px"} />}
       <Container
         maxWidth={false}
         sx={{
