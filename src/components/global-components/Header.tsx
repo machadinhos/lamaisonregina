@@ -5,7 +5,6 @@ import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { primaryColor } from "@/styles/globals";
-import useScreenWidth from "@/hooks/use-screen-width";
 
 interface Props {
   lang: LangEnum;
