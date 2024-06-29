@@ -48,3 +48,21 @@ img {
 ul {
   list-style-type: none;
 }
+
+.absolute {
+  position: absolute;
+  left: 0;
+  bottom: -5rem;
+}
+
+.absolute-desktop {
+  position: absolute;
+  left: 0;
+  bottom: -6rem;
+}
+
+.sticky {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+}

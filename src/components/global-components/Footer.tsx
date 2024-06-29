@@ -19,11 +19,15 @@ export default function Footer({ lang }: Props) {
         color: primaryColor,
         padding: "1rem",
         position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <Box
         sx={{
-          display: { xs: "none", md: "flex" },
+          display: { xs: "none", sm: "flex" },
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
@@ -38,7 +42,13 @@ export default function Footer({ lang }: Props) {
           <Image alt={"logo"} src={"/logo.png"} width={150} height={150} />
         </Link>
       </Box>
-      <Box sx={{ display: { xs: "block", md: "flex" }, justifyContent: "space-between" }}>
+      <Box
+        sx={{
+          display: { xs: "block", sm: "flex" },
+          width: { xs: "100%", md: "90%", lg: "80%", xl: "60%" },
+          justifyContent: "space-between",
+        }}
+      >
         <List
           sx={{
             display: "flex",
@@ -71,7 +81,14 @@ export default function Footer({ lang }: Props) {
           <Typography sx={{ color: primaryColor }} variant={"h4"}>
             {selectLang(lang, "footer-follow")}
           </Typography>
-          <List sx={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center" }}>
+          <List
+            sx={{
+              display: "flex",
+              flexDirection: { sm: "column", md: "row" },
+              justifyContent: "space-evenly",
+              alignItems: "center",
+            }}
+          >
             <ListItem>
               <Link href={""}>
                 <FacebookIcon />

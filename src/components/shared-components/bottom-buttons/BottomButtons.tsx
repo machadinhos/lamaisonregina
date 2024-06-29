@@ -5,18 +5,45 @@ import Link from "next/link";
 import Image from "next/image";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { useEffect } from "react";
 
 export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
+  useEffect(() => {
+    const mobileBottomButtons = document.getElementById("mobile-bottom-buttons")!;
+    const body = document.querySelector("body")!;
+    body.addEventListener("scroll", () => {
+      if (body.scrollTop <= mobileBottomButtons.offsetHeight) {
+        mobileBottomButtons.classList.remove("sticky");
+        mobileBottomButtons.classList.add("absolute");
+      } else {
+        mobileBottomButtons.classList.remove("absolute");
+        mobileBottomButtons.classList.add("sticky");
+      }
+    });
+
+    return () => {
+      body.removeEventListener("scroll", () => {
+        if (body.scrollTop <= mobileBottomButtons.offsetHeight) {
+          mobileBottomButtons.classList.remove("sticky");
+          mobileBottomButtons.classList.add("absolute");
+        } else {
+          mobileBottomButtons.classList.remove("absolute");
+          mobileBottomButtons.classList.add("sticky");
+        }
+      });
+    };
+  });
   return (
     <Box
       display={{ xs: "block", sm: "none" }}
-      position={"sticky"}
-      bottom={0}
+      position={"absolute"}
+      bottom={"-5rem"}
       left={0}
       width={"100%"}
       height={"5rem"}
       sx={{ backgroundColor: primaryColor }}
       zIndex={10}
+      id={"mobile-bottom-buttons"}
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
         <Link href={`/${lang}/`}>
@@ -41,16 +68,41 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
 }
 
 export function DesktopBottomButtons() {
+  useEffect(() => {
+    const desktopBottomButtons = document.getElementById("desktop-bottom-buttons")!;
+    const body = document.querySelector("body")!;
+    body.addEventListener("scroll", () => {
+      if (body.scrollTop <= desktopBottomButtons.offsetHeight) {
+        desktopBottomButtons.classList.remove("sticky");
+        desktopBottomButtons.classList.add("absolute-desktop");
+      } else {
+        desktopBottomButtons.classList.remove("absolute-desktop");
+        desktopBottomButtons.classList.add("sticky");
+      }
+    });
+
+    return () => {
+      body.removeEventListener("scroll", () => {
+        if (body.scrollTop <= desktopBottomButtons.offsetHeight) {
+          desktopBottomButtons.classList.remove("sticky");
+          desktopBottomButtons.classList.add("absolute-desktop");
+        } else {
+          desktopBottomButtons.classList.remove("absolute-desktop");
+          desktopBottomButtons.classList.add("sticky");
+        }
+      });
+    };
+  });
   return (
     <Box
       display={{ xs: "none", sm: "block" }}
-      position={"sticky"}
-      top={"calc(100dvh - 6rem)"}
-      mb={"-6rem"}
+      position={"absolute"}
+      top={"-6rem"}
       left={0}
       width={"100%"}
       height={"6rem"}
       zIndex={10}
+      id={"desktop-bottom-buttons"}
     >
       <Box position={"absolute"} bottom={"1rem"} left={"1rem"}>
         <Link
@@ -77,5 +129,14 @@ export function DesktopBottomButtons() {
         </Link>
       </Box>
     </Box>
+  );
+}
+
+export default function BottomButtons({ lang }: { lang: LangEnum }) {
+  return (
+    <>
+      <MobileBottomButtons lang={lang} />
+      <DesktopBottomButtons />
+    </>
   );
 }
