@@ -1,5 +1,7 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Typography } from "@mui/material";
+import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
+import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
+import GenericPageText from "@/components/shared-components/GenericPageText";
 
 interface Props {
   lang: LangEnum;
@@ -8,43 +10,19 @@ interface Props {
 export default function Catering({ lang }: Props) {
   return (
     <>
-      <Typography variant={"h1"}>Catering</Typography>
+      <GenericPageMainTitle>Catering</GenericPageMainTitle>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "catering-title-1")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "catering-text-1")}</Typography>
-        <Typography variant="body1">{selectLang(lang, "catering-text-2")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "catering-title-1")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "catering-text-1")}</GenericPageText>
+        <GenericPageText>{selectLang(lang, "catering-text-2")}</GenericPageText>
       </section>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "catering-title-2")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "catering-text-3")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "catering-title-2")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "catering-text-3")}</GenericPageText>
       </section>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "catering-title-3")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "catering-text-4")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "catering-title-3")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "catering-text-4")}</GenericPageText>
       </section>
     </>
   );

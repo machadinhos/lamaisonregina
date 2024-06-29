@@ -3,23 +3,17 @@ import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { ReactNode } from "react";
 import { primaryColor } from "@/styles/globals";
+import GenericPageText from "@/components/shared-components/GenericPageText";
+import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
+import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
+import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
 
 interface Props {
   lang: LangEnum;
 }
 
 const ServiceText = ({ children }: { children: string }) => {
-  return (
-    <Typography
-      variant={"body1"}
-      sx={{
-        textAlign: "justify",
-        // fontSize: "1.5rem",
-      }}
-    >
-      {children}
-    </Typography>
-  );
+  return <GenericPageText>{children}</GenericPageText>;
 };
 
 const ServiceCard = ({
@@ -70,14 +64,7 @@ const ServiceCard = ({
       >
         <Image src={img} alt={title} fill />
       </Box>
-      <Typography
-        variant={"body1"}
-        sx={{
-          textAlign: "justify",
-        }}
-      >
-        {text}
-      </Typography>
+      <GenericPageText>{text}</GenericPageText>
     </Box>
   );
 };
@@ -106,17 +93,15 @@ export default function Services({ lang }: Props) {
   const [card3Title, card3Text] = selectLang(lang, "services-card-3").split(" | ");
   return (
     <>
-      <Typography variant={"h1"}>{selectLang(lang, "services")}</Typography>
+      <GenericPageMainTitle>{selectLang(lang, "services")}</GenericPageMainTitle>
       <section style={{ height: "auto", minHeight: "unset" }}>
-        <Typography
-          variant={"body1"}
+        <GenericPageText
           sx={{
             textAlign: { xs: "justify", md: "center" },
-            mb: "2rem",
           }}
         >
           {selectLang(lang, "services-text-1")}
-        </Typography>
+        </GenericPageText>
         <ServiceCardSection>
           <ServiceCard
             title={card1Title}
@@ -139,26 +124,8 @@ export default function Services({ lang }: Props) {
       <section>
         <ServiceText>{selectLang(lang, "services-text-2")}</ServiceText>
         <Box sx={{ mt: "4rem" }}>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              marginTop: "1.5rem",
-              fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-            }}
-            variant={"h3"}
-          >
-            {selectLang(lang, "services-sep-1")}
-          </Typography>
-          <Typography
-            sx={{
-              mt: "1rem",
-              fontWeight: "bold",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
-            }}
-            variant={"h4"}
-          >
-            {selectLang(lang, "services-sep-2")}
-          </Typography>
+          <GenericPageTitle>{selectLang(lang, "services-sep-1")}</GenericPageTitle>
+          <GenericPageSubTitle>{selectLang(lang, "services-sep-2")}</GenericPageSubTitle>
         </Box>
         <ServiceText>{selectLang(lang, "services-text-3")}</ServiceText>
         <ServiceText>{selectLang(lang, "services-text-4")}</ServiceText>

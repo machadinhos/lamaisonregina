@@ -1,341 +1,156 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { List, ListItem, Typography } from "@mui/material";
+import { List, ListItem } from "@mui/material";
 import Link from "next/link";
-import React from "react";
+import React, { ReactNode } from "react";
+import GenericPageText from "@/components/shared-components/GenericPageText";
+import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
+import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
 
 interface Props {
   lang: LangEnum;
 }
 
-const MyListItem = ({ children }: { children: React.ReactNode | React.ReactNode[] }) => (
-  <ListItem
+const FAQTitle = ({ children }: { children: string }) => (
+  <GenericPageSubTitle
     sx={{
-      display: "block",
-      margin: 0,
-      padding: 0,
-      textAlign: "justify",
+      fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
     }}
   >
     {children}
-  </ListItem>
+  </GenericPageSubTitle>
+);
+
+const FAQListItem = ({ children }: { children: ReactNode | ReactNode[] }) => (
+  <ListItem sx={{ display: "block", margin: 0, padding: 0 }}>{children}</ListItem>
 );
 
 export default function FAQ({ lang }: Props) {
   return (
     <>
-      <Typography variant={"h1"}>FAQ</Typography>
-      <List sx={{ margin: 0, paddingX: 0 }}>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-where-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-where-text-1")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-where-text-2")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-where-text-3")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-where-text-4")}</Typography>
-          <Typography variant="body1">
+      <GenericPageMainTitle>FAQ</GenericPageMainTitle>
+      <List sx={{ padding: 0, margin: 0 }}>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-where-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-where-text-1")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-where-text-2")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-where-text-3")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-where-text-4")}</GenericPageText>
+          <GenericPageText>
             {selectLang(lang, "faq-where-text-5-1") + " "}
             <Link href={`/${lang}/contacts`}>{selectLang(lang, "faq-where-text-5-2")}</Link>
             {" " + selectLang(lang, "faq-where-text-5-3")}
-          </Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-event-types-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-event-types-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-capacity-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-capacity-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-hotel-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-hotel-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-why-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-why-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-contact-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-contact-text")}</Typography>
+          </GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-event-types-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-event-types-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-capacity-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-capacity-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-hotel-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-hotel-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-why-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-why-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-contact-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-contact-text")}</GenericPageText>
+          <List sx={{}}>
+            <FAQListItem>
+              <GenericPageText>{selectLang(lang, "faq-contact-list-1")}</GenericPageText>
+            </FAQListItem>
+            <FAQListItem>
+              <GenericPageText>{selectLang(lang, "faq-contact-list-2")}</GenericPageText>
+            </FAQListItem>
+          </List>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-suppliers-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-suppliers-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-catering-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-catering-text-1")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-catering-text-2")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-catering-text-3")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-noise-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-noise-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-tourism-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-tourism-text")}</GenericPageText>
           <ul>
-            <MyListItem>
-              <Typography variant="body1">{selectLang(lang, "faq-contact-list-1")}</Typography>
-            </MyListItem>
-            <MyListItem>
-              <Typography variant="body1">{selectLang(lang, "faq-contact-list-2")}</Typography>
-            </MyListItem>
+            <FAQListItem>
+              <GenericPageText>{selectLang(lang, "faq-tourism-list-1")}</GenericPageText>
+            </FAQListItem>
+            <FAQListItem>
+              <GenericPageText>{selectLang(lang, "faq-tourism-list-2")}</GenericPageText>
+            </FAQListItem>
+            <FAQListItem>
+              <GenericPageText>{selectLang(lang, "faq-tourism-list-3")}</GenericPageText>
+            </FAQListItem>
+            <FAQListItem>
+              <GenericPageText>{selectLang(lang, "faq-tourism-list-4")}</GenericPageText>
+            </FAQListItem>
+            <FAQListItem>
+              <GenericPageText>{selectLang(lang, "faq-tourism-list-5")}</GenericPageText>
+            </FAQListItem>
           </ul>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-suppliers-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-suppliers-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-catering-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-catering-text-1")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-catering-text-2")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-catering-text-3")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-noise-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-noise-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-tourism-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-tourism-text")}</Typography>
-          <ul>
-            <MyListItem>
-              <Typography variant="body1">{selectLang(lang, "faq-tourism-list-1")}</Typography>
-            </MyListItem>
-            <MyListItem>
-              <Typography variant="body1">{selectLang(lang, "faq-tourism-list-2")}</Typography>
-            </MyListItem>
-            <MyListItem>
-              <Typography variant="body1">{selectLang(lang, "faq-tourism-list-3")}</Typography>
-            </MyListItem>
-            <MyListItem>
-              <Typography variant="body1">{selectLang(lang, "faq-tourism-list-4")}</Typography>
-            </MyListItem>
-            <MyListItem>
-              <Typography variant="body1">{selectLang(lang, "faq-tourism-list-5")}</Typography>
-            </MyListItem>
-          </ul>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-beach-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-beach-text-1")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-beach-text-2")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-supermarket-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-supermarket-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-pricing-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-pricing-text-1")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-pricing-text-2")}</Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-pricing-text-3")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-portugal-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-portugal-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-open-space-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-portugal-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-parking-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-parking-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-communication-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-communication-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-ceremonies-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-ceremonies-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-mosquitoes-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-mosquitoes-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-sustainability-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-sustainability-text")}</Typography>
-        </MyListItem>
-        <MyListItem>
-          <Typography
-            sx={{
-              fontWeight: "bold",
-              mt: "1.5rem",
-              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-            }}
-            variant="h5"
-          >
-            {selectLang(lang, "faq-other-questions-title")}
-          </Typography>
-          <Typography variant="body1">{selectLang(lang, "faq-other-questions-text")}</Typography>
-        </MyListItem>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-beach-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-beach-text-1")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-beach-text-2")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-supermarket-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-supermarket-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-pricing-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-pricing-text-1")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-pricing-text-2")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "faq-pricing-text-3")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-portugal-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-portugal-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-open-space-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-portugal-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-parking-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-parking-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-communication-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-communication-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-ceremonies-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-ceremonies-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-mosquitoes-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-mosquitoes-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-sustainability-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-sustainability-text")}</GenericPageText>
+        </FAQListItem>
+        <FAQListItem>
+          <FAQTitle>{selectLang(lang, "faq-other-questions-title")}</FAQTitle>
+          <GenericPageText>{selectLang(lang, "faq-other-questions-text")}</GenericPageText>
+        </FAQListItem>
       </List>
     </>
   );

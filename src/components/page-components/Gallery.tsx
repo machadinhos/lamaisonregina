@@ -1,5 +1,7 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Typography } from "@mui/material";
+import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
+import GenericPageText from "@/components/shared-components/GenericPageText";
+import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
 
 interface Props {
   lang: LangEnum;
@@ -8,66 +10,26 @@ interface Props {
 export default function Gallery({ lang }: Props) {
   return (
     <>
-      <Typography variant={"h1"}>{selectLang(lang, "gallery")}</Typography>
+      <GenericPageMainTitle>{selectLang(lang, "gallery")}</GenericPageMainTitle>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "gallery-title-1")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "gallery-text-1")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "gallery-title-1")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "gallery-text-1")}</GenericPageText>
       </section>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "gallery-title-2")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "gallery-text-2")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "gallery-title-2")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "gallery-text-2")}</GenericPageText>
       </section>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "gallery-title-3")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "gallery-text-3")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "gallery-title-3")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "gallery-text-3")}</GenericPageText>
       </section>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "gallery-title-4")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "gallery-text-4")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "gallery-title-4")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "gallery-text-4")}</GenericPageText>
       </section>
       <section>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "gallery-title-5")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "gallery-text-5")}</Typography>
+        <GenericPageTitle>{selectLang(lang, "gallery-title-5")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "gallery-text-5")}</GenericPageText>
       </section>
     </>
   );

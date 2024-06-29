@@ -1,6 +1,8 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
 import { Box, List, ListItem, SxProps, Theme, Typography } from "@mui/material";
 import Carousel from "@/components/shared-components/carousel";
+import GenericPageText from "@/components/shared-components/GenericPageText";
+import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
 
 interface Props {
   lang: LangEnum;
@@ -97,32 +99,14 @@ export default function Home({ lang }: Props) {
   return (
     <>
       <section>
-        <Typography variant="body1">{selectLang(lang, "home-text-1")}</Typography>
-        <Typography variant="body1">{selectLang(lang, "home-text-2")}</Typography>
-        <Typography variant="body1">{selectLang(lang, "home-text-3")}</Typography>
-        <Typography variant="body1">{selectLang(lang, "home-text-4")}</Typography>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            marginTop: "1.5rem",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "home-sep-1")}
-        </Typography>
-        <Typography variant="body1">{selectLang(lang, "home-text-5")}</Typography>
-        <Typography variant="body1">{selectLang(lang, "home-text-6")}</Typography>
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            marginTop: "1.5rem",
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-          }}
-          variant="h3"
-        >
-          {selectLang(lang, "home-sep-2")}
-        </Typography>
+        <GenericPageText>{selectLang(lang, "home-text-1")}</GenericPageText>
+        <GenericPageText>{selectLang(lang, "home-text-2")}</GenericPageText>
+        <GenericPageText>{selectLang(lang, "home-text-3")}</GenericPageText>
+        <GenericPageText>{selectLang(lang, "home-text-4")}</GenericPageText>
+        <GenericPageTitle>{selectLang(lang, "home-sep-1")}</GenericPageTitle>
+        <GenericPageText>{selectLang(lang, "home-text-5")}</GenericPageText>
+        <GenericPageText>{selectLang(lang, "home-text-6")}</GenericPageText>
+        <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
         <Box
           sx={{
             px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
@@ -136,7 +120,7 @@ export default function Home({ lang }: Props) {
                   sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 0, margin: 0 }}
                   key={index}
                 >
-                  <Typography variant={"body1"}>{item}</Typography>
+                  <GenericPageText>{item}</GenericPageText>
                 </ListItem>
               ))}
           </List>
