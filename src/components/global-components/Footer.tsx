@@ -77,7 +77,7 @@ export default function Footer({ lang }: Props) {
             <ListItem>FAQ</ListItem>
           </Link>
         </List>
-        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <Box mb={"1rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
           <Typography sx={{ color: primaryColor }} variant={"h4"}>
             {selectLang(lang, "footer-follow")}
           </Typography>
@@ -105,6 +105,17 @@ export default function Footer({ lang }: Props) {
               </Link>
             </ListItem>
           </List>
+          <Box width={"60%"} sx={{ aspectRatio: "1/1" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d316.05314156281565!2d-8.804320165760586!3d40.07111548468533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e1!3m2!1spt-PT!2spt!4v1719690917033!5m2!1spt-PT!2spt"
+              width="100%"
+              height="100%"
+              style={{ border: `2px solid ${primaryColor}` }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Box>
         </Box>
       </Box>
       <Typography sx={{ textAlign: "center", color: primaryColor }}>
