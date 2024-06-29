@@ -64,8 +64,9 @@ export const HomeCarousel = ({ lang }: Props) => {
         <TitleTypography
           variant="h1"
           sx={{
+            padding: "1rem",
             fontWeight: "bold",
-            fontSize: { xs: "3rem", sm: "3.5rem", md: "4rem", lg: "5rem" },
+            fontSize: { xs: "6rem", sm: "8rem", md: "10rem", lg: "12rem" },
           }}
         >
           La Maison Regina
