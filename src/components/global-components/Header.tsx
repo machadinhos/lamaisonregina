@@ -62,13 +62,21 @@ function LanguageSelector() {
         alignItems: "center",
       }}
     >
-      <HeaderLink href={`/pt/${path.substring(4)}`} currentLanguage={currentLang} selectedLanguage={"pt"}>
+      <HeaderLink
+        href={`/pt/${path.substring(4).replace("header", "").replace("#", "")}`}
+        currentLanguage={currentLang}
+        selectedLanguage={"pt"}
+      >
         PT
       </HeaderLink>
       <Typography sx={{ userSelect: "none" }} variant={"h5"}>
         {" | "}
       </Typography>
-      <HeaderLink href={`/en/${path.substring(4)}`} currentLanguage={currentLang} selectedLanguage={"en"}>
+      <HeaderLink
+        href={`/en/${path.substring(4).replace("header", "").replace("#", "")}`}
+        currentLanguage={currentLang}
+        selectedLanguage={"en"}
+      >
         EN
       </HeaderLink>
     </Box>

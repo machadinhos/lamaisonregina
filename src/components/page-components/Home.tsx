@@ -1,5 +1,5 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Box, SxProps, Theme, Typography } from "@mui/material";
+import { Box, List, ListItem, SxProps, Theme, Typography } from "@mui/material";
 import Carousel from "@/components/shared-components/carousel";
 
 interface Props {
@@ -128,15 +128,15 @@ export default function Home({ lang }: Props) {
             px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
           }}
         >
-          <ul>
+          <List sx={{ textAlign: "center" }}>
             {selectLang(lang, "home-sep-2-list")
               .split(" | ")
               .map((item, index) => (
-                <li key={index}>
+                <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} key={index}>
                   <Typography variant={"body1"}>{item}</Typography>
-                </li>
+                </ListItem>
               ))}
-          </ul>
+          </List>
         </Box>
       </section>
     </>

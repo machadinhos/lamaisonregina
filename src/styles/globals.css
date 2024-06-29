@@ -44,3 +44,7 @@ section {
 img {
   user-select: none;
 }
+
+ul {
+  list-style-type: none;
+}
