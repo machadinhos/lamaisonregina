@@ -147,9 +147,8 @@ function DesktopMenu({ lang }: Props) {
       sx={{
         display: { xs: "none", sm: "flex" },
         flexDirection: "flex",
-        justifyContent: "space-between",
         alignItems: "center",
-        width: "60vw",
+        width: { md: "60vw", lg: "60vw", xl: "800px" },
       }}
     >
       <HeaderMenu lang={lang} />
@@ -163,8 +162,8 @@ function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) 
       sx={{
         display: "flex",
         ...(isMobile && { flexDirection: "column", alignItems: "center" }),
-        width: "80vw",
         justifyContent: "space-evenly",
+        width: "100%",
       }}
     >
       <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>

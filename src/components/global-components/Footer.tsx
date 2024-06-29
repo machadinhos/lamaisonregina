@@ -23,7 +23,7 @@ export default function Footer({ lang }: Props) {
     >
       <Box
         sx={{
-          display: "flex",
+          display: { xs: "none", md: "flex" },
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
@@ -38,29 +38,39 @@ export default function Footer({ lang }: Props) {
           <Image alt={"logo"} src={"/logo.png"} width={150} height={150} />
         </Link>
       </Box>
-      <Grid container sx={{ justifyContent: "space-between" }}>
-        <List sx={{ display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center" }}>
-          <Link href={`/${lang}/`}>
+      <Box sx={{ display: { xs: "block", md: "flex" }, justifyContent: "space-between" }}>
+        <List
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            fontSize: "1.5rem",
+          }}
+        >
+          <Link href={`/${lang}/#header`}>
             <ListItem>{selectLang(lang, "home")}</ListItem>
           </Link>
-          <Link href={`/${lang}/services`}>
+          <Link href={`/${lang}/services#header`}>
             <ListItem>{selectLang(lang, "services")}</ListItem>
           </Link>
-          <Link href={`/${lang}/catering`}>
+          <Link href={`/${lang}/catering#header`}>
             <ListItem>Catering</ListItem>
           </Link>
-          <Link href={`/${lang}/gallery`}>
+          <Link href={`/${lang}/gallery#header`}>
             <ListItem>{selectLang(lang, "gallery")}</ListItem>
           </Link>
-          <Link href={`/${lang}/contacts`}>
+          <Link href={`/${lang}/contacts#header`}>
             <ListItem>{selectLang(lang, "contacts")}</ListItem>
           </Link>
-          <Link href={`/${lang}/faq`}>
+          <Link href={`/${lang}/faq#header`}>
             <ListItem>FAQ</ListItem>
           </Link>
         </List>
         <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-          <Typography sx={{ color: primaryColor }}>{selectLang(lang, "footer-follow")}</Typography>
+          <Typography sx={{ color: primaryColor }} variant={"h4"}>
+            {selectLang(lang, "footer-follow")}
+          </Typography>
           <List sx={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center" }}>
             <ListItem>
               <Link href={""}>
@@ -79,7 +89,7 @@ export default function Footer({ lang }: Props) {
             </ListItem>
           </List>
         </Box>
-      </Grid>
+      </Box>
       <Typography sx={{ textAlign: "center", color: primaryColor }}>
         {selectLang(lang, "footer-rights-reserved")}
       </Typography>

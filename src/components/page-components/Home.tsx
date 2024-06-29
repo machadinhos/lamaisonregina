@@ -1,8 +1,10 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Box, List, ListItem, SxProps, Theme, Typography } from "@mui/material";
+import { Box, Button, Divider, List, ListItem, ListSubheader, SxProps, Theme, Typography } from "@mui/material";
 import Carousel from "@/components/shared-components/carousel";
 import GenericPageText from "@/components/shared-components/GenericPageText";
 import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
+import { useState } from "react";
+import { primaryColor, secondaryColor } from "@/styles/globals";
 
 interface Props {
   lang: LangEnum;
@@ -96,32 +98,70 @@ export const HomeCarousel = ({ lang }: Props) => {
 };
 
 export default function Home({ lang }: Props) {
+  const [showText, setShowText] = useState(false);
   return (
     <>
       <section>
-        <GenericPageText>{selectLang(lang, "home-text-1")}</GenericPageText>
-        <GenericPageText>{selectLang(lang, "home-text-2")}</GenericPageText>
-        <GenericPageText>{selectLang(lang, "home-text-3")}</GenericPageText>
-        <GenericPageText>{selectLang(lang, "home-text-4")}</GenericPageText>
-        <GenericPageTitle>{selectLang(lang, "home-sep-1")}</GenericPageTitle>
+        <Box pt={{ xs: "2rem", md: "0" }}>
+          <Box
+            height={{
+              xs: showText ? "max-content" : "200px",
+              sm: showText ? "max-content" : "150px",
+              md: showText ? "max-content" : "100px",
+              lg: showText ? "max-content" : "50px",
+            }}
+            overflow={"hidden"}
+          >
+            <GenericPageText>{selectLang(lang, "home-text-1")}</GenericPageText>
+            <GenericPageText>{selectLang(lang, "home-text-2")}</GenericPageText>
+            <GenericPageText>{selectLang(lang, "home-text-3")}</GenericPageText>
+            <GenericPageText>{selectLang(lang, "home-text-4")}</GenericPageText>
+          </Box>
+          <Box width={"100%"} display={"flex"} flexDirection={"column"} alignItems={"center"}>
+            {!showText && <Typography variant={"h3"}>...</Typography>}
+            <Button
+              sx={{ mt: "2rem", mb: "1rem" }}
+              variant={"contained"}
+              onClick={() => setShowText((prevState) => !prevState)}
+            >
+              {showText ? selectLang(lang, "home-show-less") : selectLang(lang, "home-learn-more")}
+            </Button>
+          </Box>
+        </Box>
+        <GenericPageTitle sx={{ mb: "2rem" }}>{selectLang(lang, "home-sep-1")}</GenericPageTitle>
         <GenericPageText>{selectLang(lang, "home-text-5")}</GenericPageText>
         <GenericPageText>{selectLang(lang, "home-text-6")}</GenericPageText>
-        <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
         <Box
           sx={{
             px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
           }}
         >
-          <List sx={{ textAlign: "center", padding: "0", margin: "0" }}>
+          <List
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              padding: "0",
+              margin: "0",
+              listStyle: "outside",
+            }}
+          >
+            <ListSubheader>
+              <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
+            </ListSubheader>
             {selectLang(lang, "home-sep-2-list")
               .split(" | ")
               .map((item, index) => (
-                <ListItem
-                  sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 0, margin: 0 }}
-                  key={index}
-                >
-                  <GenericPageText>{item}</GenericPageText>
-                </ListItem>
+                <>
+                  <ListItem
+                    sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }}
+                    key={index}
+                  >
+                    <GenericPageText>{item}</GenericPageText>
+                  </ListItem>
+                  <Box width={"40%"} height={"1px"} sx={{ backgroundColor: primaryColor }} />
+                </>
               ))}
           </List>
         </Box>
