@@ -58,7 +58,11 @@ function HeaderLink({
     );
   }
   return isLanguageSelector ? (
-    <Typography onClick={() => redirect(href)} variant={"h6"} sx={{ fontSize: isMobile ? "2rem" : "1.2rem" }}>
+    <Typography
+      onClick={() => redirect(href)}
+      variant={"h6"}
+      sx={{ fontSize: isMobile ? "2rem" : "1.2rem", cursor: "pointer" }}
+    >
       {children}
     </Typography>
   ) : (
