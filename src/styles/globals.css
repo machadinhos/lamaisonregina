@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../../public/fonts/elipses-caps.otf") format("truetype");
+  src: url("/fonts/elipses-caps.otf") format("truetype");
 }
 
 ::selection {
