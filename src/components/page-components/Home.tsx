@@ -3,7 +3,7 @@ import { Box, Button, List, ListItem, ListSubheader, SxProps, Theme, Typography 
 import Carousel from "@/components/shared-components/carousel";
 import GenericPageText from "@/components/shared-components/GenericPageText";
 import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
-import { Dispatch, Key, ReactNode, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { primaryColor } from "@/styles/globals";
 import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
 
@@ -109,7 +109,7 @@ const showMoreText = (showText: boolean, lang: LangEnum) => {
   } else return <></>;
 };
 
-const sustainabilityText = (lang: LangEnum, showSustainability: boolean) => {
+const SustainabilityText = ({ lang, showSustainability }: { lang: LangEnum; showSustainability: boolean }) => {
   if (showSustainability) {
     return (
       <>
@@ -138,38 +138,42 @@ const sustainabilityText = (lang: LangEnum, showSustainability: boolean) => {
   } else return <></>;
 };
 
-const whyChooseListItems = (
-  lang: LangEnum,
-  showSustainability: boolean,
-  setShowSustainability: Dispatch<SetStateAction<boolean>>,
-) => {
+const WhyChooseListItems = ({
+  lang,
+  showSustainability,
+  setShowSustainability,
+}: {
+  lang: LangEnum;
+  showSustainability: boolean;
+  setShowSustainability: Dispatch<SetStateAction<boolean>>;
+}) => {
   const items = selectLang(lang, "home-sep-2-list").split(" | ");
-  const itemsText = items.map((item: string | ReactNode[], index: Key | null | undefined) => (
-    <>
-      <ListItem sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }} key={index}>
+  const itemsText = items.map((item, index) => (
+    <React.Fragment key={index}>
+      <ListItem
+        key={`item-${index}`}
+        sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }}
+      >
         <GenericPageText sx={{ textAlign: "center" }}>{item}</GenericPageText>
       </ListItem>
-      {items.length - 1 == index ? (
-        <>
-          <Button
-            sx={{ mb: "1rem" }}
-            variant={"contained"}
-            onClick={() => setShowSustainability((prevState) => !prevState)}
-          >
-            {showSustainability ? selectLang(lang, "home-show-less") : selectLang(lang, "home-learn-more")}
-          </Button>
-        </>
-      ) : (
-        <></>
+      {items.length - 1 === index && (
+        <Button
+          key="sustainability-button"
+          sx={{ mb: "1rem" }}
+          variant={"text"}
+          onClick={() => setShowSustainability((prevState) => !prevState)}
+        >
+          {showSustainability ? selectLang(lang, "home-show-less") : selectLang(lang, "home-learn-more")}
+        </Button>
       )}
-      <Box width={"40%"} height={"1px"} sx={{ backgroundColor: primaryColor }} />
-    </>
+      <Box key={`divider-${index}`} width={"40%"} height={"1px"} sx={{ backgroundColor: primaryColor }} />
+    </React.Fragment>
   ));
 
   return (
     <>
       {itemsText}
-      {sustainabilityText(lang, showSustainability)}
+      <SustainabilityText lang={lang} showSustainability={showSustainability} />
     </>
   );
 };
@@ -213,10 +217,15 @@ export default function Home({ lang }: Props) {
               listStyle: "outside",
             }}
           >
-            <ListSubheader>
+            <ListSubheader key={"subHeader"}>
               <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
             </ListSubheader>
-            {whyChooseListItems(lang, showSustainability, setShowSustainability)}
+            <WhyChooseListItems
+              key={"listItems"}
+              lang={lang}
+              showSustainability={showSustainability}
+              setShowSustainability={setShowSustainability}
+            />
           </List>
         </Box>
       </section>
