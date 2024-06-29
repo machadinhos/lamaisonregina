@@ -6,18 +6,17 @@ import Image from "next/image";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
-function MobileBottomButtons({ lang, zIndex }: { lang: LangEnum; zIndex?: number }) {
+export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
   return (
     <Box
       display={{ xs: "block", sm: "none" }}
       position={"sticky"}
-      top={"calc(100vh - 5rem)"}
-      mb={"-6rem"}
+      bottom={0}
       left={0}
       width={"100vw"}
       height={"5rem"}
       sx={{ backgroundColor: primaryColor }}
-      zIndex={zIndex ? zIndex : 10}
+      zIndex={10}
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
         <Link href={`/${lang}/`}>
@@ -41,17 +40,17 @@ function MobileBottomButtons({ lang, zIndex }: { lang: LangEnum; zIndex?: number
   );
 }
 
-function DesktopBottomButtons({ zIndex }: { zIndex?: number }) {
+export function DesktopBottomButtons() {
   return (
     <Box
-      display={{ xs: "none", sm: zIndex ? "none" : "block" }}
+      display={{ xs: "none", sm: "block" }}
       position={"sticky"}
-      top={"calc(100vh - 6rem)"}
+      top={"calc(100dvh - 6rem)"}
       mb={"-6rem"}
       left={0}
       width={"100vw"}
       height={"6rem"}
-      zIndex={zIndex ? zIndex : 10}
+      zIndex={10}
     >
       <Box position={"absolute"} bottom={"1rem"} left={"1rem"}>
         <Link
@@ -63,10 +62,10 @@ function DesktopBottomButtons({ zIndex }: { zIndex?: number }) {
       </Box>
       <Box
         position={"absolute"}
-        right={"1rem"}
-        bottom={"1rem"}
-        width={"4rem"}
-        height={"4rem"}
+        right={"1.5rem"}
+        bottom={"1.5rem"}
+        width={"3.5rem"}
+        height={"3.5rem"}
         border={`3px solid ${primaryColor}`}
         borderRadius={"50%"}
         display={"flex"}
@@ -74,18 +73,9 @@ function DesktopBottomButtons({ zIndex }: { zIndex?: number }) {
         alignItems={"center"}
       >
         <Link href={"#header"}>
-          <ArrowUpwardIcon sx={{ fontSize: "4rem", color: secondaryColor }} />
+          <ArrowUpwardIcon sx={{ fontSize: "3.5rem", color: secondaryColor }} />
         </Link>
       </Box>
     </Box>
-  );
-}
-
-export default function BottomButtons({ lang, zIndex }: { lang: LangEnum; zIndex?: number }) {
-  return (
-    <>
-      <MobileBottomButtons lang={lang} zIndex={zIndex} />
-      <DesktopBottomButtons zIndex={zIndex} />
-    </>
   );
 }

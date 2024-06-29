@@ -29,7 +29,7 @@ export const HomeCarousel = ({ lang }: Props) => {
         my: "0",
         padding: "0",
         width: "100%",
-        height: { xs: "calc(100vh - 120px)", sm: "calc(100vh - 150px)" },
+        height: { xs: "calc(100vh - 120px - 5rem)", sm: "calc(100vh - 150px)" },
       }}
     >
       <section

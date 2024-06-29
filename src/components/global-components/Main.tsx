@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Container } from "@mui/material";
 import { LangEnum } from "@i18n/lang-selector";
 import { HomeCarousel } from "@/components/page-components/Home";
-import BottomButtons from "@/components/shared-components/BottomButtons";
+import { DesktopBottomButtons, MobileBottomButtons } from "@/components/shared-components/BottomButtons";
 
 interface Props {
   children: ReactNode | ReactNode[];
@@ -14,7 +14,7 @@ export default function Main({ children, isHome, lang }: Props) {
   return (
     <main>
       {isHome && <HomeCarousel lang={lang} />}
-      <BottomButtons lang={lang} />
+      <DesktopBottomButtons />
       <Container
         sx={{
           position: "relative",
@@ -35,6 +35,7 @@ export default function Main({ children, isHome, lang }: Props) {
       >
         {children}
       </Container>
+      <MobileBottomButtons lang={lang} />
     </main>
   );
 }
