@@ -1,11 +1,13 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Box, Button, List, ListItem, ListSubheader, SxProps, Theme, Typography } from "@mui/material";
+import { Box, Button, List, ListItem, SxProps, Theme, Typography } from "@mui/material";
 import Carousel from "@/components/shared-components/carousel";
 import GenericPageText from "@/components/shared-components/GenericPageText";
 import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
-import { useState } from "react";
+import React, { useState } from "react";
 import { primaryColor } from "@/styles/globals";
 import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
+import BulletedList from "@/components/shared-components/BulletedList";
+import BulletedListItem from "@/components/shared-components/BulletedListItem";
 
 interface Props {
   lang: LangEnum;
@@ -103,24 +105,24 @@ function SustainabilityText({ lang }: { lang: LangEnum }) {
     <>
       <GenericPageSubTitle>{selectLang(lang, "home-sustainability-title-1")}</GenericPageSubTitle>
       <GenericPageText>{selectLang(lang, "home-sustainability-text-1")}</GenericPageText>
-      <List>
-        <ListItem>
+      <BulletedList>
+        <BulletedListItem>
           <GenericPageText>{selectLang(lang, "home-sustainability-list-1")}</GenericPageText>
-        </ListItem>
-        <ListItem sx={{ display: "block" }}>
+        </BulletedListItem>
+        <BulletedListItem>
           <GenericPageText>{selectLang(lang, "home-sustainability-list-2-1")}</GenericPageText>
           <GenericPageText>{selectLang(lang, "home-sustainability-list-2-2")}</GenericPageText>
-        </ListItem>
-        <ListItem>
+        </BulletedListItem>
+        <BulletedListItem>
           <GenericPageText>{selectLang(lang, "home-sustainability-list-3")}</GenericPageText>
-        </ListItem>
-        <ListItem>
+        </BulletedListItem>
+        <BulletedListItem>
           <GenericPageText>{selectLang(lang, "home-sustainability-list-4")}</GenericPageText>
-        </ListItem>
-        <ListItem>
+        </BulletedListItem>
+        <BulletedListItem>
           <GenericPageText>{selectLang(lang, "home-sustainability-list-5")}</GenericPageText>
-        </ListItem>
-      </List>
+        </BulletedListItem>
+      </BulletedList>
     </>
   );
 }
@@ -143,9 +145,7 @@ function WhyChooseList({ lang }: { lang: LangEnum }) {
           listStyle: "outside",
         }}
       >
-        <ListSubheader key={"subHeader"}>
-          <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
-        </ListSubheader>
+        <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
         <WhyChooseListItems key={"listItems"} lang={lang} />
       </List>
     </Box>
@@ -156,8 +156,11 @@ function WhyChooseListItems({ lang }: { lang: LangEnum }) {
   const [showSustainability, setShowSustainability] = useState(false);
   const items = selectLang(lang, "home-sep-2-list").split(" | ");
   const itemsText = items.map((item, index) => (
-    <>
-      <ListItem sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }} key={index}>
+    <React.Fragment key={index}>
+      <ListItem
+        sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }}
+        key={`item-${index}`}
+      >
         <GenericPageText sx={{ textAlign: "center" }}>{item}</GenericPageText>
       </ListItem>
       {items.length - 1 === index && (
@@ -171,7 +174,7 @@ function WhyChooseListItems({ lang }: { lang: LangEnum }) {
         </Button>
       )}
       <Box key={`divider-${index}`} width={"40%"} height={"1px"} sx={{ backgroundColor: primaryColor }} />
-    </>
+    </React.Fragment>
   ));
 
   return (

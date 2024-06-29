@@ -6,6 +6,8 @@ import GenericPageText from "@/components/shared-components/GenericPageText";
 import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
 import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
 import { primaryColor } from "@/styles/globals";
+import BulletedList from "@/components/shared-components/BulletedList";
+import BulletedListItem from "@/components/shared-components/BulletedListItem";
 
 interface Props {
   lang: LangEnum;
@@ -27,12 +29,6 @@ const FAQListItem = ({ children }: { children: ReactNode | ReactNode[] }) => (
   <>
     <ListItem sx={{ display: "block", margin: 0, padding: 0 }}>{children}</ListItem>
     <Box width={"100%"} height={"1px"} mt={"1rem"} sx={{ backgroundColor: primaryColor }}></Box>
-  </>
-);
-
-const FAQNestedList = ({ children }: { children: ReactNode | ReactNode[] }) => (
-  <>
-    <List sx={{ listStyleType: "disc" }}>{children}</List>
   </>
 );
 
@@ -72,14 +68,14 @@ export default function FAQ({ lang }: Props) {
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-contact-title")}</FAQTitle>
           <GenericPageText>{selectLang(lang, "faq-contact-text")}</GenericPageText>
-          <FAQNestedList>
-            <ListItem>
+          <BulletedList>
+            <BulletedListItem>
               <GenericPageText>{selectLang(lang, "faq-contact-list-1")}</GenericPageText>
-            </ListItem>
-            <ListItem>
+            </BulletedListItem>
+            <BulletedListItem>
               <GenericPageText>{selectLang(lang, "faq-contact-list-2")}</GenericPageText>
-            </ListItem>
-          </FAQNestedList>
+            </BulletedListItem>
+          </BulletedList>
         </FAQListItem>
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-suppliers-title")}</FAQTitle>
@@ -98,23 +94,23 @@ export default function FAQ({ lang }: Props) {
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-tourism-title")}</FAQTitle>
           <GenericPageText>{selectLang(lang, "faq-tourism-text")}</GenericPageText>
-          <List>
-            <ListItem>
+          <BulletedList>
+            <BulletedListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-1")}</GenericPageText>
-            </ListItem>
-            <ListItem>
+            </BulletedListItem>
+            <BulletedListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-2")}</GenericPageText>
-            </ListItem>
-            <ListItem>
+            </BulletedListItem>
+            <BulletedListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-3")}</GenericPageText>
-            </ListItem>
-            <ListItem>
+            </BulletedListItem>
+            <BulletedListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-4")}</GenericPageText>
-            </ListItem>
-            <ListItem>
+            </BulletedListItem>
+            <BulletedListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-5")}</GenericPageText>
-            </ListItem>
-          </List>
+            </BulletedListItem>
+          </BulletedList>
         </FAQListItem>
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-beach-title")}</FAQTitle>

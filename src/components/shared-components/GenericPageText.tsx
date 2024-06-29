@@ -10,7 +10,12 @@ interface Props {
 }
 
 export default function GenericPageText({ children, sx }: Props) {
-  const defaultSx: SxProps<Theme> = { textAlign: "justify", fontSize: { xs: "1.2rem", sm: "1.4rem", lg: "1.5rem" } };
+  const defaultSx: SxProps<Theme> = {
+    textAlign: "justify",
+    fontSize: { xs: "1.2rem", sm: "1.4rem", lg: "1.5rem" },
+    hyphens: "auto",
+    wordBreak: "break-word",
+  };
 
   const mergedSx = { ...defaultSx, ...sx };
 
