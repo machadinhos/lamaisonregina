@@ -1,5 +1,5 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Box, Grid, List, ListItem, Typography } from "@mui/material";
+import { Box, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";

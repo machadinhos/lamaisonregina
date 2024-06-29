@@ -7,13 +7,14 @@ import GenericPageText from "@/components/shared-components/GenericPageText";
 import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
 import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
 import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
+import { SxProps, Theme } from "@mui/material/styles";
 
 interface Props {
   lang: LangEnum;
 }
 
-const ServiceText = ({ children }: { children: string }) => {
-  return <GenericPageText>{children}</GenericPageText>;
+const ServiceText = ({ children, sx }: { children: string; sx?: SxProps<Theme> }) => {
+  return <GenericPageText sx={sx}>{children}</GenericPageText>;
 };
 
 const ServiceCard = ({
@@ -80,12 +81,33 @@ const ServiceCardSection = ({ children }: { children: ReactNode | ReactNode[] })
         },
         gap: "1rem",
         justifyContent: "center",
+        mt: "4rem",
       }}
     >
       {children}
     </Grid>
   );
 };
+
+function TitleSection({ lang }: { lang: LangEnum }) {
+  return (
+    <Box
+      width={"100%"}
+      height={{ xs: "calc(80vh - 120px)", sm: "calc(75vh - 150px)", md: "calc(70vh - 150px)" }}
+      display={"flex"}
+      flexDirection={"column"}
+      justifyContent={{ xs: "center", lg: "start" }}
+    >
+      <GenericPageText
+        sx={{
+          textAlign: { xs: "justify", md: "center" },
+        }}
+      >
+        {selectLang(lang, "services-text-1")}
+      </GenericPageText>
+    </Box>
+  );
+}
 
 export default function Services({ lang }: Props) {
   const [card1Title, card1Subtitle, card1Text] = selectLang(lang, "services-card-1").split(" | ");
@@ -94,41 +116,33 @@ export default function Services({ lang }: Props) {
   return (
     <>
       <GenericPageMainTitle>{selectLang(lang, "services")}</GenericPageMainTitle>
-      <section style={{ height: "auto", minHeight: "unset" }}>
-        <GenericPageText
-          sx={{
-            textAlign: { xs: "justify", md: "center" },
-          }}
-        >
-          {selectLang(lang, "services-text-1")}
-        </GenericPageText>
-        <ServiceCardSection>
-          <ServiceCard
-            title={card1Title}
-            subTitle={card1Subtitle}
-            text={card1Text}
-            img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
-          />
-          <ServiceCard
-            title={card2Title}
-            text={card2Text}
-            img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
-          />
-          <ServiceCard
-            title={card3Title}
-            text={card3Text}
-            img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
-          />
-        </ServiceCardSection>
-      </section>
+      <TitleSection lang={lang} />
+      <ServiceCardSection>
+        <ServiceCard
+          title={card1Title}
+          subTitle={card1Subtitle}
+          text={card1Text}
+          img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
+        />
+        <ServiceCard
+          title={card2Title}
+          text={card2Text}
+          img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
+        />
+        <ServiceCard
+          title={card3Title}
+          text={card3Text}
+          img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
+        />
+      </ServiceCardSection>
       <section>
         <ServiceText>{selectLang(lang, "services-text-2")}</ServiceText>
-        <Box sx={{ mt: "4rem" }}>
+        <Box sx={{ mt: "4rem", mb: "4rem" }}>
           <GenericPageTitle>{selectLang(lang, "services-sep-1")}</GenericPageTitle>
           <GenericPageSubTitle>{selectLang(lang, "services-sep-2")}</GenericPageSubTitle>
         </Box>
-        <ServiceText>{selectLang(lang, "services-text-3")}</ServiceText>
-        <ServiceText>{selectLang(lang, "services-text-4")}</ServiceText>
+        <ServiceText sx={{ mb: "2rem" }}>{selectLang(lang, "services-text-3")}</ServiceText>
+        <ServiceText sx={{ mb: "2rem" }}>{selectLang(lang, "services-text-4")}</ServiceText>
         <ServiceText>{selectLang(lang, "services-text-5")}</ServiceText>
       </section>
     </>

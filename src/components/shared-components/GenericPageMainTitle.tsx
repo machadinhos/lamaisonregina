@@ -10,6 +10,7 @@ export default function GenericPageMainTitle({ children, sx }: Props) {
   const defaultSx: SxProps<Theme> = {
     textAlign: "center",
     fontWeight: "bold",
+    fontSize: { xs: "5rem", sm: "9rem" },
   };
 
   const mergedSx = { ...defaultSx, ...sx };

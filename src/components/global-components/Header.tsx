@@ -10,10 +10,20 @@ interface Props {
   lang: LangEnum;
 }
 
-function HeaderListItem({ children, href }: { children: ReactNode | ReactNode[]; href: string }) {
+function HeaderListItem({
+  children,
+  href,
+  isMobile,
+}: {
+  children: ReactNode | ReactNode[];
+  href: string;
+  isMobile?: boolean;
+}) {
   return (
     <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <HeaderLink href={href}>{children}</HeaderLink>
+      <HeaderLink href={href} isMobile={isMobile}>
+        {children}
+      </HeaderLink>
     </ListItem>
   );
 }
@@ -23,22 +33,27 @@ function HeaderLink({
   children,
   currentLanguage,
   selectedLanguage,
+  isMobile,
 }: {
   href: string;
   children: ReactNode | ReactNode[];
   currentLanguage?: string;
   selectedLanguage?: string;
+  isMobile?: boolean;
 }) {
   if (currentLanguage && selectedLanguage && currentLanguage === selectedLanguage) {
     return (
-      <Typography variant={"h6"} sx={{ fontWeight: "bold", userSelect: "none", fontSize: "1.2rem" }}>
+      <Typography
+        variant={"h6"}
+        sx={{ fontWeight: "bold", userSelect: "none", fontSize: isMobile ? "2rem" : "1.2rem" }}
+      >
         {children}
       </Typography>
     );
   }
   return (
     <Link href={href}>
-      <Typography variant={"h6"} sx={{ fontSize: "1.2rem" }}>
+      <Typography variant={"h6"} sx={{ fontSize: isMobile ? "2rem" : "1.2rem" }}>
         {children}
       </Typography>
     </Link>
@@ -166,12 +181,24 @@ function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) 
         width: "100%",
       }}
     >
-      <HeaderListItem href={`/${lang}/`}>{selectLang(lang, "home")}</HeaderListItem>
-      <HeaderListItem href={`/${lang}/services`}>{selectLang(lang, "services")}</HeaderListItem>
-      <HeaderListItem href={`/${lang}/catering`}>Catering</HeaderListItem>
-      <HeaderListItem href={`/${lang}/gallery`}>{selectLang(lang, "gallery")}</HeaderListItem>
-      <HeaderListItem href={`/${lang}/contacts`}>{selectLang(lang, "contacts")}</HeaderListItem>
-      <HeaderListItem href={`/${lang}/faq`}>FAQ</HeaderListItem>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/`}>
+        {selectLang(lang, "home")}
+      </HeaderListItem>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/services`}>
+        {selectLang(lang, "services")}
+      </HeaderListItem>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/catering`}>
+        Catering
+      </HeaderListItem>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/gallery`}>
+        {selectLang(lang, "gallery")}
+      </HeaderListItem>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/contacts`}>
+        {selectLang(lang, "contacts")}
+      </HeaderListItem>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/faq`}>
+        FAQ
+      </HeaderListItem>
     </List>
   );
 }

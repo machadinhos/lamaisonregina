@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import { Theme, createTheme, ThemeProvider } from "@mui/material";
+import { secondaryColor } from "@/styles/globals";
 
 const theme: Theme = createTheme({
   palette: {
@@ -15,7 +16,7 @@ const theme: Theme = createTheme({
     fontFamily: ["Poppins"].join(","),
     fontSize: 16,
     allVariants: {
-      color: "#403c34",
+      color: secondaryColor,
     },
     h1: {
       textAlign: "center",
