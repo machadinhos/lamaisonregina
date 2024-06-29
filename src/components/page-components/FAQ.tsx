@@ -1,10 +1,11 @@
 import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { List, ListItem } from "@mui/material";
+import { Box, List, ListItem } from "@mui/material";
 import Link from "next/link";
 import React, { ReactNode } from "react";
 import GenericPageText from "@/components/shared-components/GenericPageText";
 import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
 import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
+import { primaryColor } from "@/styles/globals";
 
 interface Props {
   lang: LangEnum;
@@ -14,6 +15,8 @@ const FAQTitle = ({ children }: { children: string }) => (
   <GenericPageSubTitle
     sx={{
       fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
+      textAlign: "left",
+      mt: "2rem",
     }}
   >
     {children}
@@ -21,7 +24,16 @@ const FAQTitle = ({ children }: { children: string }) => (
 );
 
 const FAQListItem = ({ children }: { children: ReactNode | ReactNode[] }) => (
-  <ListItem sx={{ display: "block", margin: 0, padding: 0 }}>{children}</ListItem>
+  <>
+    <ListItem sx={{ display: "block", margin: 0, padding: 0 }}>{children}</ListItem>
+    <Box width={"100%"} height={"1px"} mt={"1rem"} sx={{ backgroundColor: primaryColor }}></Box>
+  </>
+);
+
+const FAQNestedList = ({ children }: { children: ReactNode | ReactNode[] }) => (
+  <>
+    <List sx={{ listStyleType: "disc" }}>{children}</List>
+  </>
 );
 
 export default function FAQ({ lang }: Props) {
@@ -60,14 +72,14 @@ export default function FAQ({ lang }: Props) {
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-contact-title")}</FAQTitle>
           <GenericPageText>{selectLang(lang, "faq-contact-text")}</GenericPageText>
-          <List sx={{}}>
-            <FAQListItem>
+          <FAQNestedList>
+            <ListItem>
               <GenericPageText>{selectLang(lang, "faq-contact-list-1")}</GenericPageText>
-            </FAQListItem>
-            <FAQListItem>
+            </ListItem>
+            <ListItem>
               <GenericPageText>{selectLang(lang, "faq-contact-list-2")}</GenericPageText>
-            </FAQListItem>
-          </List>
+            </ListItem>
+          </FAQNestedList>
         </FAQListItem>
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-suppliers-title")}</FAQTitle>
@@ -86,23 +98,23 @@ export default function FAQ({ lang }: Props) {
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-tourism-title")}</FAQTitle>
           <GenericPageText>{selectLang(lang, "faq-tourism-text")}</GenericPageText>
-          <ul>
-            <FAQListItem>
+          <List>
+            <ListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-1")}</GenericPageText>
-            </FAQListItem>
-            <FAQListItem>
+            </ListItem>
+            <ListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-2")}</GenericPageText>
-            </FAQListItem>
-            <FAQListItem>
+            </ListItem>
+            <ListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-3")}</GenericPageText>
-            </FAQListItem>
-            <FAQListItem>
+            </ListItem>
+            <ListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-4")}</GenericPageText>
-            </FAQListItem>
-            <FAQListItem>
+            </ListItem>
+            <ListItem>
               <GenericPageText>{selectLang(lang, "faq-tourism-list-5")}</GenericPageText>
-            </FAQListItem>
-          </ul>
+            </ListItem>
+          </List>
         </FAQListItem>
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-beach-title")}</FAQTitle>

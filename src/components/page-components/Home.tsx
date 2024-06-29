@@ -3,7 +3,7 @@ import { Box, Button, List, ListItem, ListSubheader, SxProps, Theme, Typography 
 import Carousel from "@/components/shared-components/carousel";
 import GenericPageText from "@/components/shared-components/GenericPageText";
 import GenericPageTitle from "@/components/shared-components/GenericPageTitle";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import { primaryColor } from "@/styles/globals";
 import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
 
@@ -11,7 +11,7 @@ interface Props {
   lang: LangEnum;
 }
 
-const TitleTypography = ({
+function TitleTypography({
   children,
   variant,
   sx,
@@ -19,15 +19,15 @@ const TitleTypography = ({
   children: string;
   variant: "h4" | "h1" | "h5";
   sx?: SxProps<Theme>;
-}) => {
+}) {
   return (
     <Typography variant={variant} sx={{ ...sx, color: "#fff" /*, userSelect: "none"*/ }}>
       {children}
     </Typography>
   );
-};
+}
 
-export const HomeCarousel = ({ lang }: Props) => {
+export function HomeCarousel({ lang }: Props) {
   return (
     <Box
       sx={{
@@ -96,64 +96,68 @@ export const HomeCarousel = ({ lang }: Props) => {
       </section>
     </Box>
   );
-};
+}
 
-const showMoreText = (showText: boolean, lang: LangEnum) => {
-  if (showText) {
-    return (
-      <>
-        <GenericPageText>{selectLang(lang, "home-text-3")}</GenericPageText>
-        <GenericPageText>{selectLang(lang, "home-text-4")}</GenericPageText>
-      </>
-    );
-  } else return <></>;
-};
+function SustainabilityText({ lang }: { lang: LangEnum }) {
+  return (
+    <>
+      <GenericPageSubTitle>{selectLang(lang, "home-sustainability-title-1")}</GenericPageSubTitle>
+      <GenericPageText>{selectLang(lang, "home-sustainability-text-1")}</GenericPageText>
+      <List>
+        <ListItem>
+          <GenericPageText>{selectLang(lang, "home-sustainability-list-1")}</GenericPageText>
+        </ListItem>
+        <ListItem sx={{ display: "block" }}>
+          <GenericPageText>{selectLang(lang, "home-sustainability-list-2-1")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "home-sustainability-list-2-2")}</GenericPageText>
+        </ListItem>
+        <ListItem>
+          <GenericPageText>{selectLang(lang, "home-sustainability-list-3")}</GenericPageText>
+        </ListItem>
+        <ListItem>
+          <GenericPageText>{selectLang(lang, "home-sustainability-list-4")}</GenericPageText>
+        </ListItem>
+        <ListItem>
+          <GenericPageText>{selectLang(lang, "home-sustainability-list-5")}</GenericPageText>
+        </ListItem>
+      </List>
+    </>
+  );
+}
 
-const SustainabilityText = ({ lang, showSustainability }: { lang: LangEnum; showSustainability: boolean }) => {
-  if (showSustainability) {
-    return (
-      <>
-        <GenericPageSubTitle>{selectLang(lang, "home-sustainability-title-1")}</GenericPageSubTitle>
-        <GenericPageText>{selectLang(lang, "home-sustainability-text-1")}</GenericPageText>
-        <List>
-          <ListItem>
-            <GenericPageText>{selectLang(lang, "home-sustainability-list-1")}</GenericPageText>
-          </ListItem>
-          <ListItem sx={{ display: "block" }}>
-            <GenericPageText>{selectLang(lang, "home-sustainability-list-2-1")}</GenericPageText>
-            <GenericPageText>{selectLang(lang, "home-sustainability-list-2-2")}</GenericPageText>
-          </ListItem>
-          <ListItem>
-            <GenericPageText>{selectLang(lang, "home-sustainability-list-3")}</GenericPageText>
-          </ListItem>
-          <ListItem>
-            <GenericPageText>{selectLang(lang, "home-sustainability-list-4")}</GenericPageText>
-          </ListItem>
-          <ListItem>
-            <GenericPageText>{selectLang(lang, "home-sustainability-list-5")}</GenericPageText>
-          </ListItem>
-        </List>
-      </>
-    );
-  } else return <></>;
-};
+function WhyChooseList({ lang }: { lang: LangEnum }) {
+  return (
+    <Box
+      sx={{
+        px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
+      }}
+    >
+      <List
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          padding: "0",
+          margin: "0",
+          listStyle: "outside",
+        }}
+      >
+        <ListSubheader key={"subHeader"}>
+          <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
+        </ListSubheader>
+        <WhyChooseListItems key={"listItems"} lang={lang} />
+      </List>
+    </Box>
+  );
+}
 
-const WhyChooseListItems = ({
-  lang,
-  showSustainability,
-  setShowSustainability,
-}: {
-  lang: LangEnum;
-  showSustainability: boolean;
-  setShowSustainability: Dispatch<SetStateAction<boolean>>;
-}) => {
+function WhyChooseListItems({ lang }: { lang: LangEnum }) {
+  const [showSustainability, setShowSustainability] = useState(false);
   const items = selectLang(lang, "home-sep-2-list").split(" | ");
   const itemsText = items.map((item, index) => (
-    <React.Fragment key={index}>
-      <ListItem
-        key={`item-${index}`}
-        sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }}
-      >
+    <>
+      <ListItem sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }} key={index}>
         <GenericPageText sx={{ textAlign: "center" }}>{item}</GenericPageText>
       </ListItem>
       {items.length - 1 === index && (
@@ -167,67 +171,51 @@ const WhyChooseListItems = ({
         </Button>
       )}
       <Box key={`divider-${index}`} width={"40%"} height={"1px"} sx={{ backgroundColor: primaryColor }} />
-    </React.Fragment>
+    </>
   ));
 
   return (
     <>
       {itemsText}
-      <SustainabilityText lang={lang} showSustainability={showSustainability} />
+      {showSustainability && <SustainabilityText lang={lang} />}
     </>
   );
-};
+}
+
+function HomeInfo({ lang }: { lang: LangEnum }) {
+  const [showText, setShowText] = useState(false);
+  return (
+    <Box pt={{ xs: "2rem", md: "0" }}>
+      <GenericPageText>{selectLang(lang, "home-text-1")}</GenericPageText>
+      <GenericPageText>{selectLang(lang, "home-text-2")}</GenericPageText>
+      {showText && (
+        <>
+          <GenericPageText>{selectLang(lang, "home-text-3")}</GenericPageText>
+          <GenericPageText>{selectLang(lang, "home-text-4")}</GenericPageText>
+        </>
+      )}
+      <Box width={"100%"} display={"flex"} flexDirection={"column"} alignItems={"center"}>
+        <Button
+          sx={{ mt: "2rem", mb: "1rem" }}
+          variant={"contained"}
+          onClick={() => setShowText((prevState) => !prevState)}
+        >
+          {showText ? selectLang(lang, "home-show-less") : selectLang(lang, "home-learn-more")}
+        </Button>
+      </Box>
+    </Box>
+  );
+}
 
 export default function Home({ lang }: Props) {
-  const [showSustainability, setShowSustainability] = useState(false);
-  const [showText, setShowText] = useState(false);
   return (
     <>
       <section>
-        <Box pt={{ xs: "2rem", md: "0" }}>
-          <GenericPageText>{selectLang(lang, "home-text-1")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "home-text-2")}</GenericPageText>
-          {showMoreText(showText, lang)}
-          <Box width={"100%"} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-            <Button
-              sx={{ mt: "2rem", mb: "1rem" }}
-              variant={"contained"}
-              onClick={() => setShowText((prevState) => !prevState)}
-            >
-              {showText ? selectLang(lang, "home-show-less") : selectLang(lang, "home-learn-more")}
-            </Button>
-          </Box>
-        </Box>
+        <HomeInfo lang={lang} />
         <GenericPageTitle sx={{ mb: "2rem" }}>{selectLang(lang, "home-sep-1")}</GenericPageTitle>
         <GenericPageText>{selectLang(lang, "home-text-5")}</GenericPageText>
         <GenericPageText>{selectLang(lang, "home-text-6")}</GenericPageText>
-        <Box
-          sx={{
-            px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
-          }}
-        >
-          <List
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              textAlign: "center",
-              padding: "0",
-              margin: "0",
-              listStyle: "outside",
-            }}
-          >
-            <ListSubheader key={"subHeader"}>
-              <GenericPageTitle>{selectLang(lang, "home-sep-2")}</GenericPageTitle>
-            </ListSubheader>
-            <WhyChooseListItems
-              key={"listItems"}
-              lang={lang}
-              showSustainability={showSustainability}
-              setShowSustainability={setShowSustainability}
-            />
-          </List>
-        </Box>
+        <WhyChooseList lang={lang} />
       </section>
     </>
   );
