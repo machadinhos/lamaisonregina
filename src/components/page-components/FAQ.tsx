@@ -45,7 +45,9 @@ export default function FAQ({ lang }: Props) {
           <GenericPageText>{selectLang(lang, "faq-where-text-4")}</GenericPageText>
           <GenericPageText>
             {selectLang(lang, "faq-where-text-5-1") + " "}
-            <Link href={`/${lang}/contacts`}>{selectLang(lang, "faq-where-text-5-2")}</Link>
+            <Link style={{ color: primaryColor }} href={`/${lang}/contacts`}>
+              {selectLang(lang, "faq-where-text-5-2")}
+            </Link>
             {" " + selectLang(lang, "faq-where-text-5-3")}
           </GenericPageText>
         </FAQListItem>
@@ -123,9 +125,13 @@ export default function FAQ({ lang }: Props) {
         </FAQListItem>
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-pricing-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-pricing-text-1")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-pricing-text-2")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-pricing-text-3")}</GenericPageText>
+          <GenericPageText>
+            {selectLang(lang, "faq-pricing-text-1")}{" "}
+            <Link style={{ color: primaryColor }} href={`/${lang}/contacts`}>
+              {selectLang(lang, "faq-pricing-text-2")}
+            </Link>{" "}
+            {selectLang(lang, "faq-pricing-text-3")}
+          </GenericPageText>
         </FAQListItem>
         <FAQListItem>
           <FAQTitle>{selectLang(lang, "faq-portugal-title")}</FAQTitle>
