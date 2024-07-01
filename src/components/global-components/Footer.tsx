@@ -38,9 +38,13 @@ export default function Footer({ lang }: Props) {
           height: "100%",
         }}
       >
-        <Link href={`/${lang}/`}>
-          <Box position={"relative"} width={"150px"} sx={{ aspectRatio: "1.3/1" }}>
-            <Image alt={"logo"} src={"/logo.png"} fill />
+        <Link href={`/${lang}#header`}>
+          <Box
+            position={"relative"}
+            width={{ xs: "150px", sm: "200px", md: "250px", lg: "300px", xl: "350px" }}
+            sx={{ aspectRatio: "1.3/1" }}
+          >
+            <Image alt={"logo"} src={"/logo_primary.png"} fill />
           </Box>
         </Link>
       </Box>
@@ -49,6 +53,10 @@ export default function Footer({ lang }: Props) {
           display: { xs: "block", sm: "flex" },
           width: { xs: "100%", md: "90%", lg: "80%", xl: "60%" },
           justifyContent: "space-between",
+          "& > *": {
+            flex: { sm: "0 0 150px", md: "0 0 200px", lg: "0 0 250px", xl: "0 0 300px" },
+            width: { sm: "150px", md: "200px", lg: "250px", xl: "300px" },
+          },
         }}
       >
         <List
@@ -80,7 +88,7 @@ export default function Footer({ lang }: Props) {
           </Link>
         </List>
         <Box mb={"1rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
-          <Typography sx={{ color: primaryColor }} variant={"h4"}>
+          <Typography sx={{ color: primaryColor, display: { xs: "block", sm: "none", md: "block" } }} variant={"h4"}>
             {selectLang(lang, "footer-follow")}
           </Typography>
           <List
