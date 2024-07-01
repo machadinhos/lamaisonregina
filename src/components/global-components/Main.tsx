@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { Container } from "@mui/material";
 import { LangEnum } from "@i18n/lang-selector";
-import { HomeCarousel } from "@/components/page-components/Home";
 import BottomButtons from "@/components/shared-components/bottom-buttons/BottomButtons";
+import { HomeCarousel } from "@/components/page-components/Home/HomeCarousel";
 
 interface Props {
   children: ReactNode | ReactNode[];

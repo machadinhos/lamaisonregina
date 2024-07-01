@@ -8,29 +8,16 @@ import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTi
 import { primaryColor } from "@/styles/globals";
 import BulletedList from "@/components/shared-components/BulletedList";
 import BulletedListItem from "@/components/shared-components/BulletedListItem";
+import { FAQListItem } from "@/components/page-components/FAQ/FAQListItem";
+import { FAQTitle } from "@/components/page-components/FAQ/FAQTitle";
 
 interface Props {
   lang: LangEnum;
 }
 
-const FAQTitle = ({ children }: { children: string }) => (
-  <GenericPageSubTitle
-    sx={{
-      fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
-      textAlign: "left",
-      mt: "2rem",
-    }}
-  >
-    {children}
-  </GenericPageSubTitle>
-);
 
-const FAQListItem = ({ children }: { children: ReactNode | ReactNode[] }) => (
-  <>
-    <ListItem sx={{ display: "block", margin: 0, padding: 0 }}>{children}</ListItem>
-    <Box width={"100%"} height={"1px"} mt={"1rem"} sx={{ backgroundColor: primaryColor }}></Box>
-  </>
-);
+
+
 
 export default function FAQ({ lang }: Props) {
   return (

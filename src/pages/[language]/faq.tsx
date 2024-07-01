@@ -1,5 +1,5 @@
 import { LangEnum } from "@i18n/lang-selector";
-import FAQ from "@/components/page-components/FAQ";
+import FAQ from "@/components/page-components/FAQ/FAQ";
 import PageContent from "@/components/global-components/PageContent";
 
 export default function FAQPage({ language }: { language: LangEnum }) {
