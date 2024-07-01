@@ -1,13 +1,12 @@
-import { LangEnum, selectLang } from "@i18n/lang-selector";
-import { Box, List, ListItem } from "@mui/material";
+import { faqLang, LangEnum } from "@i18n/lang-selector";
+import { List } from "@mui/material";
 import Link from "next/link";
-import React, { ReactNode } from "react";
-import GenericPageText from "@/components/shared-components/GenericPageText";
-import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
-import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
+import React from "react";
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
+import GenericPageMainTitle from "@/components/shared-components/Typography/GenericPageMainTitle";
 import { primaryColor } from "@/styles/globals";
-import BulletedList from "@/components/shared-components/BulletedList";
-import BulletedListItem from "@/components/shared-components/BulletedListItem";
+import BulletedList from "@/components/shared-components/BulletList/BulletedList";
+import BulletedListItem from "@/components/shared-components/BulletList/BulletedListItem";
 import { FAQListItem } from "@/components/page-components/FAQ/FAQListItem";
 import { FAQTitle } from "@/components/page-components/FAQ/FAQTitle";
 
@@ -15,142 +14,138 @@ interface Props {
   lang: LangEnum;
 }
 
-
-
-
-
 export default function FAQ({ lang }: Props) {
   return (
     <>
       <GenericPageMainTitle>FAQ</GenericPageMainTitle>
       <List sx={{ padding: 0, margin: 0 }}>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-where-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-where-text-1")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-where-text-2")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-where-text-3")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-where-text-4")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-where-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-where-text-1")}</GenericPageText>
+          <GenericPageText>{faqLang(lang, "faq-where-text-2")}</GenericPageText>
+          <GenericPageText>{faqLang(lang, "faq-where-text-3")}</GenericPageText>
+          <GenericPageText>{faqLang(lang, "faq-where-text-4")}</GenericPageText>
           <GenericPageText>
-            {selectLang(lang, "faq-where-text-5-1") + " "}
+            {faqLang(lang, "faq-where-text-5-1") + " "}
             <Link style={{ color: primaryColor }} href={`/${lang}/contacts`}>
-              {selectLang(lang, "faq-where-text-5-2")}
+              {faqLang(lang, "faq-where-text-5-2")}
             </Link>
-            {" " + selectLang(lang, "faq-where-text-5-3")}
+            {" " + faqLang(lang, "faq-where-text-5-3")}
           </GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-event-types-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-event-types-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-event-types-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-event-types-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-capacity-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-capacity-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-capacity-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-capacity-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-hotel-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-hotel-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-hotel-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-hotel-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-why-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-why-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-why-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-why-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-contact-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-contact-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-contact-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-contact-text")}</GenericPageText>
           <BulletedList>
             <BulletedListItem>
-              <GenericPageText>{selectLang(lang, "faq-contact-list-1")}</GenericPageText>
+              <GenericPageText>{faqLang(lang, "faq-contact-list-1")}</GenericPageText>
             </BulletedListItem>
             <BulletedListItem>
-              <GenericPageText>{selectLang(lang, "faq-contact-list-2")}</GenericPageText>
+              <GenericPageText>{faqLang(lang, "faq-contact-list-2")}</GenericPageText>
             </BulletedListItem>
           </BulletedList>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-suppliers-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-suppliers-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-suppliers-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-suppliers-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-catering-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-catering-text-1")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-catering-text-2")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-catering-text-3")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-catering-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-catering-text-1")}</GenericPageText>
+          <GenericPageText>{faqLang(lang, "faq-catering-text-2")}</GenericPageText>
+          <GenericPageText>{faqLang(lang, "faq-catering-text-3")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-noise-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-noise-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-noise-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-noise-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-tourism-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-tourism-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-tourism-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-tourism-text")}</GenericPageText>
           <BulletedList>
             <BulletedListItem>
-              <GenericPageText>{selectLang(lang, "faq-tourism-list-1")}</GenericPageText>
+              <GenericPageText>{faqLang(lang, "faq-tourism-list-1")}</GenericPageText>
             </BulletedListItem>
             <BulletedListItem>
-              <GenericPageText>{selectLang(lang, "faq-tourism-list-2")}</GenericPageText>
+              <GenericPageText>{faqLang(lang, "faq-tourism-list-2")}</GenericPageText>
             </BulletedListItem>
             <BulletedListItem>
-              <GenericPageText>{selectLang(lang, "faq-tourism-list-3")}</GenericPageText>
+              <GenericPageText>{faqLang(lang, "faq-tourism-list-3")}</GenericPageText>
             </BulletedListItem>
             <BulletedListItem>
-              <GenericPageText>{selectLang(lang, "faq-tourism-list-4")}</GenericPageText>
+              <GenericPageText>{faqLang(lang, "faq-tourism-list-4")}</GenericPageText>
             </BulletedListItem>
             <BulletedListItem>
-              <GenericPageText>{selectLang(lang, "faq-tourism-list-5")}</GenericPageText>
+              <GenericPageText>{faqLang(lang, "faq-tourism-list-5")}</GenericPageText>
             </BulletedListItem>
           </BulletedList>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-beach-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-beach-text-1")}</GenericPageText>
-          <GenericPageText>{selectLang(lang, "faq-beach-text-2")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-beach-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-beach-text-1")}</GenericPageText>
+          <GenericPageText>{faqLang(lang, "faq-beach-text-2")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-supermarket-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-supermarket-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-supermarket-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-supermarket-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-pricing-title")}</FAQTitle>
+          <FAQTitle>{faqLang(lang, "faq-pricing-title")}</FAQTitle>
           <GenericPageText>
-            {selectLang(lang, "faq-pricing-text-1")}{" "}
+            {faqLang(lang, "faq-pricing-text-1")}{" "}
             <Link style={{ color: primaryColor }} href={`/${lang}/contacts`}>
-              {selectLang(lang, "faq-pricing-text-2")}
+              {faqLang(lang, "faq-pricing-text-2")}
             </Link>{" "}
-            {selectLang(lang, "faq-pricing-text-3")}
+            {faqLang(lang, "faq-pricing-text-3")}
           </GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-portugal-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-portugal-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-portugal-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-portugal-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-open-space-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-portugal-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-open-space-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-portugal-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-parking-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-parking-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-parking-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-parking-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-communication-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-communication-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-communication-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-communication-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-ceremonies-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-ceremonies-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-ceremonies-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-ceremonies-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-mosquitoes-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-mosquitoes-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-mosquitoes-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-mosquitoes-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-sustainability-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-sustainability-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-sustainability-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-sustainability-text")}</GenericPageText>
         </FAQListItem>
         <FAQListItem>
-          <FAQTitle>{selectLang(lang, "faq-other-questions-title")}</FAQTitle>
-          <GenericPageText>{selectLang(lang, "faq-other-questions-text")}</GenericPageText>
+          <FAQTitle>{faqLang(lang, "faq-other-questions-title")}</FAQTitle>
+          <GenericPageText>{faqLang(lang, "faq-other-questions-text")}</GenericPageText>
         </FAQListItem>
       </List>
     </>

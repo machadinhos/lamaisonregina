@@ -1,4 +1,4 @@
-import { LangEnum, selectLang } from "@i18n/lang-selector";
+import { contactsLang, galleryLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
 import { Box, Container, List, ListItem, Typography } from "@mui/material";
 import Link from "next/link";
 import { ReactNode, useState } from "react";
@@ -198,19 +198,19 @@ function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) 
       }}
     >
       <HeaderListItem isMobile={isMobile} href={`/${lang}/`}>
-        {selectLang(lang, "home")}
+        {homeLang(lang, "title")}
       </HeaderListItem>
       <HeaderListItem isMobile={isMobile} href={`/${lang}/services`}>
-        {selectLang(lang, "services")}
+        {servicesLang(lang, "title")}
       </HeaderListItem>
       <HeaderListItem isMobile={isMobile} href={`/${lang}/catering`}>
         Catering
       </HeaderListItem>
       <HeaderListItem isMobile={isMobile} href={`/${lang}/gallery`}>
-        {selectLang(lang, "gallery")}
+        {galleryLang(lang, "title")}
       </HeaderListItem>
       <HeaderListItem isMobile={isMobile} href={`/${lang}/contacts`}>
-        {selectLang(lang, "contacts")}
+        {contactsLang(lang, "title")}
       </HeaderListItem>
       <HeaderListItem isMobile={isMobile} href={`/${lang}/faq`}>
         FAQ

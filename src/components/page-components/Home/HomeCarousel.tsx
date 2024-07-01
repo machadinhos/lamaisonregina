@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import Carousel from "@/components/shared-components/carousel";
-import { LangEnum, selectLang } from "@i18n/lang-selector";
+import Carousel from "@/components/shared-components/Carousel";
+import { homeLang, LangEnum } from "@i18n/lang-selector";
 import React from "react";
 import { TitleTypography } from "@/components/page-components/Home/TitleTypography";
 
@@ -45,7 +45,7 @@ export function HomeCarousel({ lang }: Props) {
           }}
           variant="h4"
         >
-          {selectLang(lang, "home-welcome-1")}
+          {homeLang(lang, "home-welcome-1")}
         </TitleTypography>
         <TitleTypography
           variant="h1"
@@ -64,7 +64,7 @@ export function HomeCarousel({ lang }: Props) {
           }}
           variant="h4"
         >
-          {selectLang(lang, "home-welcome-2")}
+          {homeLang(lang, "home-welcome-2")}
         </TitleTypography>
         <TitleTypography
           sx={{
@@ -72,7 +72,7 @@ export function HomeCarousel({ lang }: Props) {
           }}
           variant="h5"
         >
-          {selectLang(lang, "home-slogan")}
+          {homeLang(lang, "home-slogan")}
         </TitleTypography>
       </section>
     </Box>

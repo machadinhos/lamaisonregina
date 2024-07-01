@@ -1,4 +1,4 @@
-import { LangEnum, selectLang } from "@i18n/lang-selector";
+import { contactsLang, galleryLang, globalsLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
 import { Box, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -69,19 +69,19 @@ export default function Footer({ lang }: Props) {
           }}
         >
           <Link href={`/${lang}/#header`}>
-            <ListItem>{selectLang(lang, "home")}</ListItem>
+            <ListItem>{homeLang(lang, "title")}</ListItem>
           </Link>
           <Link href={`/${lang}/services#header`}>
-            <ListItem>{selectLang(lang, "services")}</ListItem>
+            <ListItem>{servicesLang(lang, "title")}</ListItem>
           </Link>
           <Link href={`/${lang}/catering#header`}>
             <ListItem>Catering</ListItem>
           </Link>
           <Link href={`/${lang}/gallery#header`}>
-            <ListItem>{selectLang(lang, "gallery")}</ListItem>
+            <ListItem>{galleryLang(lang, "title")}</ListItem>
           </Link>
           <Link href={`/${lang}/contacts#header`}>
-            <ListItem>{selectLang(lang, "contacts")}</ListItem>
+            <ListItem>{contactsLang(lang, "title")}</ListItem>
           </Link>
           <Link href={`/${lang}/faq#header`}>
             <ListItem>FAQ</ListItem>
@@ -89,7 +89,7 @@ export default function Footer({ lang }: Props) {
         </List>
         <Box mb={"1rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
           <Typography sx={{ color: primaryColor, display: { xs: "block", sm: "none", md: "block" } }} variant={"h4"}>
-            {selectLang(lang, "footer-follow")}
+            {globalsLang(lang, "footer-follow")}
           </Typography>
           <List
             sx={{
@@ -129,7 +129,7 @@ export default function Footer({ lang }: Props) {
         </Box>
       </Box>
       <Typography sx={{ textAlign: "center", color: primaryColor }}>
-        {selectLang(lang, "footer-rights-reserved")}
+        {globalsLang(lang, "footer-rights-reserved")}
       </Typography>
     </footer>
   );

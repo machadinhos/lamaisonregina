@@ -1,8 +1,8 @@
-import { LangEnum, selectLang } from "@i18n/lang-selector";
+import { contactsLang, LangEnum } from "@i18n/lang-selector";
 import { Box } from "@mui/material";
-import GenericPageMainTitle from "@/components/shared-components/GenericPageMainTitle";
-import GenericPageSubTitle from "@/components/shared-components/GenericPageSubTitle";
-import GenericPageText from "@/components/shared-components/GenericPageText";
+import GenericPageMainTitle from "@/components/shared-components/Typography/GenericPageMainTitle";
+import GenericPageSubTitle from "@/components/shared-components/Typography/GenericPageSubTitle";
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Link from "next/link";
 
 interface Props {
@@ -20,14 +20,14 @@ function ContactTypography({ children, isTitle }: { isTitle?: boolean; children:
 export default function Contacts({ lang }: Props) {
   return (
     <>
-      <GenericPageMainTitle>{selectLang(lang, "contacts")}</GenericPageMainTitle>
+      <GenericPageMainTitle>{contactsLang(lang, "title")}</GenericPageMainTitle>
       <section>
-        <ContactTypography>{selectLang(lang, "contacts-text-1")}</ContactTypography>
-        <ContactTypography>{selectLang(lang, "contacts-text-2")}</ContactTypography>
+        <ContactTypography>{contactsLang(lang, "contacts-text-1")}</ContactTypography>
+        <ContactTypography>{contactsLang(lang, "contacts-text-2")}</ContactTypography>
         <Box mt={"4rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
-          <ContactTypography isTitle>{selectLang(lang, "contacts-address-title")}</ContactTypography>
+          <ContactTypography isTitle>{contactsLang(lang, "contacts-address-title")}</ContactTypography>
           <Link href={"https://maps.app.goo.gl/hX1nFLUwRSRbtCS29"}>
-            <ContactTypography>{selectLang(lang, "contacts-address-text")}</ContactTypography>
+            <ContactTypography>{contactsLang(lang, "contacts-address-text")}</ContactTypography>
           </Link>
           <Box width={"100%"} display={"flex"} justifyContent={"center"}>
             <Box width={{ xs: "100%", sm: "70%", md: "50%", lg: "30%", xl: "30%" }} sx={{ aspectRatio: "1/1" }}>
@@ -42,14 +42,14 @@ export default function Contacts({ lang }: Props) {
               ></iframe>
             </Box>
           </Box>
-          <ContactTypography isTitle>{selectLang(lang, "contacts-gps-title")}</ContactTypography>
+          <ContactTypography isTitle>{contactsLang(lang, "contacts-gps-title")}</ContactTypography>
           <Link href={"https://maps.app.goo.gl/hX1nFLUwRSRbtCS29"}>
-            <ContactTypography>{selectLang(lang, "contacts-gps-text")}</ContactTypography>
+            <ContactTypography>{contactsLang(lang, "contacts-gps-text")}</ContactTypography>
           </Link>
-          <ContactTypography isTitle>{selectLang(lang, "contacts-telephone-title")}</ContactTypography>
-          <ContactTypography>{selectLang(lang, "contacts-telephone-text")}</ContactTypography>
-          <ContactTypography isTitle>{selectLang(lang, "contacts-email-title")}</ContactTypography>
-          <ContactTypography>{selectLang(lang, "contacts-email-text")}</ContactTypography>
+          <ContactTypography isTitle>{contactsLang(lang, "contacts-telephone-title")}</ContactTypography>
+          <ContactTypography>{contactsLang(lang, "contacts-telephone-text")}</ContactTypography>
+          <ContactTypography isTitle>{contactsLang(lang, "contacts-email-title")}</ContactTypography>
+          <ContactTypography>{contactsLang(lang, "contacts-email-text")}</ContactTypography>
         </Box>
       </section>
     </>

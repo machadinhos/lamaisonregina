@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
-import { Container } from "@mui/material";
+import { Container, Theme } from "@mui/material";
 import { LangEnum } from "@i18n/lang-selector";
-import BottomButtons from "@/components/shared-components/bottom-buttons/BottomButtons";
+import BottomButtons from "@/components/shared-components/BottomButtons";
 import { HomeCarousel } from "@/components/page-components/Home/HomeCarousel";
+import { SxProps } from "@mui/material/styles";
 
 interface Props {
   children: ReactNode | ReactNode[];
@@ -10,30 +11,27 @@ interface Props {
   lang: LangEnum;
 }
 
+const mainContainerSx: SxProps<Theme> = {
+  position: "relative",
+  mb: "6rem",
+  mt: { xs: "2rem", sm: "4rem", md: "4rem", lg: "4rem", xl: "4rem" },
+  maxWidth: {
+    lg: "1536px",
+  },
+  textAlign: "justify",
+  px: {
+    xs: "1.25rem",
+    sm: "96px",
+    md: "96px",
+    lg: "96px",
+    xl: "96px",
+  },
+};
 export default function Main({ children, isHome, lang }: Props) {
   return (
     <main>
       {isHome && <HomeCarousel lang={lang} />}
-      <Container
-        sx={{
-          position: "relative",
-          mb: "6rem",
-          mt: { xs: "2rem", sm: "4rem", md: "4rem", lg: "4rem", xl: "4rem" },
-          maxWidth: {
-            lg: "1536px",
-          },
-          textAlign: "justify",
-          px: {
-            xs: "1.25rem",
-            sm: "96px",
-            md: "96px",
-            lg: "96px",
-            xl: "96px",
-          },
-        }}
-      >
-        {children}
-      </Container>
+      <Container sx={mainContainerSx}>{children}</Container>
       <BottomButtons lang={lang} />
     </main>
   );

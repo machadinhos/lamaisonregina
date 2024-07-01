@@ -3,7 +3,6 @@ import Home from "@/components/page-components/Home/Home";
 import PageContent from "@/components/global-components/PageContent";
 
 export default function HomePage({ language }: { language: LangEnum }) {
-  console.log(language);
   return (
     <PageContent isHome lang={language}>
       <Home lang={language} />

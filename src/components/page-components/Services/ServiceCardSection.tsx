@@ -1,20 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { LangEnum, selectLang } from "@i18n/lang-selector";
+import { LangEnum, servicesLang } from "@i18n/lang-selector";
 import { primaryColor } from "@/styles/globals";
 import Image from "next/image";
-import GenericPageText from "@/components/shared-components/GenericPageText";
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 
-const ServiceCard = ({
-  title,
-  subTitle,
-  text,
-  img,
-}: {
-  title: string;
-  text: string;
-  img: string;
-  subTitle?: string;
-}) => {
+function ServiceCard({ title, subTitle, text, img }: { title: string; text: string; img: string; subTitle?: string }) {
   return (
     <Box
       sx={{
@@ -52,21 +42,22 @@ const ServiceCard = ({
       >
         <Image src={img} alt={title} fill />
       </Box>
-      <GenericPageText>{text}</GenericPageText>
+      <GenericPageText sx={{ fontSize: { lg: "1rem" } }}>{text}</GenericPageText>
     </Box>
   );
-};
+}
 
 export const ServiceCardSection = ({ lang }: { lang: LangEnum }) => {
-  const [card1Title, card1Subtitle, card1Text] = selectLang(lang, "services-card-1").split(" | ");
-  const [card2Title, card2Text] = selectLang(lang, "services-card-2").split(" | ");
-  const [card3Title, card3Text] = selectLang(lang, "services-card-3").split(" | ");
+  const [card1Title, card1Subtitle, card1Text] = servicesLang(lang, "card-1").split(" | ");
+  const [card2Title, card2Text] = servicesLang(lang, "card-2").split(" | ");
+  const [card3Title, card3Text] = servicesLang(lang, "card-3").split(" | ");
   return (
     <Grid
       sx={{
         display: "grid",
         gridTemplateColumns: {
-          xs: "repeat(auto-fit, minmax(300px, 1fr))",
+          xs: "repeat(auto-fit, minmax(300px, 70%))",
+          sm: "repeat(2, minmax(300px, 1fr))",
           lg: "repeat(3, minmax(300px, 1fr))",
         },
         gap: "1rem",
