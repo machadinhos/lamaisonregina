@@ -9,6 +9,7 @@ import BulletedList from "@/components/shared-components/BulletList/BulletedList
 import BulletedListItem from "@/components/shared-components/BulletList/BulletedListItem";
 import { FAQListItem } from "@/components/page-components/FAQ/FAQListItem";
 import { FAQTitle } from "@/components/page-components/FAQ/FAQTitle";
+import CTA from "@/components/shared-components/CTA";
 
 interface Props {
   lang: LangEnum;
@@ -148,6 +149,7 @@ export default function FAQ({ lang }: Props) {
           <GenericPageText>{faqLang(lang, "faq-other-questions-text")}</GenericPageText>
         </FAQListItem>
       </List>
+      <CTA lang={lang} />
     </>
   );
 }

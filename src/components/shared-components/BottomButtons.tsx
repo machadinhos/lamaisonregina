@@ -1,11 +1,19 @@
 import { LangEnum } from "@i18n/lang-selector";
-import { Box } from "@mui/material";
+import { Box, Theme } from "@mui/material";
 import { primaryColor, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
 import Image from "next/image";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { useEffect } from "react";
+import { SxProps } from "@mui/material/styles";
+
+function ArrowUpwardIcon({ sx }: { sx: SxProps<Theme> }) {
+  return (
+    <Box position={"relative"} width={"50px"} height={"50px"} sx={{ ...sx }}>
+      <Image src={"/arrow.webp"} alt={"arrow"} fill />
+    </Box>
+  );
+}
 
 export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
   useEffect(() => {

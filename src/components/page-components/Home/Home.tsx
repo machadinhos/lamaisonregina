@@ -3,6 +3,7 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import React from "react";
 import { WhyChooseList } from "@/components/page-components/Home/WhyChooseList";
 import { HomeInfo } from "@/components/page-components/Home/HomeInfo";
+import CTA from "@/components/shared-components/CTA";
 
 interface Props {
   lang: LangEnum;
@@ -17,6 +18,7 @@ export default function Home({ lang }: Props) {
         <GenericPageText>{homeLang(lang, "home-text-6")}</GenericPageText>
         <WhyChooseList lang={lang} />
       </section>
+      <CTA lang={lang} />
     </>
   );
 }

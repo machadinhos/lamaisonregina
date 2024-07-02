@@ -2,6 +2,8 @@ import { cateringLang, LangEnum } from "@i18n/lang-selector";
 import GenericPageMainTitle from "@/components/shared-components/Typography/GenericPageMainTitle";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
+import CTA from "@/components/shared-components/CTA";
+import React from "react";
 
 interface Props {
   lang: LangEnum;
@@ -24,6 +26,7 @@ export default function Catering({ lang }: Props) {
         <GenericPageTitle>{cateringLang(lang, "catering-title-3")}</GenericPageTitle>
         <GenericPageText>{cateringLang(lang, "catering-text-4")}</GenericPageText>
       </section>
+      <CTA lang={lang} />
     </>
   );
 }

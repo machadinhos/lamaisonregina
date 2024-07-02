@@ -1,10 +1,12 @@
 {
   "pt": {
     "footer-follow": "Siga-nos",
-    "footer-rights-reserved": "© 2024 La Maison Regina. Todos os direitos reservados."
+    "footer-rights-reserved": "© 2024 La Maison Regina. Todos os direitos reservados.",
+    "cta": "Contacte-nos"
   },
   "en": {
     "footer-follow": "Follow us",
-    "footer-rights-reserved": "© 2024 La Maison Regina. All rights reserved."
+    "footer-rights-reserved": "© 2024 La Maison Regina. All rights reserved.",
+    "cta": "Contact us"
   }
 }

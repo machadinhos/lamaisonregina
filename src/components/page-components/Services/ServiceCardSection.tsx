@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { LangEnum, servicesLang } from "@i18n/lang-selector";
 import { primaryColor } from "@/styles/globals";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
-import GenericImage from "@/components/shared-components/GenericImage";
+import Image from "next/image";
 
 function ServiceCard({ title, subTitle, text, img }: { title: string; text: string; subTitle?: string; img: string }) {
   return (
@@ -32,17 +32,24 @@ function ServiceCard({ title, subTitle, text, img }: { title: string; text: stri
       >
         <Typography variant={"h4"}>{title}</Typography>
       </Box>
-      <Box
-        sx={{
-          position: "relative",
-          aspectRatio: "1/1",
-          width: "90%",
-          alignItems: "center",
-          transition: "width height 500ms ease-in-out",
-          "&:hover": { width: "100%" },
-        }}
-      >
-        <GenericImage src={img} alt={title} />
+      <Box width={"100%"} display={"flex"} alignItems={"center"} justifyContent={"center"} sx={{ aspectRatio: "1/1" }}>
+        <Box
+          width={"90%"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          sx={{ aspectRatio: "1/1", "&:hover": { width: "100%" }, transition: "width 300ms" }}
+        >
+          <Box
+            sx={{
+              position: "relative",
+              aspectRatio: "1/1",
+              width: "100%",
+            }}
+          >
+            <Image style={{ borderRadius: "15px" }} src={img} alt={title} fill />
+          </Box>
+        </Box>
       </Box>
       <Box sx={{ alignItems: "start" }}>
         {subTitle && <GenericPageText sx={{ mt: 0, fontSize: { lg: "1rem" } }}>{subTitle}</GenericPageText>}

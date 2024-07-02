@@ -4,7 +4,7 @@ Coisas para fazer:
 ✔️- Mudar toda a letra do site para Monserrat
 ✔️- Traço por baixo dos links do header em hover
 ✔️- Ampliar as imagens em hover
-- Mudar o ícone da seta para voltar para cima   https://lifeplanresorts.com/
+✔️- Mudar o ícone da seta para voltar para cima   https://lifeplanresorts.com/
 - Mudar o tamanho de letra https://lifeplanresorts.com/
 ✔️- Tirar o google maps do rodapé
 ✔️- Trocar segue-nos por Siga-nos no rodapé
@@ -17,7 +17,7 @@ Coisas para fazer:
 ✔️- Trocar Porque Escoher a LA MAison Regina por Porquê... Homepage
 ✔️- Trocar Porquê Escoher a LA MAison Regina por bullet points Homepage
 - Colocar espaço para imagens depois do Porquê Escolher a LA MAison Regina Homepage seguido de CTA
-- No card dos serviços, colocar o diga sim connosco como texto, não subtitulo
+✔️- No card dos serviços, colocar o diga sim connosco como texto, não subtitulo
 ✔️- Acabar highlight dos serviços
 ✔️- Remover paragrafo serviços
 ✔️- Alterar ordem de header: Home, Serviços, Galeria, Catering, FAQ, Contactos

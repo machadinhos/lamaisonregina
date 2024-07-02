@@ -1,11 +1,11 @@
 import { contactsLang, galleryLang, globalsLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
 import { Box, List, ListItem, Typography } from "@mui/material";
-import Image from "next/image";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { primaryColor, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Props {
   lang: LangEnum;
@@ -39,24 +39,17 @@ export default function Footer({ lang }: Props) {
         }}
       >
         <Link href={`/${lang}#header`}>
-          <Box
-            position={"relative"}
-            width={{ xs: "150px", sm: "200px", md: "250px", lg: "300px", xl: "350px" }}
-            sx={{ aspectRatio: "1.3/1" }}
-          >
+          <Box position={"relative"} width={"200px"} sx={{ aspectRatio: "1.3/1" }}>
             <Image alt={"logo"} src={"/logo_primary.png"} fill />
           </Box>
         </Link>
       </Box>
       <Box
         sx={{
-          display: { xs: "block", sm: "flex" },
-          width: { xs: "100%", md: "90%", lg: "80%", xl: "60%" },
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          width: { xs: "100%", md: "90%", lg: "80%", xl: "80%" },
           justifyContent: "space-between",
-          "& > *": {
-            flex: { sm: "0 0 150px", md: "0 0 200px", lg: "0 0 250px", xl: "0 0 300px" },
-            width: { sm: "150px", md: "200px", lg: "250px", xl: "300px" },
-          },
         }}
       >
         <List
@@ -64,8 +57,9 @@ export default function Footer({ lang }: Props) {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-evenly",
-            alignItems: "center",
+            alignItems: { xs: "center", md: "flex-start" },
             fontSize: "1.5rem",
+            width: "50px",
           }}
         >
           <Link href={`/${lang}/#header`}>
