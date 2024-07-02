@@ -15,8 +15,8 @@ export default function Services({ lang }: Props) {
       <GenericPageMainTitle>{servicesLang(lang, "title")}</GenericPageMainTitle>
       <ServiceTitleSection lang={lang} />
       <ServiceCardSection lang={lang} />
-      <ServiceHighlightsSection lang={lang} />
       <ServiceTextSection lang={lang} />
+      <ServiceHighlightsSection lang={lang} />
     </>
   );
 }

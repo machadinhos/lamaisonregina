@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import Carousel from "@/components/shared-components/Carousel";
 import { homeLang, LangEnum } from "@i18n/lang-selector";
 import React from "react";
-import { TitleTypography } from "@/components/page-components/Home/TitleTypography";
+import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 
 interface Props {
   lang: LangEnum;
@@ -27,8 +27,10 @@ export function HomeCarousel({ lang }: Props) {
           position: "relative",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "flex-end",
+          paddingBottom: "6rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
         }}
       >
         <Carousel
@@ -39,41 +41,7 @@ export function HomeCarousel({ lang }: Props) {
             "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
           ]}
         />
-        <TitleTypography
-          sx={{
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
-          }}
-          variant="h4"
-        >
-          {homeLang(lang, "home-welcome-1")}
-        </TitleTypography>
-        <TitleTypography
-          variant="h1"
-          sx={{
-            padding: "1rem",
-            fontWeight: "bold",
-            fontSize: { xs: "5rem", sm: "8rem", md: "10rem", lg: "12rem" },
-          }}
-        >
-          La Maison Regina
-        </TitleTypography>
-        <TitleTypography
-          sx={{
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
-            marginBottom: "1.5rem",
-          }}
-          variant="h4"
-        >
-          {homeLang(lang, "home-welcome-2")}
-        </TitleTypography>
-        <TitleTypography
-          sx={{
-            fontSize: { xs: "1rem", sm: "1.5rem", md: "2rem", lg: "2.5rem" },
-          }}
-          variant="h5"
-        >
-          {homeLang(lang, "home-slogan")}
-        </TitleTypography>
+        <GenericPageTitle sx={{ color: "white", textAlign: "left" }}>{homeLang(lang, "home-slogan")}</GenericPageTitle>
       </section>
     </Box>
   );

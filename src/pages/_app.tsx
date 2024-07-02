@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
-import { Theme, createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, Theme, ThemeProvider } from "@mui/material";
 import { secondaryColor } from "@/styles/globals";
 
 const theme: Theme = createTheme({
@@ -13,14 +13,16 @@ const theme: Theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Poppins"].join(","),
     fontSize: 16,
     allVariants: {
       color: secondaryColor,
+      fontFamily: "Montserrat, sans-serif",
+      fontOpticalSizing: "auto",
+      fontWeight: 400,
+      fontStyle: "normal",
     },
     h1: {
       textAlign: "center",
-      fontFamily: "Elipses Caps",
     },
     h2: {
       textAlign: "center",

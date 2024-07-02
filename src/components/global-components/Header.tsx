@@ -1,10 +1,10 @@
 import { contactsLang, galleryLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
 import { Box, Container, List, ListItem, Typography } from "@mui/material";
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { primaryColor } from "@/styles/globals";
+import { primaryColor, secondaryColor } from "@/styles/globals";
 
 interface Props {
   lang: LangEnum;
@@ -14,14 +14,16 @@ function HeaderListItem({
   children,
   href,
   isMobile,
+  isSelected,
 }: {
   children: ReactNode | ReactNode[];
   href: string;
   isMobile?: boolean;
+  isSelected?: boolean;
 }) {
   return (
     <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <HeaderLink href={href} isMobile={isMobile}>
+      <HeaderLink href={href} isMobile={isMobile} isSelected={isSelected}>
         {children}
       </HeaderLink>
     </ListItem>
@@ -35,6 +37,7 @@ function HeaderLink({
   selectedLanguage,
   isMobile,
   isLanguageSelector,
+  isSelected,
 }: {
   href: string;
   children: ReactNode | ReactNode[];
@@ -42,7 +45,9 @@ function HeaderLink({
   selectedLanguage?: string;
   isMobile?: boolean;
   isLanguageSelector?: boolean;
+  isSelected?: boolean;
 }) {
+  const [isHovering, setIsHovering] = useState(false);
   const redirect = (href: string) => {
     window.location.href = href;
   };
@@ -57,19 +62,36 @@ function HeaderLink({
       </Typography>
     );
   }
+  const onClick = () => {
+    document.getElementById("language-selector-link")!.style.cursor = "default";
+    redirect(href);
+  };
   return isLanguageSelector ? (
     <Typography
-      onClick={() => redirect(href)}
+      id={"language-selector-link"}
+      onClick={onClick}
       variant={"h6"}
       sx={{ fontSize: isMobile ? "2rem" : "1.2rem", cursor: "pointer" }}
     >
       {children}
     </Typography>
   ) : (
-    <Link href={href}>
+    <Link
+      href={href}
+      onMouseOver={() => !isSelected && setIsHovering(true)}
+      onMouseLeave={() => !isSelected && setIsHovering(false)}
+    >
       <Typography variant={"h6"} sx={{ fontSize: isMobile ? "2rem" : "1.2rem" }}>
         {children}
       </Typography>
+      <Box
+        sx={{
+          width: isHovering || isSelected ? "100%" : 0,
+          height: "1px",
+          backgroundColor: secondaryColor,
+          transition: "width 300ms ease-in-out",
+        }}
+      ></Box>
     </Link>
   );
 }
@@ -188,6 +210,10 @@ function DesktopMenu({ lang }: Props) {
 }
 
 function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) {
+  const selectedOption = useRouter().asPath.slice(4).split("#")[0];
+  useEffect(() => {
+    console.log("selectedOption:", selectedOption);
+  });
   return (
     <List
       sx={{
@@ -197,23 +223,23 @@ function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) 
         width: "100%",
       }}
     >
-      <HeaderListItem isMobile={isMobile} href={`/${lang}/`}>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/`} isSelected={!selectedOption.length}>
         {homeLang(lang, "title")}
       </HeaderListItem>
-      <HeaderListItem isMobile={isMobile} href={`/${lang}/services`}>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/services`} isSelected={selectedOption === "services"}>
         {servicesLang(lang, "title")}
       </HeaderListItem>
-      <HeaderListItem isMobile={isMobile} href={`/${lang}/catering`}>
-        Catering
-      </HeaderListItem>
-      <HeaderListItem isMobile={isMobile} href={`/${lang}/gallery`}>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/gallery`} isSelected={selectedOption === "gallery"}>
         {galleryLang(lang, "title")}
       </HeaderListItem>
-      <HeaderListItem isMobile={isMobile} href={`/${lang}/contacts`}>
-        {contactsLang(lang, "title")}
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/catering`} isSelected={selectedOption === "catering"}>
+        Catering
       </HeaderListItem>
-      <HeaderListItem isMobile={isMobile} href={`/${lang}/faq`}>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/faq`} isSelected={selectedOption === "faq"}>
         FAQ
+      </HeaderListItem>
+      <HeaderListItem isMobile={isMobile} href={`/${lang}/contacts`} isSelected={selectedOption === "contacts"}>
+        {contactsLang(lang, "title")}
       </HeaderListItem>
     </List>
   );

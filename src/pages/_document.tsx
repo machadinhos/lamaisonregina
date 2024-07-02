@@ -15,7 +15,13 @@ class MyDocument extends Document<MyDocumentProps> {
     return (
       <Html lang={this.props.lang}>
         <Head>
-          <link rel="preload" href="/fonts/elipses-caps.otf" as="font" type="font/otf" crossOrigin="anonymous" />
+          <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            as="font"
+            type="font"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />

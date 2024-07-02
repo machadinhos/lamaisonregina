@@ -7,17 +7,17 @@ interface Props {
 }
 
 export default function GenericPageTitle({ children, sx }: Props) {
-  const defaultSx: SxProps<Theme> = {
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
-    mt: "1.5rem",
-  };
-
-  const mergedSx = { ...defaultSx, ...sx };
-
   return (
-    <Typography variant={"h3"} sx={mergedSx}>
+    <Typography
+      variant={"h3"}
+      sx={{
+        textAlign: "center",
+        fontWeight: "300",
+        fontSize: { xs: "2rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
+        mt: "1.5rem",
+        ...sx,
+      }}
+    >
       {children}
     </Typography>
   );

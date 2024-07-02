@@ -105,12 +105,12 @@ export default function Carousel({ sources }: Props) {
               width={"100%"}
               height={"100%"}
               position={"absolute"}
+              top={0}
+              left={0}
               sx={{
                 transition: "transform 0.5s ease-in-out",
                 opacity: resolveOpacity(image._id),
                 transform: resolveTransform(image._id),
-                top: 0,
-                left: 0,
               }}
               zIndex={-1}
             >

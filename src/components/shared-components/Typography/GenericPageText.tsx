@@ -10,18 +10,18 @@ interface Props {
 }
 
 export default function GenericPageText({ children, sx }: Props) {
-  const defaultSx: SxProps<Theme> = {
-    textAlign: "justify",
-    fontSize: { xs: "1.2rem", sm: "1.4rem", lg: "1.5rem" },
-    hyphens: "auto",
-    wordBreak: "break-word",
-    mt: "1rem",
-  };
-
-  const mergedSx = { ...defaultSx, ...sx };
-
   return (
-    <Typography variant={"body1"} sx={mergedSx}>
+    <Typography
+      variant={"body1"}
+      sx={{
+        textAlign: "justify",
+        fontSize: { xs: "1.2rem", sm: "1.4rem", lg: "1.5rem" },
+        hyphens: "auto",
+        wordBreak: "break-word",
+        mt: "1rem",
+        ...sx,
+      }}
+    >
       {children}
     </Typography>
   );

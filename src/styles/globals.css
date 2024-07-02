@@ -1,11 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-@font-face {
-  font-family: "Elipses Caps";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/elipses-caps.otf") format("truetype");
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 ::selection {
   background: #e0bc7c;
@@ -22,6 +15,10 @@ body {
   height: 100vh;
   overflow: auto;
   scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 * {

@@ -27,10 +27,6 @@ export default function Gallery({ lang }: Props) {
         <GenericPageTitle>{galleryLang(lang, "gallery-title-4")}</GenericPageTitle>
         <GenericPageText>{galleryLang(lang, "gallery-text-4")}</GenericPageText>
       </section>
-      <section>
-        <GenericPageTitle>{galleryLang(lang, "gallery-title-5")}</GenericPageTitle>
-        <GenericPageText>{galleryLang(lang, "gallery-text-5")}</GenericPageText>
-      </section>
     </>
   );
 }

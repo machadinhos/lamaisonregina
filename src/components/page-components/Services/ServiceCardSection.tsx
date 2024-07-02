@@ -1,10 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { LangEnum, servicesLang } from "@i18n/lang-selector";
 import { primaryColor } from "@/styles/globals";
-import Image from "next/image";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
+import GenericImage from "@/components/shared-components/GenericImage";
 
-function ServiceCard({ title, subTitle, text, img }: { title: string; text: string; img: string; subTitle?: string }) {
+function ServiceCard({ title, subTitle, text, img }: { title: string; text: string; subTitle?: string; img: string }) {
   return (
     <Box
       sx={{
@@ -31,18 +31,23 @@ function ServiceCard({ title, subTitle, text, img }: { title: string; text: stri
         }}
       >
         <Typography variant={"h4"}>{title}</Typography>
-        {subTitle && <Typography variant={"h5"}>{subTitle}</Typography>}
       </Box>
       <Box
         sx={{
           position: "relative",
           aspectRatio: "1/1",
-          width: "100%",
+          width: "90%",
+          alignItems: "center",
+          transition: "width height 500ms ease-in-out",
+          "&:hover": { width: "100%" },
         }}
       >
-        <Image src={img} alt={title} fill />
+        <GenericImage src={img} alt={title} />
       </Box>
-      <GenericPageText sx={{ fontSize: { lg: "1rem" } }}>{text}</GenericPageText>
+      <Box sx={{ alignItems: "start" }}>
+        {subTitle && <GenericPageText sx={{ mt: 0, fontSize: { lg: "1rem" } }}>{subTitle}</GenericPageText>}
+        <GenericPageText sx={{ mt: 0, fontSize: { lg: "1rem" } }}>{text}</GenericPageText>
+      </Box>
     </Box>
   );
 }

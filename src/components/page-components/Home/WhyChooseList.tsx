@@ -1,9 +1,8 @@
 import { homeLang, LangEnum } from "@i18n/lang-selector";
-import { Box, Button, List, ListItem } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import React, { useState } from "react";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
-import { primaryColor } from "@/styles/globals";
 import GenericPageSubTitle from "@/components/shared-components/Typography/GenericPageSubTitle";
 import BulletedList from "@/components/shared-components/BulletList/BulletedList";
 import BulletedListItem from "@/components/shared-components/BulletList/BulletedListItem";
@@ -11,7 +10,9 @@ import BulletedListItem from "@/components/shared-components/BulletList/Bulleted
 export function SustainabilityText({ lang }: { lang: LangEnum }) {
   return (
     <>
-      <GenericPageSubTitle>{homeLang(lang, "home-sustainability-title-1")}</GenericPageSubTitle>
+      <GenericPageSubTitle sx={{ textAlign: "left" }}>
+        {homeLang(lang, "home-sustainability-title-1")}
+      </GenericPageSubTitle>
       <GenericPageText>{homeLang(lang, "home-sustainability-text-1")}</GenericPageText>
       <BulletedList>
         <BulletedListItem>
@@ -35,60 +36,49 @@ export function SustainabilityText({ lang }: { lang: LangEnum }) {
   );
 }
 
-function WhyChooseListItems({ lang }: { lang: LangEnum }) {
-  const [showSustainability, setShowSustainability] = useState(false);
+function WhyChooseListItems({
+  lang,
+  toggleSustainability,
+  showSustainability,
+}: {
+  lang: LangEnum;
+  toggleSustainability: () => void;
+  showSustainability: boolean;
+}) {
   const items = homeLang(lang, "home-sep-2-list").split(" | ");
   const itemsText = items.map((item, index) => (
     <React.Fragment key={index}>
-      <ListItem
-        sx={{ width: { md: "70%", lg: "50%" }, display: "flex", justifyContent: "center" }}
-        key={`item-${index}`}
-      >
-        <GenericPageText sx={{ textAlign: "center" }}>{item}</GenericPageText>
-      </ListItem>
+      <BulletedListItem sx={{ width: { md: "70%", lg: "50%" }, justifyContent: "left" }} key={`item-${index}`}>
+        <GenericPageText>{item}</GenericPageText>
+      </BulletedListItem>
       {items.length - 1 === index && (
-        <Button
-          key="sustainability-button"
-          sx={{ mb: "1rem" }}
-          variant={"text"}
-          onClick={() => setShowSustainability((prevState) => !prevState)}
-        >
+        <Button key="sustainability-button" sx={{ mb: "1rem" }} variant={"text"} onClick={toggleSustainability}>
           {showSustainability ? homeLang(lang, "home-show-less") : homeLang(lang, "home-learn-more")}
         </Button>
       )}
-      <Box key={`divider-${index}`} width={"40%"} height={"1px"} sx={{ backgroundColor: primaryColor }} />
     </React.Fragment>
   ));
 
-  return (
-    <>
-      {itemsText}
-      {showSustainability && <SustainabilityText lang={lang} />}
-    </>
-  );
+  return <>{itemsText}</>;
 }
 
 export function WhyChooseList({ lang }: { lang: LangEnum }) {
+  const [showSustainability, setShowSustainability] = useState(false);
+  const toggleSustainability = () => {
+    setShowSustainability((prevState) => !prevState);
+  };
   return (
-    <Box
-      sx={{
-        px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
-      }}
-    >
-      <List
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          padding: "0",
-          margin: "0",
-          listStyle: "outside",
-        }}
-      >
-        <GenericPageTitle>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
-        <WhyChooseListItems key={"listItems"} lang={lang} />
-      </List>
+    <Box>
+      <GenericPageTitle sx={{ textAlign: "justify" }}>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
+      <BulletedList>
+        <WhyChooseListItems
+          toggleSustainability={toggleSustainability}
+          showSustainability={showSustainability}
+          key={"listItems"}
+          lang={lang}
+        />
+      </BulletedList>
+      {showSustainability && <SustainabilityText lang={lang} />}
     </Box>
   );
 }

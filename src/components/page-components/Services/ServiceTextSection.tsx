@@ -7,7 +7,6 @@ import GenericPageSubTitle from "@/components/shared-components/Typography/Gener
 export function ServiceTextSection({ lang }: { lang: LangEnum }) {
   return (
     <section>
-      <GenericPageText>{servicesLang(lang, "text-2")}</GenericPageText>
       <Box sx={{ mt: "4rem", mb: "4rem" }}>
         <GenericPageTitle>{servicesLang(lang, "sep-1")}</GenericPageTitle>
         <GenericPageSubTitle>{servicesLang(lang, "sep-2")}</GenericPageSubTitle>
