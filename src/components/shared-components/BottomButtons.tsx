@@ -10,7 +10,7 @@ import { SxProps } from "@mui/material/styles";
 function ArrowUpwardIcon({ sx }: { sx: SxProps<Theme> }) {
   return (
     <Box position={"relative"} width={"50px"} height={"50px"} sx={{ ...sx }}>
-      <Image src={"/arrow.webp"} alt={"arrow"} fill />
+      <Image src={"/arrows/up_arrow.webp"} alt={"arrow"} fill />
     </Box>
   );
 }
@@ -55,7 +55,7 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
         <Link href={`/${lang}/`}>
-          <Image alt={"logo"} src={"/logo.png"} width={75} height={60} />
+          <Image alt={"logo"} src={"/logos/logo.png"} width={75} height={60} />
         </Link>
       </Box>
       <Box position={"absolute"} bottom={"1rem"} left={"1rem"}>

@@ -40,7 +40,7 @@ export default function Footer({ lang }: Props) {
       >
         <Link href={`/${lang}#header`}>
           <Box position={"relative"} width={"200px"} sx={{ aspectRatio: "1.3/1" }}>
-            <Image alt={"logo"} src={"/logo_primary.png"} fill />
+            <Image alt={"logo"} src={"/logos/logo_primary.png"} fill />
           </Box>
         </Link>
       </Box>

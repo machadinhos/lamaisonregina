@@ -4,8 +4,7 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import GenericPageMainTitle from "@/components/shared-components/Typography/GenericPageMainTitle";
 import CTA from "@/components/shared-components/CTA";
 import React from "react";
-import TestSlider from "@/components/shared-components/Carousel/TestSlider";
-import { SwiperCarousel } from "@/components/shared-components/Carousel/SwiperSlider";
+import ArrowCarousel from "@/components/shared-components/Carousel/ArrowCarousel";
 
 interface Props {
   lang: LangEnum;
@@ -46,21 +45,22 @@ export default function Gallery({ lang }: Props) {
       <section style={{ width: "100%", height: "100%" }}>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-1")}</GenericPageTitle>
         <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
-        {/*<ArrowCarousel images={images1} />*/}
-        <TestSlider images={images1} />
+        <ArrowCarousel images={images1} />
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-2")}</GenericPageTitle>
         <GenericPageText>{galleryLang(lang, "gallery-text-2")}</GenericPageText>
+        <ArrowCarousel images={images2} />
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-3")}</GenericPageTitle>
         <GenericPageText>{galleryLang(lang, "gallery-text-3")}</GenericPageText>
+        <ArrowCarousel images={images3} />
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-4")}</GenericPageTitle>
         <GenericPageText>{galleryLang(lang, "gallery-text-4")}</GenericPageText>
-        <SwiperCarousel images={images2} />
+        <ArrowCarousel images={images4} />
       </section>
       <CTA lang={lang} />
     </>

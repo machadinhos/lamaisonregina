@@ -268,7 +268,7 @@ export default function Header({ lang }: Props) {
         <LanguageSelector />
         <Link href={`/${lang}/`}>
           <Box position={"relative"} mt={"1rem"} width={"100px"} sx={{ aspectRatio: "1.3/1" }}>
-            <Image alt={"logo"} src={"/logo.png"} fill />
+            <Image alt={"logo"} src={"/logos/logo.png"} fill />
           </Box>
         </Link>
         <MobileMenu setIsActive={setIsActive} isActive={isActive} lang={lang} />
