@@ -20,7 +20,7 @@ const mainContainerSx: SxProps<Theme> = {
   },
   textAlign: "justify",
   px: {
-    xs: "1.25rem",
+    xs: "2rem",
     sm: "96px",
     md: "96px",
     lg: "96px",

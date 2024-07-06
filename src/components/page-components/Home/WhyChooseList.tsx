@@ -49,7 +49,7 @@ function WhyChooseListItems({
   const itemsText = items.map((item, index) => (
     <React.Fragment key={index}>
       <BulletedListItem sx={{ width: { md: "70%", lg: "50%" }, justifyContent: "left" }} key={`item-${index}`}>
-        <GenericPageText>{item}</GenericPageText>
+        <GenericPageText sx={{ textAlign: "left" }}>{item}</GenericPageText>
       </BulletedListItem>
       {items.length - 1 === index && (
         <Button key="sustainability-button" sx={{ mb: "1rem" }} variant={"text"} onClick={toggleSustainability}>

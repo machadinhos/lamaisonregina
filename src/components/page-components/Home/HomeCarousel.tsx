@@ -41,7 +41,16 @@ export function HomeCarousel({ lang }: Props) {
             "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
           ]}
         />
-        <GenericPageTitle sx={{ color: "white", textAlign: "left" }}>{homeLang(lang, "home-slogan")}</GenericPageTitle>
+        <GenericPageTitle
+          sx={{
+            color: "white",
+            textAlign: "left",
+            fontSize: { xs: "2.25rem", sm: "2.75rem" },
+            px: "2.5rem",
+          }}
+        >
+          {homeLang(lang, "home-slogan")}
+        </GenericPageTitle>
       </section>
     </Box>
   );

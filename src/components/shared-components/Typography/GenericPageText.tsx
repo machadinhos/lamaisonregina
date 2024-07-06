@@ -15,7 +15,7 @@ export default function GenericPageText({ children, sx }: Props) {
       variant={"body1"}
       sx={{
         textAlign: "justify",
-        fontSize: { xs: "1.2rem", sm: "1.4rem", lg: "1.5rem" },
+        fontSize: { xs: "1.15rem", sm: "1.1rem", lg: "1rem" },
         hyphens: "auto",
         wordBreak: "break-word",
         mt: "1rem",

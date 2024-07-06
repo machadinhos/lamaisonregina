@@ -50,6 +50,7 @@ export default function Footer({ lang }: Props) {
           flexDirection: { xs: "column", sm: "row" },
           width: { xs: "100%", md: "90%", lg: "80%", xl: "80%" },
           justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <List
