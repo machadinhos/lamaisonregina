@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Carousel from "@/components/shared-components/Carousel";
+import InfiniteArrowCarousel from "@/components/shared-components/Carousel/InfiniteArrowCarousel";
 import { homeLang, LangEnum } from "@i18n/lang-selector";
 import React from "react";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
@@ -33,7 +33,7 @@ export function HomeCarousel({ lang }: Props) {
           paddingRight: "1rem",
         }}
       >
-        <Carousel
+        <InfiniteArrowCarousel
           sources={[
             "https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",

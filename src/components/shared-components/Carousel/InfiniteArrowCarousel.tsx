@@ -14,7 +14,7 @@ const generateImages = (sources: string[]) => {
   }));
 };
 
-export default function Carousel({ sources }: Props) {
+export default function InfiniteArrowCarousel({ sources }: Props) {
   const [images] = useState(generateImages(sources));
   const [leftImage, setLeftImage] = useState(images.length - 1);
   const [rightImage, setRightImage] = useState(1);

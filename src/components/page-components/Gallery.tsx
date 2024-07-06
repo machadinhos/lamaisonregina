@@ -4,18 +4,50 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import GenericPageMainTitle from "@/components/shared-components/Typography/GenericPageMainTitle";
 import CTA from "@/components/shared-components/CTA";
 import React from "react";
+import TestSlider from "@/components/shared-components/Carousel/TestSlider";
+import { SwiperCarousel } from "@/components/shared-components/Carousel/SwiperSlider";
 
 interface Props {
   lang: LangEnum;
 }
 
 export default function Gallery({ lang }: Props) {
+  const images1 = [
+    "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
+  ];
+
+  const images2 = [
+    "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
+  ];
+
+  const images3 = [
+    "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
+  ];
+
+  const images4 = [
+    "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
+  ];
+
   return (
     <>
       <GenericPageMainTitle>{galleryLang(lang, "title")}</GenericPageMainTitle>
-      <section>
+      <section style={{ width: "100%", height: "100%" }}>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-1")}</GenericPageTitle>
         <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
+        {/*<ArrowCarousel images={images1} />*/}
+        <TestSlider images={images1} />
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-2")}</GenericPageTitle>
@@ -28,6 +60,7 @@ export default function Gallery({ lang }: Props) {
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-4")}</GenericPageTitle>
         <GenericPageText>{galleryLang(lang, "gallery-text-4")}</GenericPageText>
+        <SwiperCarousel images={images2} />
       </section>
       <CTA lang={lang} />
     </>
