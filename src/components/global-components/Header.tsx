@@ -259,7 +259,7 @@ export default function Header({ lang }: Props) {
           position: isActive ? "fixed" : "relative",
           ...(isActive && { top: 0, left: 0 }),
           height: { xs: "120px", sm: "150px" },
-          zIndex: 20,
+          zIndex: 40,
         }}
         id={"header"}
       >
