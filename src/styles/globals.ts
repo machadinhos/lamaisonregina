@@ -8,4 +8,5 @@ export const sizes = {
   xl: "1536px",
 };
 
+export const mainSmallPadding = 48;
 export const mainPadding = 96;

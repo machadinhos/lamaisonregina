@@ -12,7 +12,7 @@ export default function GenericPageTitle({ children, sx }: Props) {
       variant={"h3"}
       sx={{
         textAlign: "center",
-        fontWeight: "300",
+        fontWeight: "400",
         fontSize: { xs: "2rem", sm: "2.25rem", md: "2.75rem", lg: "3.25rem" },
         mt: "1.5rem",
         ...sx,

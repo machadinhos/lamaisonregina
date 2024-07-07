@@ -44,23 +44,23 @@ export default function Gallery({ lang }: Props) {
       <GenericPageMainTitle>{galleryLang(lang, "title")}</GenericPageMainTitle>
       <section style={{ width: "100%", height: "100%" }}>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-1")}</GenericPageTitle>
-        <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
         <ArrowCarousel images={images1} />
+        <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-2")}</GenericPageTitle>
-        <GenericPageText>{galleryLang(lang, "gallery-text-2")}</GenericPageText>
         <ArrowCarousel images={images2} />
+        <GenericPageText>{galleryLang(lang, "gallery-text-2")}</GenericPageText>
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-3")}</GenericPageTitle>
-        <GenericPageText>{galleryLang(lang, "gallery-text-3")}</GenericPageText>
         <ArrowCarousel images={images3} />
+        <GenericPageText>{galleryLang(lang, "gallery-text-3")}</GenericPageText>
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-4")}</GenericPageTitle>
-        <GenericPageText>{galleryLang(lang, "gallery-text-4")}</GenericPageText>
         <ArrowCarousel images={images4} />
+        <GenericPageText>{galleryLang(lang, "gallery-text-4")}</GenericPageText>
       </section>
       <CTA lang={lang} />
     </>

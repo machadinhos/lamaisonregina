@@ -112,9 +112,14 @@ export default function Footer({ lang }: Props) {
           </List>
         </Box>
       </Box>
-      <Typography sx={{ textAlign: "center", color: primaryColor }}>
-        {globalsLang(lang, "footer-rights-reserved")}
-      </Typography>
+      <Box>
+        <Typography sx={{ textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}>
+          {`${globalsLang(lang, "footer-rights-reserved-1")} `}
+        </Typography>
+        <Typography sx={{ textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}>
+          {globalsLang(lang, "footer-rights-reserved-2")}
+        </Typography>
+      </Box>
     </footer>
   );
 }

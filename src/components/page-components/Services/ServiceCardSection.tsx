@@ -23,11 +23,12 @@ function ServiceCard({ title, subTitle, text, img }: { title: string; text: stri
     >
       <Box
         sx={{
+          display: "flex",
           justifyContent: "center",
           alignItems: "center",
           verticalAlign: "top",
           gap: "1rem",
-          height: "5rem",
+          height: { xs: "fit-content", sm: "5rem", lg: "5rem" },
         }}
       >
         <Typography variant={"h4"}>{title}</Typography>
@@ -68,13 +69,13 @@ export const ServiceCardSection = ({ lang }: { lang: LangEnum }) => {
       sx={{
         display: "grid",
         gridTemplateColumns: {
-          xs: "repeat(auto-fit, minmax(300px, 70%))",
-          sm: "repeat(2, minmax(300px, 1fr))",
+          xs: "repeat(1, minmax(300px, 1fr))",
+          md: "repeat(2, minmax(300px, 1fr))",
           lg: "repeat(3, minmax(300px, 1fr))",
         },
         gap: "1rem",
         justifyContent: "center",
-        mt: "4rem",
+        mt: "2rem",
       }}
     >
       <ServiceCard

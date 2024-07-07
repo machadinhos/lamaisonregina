@@ -20,7 +20,7 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
     const mobileBottomButtons = document.getElementById("mobile-bottom-buttons")!;
     const body = document.querySelector("body")!;
     body.addEventListener("scroll", () => {
-      if (body.scrollTop <= mobileBottomButtons.offsetHeight) {
+      if (body.scrollTop <= mobileBottomButtons.getBoundingClientRect().height) {
         mobileBottomButtons.classList.remove("sticky");
         mobileBottomButtons.classList.add("absolute");
       } else {
@@ -54,7 +54,7 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
       id={"mobile-bottom-buttons"}
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-        <Link href={`/${lang}/`}>
+        <Link href={`/${lang}#header`}>
           <Image alt={"logo"} src={"/logos/logo.png"} width={75} height={60} />
         </Link>
       </Box>

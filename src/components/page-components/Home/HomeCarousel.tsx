@@ -47,6 +47,7 @@ export function HomeCarousel({ lang }: Props) {
             textAlign: "left",
             fontSize: { xs: "2.25rem", sm: "2.75rem" },
             px: "2.5rem",
+            fontWeight: "300",
           }}
         >
           {homeLang(lang, "home-slogan")}

@@ -14,6 +14,7 @@ export default function GenericPageMainTitle({ children, sx }: Props) {
         textAlign: "center",
         fontWeight: "300",
         fontSize: { xs: "4rem", sm: "6rem" },
+        mb: "2rem",
         ...sx,
       }}
     >
