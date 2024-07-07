@@ -1,12 +1,18 @@
 import { LangEnum } from "@i18n/lang-selector";
 import PageContent from "@/components/global-components/PageContent";
 import Services from "@/components/page-components/Services/Services";
+import Head from "next/head";
 
 export default function ServicesPage({ language }: { language: LangEnum }) {
   return (
-    <PageContent lang={language}>
-      <Services lang={language} />
-    </PageContent>
+    <>
+      <Head>
+        <title>{language === LangEnum.EN ? "Services" : "Serviços"}</title>
+      </Head>
+      <PageContent lang={language}>
+        <Services lang={language} />
+      </PageContent>
+    </>
   );
 }
 

@@ -1,10 +1,14 @@
 import { LangEnum } from "@i18n/lang-selector";
 import Catering from "@/components/page-components/Catering";
 import PageContent from "@/components/global-components/PageContent";
+import Head from "next/head";
 
 export default function CateringPage({ language }: { language: LangEnum }) {
   return (
     <>
+      <Head>
+        <title>Catering</title>
+      </Head>
       <PageContent lang={language}>
         <Catering lang={language} />
       </PageContent>

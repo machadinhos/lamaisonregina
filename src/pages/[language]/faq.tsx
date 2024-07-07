@@ -1,10 +1,14 @@
 import { LangEnum } from "@i18n/lang-selector";
 import FAQ from "@/components/page-components/FAQ/FAQ";
 import PageContent from "@/components/global-components/PageContent";
+import Head from "next/head";
 
 export default function FAQPage({ language }: { language: LangEnum }) {
   return (
     <>
+      <Head>
+        <title>FAQ</title>
+      </Head>
       <PageContent lang={language}>
         <FAQ lang={language} />
       </PageContent>

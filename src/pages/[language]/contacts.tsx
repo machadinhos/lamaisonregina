@@ -1,10 +1,14 @@
 import { LangEnum } from "@i18n/lang-selector";
 import Contacts from "@/components/page-components/Contacts";
 import PageContent from "@/components/global-components/PageContent";
+import Head from "next/head";
 
 export default function ContactsPage({ language }: { language: LangEnum }) {
   return (
     <>
+      <Head>
+        <title>{language === LangEnum.EN ? "Contacts" : "Contactos"}</title>
+      </Head>
       <PageContent lang={language}>
         <Contacts lang={language} />
       </PageContent>
