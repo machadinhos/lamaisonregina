@@ -40,7 +40,6 @@ export default function InfiniteArrowCarousel({ sources }: Props) {
 
   const moveImages = useCallback(
     (forward: boolean) => {
-      console.log("Moving images ", forward ? "forward" : "backward");
       if (!moving) {
         setMoving(true);
         setCurrentImage((prevState) => moveImage(prevState, forward));

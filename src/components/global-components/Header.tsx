@@ -1,7 +1,7 @@
 import { contactsLang, galleryLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
 import { Box, Container, List, ListItem, Typography } from "@mui/material";
 import Link from "next/link";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { primaryColor, secondaryColor } from "@/styles/globals";
@@ -211,9 +211,7 @@ function DesktopMenu({ lang }: Props) {
 
 function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) {
   const selectedOption = useRouter().asPath.slice(4).split("#")[0];
-  useEffect(() => {
-    console.log("selectedOption:", selectedOption);
-  });
+
   return (
     <List
       sx={{

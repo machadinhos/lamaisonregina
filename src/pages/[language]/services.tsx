@@ -3,7 +3,6 @@ import PageContent from "@/components/global-components/PageContent";
 import Services from "@/components/page-components/Services/Services";
 
 export default function ServicesPage({ language }: { language: LangEnum }) {
-  console.log(language);
   return (
     <PageContent lang={language}>
       <Services lang={language} />

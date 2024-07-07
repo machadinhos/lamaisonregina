@@ -4,6 +4,7 @@ import { LangEnum } from "@i18n/lang-selector";
 import BottomButtons from "@/components/shared-components/BottomButtons";
 import { HomeCarousel } from "@/components/page-components/Home/HomeCarousel";
 import { SxProps } from "@mui/material/styles";
+import { mainPadding } from "@/styles/globals";
 
 interface Props {
   children: ReactNode | ReactNode[];
@@ -21,10 +22,10 @@ const mainContainerSx: SxProps<Theme> = {
   textAlign: "justify",
   px: {
     xs: "2rem",
-    sm: "96px",
-    md: "96px",
-    lg: "96px",
-    xl: "96px",
+    sm: `${mainPadding}px`,
+    md: `${mainPadding}px`,
+    lg: `${mainPadding}px`,
+    xl: `${mainPadding}px`,
   },
 };
 export default function Main({ children, isHome, lang }: Props) {

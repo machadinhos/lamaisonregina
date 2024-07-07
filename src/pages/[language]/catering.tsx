@@ -3,7 +3,6 @@ import Catering from "@/components/page-components/Catering";
 import PageContent from "@/components/global-components/PageContent";
 
 export default function CateringPage({ language }: { language: LangEnum }) {
-  console.log(language);
   return (
     <>
       <PageContent lang={language}>

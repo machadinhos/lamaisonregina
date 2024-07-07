@@ -3,7 +3,6 @@ import FAQ from "@/components/page-components/FAQ/FAQ";
 import PageContent from "@/components/global-components/PageContent";
 
 export default function FAQPage({ language }: { language: LangEnum }) {
-  console.log(language);
   return (
     <>
       <PageContent lang={language}>

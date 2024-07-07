@@ -7,3 +7,5 @@ export const sizes = {
   lg: "1200px",
   xl: "1536px",
 };
+
+export const mainPadding = 96;

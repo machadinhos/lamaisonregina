@@ -3,7 +3,6 @@ import Contacts from "@/components/page-components/Contacts";
 import PageContent from "@/components/global-components/PageContent";
 
 export default function ContactsPage({ language }: { language: LangEnum }) {
-  console.log(language);
   return (
     <>
       <PageContent lang={language}>
