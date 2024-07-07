@@ -63,6 +63,7 @@ export default function ArrowCarousel({ images }: { images: string[] }) {
           my={"2rem"}
         >
           <Box
+            zIndex={30}
             ref={scrollContainerRef}
             height={"100%"}
             display={"flex"}
@@ -120,6 +121,7 @@ const ArrowBox = ({
 }) => {
   return (
     <Box
+      zIndex={30}
       position={"relative"}
       width={"50px"}
       height={"50px"}
