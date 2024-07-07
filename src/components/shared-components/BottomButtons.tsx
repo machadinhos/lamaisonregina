@@ -20,7 +20,7 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
     const mobileBottomButtons = document.getElementById("mobile-bottom-buttons")!;
     const body = document.querySelector("body")!;
     body.addEventListener("scroll", () => {
-      if (body.scrollTop <= mobileBottomButtons.getBoundingClientRect().height) {
+      if (body.scrollTop <= mobileBottomButtons.getBoundingClientRect().height * 2) {
         mobileBottomButtons.classList.remove("sticky");
         mobileBottomButtons.classList.add("absolute");
       } else {

@@ -44,9 +44,11 @@ export default function Contacts({ lang }: Props) {
             </Box>
           </Box>
           <ContactTypography isTitle>{contactsLang(lang, "contacts-gps-title")}</ContactTypography>
-          <Link href={"https://maps.app.goo.gl/hX1nFLUwRSRbtCS29"}>
-            <ContactTypography>{contactsLang(lang, "contacts-gps-text")}</ContactTypography>
-          </Link>
+          <Box display={"flex"} justifyContent={"center"}>
+            <Link style={{ width: "fit-content" }} href={"https://maps.app.goo.gl/hX1nFLUwRSRbtCS29"}>
+              <ContactTypography>{contactsLang(lang, "contacts-gps-text")}</ContactTypography>
+            </Link>
+          </Box>
           <ContactTypography isTitle>{contactsLang(lang, "contacts-telephone-title")}</ContactTypography>
           <ContactTypography>{contactsLang(lang, "contacts-telephone-text")}</ContactTypography>
           <ContactTypography isTitle>{contactsLang(lang, "contacts-email-title")}</ContactTypography>
