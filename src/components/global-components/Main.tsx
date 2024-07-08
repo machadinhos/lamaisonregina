@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import { Container, Theme } from "@mui/material";
 import { LangEnum } from "@i18n/lang-selector";
-import BottomButtons from "@/components/shared-components/BottomButtons";
 import { HomeCarousel } from "@/components/page-components/Home/HomeCarousel";
 import { SxProps } from "@mui/material/styles";
 import { mainPadding, mainSmallPadding } from "@/styles/globals";
@@ -29,12 +28,12 @@ const mainContainerSx: SxProps<Theme> = {
     xl: `${mainPadding}px`,
   },
 };
+
 export default function Main({ children, isHome, lang }: Props) {
   return (
-    <main>
+    <>
       {isHome && <HomeCarousel lang={lang} />}
       <Container sx={mainContainerSx}>{children}</Container>
-      <BottomButtons lang={lang} />
-    </main>
+    </>
   );
 }

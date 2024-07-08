@@ -1,7 +1,9 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
-import { createTheme, Theme, ThemeProvider } from "@mui/material";
+import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { secondaryColor } from "@/styles/globals";
+import { useRouter } from "next/router";
+import { AnimatePresence } from "framer-motion";
 
 const theme: Theme = createTheme({
   palette: {
@@ -48,10 +50,15 @@ const theme: Theme = createTheme({
   },
 });
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <CssBaseline />
+        <AnimatePresence mode="wait">
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
       </ThemeProvider>
     </>
   );
