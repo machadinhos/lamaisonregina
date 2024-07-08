@@ -69,17 +69,17 @@ export default function Footer({ lang }: Props) {
           <Link href={`/${lang}/services#header`}>
             <ListItem>{servicesLang(lang, "title")}</ListItem>
           </Link>
-          <Link href={`/${lang}/catering#header`}>
-            <ListItem>Catering</ListItem>
-          </Link>
           <Link href={`/${lang}/gallery#header`}>
             <ListItem>{galleryLang(lang, "title")}</ListItem>
           </Link>
-          <Link href={`/${lang}/contacts#header`}>
-            <ListItem>{contactsLang(lang, "title")}</ListItem>
+          <Link href={`/${lang}/catering#header`}>
+            <ListItem>Catering</ListItem>
           </Link>
           <Link href={`/${lang}/faq#header`}>
             <ListItem>FAQ</ListItem>
+          </Link>
+          <Link href={`/${lang}/contacts#header`}>
+            <ListItem>{contactsLang(lang, "title")}</ListItem>
           </Link>
         </List>
         <Box mb={"1rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
