@@ -50,7 +50,6 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
       width={"100%"}
       height={"5rem"}
       sx={{ backgroundColor: primaryColor }}
-      zIndex={40}
       id={"mobile-bottom-buttons"}
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
@@ -109,7 +108,6 @@ export function DesktopBottomButtons() {
       left={0}
       width={"100%"}
       height={"6rem"}
-      zIndex={10}
       id={"desktop-bottom-buttons"}
     >
       <Box position={"absolute"} bottom={"1rem"} left={"1rem"}>

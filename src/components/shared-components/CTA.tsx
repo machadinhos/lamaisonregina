@@ -7,7 +7,7 @@ export default function CTA({ lang }: { lang: LangEnum }) {
   return (
     <>
       <Box display={"flex"} justifyContent={"center"} marginTop={"3rem"}>
-        <Link href={`/${lang}/contacts/#header`} style={{ zIndex: 30, width: "max-content" }}>
+        <Link href={`/${lang}/contacts/#header`} style={{ width: "max-content" }}>
           <Button
             variant={"contained"}
             sx={{

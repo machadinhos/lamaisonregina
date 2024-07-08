@@ -52,12 +52,7 @@ function WhyChooseListItems({
         <GenericPageText sx={{ textAlign: "left" }}>{item}</GenericPageText>
       </BulletedListItem>
       {items.length - 1 === index && (
-        <Button
-          key="sustainability-button"
-          sx={{ mb: "1rem", zIndex: 30 }}
-          variant={"text"}
-          onClick={toggleSustainability}
-        >
+        <Button key="sustainability-button" sx={{ mb: "1rem" }} variant={"text"} onClick={toggleSustainability}>
           {showSustainability ? homeLang(lang, "home-show-less") : homeLang(lang, "home-learn-more")}
         </Button>
       )}

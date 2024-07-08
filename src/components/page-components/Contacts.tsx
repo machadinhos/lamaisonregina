@@ -30,11 +30,7 @@ export default function Contacts({ lang }: Props) {
             <ContactTypography>{contactsLang(lang, "contacts-address-text")}</ContactTypography>
           </Link>
           <Box width={"100%"} display={"flex"} justifyContent={"center"}>
-            <Box
-              zIndex={30}
-              width={{ xs: "100%", sm: "70%", md: "50%", lg: "30%", xl: "30%" }}
-              sx={{ aspectRatio: "1/1" }}
-            >
+            <Box width={{ xs: "100%", sm: "70%", md: "50%", lg: "30%", xl: "30%" }} sx={{ aspectRatio: "1/1" }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d763.2969855168978!2d-8.804499708003998!3d40.071219679959604!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e0!3m2!1spt-PT!2spt!4v1719874529334!5m2!1spt-PT!2spt"
                 style={{ border: 0, width: "100%", height: "100%" }}
