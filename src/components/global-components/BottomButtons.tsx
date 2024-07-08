@@ -1,6 +1,6 @@
 import { LangEnum } from "@i18n/lang-selector";
 import { Box, Theme } from "@mui/material";
-import { primaryColor, secondaryColor } from "@/styles/globals";
+import { primaryColor, rootFontSize, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
 import Image from "next/image";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
@@ -18,26 +18,23 @@ function ArrowUpwardIcon({ sx }: { sx: SxProps<Theme> }) {
 export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
   useEffect(() => {
     const mobileBottomButtons = document.getElementById("mobile-bottom-buttons")!;
-    const body = document.querySelector("body")!;
-    body.addEventListener("scroll", () => {
-      if (body.scrollTop <= mobileBottomButtons.getBoundingClientRect().height * 2) {
+    const changeButtons = () => {
+      if (body.scrollTop <= rootFontSize * 6) {
         mobileBottomButtons.classList.remove("sticky");
-        mobileBottomButtons.classList.add("absolute");
+        mobileBottomButtons.classList.add("fixed");
       } else {
-        mobileBottomButtons.classList.remove("absolute");
+        mobileBottomButtons.classList.remove("fixed");
         mobileBottomButtons.classList.add("sticky");
       }
+    };
+    const body = document.querySelector("body")!;
+    body.addEventListener("scroll", () => {
+      changeButtons();
     });
 
     return () => {
       body.removeEventListener("scroll", () => {
-        if (body.scrollTop <= mobileBottomButtons.offsetHeight) {
-          mobileBottomButtons.classList.remove("sticky");
-          mobileBottomButtons.classList.add("absolute");
-        } else {
-          mobileBottomButtons.classList.remove("absolute");
-          mobileBottomButtons.classList.add("sticky");
-        }
+        changeButtons();
       });
     };
   });
@@ -50,6 +47,7 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
       width={"100%"}
       height={"5rem"}
       sx={{ backgroundColor: primaryColor }}
+      zIndex={40}
       id={"mobile-bottom-buttons"}
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
@@ -77,26 +75,23 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
 export function DesktopBottomButtons() {
   useEffect(() => {
     const desktopBottomButtons = document.getElementById("desktop-bottom-buttons")!;
-    const body = document.querySelector("body")!;
-    body.addEventListener("scroll", () => {
-      if (body.scrollTop <= desktopBottomButtons.offsetHeight) {
+    const changeButtons = () => {
+      if (body.scrollTop <= rootFontSize * 5) {
         desktopBottomButtons.classList.remove("sticky");
-        desktopBottomButtons.classList.add("absolute-desktop");
+        desktopBottomButtons.classList.add("fixed-desktop");
       } else {
-        desktopBottomButtons.classList.remove("absolute-desktop");
+        desktopBottomButtons.classList.remove("fixed-desktop");
         desktopBottomButtons.classList.add("sticky");
       }
+    };
+    const body = document.querySelector("body")!;
+    body.addEventListener("scroll", () => {
+      changeButtons();
     });
 
     return () => {
       body.removeEventListener("scroll", () => {
-        if (body.scrollTop <= desktopBottomButtons.offsetHeight) {
-          desktopBottomButtons.classList.remove("sticky");
-          desktopBottomButtons.classList.add("absolute-desktop");
-        } else {
-          desktopBottomButtons.classList.remove("absolute-desktop");
-          desktopBottomButtons.classList.add("sticky");
-        }
+        changeButtons();
       });
     };
   });
@@ -107,7 +102,7 @@ export function DesktopBottomButtons() {
       top={"-6rem"}
       left={0}
       width={"100%"}
-      height={"6rem"}
+      height={0}
       id={"desktop-bottom-buttons"}
     >
       <Box position={"absolute"} bottom={"1rem"} left={"1rem"}>

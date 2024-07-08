@@ -135,15 +135,7 @@ function LanguageSelector() {
   );
 }
 
-function MobileMenu({
-  lang,
-  setIsActive,
-  isActive,
-}: {
-  lang: LangEnum;
-  setIsActive: (value: boolean) => void;
-  isActive: boolean;
-}) {
+function MobileMenu({ lang, toggleActive, isActive }: { lang: LangEnum; toggleActive: () => void; isActive: boolean }) {
   const spanStyle = {
     width: "25px",
     height: "3px",
@@ -159,7 +151,7 @@ function MobileMenu({
         flexDirection={"column"}
         gap={"5px"}
         justifyContent={"center"}
-        onClick={() => setIsActive(!isActive)}
+        onClick={toggleActive}
       >
         <span style={spanStyle}></span>
         <span style={spanStyle}></span>
@@ -176,7 +168,6 @@ function MobileSlider({ lang, isActive }: { lang: LangEnum; isActive: boolean })
       sx={{
         display: { xs: "flex", sm: "none" },
         backgroundColor: primaryColor,
-        zIndex: 20,
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
@@ -245,6 +236,15 @@ function HeaderMenu({ lang, isMobile }: { lang: LangEnum; isMobile?: boolean }) 
 
 export default function Header({ lang }: Props) {
   const [isActive, setIsActive] = useState(false);
+  const [isSliding, setIsSliding] = useState(false);
+
+  const toggleActive = () => {
+    setIsSliding(true);
+    setIsActive((prevState) => !prevState);
+    setTimeout(() => {
+      setIsSliding(false);
+    }, 500);
+  };
   return (
     <>
       {isActive && <Box width={"100%"} height={"120px"} />}
@@ -259,17 +259,17 @@ export default function Header({ lang }: Props) {
           position: isActive ? "fixed" : "relative",
           ...(isActive && { top: 0, left: 0 }),
           height: { xs: "120px", sm: "150px" },
-          zIndex: 40,
+          zIndex: isActive || isSliding ? 40 : "unset",
         }}
         id={"header"}
       >
         <LanguageSelector />
         <Link href={`/${lang}/`}>
           <Box position={"relative"} mt={"1rem"} width={"100px"} sx={{ aspectRatio: "1.3/1" }}>
-            <Image alt={"logo"} src={"/logos/logo.png"} fill />
+            <Image alt={"logo"} src={"/logos/logo.png"} fill priority />
           </Box>
         </Link>
-        <MobileMenu setIsActive={setIsActive} isActive={isActive} lang={lang} />
+        <MobileMenu toggleActive={toggleActive} isActive={isActive} lang={lang} />
         <DesktopMenu lang={lang} />
       </Container>
     </>

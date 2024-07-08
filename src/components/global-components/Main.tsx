@@ -12,7 +12,6 @@ interface Props {
 }
 
 const mainContainerSx: SxProps<Theme> = {
-  zIndex: { sm: 30 },
   position: "relative",
   mb: "6rem",
   mt: { xs: "2rem", sm: "4rem", md: "4rem", lg: "4rem", xl: "4rem" },
@@ -31,9 +30,9 @@ const mainContainerSx: SxProps<Theme> = {
 
 export default function Main({ children, isHome, lang }: Props) {
   return (
-    <>
+    <main>
       {isHome && <HomeCarousel lang={lang} />}
       <Container sx={mainContainerSx}>{children}</Container>
-    </>
+    </main>
   );
 }

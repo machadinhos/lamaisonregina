@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
-import { secondaryColor } from "@/styles/globals";
+import { rootFontSize, secondaryColor } from "@/styles/globals";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 
@@ -15,7 +15,7 @@ const theme: Theme = createTheme({
     },
   },
   typography: {
-    fontSize: 16,
+    fontSize: rootFontSize,
     allVariants: {
       color: secondaryColor,
       fontFamily: "Montserrat, sans-serif",

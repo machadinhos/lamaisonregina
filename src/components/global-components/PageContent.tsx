@@ -4,7 +4,7 @@ import Header from "@/components/global-components/Header";
 import Main from "@/components/global-components/Main";
 import Footer from "@/components/global-components/Footer";
 import { motion } from "framer-motion";
-import BottomButtons from "@/components/shared-components/BottomButtons";
+import BottomButtons from "@/components/global-components/BottomButtons";
 
 interface Props {
   lang: LangEnum;
@@ -28,7 +28,7 @@ const pageVariants = {
 };
 
 const pageTransition = {
-  duration: 0.5,
+  duration: 0.3,
 };
 
 export default function PageContent({ lang, children, isHome }: Props) {

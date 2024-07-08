@@ -46,20 +46,17 @@ ul {
   list-style-type: none;
 }
 
-.absolute {
-  position: absolute;
-  left: 0;
+.fixed {
+  position: fixed;
   bottom: -5rem;
 }
 
-.absolute-desktop {
-  position: absolute;
-  left: 0;
+.fixed-desktop {
+  position: fixed;
   bottom: -6rem;
 }
 
 .sticky {
   position: sticky;
   bottom: 0;
-  left: 0;
 }

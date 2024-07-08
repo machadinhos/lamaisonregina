@@ -150,7 +150,6 @@ const ImageModal = ({ image, setShowingImage }: { image: string; setShowingImage
         alignItems={"center"}
         sx={{ backgroundColor: "rgba(0,0,0,0.65)" }}
         onClick={() => setShowingImage("")}
-        zIndex={50}
       >
         <Box position={"relative"} width={"90vw"} height={"90vh"}>
           <Image src={image} alt={image} fill style={{ objectFit: "contain", margin: "5px" }} />
