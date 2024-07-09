@@ -4,6 +4,8 @@ import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { rootFontSize, secondaryColor } from "@/styles/globals";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const theme: Theme = createTheme({
   palette: {

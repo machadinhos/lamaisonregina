@@ -79,10 +79,7 @@ export default function ArrowCarousel({ images }: { images: string[] }) {
             ))}
           </Box>
         </Box>
-        <Box alignItems={"center"} height={"50px"} display={"flex"} justifyContent={"center"} gap={"2rem"}>
-          <ArrowBox enabled={canScrollLeft} direction={"left"} onClick={scrollLeft} />
-          <ArrowBox enabled={canScrollRight} direction={"right"} onClick={scrollRight} />
-        </Box>
+        <Box alignItems={"center"} height={"50px"} display={"flex"} justifyContent={"center"} gap={"2rem"}></Box>
       </Box>
       {showingImage && <ImageModal setShowingImage={setShowingImage} image={showingImage} />}
     </>
@@ -108,33 +105,6 @@ function ImageCard({ image, setShowingImage }: { image: string; setShowingImage:
     </Box>
   );
 }
-
-const ArrowBox = ({
-  direction,
-  onClick,
-  enabled,
-}: {
-  direction: "left" | "right";
-  onClick: () => void;
-  enabled: boolean;
-}) => {
-  return (
-    <Box
-      position={"relative"}
-      width={"50px"}
-      height={"50px"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      sx={{
-        opacity: enabled ? 1 : 0.3,
-        "&:hover": { cursor: enabled ? "pointer" : "default" },
-      }}
-      onClick={() => enabled && onClick()}
-    >
-      <Image src={`/arrows/${direction}_arrow.webp`} alt={`${direction} arrow`} fill />
-    </Box>
-  );
-};
 
 const ImageModal = ({ image, setShowingImage }: { image: string; setShowingImage: (image: string) => void }) => {
   return (

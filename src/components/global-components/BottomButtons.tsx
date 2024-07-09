@@ -1,5 +1,5 @@
 import { LangEnum } from "@i18n/lang-selector";
-import { Box, Theme } from "@mui/material";
+import { Box, IconButton, Theme } from "@mui/material";
 import { primaryColor, rootFontSize, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,8 +9,18 @@ import { SxProps } from "@mui/material/styles";
 
 function ArrowUpwardIcon({ sx }: { sx: SxProps<Theme> }) {
   return (
-    <Box position={"relative"} width={"50px"} height={"50px"} sx={{ ...sx }}>
-      <Image src={"/arrows/up_arrow.webp"} alt={"arrow"} fill />
+    <Box sx={{ width: "50px", height: "50px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <Box position={"relative"} width={"25px"} height={"40px"} sx={{ ...sx }}>
+        <Image src={"/arrows/up_arrow.webp"} alt={"arrow"} fill />
+      </Box>
+    </Box>
+  );
+}
+
+function WhatsappIconButton({ size }: { size: number }) {
+  return (
+    <Box sx={{ width: "50px", height: "50px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <WhatsappIcon sx={{ fontSize: `${size}rem` }} color={"success"} />
     </Box>
   );
 }
@@ -52,21 +62,22 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
         <Link href={`/${lang}#header`}>
-          <Image alt={"logo"} src={"/logos/logo.png"} width={75} height={60} />
+          <Image alt={"logo"} src={"/logos/logo.png"} width={75} height={60} priority />
         </Link>
       </Box>
-      <Box position={"absolute"} bottom={"1rem"} left={"1rem"}>
-        <Link
+      <Box sx={{ position: "absolute", bottom: "0.5rem", left: "1rem" }}>
+        <IconButton
+          onClick={() => {}}
           target={"_blank"}
           href={"https://api.whatsapp.com/send/?phone=351915581629&text&type=phone_number&app_absent=0"}
         >
-          <WhatsappIcon sx={{ fontSize: "3rem" }} color={"success"} />
-        </Link>
+          <WhatsappIconButton size={3} />
+        </IconButton>
       </Box>
-      <Box position={"absolute"} right={"1rem"} bottom={"1rem"}>
-        <Link href={"#header"}>
+      <Box sx={{ position: "absolute", right: "1rem", bottom: "0.5rem" }}>
+        <IconButton onClick={() => {}} href={"#header"}>
           <ArrowUpwardIcon sx={{ fontSize: "3rem", color: "white" }} />
-        </Link>
+        </IconButton>
       </Box>
     </Box>
   );
@@ -105,13 +116,14 @@ export function DesktopBottomButtons() {
       height={0}
       id={"desktop-bottom-buttons"}
     >
-      <Box position={"absolute"} bottom={"1rem"} left={"1rem"}>
-        <Link
+      <Box position={"absolute"} bottom={"1.5rem"} left={"1rem"}>
+        <IconButton
+          onClick={() => {}}
           target={"_blank"}
           href={"https://api.whatsapp.com/send/?phone=351915581629&text&type=phone_number&app_absent=0"}
         >
-          <WhatsappIcon sx={{ fontSize: "4rem" }} color={"success"} />
-        </Link>
+          <WhatsappIconButton size={4} />
+        </IconButton>
       </Box>
       <Box
         position={"absolute"}
@@ -119,15 +131,15 @@ export function DesktopBottomButtons() {
         bottom={"1.5rem"}
         width={"3.5rem"}
         height={"3.5rem"}
-        border={`3px solid ${primaryColor}`}
+        border={`1px solid ${primaryColor}`}
         borderRadius={"50%"}
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Link href={"#header"}>
+        <IconButton onClick={() => {}} href={"#header"}>
           <ArrowUpwardIcon sx={{ fontSize: "3.5rem", color: secondaryColor }} />
-        </Link>
+        </IconButton>
       </Box>
     </Box>
   );
