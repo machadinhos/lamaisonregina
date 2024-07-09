@@ -26,6 +26,27 @@ function ImageCard({ image, index, goToSlide }: { image: string; index: number; 
   );
 }
 
+const ArrowBox = ({ direction, onClick }: { direction: "left" | "right"; onClick: () => void }) => {
+  return (
+    <IconButton
+      sx={{
+        "&:hover": { cursor: "pointer" },
+        display: "flex",
+        position: "relative",
+        width: "4rem",
+        height: "4rem",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onClick={onClick}
+    >
+      <Box width={"2.5rem"} height={"2rem"} position={"relative"} alignItems={"center"}>
+        <Image src={`/arrows/${direction}_arrow.webp`} alt={`${direction} arrow`} fill />
+      </Box>
+    </IconButton>
+  );
+};
+
 export default function SlickCarousel({ images }: { images: string[] }) {
   const screenWidth = useScreenWidth();
   const getMaxWidth = () => Math.min(500, screenWidth * 0.85);
@@ -89,24 +110,3 @@ export default function SlickCarousel({ images }: { images: string[] }) {
     </Box>
   );
 }
-
-const ArrowBox = ({ direction, onClick }: { direction: "left" | "right"; onClick: () => void }) => {
-  return (
-    <IconButton
-      sx={{
-        "&:hover": { cursor: "pointer" },
-        display: "flex",
-        position: "relative",
-        width: "4rem",
-        height: "4rem",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-      onClick={onClick}
-    >
-      <Box width={"2.5rem"} height={"2rem"} position={"relative"} alignItems={"center"}>
-        <Image src={`/arrows/${direction}_arrow.webp`} alt={`${direction} arrow`} fill />
-      </Box>
-    </IconButton>
-  );
-};
