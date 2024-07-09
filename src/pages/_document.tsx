@@ -1,10 +1,10 @@
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from "next/document";
 
-interface MyDocumentProps extends DocumentInitialProps {
+interface CustomDocumentProps extends DocumentInitialProps {
   lang: string;
 }
 
-class MyDocument extends Document<MyDocumentProps> {
+class CustomDocument extends Document<CustomDocumentProps> {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     const lang = ctx.asPath?.split("/")[1] ?? "pt";
@@ -32,4 +32,4 @@ class MyDocument extends Document<MyDocumentProps> {
   }
 }
 
-export default MyDocument;
+export default CustomDocument;
