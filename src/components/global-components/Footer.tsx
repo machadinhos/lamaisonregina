@@ -95,17 +95,17 @@ export default function Footer({ lang }: Props) {
             }}
           >
             <ListItem>
-              <Link href={""}>
+              <Link href={"https://www.facebook.com/"}>
                 <FacebookIcon />
               </Link>
             </ListItem>
             <ListItem>
-              <Link href={""}>
+              <Link href={"https://api.whatsapp.com/send/?phone=351915581629&text&type=phone_number&app_absent=0"}>
                 <WhatsappIcon />
               </Link>
             </ListItem>
             <ListItem>
-              <Link href={""}>
+              <Link href={"https://www.instagram.com/?hl=pt"}>
                 <InstagramIcon />
               </Link>
             </ListItem>
