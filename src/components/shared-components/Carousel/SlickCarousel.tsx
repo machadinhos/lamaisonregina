@@ -26,6 +26,19 @@ function ImageCard({ image, index, goToSlide }: { image: string; index: number; 
   );
 }
 
+const Arrow = ({ direction }: { direction: "left" | "right" }) => {
+  return (
+    <Image
+      src={"/arrows/carousel_arrow.webp"}
+      alt={`${direction} arrow`}
+      fill
+      style={{
+        rotate: direction === "right" ? "180deg" : "0",
+      }}
+    />
+  );
+};
+
 const ArrowBox = ({ direction, onClick }: { direction: "left" | "right"; onClick: () => void }) => {
   return (
     <IconButton
@@ -41,7 +54,7 @@ const ArrowBox = ({ direction, onClick }: { direction: "left" | "right"; onClick
       onClick={onClick}
     >
       <Box width={"2.5rem"} height={"2rem"} position={"relative"} alignItems={"center"}>
-        <Image src={`/arrows/${direction}_arrow.webp`} alt={`${direction} arrow`} fill />
+        <Arrow direction={direction} />
       </Box>
     </IconButton>
   );
