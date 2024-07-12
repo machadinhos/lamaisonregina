@@ -56,7 +56,7 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
       left={0}
       width={"100%"}
       height={"5rem"}
-      sx={{ backgroundColor: primaryColor }}
+      sx={{ backgroundColor: primaryColor, transition: "bottom 0.25s ease-in-out" }}
       zIndex={40}
       id={"mobile-bottom-buttons"}
     >
@@ -108,6 +108,7 @@ export function DesktopBottomButtons() {
   });
   return (
     <Box
+      sx={{ transition: "bottom 0.25s ease-in-out" }}
       display={{ xs: "none", sm: "block" }}
       position={"absolute"}
       top={"-6rem"}
