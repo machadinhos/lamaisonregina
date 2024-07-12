@@ -48,7 +48,7 @@ function WhyChooseListItems({
   const items = homeLang(lang, "home-sep-2-list").split(" | ");
   const itemsText = items.map((item, index) => (
     <React.Fragment key={index}>
-      <BulletedListItem sx={{ width: { md: "70%", lg: "50%" }, justifyContent: "left" }} key={`item-${index}`}>
+      <BulletedListItem sx={{ justifyContent: "left" }} key={`item-${index}`}>
         <GenericPageText sx={{ textAlign: "left" }}>{item}</GenericPageText>
       </BulletedListItem>
       {items.length - 1 === index && (
@@ -68,17 +68,19 @@ export function WhyChooseList({ lang }: { lang: LangEnum }) {
     setShowSustainability((prevState) => !prevState);
   };
   return (
-    <Box>
-      <GenericPageTitle sx={{ textAlign: "left" }}>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
-      <BulletedList>
-        <WhyChooseListItems
-          toggleSustainability={toggleSustainability}
-          showSustainability={showSustainability}
-          key={"listItems"}
-          lang={lang}
-        />
-      </BulletedList>
-      {showSustainability && <SustainabilityText lang={lang} />}
-    </Box>
+    <section>
+      <Box>
+        <GenericPageTitle sx={{ textAlign: "left" }}>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
+        <BulletedList>
+          <WhyChooseListItems
+            toggleSustainability={toggleSustainability}
+            showSustainability={showSustainability}
+            key={"listItems"}
+            lang={lang}
+          />
+        </BulletedList>
+        {showSustainability && <SustainabilityText lang={lang} />}
+      </Box>
+    </section>
   );
 }
