@@ -15,12 +15,11 @@ class CustomDocument extends Document<CustomDocumentProps> {
     return (
       <Html lang={this.props.lang}>
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={"anonymous"} />
           <link
-            rel="preload"
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            as="font"
-            type="font"
-            crossOrigin="anonymous"
+            rel="stylesheet"
           />
         </Head>
         <body>
