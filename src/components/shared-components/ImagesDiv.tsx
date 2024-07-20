@@ -6,8 +6,8 @@ export default function ImagesDiv({ imagesSrc }: { imagesSrc: [string, string, s
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const imageBoxStyle = (index: number) => ({
-    width: hoveredIndex === null ? { xs: "100%", md: `${(1 / 3) * 100}%` } : hoveredIndex === index ? "100%" : "0%",
-    opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0,
+    width: { xs: "100%", md: hoveredIndex === null ? `${(1 / 3) * 100}%` : hoveredIndex === index ? "100%" : "0%" },
+    opacity: { md: hoveredIndex === null || hoveredIndex === index ? 1 : 0 },
     transition: "all 0.4s ease-in-out",
     overflow: "hidden",
   });
