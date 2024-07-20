@@ -1,27 +1,35 @@
 import { Box } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 export default function ImagesDiv({ imagesSrc }: { imagesSrc: [string, string, string] }) {
-  const imageBoxStyle = {
-    width: { xs: "100%", md: `${(1 / 3) * 100}%` },
-    transition: "width 0.4s ease-in-out",
-    "&:hover": {
-      width: "100%",
-    },
-  };
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const imageBoxStyle = (index: number) => ({
+    width: hoveredIndex === null ? { xs: "100%", md: `${(1 / 3) * 100}%` } : hoveredIndex === index ? "100%" : "0%",
+    opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0,
+    transition: "all 0.4s ease-in-out",
+    overflow: "hidden",
+  });
 
   return (
     <Box
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"center"}
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
       height={{ xs: "75rem", md: "25rem" }}
-      width={"100%"}
+      width="100%"
       flexDirection={{ xs: "column", md: "row" }}
     >
       {imagesSrc.map((src, index) => (
-        <Box key={index} position="relative" height={"100%"} sx={imageBoxStyle}>
+        <Box
+          key={index}
+          position="relative"
+          height="100%"
+          sx={imageBoxStyle(index)}
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
           <Image src={src} alt={`image-${index}`} style={{ objectFit: "cover" }} fill />
         </Box>
       ))}
