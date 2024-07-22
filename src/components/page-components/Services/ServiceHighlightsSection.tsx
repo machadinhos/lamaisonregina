@@ -22,7 +22,7 @@ const highlights = [
 
 export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
   return (
-    <section style={{ marginTop: "8rem" }}>
+    <section style={{ marginTop: "6rem", backgroundColor: "#E9E9E9", paddingTop: "2rem" }}>
       <Box display={"grid"} gridTemplateColumns={{ xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}>
         {highlights.map((highlight, index) => (
           <ServiceHighlight texts={servicesLang(lang, `highlight-${highlight}`).split(" | ")} key={index}>

@@ -1,8 +1,8 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { LangEnum, servicesLang } from "@i18n/lang-selector";
-import { primaryColor } from "@/styles/globals";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
+import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 
 function ServiceCard({ title, subTitle, text, img }: { title: string; text: string; subTitle?: string; img: string }) {
   return (
@@ -12,10 +12,6 @@ function ServiceCard({ title, subTitle, text, img }: { title: string; text: stri
         flexDirection: "column",
         gap: "1rem",
         padding: "1rem",
-        border: "1px solid",
-        borderRadius: "1rem",
-        borderColor: primaryColor,
-        boxShadow: "0 0 10px 0 rgba(0,0,0,0.1)",
         textAlign: "center",
         alignItems: "center",
         justifyContent: "start",
@@ -31,15 +27,19 @@ function ServiceCard({ title, subTitle, text, img }: { title: string; text: stri
           height: { xs: "fit-content", sm: "5rem", lg: "5rem" },
         }}
       >
-        <Typography variant={"h4"}>{title}</Typography>
+        <GenericPageTitle>{title}</GenericPageTitle>
       </Box>
       <Box width={"100%"} display={"flex"} alignItems={"center"} justifyContent={"center"} sx={{ aspectRatio: "1/1" }}>
         <Box
-          width={"90%"}
+          width={"100%"}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"center"}
-          sx={{ aspectRatio: "1/1", "&:hover": { width: "100%" }, transition: "width 300ms" }}
+          sx={{
+            aspectRatio: "1/1",
+            "&:hover": { transform: "scale(1.05)" },
+            transition: "transform 300ms ease-in-out",
+          }}
         >
           <Box
             sx={{
@@ -48,7 +48,7 @@ function ServiceCard({ title, subTitle, text, img }: { title: string; text: stri
               width: "100%",
             }}
           >
-            <Image style={{ borderRadius: "15px" }} src={img} alt={title} fill />
+            <Image src={img} alt={title} fill />
           </Box>
         </Box>
       </Box>
@@ -64,6 +64,7 @@ export const ServiceCardSection = ({ lang }: { lang: LangEnum }) => {
   const [card1Title, card1Subtitle, card1Text] = servicesLang(lang, "card-1").split(" | ");
   const [card2Title, card2Text] = servicesLang(lang, "card-2").split(" | ");
   const [card3Title, card3Text] = servicesLang(lang, "card-3").split(" | ");
+
   return (
     <Grid
       sx={{

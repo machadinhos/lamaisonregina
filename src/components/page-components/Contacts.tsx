@@ -1,8 +1,8 @@
 import { contactsLang, LangEnum } from "@i18n/lang-selector";
 import { Box } from "@mui/material";
-import GenericPageSubTitle from "@/components/shared-components/Typography/GenericPageSubTitle";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Link from "next/link";
+import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 
 interface Props {
   lang: LangEnum;
@@ -10,7 +10,7 @@ interface Props {
 
 function ContactTypography({ children, isTitle }: { isTitle?: boolean; children: string }) {
   return isTitle ? (
-    <GenericPageSubTitle sx={{ textAlign: "center" }}>{children}</GenericPageSubTitle>
+    <GenericPageTitle sx={{ textAlign: "center" }}>{children}</GenericPageTitle>
   ) : (
     <GenericPageText sx={{ textAlign: "center" }}>{children}</GenericPageText>
   );
@@ -22,7 +22,11 @@ export default function Contacts({ lang }: Props) {
       <section>
         <ContactTypography>{contactsLang(lang, "contacts-text-1")}</ContactTypography>
         <ContactTypography>{contactsLang(lang, "contacts-text-2")}</ContactTypography>
-        <Box mt={"4rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
+        <Box mt={"2rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
+          <ContactTypography isTitle>{contactsLang(lang, "contacts-telephone-title")}</ContactTypography>
+          <ContactTypography>{contactsLang(lang, "contacts-telephone-text")}</ContactTypography>
+          <ContactTypography isTitle>{contactsLang(lang, "contacts-email-title")}</ContactTypography>
+          <ContactTypography>{contactsLang(lang, "contacts-email-text")}</ContactTypography>
           <ContactTypography isTitle>{contactsLang(lang, "contacts-address-title")}</ContactTypography>
           <Link href={"https://maps.app.goo.gl/hX1nFLUwRSRbtCS29"}>
             <ContactTypography>{contactsLang(lang, "contacts-address-text")}</ContactTypography>
@@ -43,10 +47,6 @@ export default function Contacts({ lang }: Props) {
               <ContactTypography>{contactsLang(lang, "contacts-gps-text")}</ContactTypography>
             </Link>
           </Box>
-          <ContactTypography isTitle>{contactsLang(lang, "contacts-telephone-title")}</ContactTypography>
-          <ContactTypography>{contactsLang(lang, "contacts-telephone-text")}</ContactTypography>
-          <ContactTypography isTitle>{contactsLang(lang, "contacts-email-title")}</ContactTypography>
-          <ContactTypography>{contactsLang(lang, "contacts-email-text")}</ContactTypography>
         </Box>
       </section>
     </>

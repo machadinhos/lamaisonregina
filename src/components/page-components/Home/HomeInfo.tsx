@@ -20,7 +20,7 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
           </GenericPageSubTitle>
         </Box>
         <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }}>
-          <Box width={{ xs: "100%", md: `${(2 / 3) * 100}%` }}>
+          <Box pr={{ md: "1.5rem" }} width={{ xs: "100%", md: `${(2 / 3) * 100}%` }}>
             <GenericPageText>{homeLang(lang, "home-text-1")}</GenericPageText>
             <GenericPageText>{homeLang(lang, "home-text-2")}</GenericPageText>
             <GenericPageText>{homeLang(lang, "home-text-3")}</GenericPageText>
