@@ -1,6 +1,5 @@
 import { contactsLang, LangEnum } from "@i18n/lang-selector";
 import { Box } from "@mui/material";
-import GenericPageMainTitle from "@/components/shared-components/Typography/GenericPageMainTitle";
 import GenericPageSubTitle from "@/components/shared-components/Typography/GenericPageSubTitle";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Link from "next/link";
@@ -20,7 +19,6 @@ function ContactTypography({ children, isTitle }: { isTitle?: boolean; children:
 export default function Contacts({ lang }: Props) {
   return (
     <>
-      <GenericPageMainTitle>{contactsLang(lang, "title")}</GenericPageMainTitle>
       <section>
         <ContactTypography>{contactsLang(lang, "contacts-text-1")}</ContactTypography>
         <ContactTypography>{contactsLang(lang, "contacts-text-2")}</ContactTypography>
