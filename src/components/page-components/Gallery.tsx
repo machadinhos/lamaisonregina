@@ -44,22 +44,22 @@ export default function Gallery({ lang }: Props) {
       <GenericPageMainTitle>{galleryLang(lang, "title")}</GenericPageMainTitle>
       <section style={{ width: "100%", height: "100%" }}>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-1")}</GenericPageTitle>
-        <SlickCarousel images={images1} />
+        <SlickCarousel images={images1} galleryId={"a"} />
         <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-2")}</GenericPageTitle>
-        <SlickCarousel images={images2} />
+        <SlickCarousel images={images2} galleryId={"b"} />
         <GenericPageText>{galleryLang(lang, "gallery-text-2")}</GenericPageText>
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-3")}</GenericPageTitle>
-        <SlickCarousel images={images3} />
+        <SlickCarousel images={images3} galleryId={"c"} />
         <GenericPageText>{galleryLang(lang, "gallery-text-3")}</GenericPageText>
       </section>
       <section>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-4")}</GenericPageTitle>
-        <SlickCarousel images={images4} />
+        <SlickCarousel images={images4} galleryId={"d"} />
         <GenericPageText>{galleryLang(lang, "gallery-text-4")}</GenericPageText>
       </section>
       <CTA lang={lang} />
