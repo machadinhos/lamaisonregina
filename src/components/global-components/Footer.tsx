@@ -6,10 +6,19 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { primaryColor, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 
 interface Props {
   lang: LangEnum;
 }
+
+const ListItemLink = ({ children, href }: { children: string; href: string }) => {
+  return (
+    <Link href={href}>
+      <ListItem>{children}</ListItem>
+    </Link>
+  );
+};
 
 export default function Footer({ lang }: Props) {
   return (
@@ -17,7 +26,7 @@ export default function Footer({ lang }: Props) {
       style={{
         backgroundColor: secondaryColor,
         color: primaryColor,
-        padding: "1rem",
+        padding: "2rem",
         position: "relative",
         display: "flex",
         flexDirection: "column",
@@ -59,31 +68,22 @@ export default function Footer({ lang }: Props) {
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: { xs: "center", md: "flex-start" },
-            fontSize: "1.5rem",
+            fontSize: "1.25rem",
             width: "50px",
           }}
         >
-          <Link href={`/${lang}/#header`}>
-            <ListItem>{homeLang(lang, "title")}</ListItem>
-          </Link>
-          <Link href={`/${lang}/services#header`}>
-            <ListItem>{servicesLang(lang, "title")}</ListItem>
-          </Link>
-          <Link href={`/${lang}/gallery#header`}>
-            <ListItem>{galleryLang(lang, "title")}</ListItem>
-          </Link>
-          <Link href={`/${lang}/catering#header`}>
-            <ListItem>Catering</ListItem>
-          </Link>
-          <Link href={`/${lang}/faq#header`}>
-            <ListItem>FAQ</ListItem>
-          </Link>
-          <Link href={`/${lang}/contacts#header`}>
-            <ListItem>{contactsLang(lang, "title")}</ListItem>
-          </Link>
+          <ListItemLink href={`/${lang}/#header`}>{homeLang(lang, "title")}</ListItemLink>
+          <ListItemLink href={`/${lang}/services#header`}>{servicesLang(lang, "title")}</ListItemLink>
+          <ListItemLink href={`/${lang}/gallery#header`}>{galleryLang(lang, "title")}</ListItemLink>
+          <ListItemLink href={`/${lang}/catering#header`}>Catering</ListItemLink>
+          <ListItemLink href={`/${lang}/faq#header`}>FAQ</ListItemLink>
+          <ListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "title")}</ListItemLink>
         </List>
         <Box mb={"1rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
-          <Typography sx={{ color: primaryColor, display: { xs: "block", sm: "none", md: "block" } }} variant={"h4"}>
+          <Typography
+            sx={{ fontSize: "1.25rem", color: primaryColor, display: { xs: "block", sm: "none", md: "block" } }}
+            variant={"h4"}
+          >
             {globalsLang(lang, "footer-follow")}
           </Typography>
           <List
