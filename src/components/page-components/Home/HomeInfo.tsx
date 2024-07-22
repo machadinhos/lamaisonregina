@@ -29,7 +29,6 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
             <GenericPageText>{homeLang(lang, "home-text-6")}</GenericPageText>
           </Box>
           <Box
-            ml={"1rem"}
             mt={{ xs: "2rem", md: "0" }}
             width={{ xs: "100%", md: `${(1 / 3) * 100}%` }}
             height={{ xs: "20rem", md: "auto" }}

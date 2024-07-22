@@ -3,7 +3,6 @@ import { Container, Theme } from "@mui/material";
 import { LangEnum } from "@i18n/lang-selector";
 import { HomeCarousel } from "@/components/page-components/Home/HomeCarousel";
 import { SxProps } from "@mui/material/styles";
-import { mainPadding } from "@/styles/globals";
 
 interface Props {
   children: ReactNode | ReactNode[];
@@ -19,13 +18,6 @@ const mainContainerSx: SxProps<Theme> = {
     lg: "1536px",
   },
   textAlign: "justify",
-  px: {
-    xs: "2rem",
-    sm: `${mainPadding}px`,
-    md: `${mainPadding}px`,
-    lg: `${mainPadding}px`,
-    xl: `${mainPadding}px`,
-  },
 };
 
 export default function Main({ children, isHome, lang }: Props) {
