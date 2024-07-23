@@ -14,7 +14,7 @@ interface Props {
 
 const ListItemLink = ({ children, href }: { children: string; href: string }) => {
   return (
-    <Link href={href}>
+    <Link href={href} style={{ fontWeight: 400 }}>
       <ListItem>{children}</ListItem>
     </Link>
   );
@@ -65,6 +65,7 @@ export default function Footer({ lang }: Props) {
         <List
           sx={{
             display: "flex",
+            mb: { xs: "1rem", md: "auto" },
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: { xs: "center", md: "flex-start" },
