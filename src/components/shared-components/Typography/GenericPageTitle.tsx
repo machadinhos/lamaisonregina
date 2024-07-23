@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import { SxProps, Theme } from "@mui/material/styles";
+import processChildren from "@/components/shared-components/Typography/childrenProcessor";
 
 interface Props {
   children: string;
@@ -18,7 +19,7 @@ export default function GenericPageTitle({ children, sx }: Props) {
         ...sx,
       }}
     >
-      {children}
+      {processChildren(children)}
     </Typography>
   );
 }
