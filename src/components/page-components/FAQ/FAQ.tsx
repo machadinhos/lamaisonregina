@@ -134,6 +134,9 @@ export default function FAQ({ lang }: Props) {
               <BulletedListItem>
                 <GenericPageText>{faqLang(lang, "faq-tourism-list-5")}</GenericPageText>
               </BulletedListItem>
+              <BulletedListItem>
+                <GenericPageText>{faqLang(lang, "faq-tourism-list-6")}</GenericPageText>
+              </BulletedListItem>
             </BulletedList>
           </FAQAccordionDetails>
         </FAQAccordion>
