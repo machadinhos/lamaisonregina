@@ -18,6 +18,7 @@ export default function CTA({ lang }: { lang: LangEnum }) {
               padding: "1rem",
               pt: "0",
               margin: 0,
+              borderRadius: 0,
             }}
           >
             <GenericPageText>{globalsLang(lang, "cta")}</GenericPageText>
