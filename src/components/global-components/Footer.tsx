@@ -1,5 +1,5 @@
 import { contactsLang, galleryLang, globalsLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
-import { Box, List, ListItem, Typography } from "@mui/material";
+import { Box, IconButton, List, ListItem, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -14,9 +14,11 @@ interface Props {
 
 const ListItemLink = ({ children, href }: { children: string; href: string }) => {
   return (
-    <Link href={href} style={{ fontWeight: 400 }}>
-      <ListItem>{children}</ListItem>
-    </Link>
+    <IconButton>
+      <Link href={href} style={{ fontWeight: 400, color: primaryColor }}>
+        <ListItem>{children}</ListItem>
+      </Link>
+    </IconButton>
   );
 };
 
@@ -96,19 +98,25 @@ export default function Footer({ lang }: Props) {
             }}
           >
             <ListItem>
-              <Link href={"https://www.facebook.com/"}>
-                <FacebookIcon />
-              </Link>
+              <IconButton>
+                <Link href={"https://www.facebook.com/"}>
+                  <FacebookIcon sx={{ color: primaryColor }} />
+                </Link>
+              </IconButton>
             </ListItem>
             <ListItem>
-              <Link href={"https://api.whatsapp.com/send/?phone=351915581629&text&type=phone_number&app_absent=0"}>
-                <WhatsappIcon />
-              </Link>
+              <IconButton>
+                <Link href={"https://api.whatsapp.com/send/?phone=351915581629&text&type=phone_number&app_absent=0"}>
+                  <WhatsappIcon sx={{ color: primaryColor }} />
+                </Link>
+              </IconButton>
             </ListItem>
             <ListItem>
-              <Link href={"https://www.instagram.com/?hl=pt"}>
-                <InstagramIcon />
-              </Link>
+              <IconButton>
+                <Link href={"https://www.instagram.com/?hl=pt"}>
+                  <InstagramIcon sx={{ color: primaryColor }} />
+                </Link>
+              </IconButton>
             </ListItem>
           </List>
         </Box>

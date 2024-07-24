@@ -61,9 +61,11 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
       id={"mobile-bottom-buttons"}
     >
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-        <Link href={`/${lang}#header`}>
-          <Image alt={"logo"} src={"/logos/logo.png"} width={75} height={60} priority />
-        </Link>
+        <IconButton>
+          <Link href={`/${lang}#header`}>
+            <Image alt={"logo"} src={"/logos/logo.png"} width={75} height={60} priority />
+          </Link>
+        </IconButton>
       </Box>
       <Box sx={{ position: "absolute", bottom: "0.5rem", left: "1rem" }}>
         <IconButton
