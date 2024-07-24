@@ -15,7 +15,7 @@ export function HomeCarousel({ lang }: Props) {
         my: "0",
         padding: "0",
         width: "100%",
-        height: { xs: "calc(100vh - 120px)", sm: "calc(100vh - 150px)" },
+        height: "100vh",
       }}
     >
       <section
