@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import { Box, IconButton, keyframes } from "@mui/material";
 import Image from "next/image";
-import useScreenWidth from "@/hooks/use-screen-width";
+import useWindowWidth from "@/hooks/use-window-width";
 import { useEffect, useRef, useState } from "react";
 
 function ImageCard({
@@ -42,7 +42,7 @@ function ImageCard({
           ref={imageRef}
           src={image}
           alt={`image${index}`}
-          style={{ cursor: "pointer", objectFit: "cover", borderRadius: "10px" }}
+          style={{ cursor: "pointer", objectFit: "cover" }}
           fill
           onClick={handleImageClick}
         />
@@ -153,12 +153,12 @@ const ImageModal = ({
 };
 
 export default function SlickCarousel({ images }: { images: string[] }) {
-  const screenWidth = useScreenWidth();
-  const getMaxWidth = () => Math.min(500, screenWidth * 0.85);
-
+  const screenWidth = useWindowWidth();
   const sliderRef = useRef<Slider>(null);
-
   const [openedImage, setOpenedImage] = useState<OpenedImage | null>(null);
+  if (screenWidth === null) return null;
+
+  const getMaxWidth = () => Math.min(500, screenWidth * 0.85);
 
   const nextSlide = () => {
     sliderRef.current?.slickNext();

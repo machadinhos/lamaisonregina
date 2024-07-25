@@ -4,12 +4,13 @@ import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import Image from "next/image";
 
 interface Props {
-  sources: string[];
+  sources: { src: string; alt: string }[];
 }
 
-const generateImages = (sources: string[]) => {
-  return sources.map((src, index) => ({
+const generateImages = (sources: { src: string; alt: string }[]) => {
+  return sources.map(({ src, alt }, index) => ({
     src,
+    alt,
     _id: String(index),
   }));
 };
@@ -98,9 +99,9 @@ export default function InfiniteArrowCarousel({ sources }: Props) {
           display={"flex"}
           alignItems={"center"}
         >
-          {images.map((image) => (
+          {images.map(({ src, alt, _id }) => (
             <Box
-              key={image._id}
+              key={_id}
               width={"100%"}
               height={"100%"}
               position={"absolute"}
@@ -108,13 +109,13 @@ export default function InfiniteArrowCarousel({ sources }: Props) {
               left={0}
               sx={{
                 transition: "transform 0.5s ease-in-out",
-                opacity: resolveOpacity(image._id),
-                transform: resolveTransform(image._id),
+                opacity: resolveOpacity(_id),
+                transform: resolveTransform(_id),
               }}
               zIndex={-1}
             >
               <Box width={"100%"} height={"100%"} position={"relative"}>
-                <Image fill src={image.src} alt={image.src} style={{ objectFit: "cover" }} />
+                <Image fill src={src} alt={alt} style={{ objectFit: "cover" }} />
               </Box>
             </Box>
           ))}

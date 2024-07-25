@@ -3,6 +3,7 @@ import InfiniteArrowCarousel from "@/components/shared-components/Carousel/Infin
 import { homeLang, LangEnum } from "@i18n/lang-selector";
 import React from "react";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
+import imageSelect from "@images/ImageSelect";
 
 interface Props {
   lang: LangEnum;
@@ -18,8 +19,8 @@ export function HomeCarousel({ lang }: Props) {
         height: "100vh",
       }}
     >
-      <section
-        style={{
+      <Box
+        sx={{
           marginTop: "0",
           marginBottom: "0",
           width: "100%",
@@ -33,26 +34,19 @@ export function HomeCarousel({ lang }: Props) {
           paddingRight: "1rem",
         }}
       >
-        <InfiniteArrowCarousel
-          sources={[
-            "https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
-            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
-            "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
-          ]}
-        />
+        <InfiniteArrowCarousel sources={imageSelect.home.carouselImages} />
         <GenericPageTitle
           sx={{
             color: "white",
             textAlign: "left",
-            fontSize: { xs: "2.25rem", sm: "2.75rem" },
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.3rem", lg: "2.75rem" },
             px: "2.5rem",
             fontWeight: "300",
           }}
         >
           {homeLang(lang, "home-slogan")}
         </GenericPageTitle>
-      </section>
+      </Box>
     </Box>
   );
 }

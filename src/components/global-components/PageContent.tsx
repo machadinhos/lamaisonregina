@@ -1,10 +1,12 @@
 import { LangEnum } from "@i18n/lang-selector";
-import { ReactNode } from "react";
-import Header from "@/components/global-components/Header";
+import React, { ReactNode } from "react";
 import Main from "@/components/global-components/Main";
-import Footer from "@/components/global-components/Footer";
 import { motion } from "framer-motion";
 import BottomButtons from "@/components/global-components/BottomButtons";
+import Footer from "@/components/global-components/Footer";
+import Header from "@/components/global-components/Header/Header";
+import { Box } from "@mui/material";
+import { primaryColor } from "@/styles/globals";
 
 interface Props {
   lang: LangEnum;
@@ -34,13 +36,13 @@ const pageTransition = {
 export default function PageContent({ lang, children, isHome }: Props) {
   return (
     <>
-      <Header lang={lang} />
+      <Box zIndex={2432} position={"fixed"} width={"100%"} height={"4px"} bgcolor={primaryColor} />
+      <Header lang={lang} isHome={isHome} id={"header"} />
       <motion.div initial="initial" animate="animate" exit="exit" variants={pageVariants} transition={pageTransition}>
-        <Main lang={lang} isHome={isHome}>
-          {children}
-        </Main>
+        <Main>{children}</Main>
       </motion.div>
       <BottomButtons lang={lang} />
+      <Box zIndex={2432} width={"100%"} height={"5px"} bgcolor={primaryColor} />
       <Footer lang={lang} />
     </>
   );

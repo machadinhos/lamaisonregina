@@ -6,6 +6,7 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import GenericPageSubTitle from "@/components/shared-components/Typography/GenericPageSubTitle";
 import BulletedList from "@/components/shared-components/BulletList/BulletedList";
 import BulletedListItem from "@/components/shared-components/BulletList/BulletedListItem";
+import SectionContainer from "@/components/shared-components/SectionContainer";
 
 export function SustainabilityText({ lang }: { lang: LangEnum }) {
   return (
@@ -68,7 +69,7 @@ export function WhyChooseList({ lang }: { lang: LangEnum }) {
     setShowSustainability((prevState) => !prevState);
   };
   return (
-    <section>
+    <SectionContainer>
       <Box>
         <GenericPageTitle sx={{ textAlign: "left" }}>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
         <BulletedList>
@@ -81,6 +82,6 @@ export function WhyChooseList({ lang }: { lang: LangEnum }) {
         </BulletedList>
         {showSustainability && <SustainabilityText lang={lang} />}
       </Box>
-    </section>
+    </SectionContainer>
   );
 }

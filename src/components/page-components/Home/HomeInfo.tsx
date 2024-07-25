@@ -4,10 +4,12 @@ import { Box } from "@mui/material";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
+import SectionContainer from "@/components/shared-components/SectionContainer";
+import imageSelect from "@images/ImageSelect";
 
 export function HomeInfo({ lang }: { lang: LangEnum }) {
   return (
-    <section>
+    <SectionContainer>
       <Box pt={{ xs: "2rem", md: "0" }}>
         <Box mb={"4rem"}>
           <GenericPageTitle>{homeLang(lang, "home-welcome")}</GenericPageTitle>
@@ -28,8 +30,8 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
           >
             <Box height={"100%"} width={"100%"} position={"relative"}>
               <Image
-                src="https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg"
-                alt="home-info-image"
+                src={imageSelect.home.infoImage.src}
+                alt={imageSelect.home.infoImage.alt}
                 style={{ objectFit: "cover" }}
                 fill
               />
@@ -37,6 +39,6 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
           </Box>
         </Box>
       </Box>
-    </section>
+    </SectionContainer>
   );
 }

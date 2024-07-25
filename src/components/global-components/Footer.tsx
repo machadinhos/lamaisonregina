@@ -16,7 +16,7 @@ const ListItemLink = ({ children, href }: { children: string; href: string }) =>
   return (
     <IconButton>
       <Link href={href} style={{ fontWeight: 400, color: primaryColor }}>
-        <ListItem>{children}</ListItem>
+        <ListItem sx={{ fontSize: { xs: "1.15rem", sm: "1.1rem", lg: "1rem" } }}>{children}</ListItem>
       </Link>
     </IconButton>
   );

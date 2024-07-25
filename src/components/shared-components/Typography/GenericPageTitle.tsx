@@ -16,6 +16,7 @@ export default function GenericPageTitle({ children, sx }: Props) {
         fontWeight: "400",
         fontSize: { xs: "1.7rem", lg: "1.8rem" },
         mt: "1.5rem",
+        mb: "1.5rem",
         ...sx,
       }}
     >

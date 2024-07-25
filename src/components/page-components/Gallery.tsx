@@ -4,6 +4,7 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import CTA from "@/components/shared-components/CTA";
 import React from "react";
 import SlickCarousel from "@/components/shared-components/Carousel/SlickCarousel";
+import SectionContainer from "@/components/shared-components/SectionContainer";
 
 interface Props {
   lang: LangEnum;
@@ -40,26 +41,26 @@ export default function Gallery({ lang }: Props) {
 
   return (
     <>
-      <section style={{ width: "100%", height: "100%" }}>
+      <SectionContainer>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-1")}</GenericPageTitle>
         <SlickCarousel images={images1} />
         <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
-      </section>
-      <section>
+      </SectionContainer>
+      <SectionContainer>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-2")}</GenericPageTitle>
         <SlickCarousel images={images2} />
         <GenericPageText>{galleryLang(lang, "gallery-text-2")}</GenericPageText>
-      </section>
-      <section>
+      </SectionContainer>
+      <SectionContainer>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-3")}</GenericPageTitle>
         <SlickCarousel images={images3} />
         <GenericPageText>{galleryLang(lang, "gallery-text-3")}</GenericPageText>
-      </section>
-      <section>
+      </SectionContainer>
+      <SectionContainer>
         <GenericPageTitle>{galleryLang(lang, "gallery-title-4")}</GenericPageTitle>
         <SlickCarousel images={images4} />
         <GenericPageText>{galleryLang(lang, "gallery-text-4")}</GenericPageText>
-      </section>
+      </SectionContainer>
       <CTA lang={lang} />
     </>
   );

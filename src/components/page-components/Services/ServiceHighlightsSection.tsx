@@ -4,6 +4,7 @@ import { primaryColor } from "@/styles/globals";
 import { ReactNode } from "react";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
+import SectionContainer from "@/components/shared-components/SectionContainer";
 
 const highlights = [
   "location",
@@ -22,15 +23,20 @@ const highlights = [
 
 export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
   return (
-    <section style={{ marginTop: "6rem", backgroundColor: "#E9E9E9", paddingTop: "2rem" }}>
-      <Box display={"grid"} gridTemplateColumns={{ xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}>
-        {highlights.map((highlight, index) => (
-          <ServiceHighlight texts={servicesLang(lang, `highlight-${highlight}`).split(" | ")} key={index}>
-            <Image src={`/services/${highlight}.webp`} alt={highlight} fill />
-          </ServiceHighlight>
-        ))}
-      </Box>
-    </section>
+    <div style={{ marginTop: "6rem", backgroundColor: "#E9E9E9", paddingTop: "2rem" }}>
+      <SectionContainer>
+        <Box
+          display={"grid"}
+          gridTemplateColumns={{ xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+        >
+          {highlights.map((highlight, index) => (
+            <ServiceHighlight texts={servicesLang(lang, `highlight-${highlight}`).split(" | ")} key={index}>
+              <Image src={`/services/${highlight}.webp`} alt={highlight} fill />
+            </ServiceHighlight>
+          ))}
+        </Box>
+      </SectionContainer>
+    </div>
   );
 }
 
