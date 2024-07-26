@@ -9,7 +9,6 @@ function useWindowWidth(): number | null {
     }
 
     if (typeof window !== "undefined") {
-      console.log("window.innerWidth", window.innerWidth);
       setWidth(window.innerWidth);
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
