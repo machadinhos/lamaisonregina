@@ -45,7 +45,7 @@ function HeaderListItem({
           },
         }}
       >
-        <IconButton sx={{ "&:hover": { backgroundColor: "transparent" } }}>
+        <IconButton sx={{ margin: 0, padding: 0, "&:hover": { backgroundColor: "transparent" } }}>
           <Link href={page.href}>
             <GenericPageTitle
               sx={{ mb: 0, ...(fontSize ? { fontSize: fontSize } : {}), color: isHome ? "white" : "auto" }}
@@ -60,7 +60,7 @@ function HeaderListItem({
             backgroundColor: isHome ? "white" : "black",
             width: currentPage === page.href.split("/")[2] ? "100%" : 0,
             transition: "width 0.3s",
-            marginTop: 0,
+            marginTop: "2px",
           }}
         />
       </Box>
