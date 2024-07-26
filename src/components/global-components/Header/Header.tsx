@@ -7,16 +7,15 @@ import DesktopHeader from "@/components/global-components/Header/DesktopHeader";
 interface Props {
   lang: LangEnum;
   isHome?: boolean;
-  id: string;
 }
 
-function Header({ lang, isHome, id }: Props) {
+function Header({ lang, isHome }: Props) {
   const isSmallScreen = useMediaQuery(`(max-width:${sizes.sm}px)`);
 
-  return isSmallScreen ? (
-    <MobileHeader id={id} isHome={isHome} lang={lang} />
-  ) : (
-    <DesktopHeader id={id} isHome={isHome} lang={lang} />
+  return (
+    <header>
+      {isSmallScreen ? <MobileHeader isHome={isHome} lang={lang} /> : <DesktopHeader isHome={isHome} lang={lang} />}
+    </header>
   );
 }
 

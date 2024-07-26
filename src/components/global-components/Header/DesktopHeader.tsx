@@ -1,19 +1,19 @@
 import { LangEnum } from "@i18n/lang-selector";
 import LangSelector from "@/components/global-components/Header/LangSelector";
 import { Box } from "@mui/material";
-import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import PagesList from "@/components/global-components/Header/PagesList";
 import imageSelect from "@images/ImageSelect";
+import Link from "next/link";
 
-export default function DesktopHeader({ lang, isHome, id }: { lang: LangEnum; isHome?: boolean; id: string }) {
+export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
   return (
     <header
-      id={id}
+      id={"header"}
       style={{
         padding: "2rem 5rem 0 5rem",
-        position: isHome ? "absolute" : undefined,
+        position: isHome ? "absolute" : "relative",
         top: 0,
         left: 0,
         width: "100%",

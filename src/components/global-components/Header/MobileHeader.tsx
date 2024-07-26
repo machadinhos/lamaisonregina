@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import imageSelect from "@images/ImageSelect";
 
-export default function MobileHeader({ lang, isHome, id }: { lang: LangEnum; isHome?: boolean; id: string }) {
+export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
   const [open, setOpen] = useState<boolean>(false);
 
   const toggleDrawer = () => {
@@ -18,10 +18,10 @@ export default function MobileHeader({ lang, isHome, id }: { lang: LangEnum; isH
 
   return (
     <header
-      id={id}
+      id={"header"}
       style={{
         padding: "1rem",
-        position: isHome ? "absolute" : undefined,
+        position: isHome ? "absolute" : "relative",
         top: 0,
         left: 0,
         width: "100%",
