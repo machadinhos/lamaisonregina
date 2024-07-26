@@ -115,7 +115,7 @@ export default function InfiniteArrowCarousel({ sources }: Props) {
               zIndex={-1}
             >
               <Box width={"100%"} height={"100%"} position={"relative"}>
-                <Image fill src={src} alt={alt} style={{ objectFit: "cover" }} />
+                <Image priority fill src={src} alt={alt} style={{ objectFit: "cover" }} />
               </Box>
             </Box>
           ))}

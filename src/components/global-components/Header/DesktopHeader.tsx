@@ -25,6 +25,7 @@ export default function DesktopHeader({ lang, isHome, id }: { lang: LangEnum; is
         <Box flex={1} display={"flex"} justifyContent={"center"} position={"relative"} height={"7rem"}>
           <Link href={`/${lang}/`}>
             <Image
+              priority
               src={imageSelect.globals.logoPrimary.src}
               alt={imageSelect.globals.logoPrimary.alt}
               fill

@@ -76,6 +76,7 @@ const HeaderTop = ({
       >
         <Link href={`/${lang}/`}>
           <Image
+            priority
             src={imageSelect.globals.logoPrimary.src}
             alt={imageSelect.globals.logoPrimary.alt}
             fill
