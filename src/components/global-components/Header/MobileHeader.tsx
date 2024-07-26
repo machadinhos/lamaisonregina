@@ -76,8 +76,8 @@ const HeaderTop = ({
       >
         <Link href={`/${lang}/`}>
           <Image
-            src={imageSelect.global.logoPrimary.src}
-            alt={imageSelect.global.logoPrimary.alt}
+            src={imageSelect.globals.logoPrimary.src}
+            alt={imageSelect.globals.logoPrimary.alt}
             fill
             style={{
               objectFit: "contain",

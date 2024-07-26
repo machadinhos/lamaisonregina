@@ -3,13 +3,16 @@ import { Box, IconButton, keyframes } from "@mui/material";
 import Image from "next/image";
 import useWindowWidth from "@/hooks/use-window-width";
 import { useEffect, useRef, useState } from "react";
+import imageSelect from "@images/ImageSelect";
 
 function ImageCard({
-  image,
+  src,
+  alt,
   index,
   setOpenedImage,
 }: {
-  image: string;
+  src: string;
+  alt: string;
   index: number;
   setOpenedImage: (image: OpenedImage | null) => void;
 }) {
@@ -23,8 +26,8 @@ function ImageCard({
       setOpenedImage({
         coords: { top, left },
         size: { width: imageRef.current.width, height: imageRef.current.height },
-        src: image,
-        alt: `image${index}`,
+        src: src,
+        alt: alt,
       });
     }
   };
@@ -40,7 +43,7 @@ function ImageCard({
       >
         <Image
           ref={imageRef}
-          src={image}
+          src={src}
           alt={`image${index}`}
           style={{ cursor: "pointer", objectFit: "cover" }}
           fill
@@ -54,8 +57,8 @@ function ImageCard({
 const Arrow = ({ direction }: { direction: "left" | "right" }) => {
   return (
     <Image
-      src={"/arrows/carousel_arrow.webp"}
-      alt={`${direction} arrow`}
+      src={imageSelect.globals.carouselArrow.src}
+      alt={`${direction}-arrow`}
       fill
       style={{
         rotate: direction === "right" ? "180deg" : "0",
@@ -152,7 +155,7 @@ const ImageModal = ({
   );
 };
 
-export default function SlickCarousel({ images }: { images: string[] }) {
+export default function SlickCarousel({ images }: { images: { src: string; alt: string }[] }) {
   const screenWidth = useWindowWidth();
   const sliderRef = useRef<Slider>(null);
   const [openedImage, setOpenedImage] = useState<OpenedImage | null>(null);
@@ -198,9 +201,9 @@ export default function SlickCarousel({ images }: { images: string[] }) {
   return (
     <Box width={"100%"} height={"fit-content"} mb={"2rem"}>
       <Slider ref={sliderRef} {...settings}>
-        {images.map((image, index) => (
-          <Box key={image + index} height={"350px"} width={`${getMaxWidth()}px`} sx={{ flexShrink: 0 }}>
-            <ImageCard setOpenedImage={setOpenedImage} image={image} index={index} />
+        {images.map(({ src, alt }, index) => (
+          <Box key={src + index} height={"350px"} width={`${getMaxWidth()}px`} sx={{ flexShrink: 0 }}>
+            <ImageCard setOpenedImage={setOpenedImage} src={src} alt={alt} index={index} />
           </Box>
         ))}
       </Slider>

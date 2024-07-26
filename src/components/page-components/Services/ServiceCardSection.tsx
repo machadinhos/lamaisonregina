@@ -4,8 +4,19 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import Image from "next/image";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import SectionContainer from "@/components/shared-components/SectionContainer";
+import imageSelect from "@images/ImageSelect";
 
-function ServiceCard({ title, subTitle, text, img }: { title: string; text: string; subTitle?: string; img: string }) {
+function ServiceCard({
+  title,
+  subTitle,
+  text,
+  img,
+}: {
+  title: string;
+  text: string;
+  subTitle?: string;
+  img: { src: string; alt: string };
+}) {
   return (
     <Box display={"flex"} justifyContent={"center"}>
       <Box
@@ -58,7 +69,7 @@ function ServiceCard({ title, subTitle, text, img }: { title: string; text: stri
                 width: "100%",
               }}
             >
-              <Image src={img} alt={title} fill />
+              <Image src={img.src} alt={img.alt} fill />
             </Box>
           </Box>
         </Box>
@@ -86,22 +97,9 @@ export const ServiceCardSection = ({ lang }: { lang: LangEnum }) => {
           mt: "2rem",
         }}
       >
-        <ServiceCard
-          title={card1Title}
-          subTitle={card1Subtitle}
-          text={card1Text}
-          img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
-        />
-        <ServiceCard
-          title={card2Title}
-          text={card2Text}
-          img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
-        />
-        <ServiceCard
-          title={card3Title}
-          text={card3Text}
-          img={"https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg"}
-        />
+        <ServiceCard title={card1Title} subTitle={card1Subtitle} text={card1Text} img={imageSelect.services.card1} />
+        <ServiceCard title={card2Title} text={card2Text} img={imageSelect.services.card2} />
+        <ServiceCard title={card3Title} text={card3Text} img={imageSelect.services.card3} />
       </Box>
     </SectionContainer>
   );

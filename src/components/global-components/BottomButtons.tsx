@@ -6,12 +6,13 @@ import Image from "next/image";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import { useEffect } from "react";
 import { SxProps } from "@mui/material/styles";
+import imageSelect from "@images/ImageSelect";
 
 function ArrowUpwardIcon({ sx }: { sx: SxProps<Theme> }) {
   return (
     <Box sx={{ width: "50px", height: "50px", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <Box position={"relative"} width={"25px"} height={"40px"} sx={{ ...sx }}>
-        <Image src={"/arrows/up_arrow.webp"} alt={"arrow"} fill />
+        <Image src={imageSelect.globals.up_arrow.src} alt={imageSelect.globals.up_arrow.alt} fill />
       </Box>
     </Box>
   );
@@ -63,7 +64,13 @@ export function MobileBottomButtons({ lang }: { lang: LangEnum }) {
       <Box width={"100%"} height={"100%"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
         <IconButton>
           <Link href={`/${lang}#header`}>
-            <Image alt={"logo"} src={"/logos/logo.png"} width={75} height={60} priority />
+            <Image
+              alt={imageSelect.globals.logo.alt}
+              src={imageSelect.globals.logo.src}
+              width={75}
+              height={60}
+              priority
+            />
           </Link>
         </IconButton>
       </Box>

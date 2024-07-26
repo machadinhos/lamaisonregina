@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import PagesList from "@/components/global-components/Header/PagesList";
+import imageSelect from "@images/ImageSelect";
 
 export default function DesktopHeader({ lang, isHome, id }: { lang: LangEnum; isHome?: boolean; id: string }) {
   return (
@@ -24,8 +25,8 @@ export default function DesktopHeader({ lang, isHome, id }: { lang: LangEnum; is
         <Box flex={1} display={"flex"} justifyContent={"center"} position={"relative"} height={"7rem"}>
           <Link href={`/${lang}/`}>
             <Image
-              src={"/logos/logo_primary.png"}
-              alt={"logo"}
+              src={imageSelect.globals.logoPrimary.src}
+              alt={imageSelect.globals.logoPrimary.alt}
               fill
               style={{
                 objectFit: "contain",

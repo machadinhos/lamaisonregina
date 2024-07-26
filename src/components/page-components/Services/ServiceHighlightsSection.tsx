@@ -5,21 +5,7 @@ import { ReactNode } from "react";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
 import SectionContainer from "@/components/shared-components/SectionContainer";
-
-const highlights = [
-  "location",
-  "accommodation",
-  "kitchen",
-  "people",
-  "parking",
-  "pergola",
-  "room",
-  "planner",
-  "ceremony",
-  "bathroom",
-  "sustainability",
-  "church",
-];
+import imageSelect from "@images/ImageSelect";
 
 export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
   return (
@@ -29,9 +15,9 @@ export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
           display={"grid"}
           gridTemplateColumns={{ xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
         >
-          {highlights.map((highlight, index) => (
-            <ServiceHighlight texts={servicesLang(lang, `highlight-${highlight}`).split(" | ")} key={index}>
-              <Image src={`/services/${highlight}.webp`} alt={highlight} fill />
+          {imageSelect.services.highlights.map(({ src, alt }, index) => (
+            <ServiceHighlight texts={servicesLang(lang, `highlight-${alt}`).split(" | ")} key={index}>
+              <Image src={src} alt={alt} fill />
             </ServiceHighlight>
           ))}
         </Box>

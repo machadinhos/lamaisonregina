@@ -1,0 +1,18 @@
+{
+  "logoPrimary": {
+    "src": "/logos/logo_primary.png",
+    "alt": "logo-primary"
+  },
+  "logo": {
+    "src": "/logos/logo.png",
+    "alt": "logo"
+  },
+  "up_arrow":{
+    "src": "/arrows/up_arrow.webp",
+    "alt": "up-arrow"
+  },
+  "carouselArrow": {
+    "src": "/arrows/carousel_arrow.webp",
+    "alt": "N/A"
+  }
+}

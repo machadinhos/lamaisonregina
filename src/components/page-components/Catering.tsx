@@ -6,6 +6,7 @@ import GenericPageTitle from "@/components/shared-components/Typography/GenericP
 import SectionContainer from "@/components/shared-components/SectionContainer";
 import { Box } from "@mui/material";
 import Image from "next/image";
+import imageSelect from "@images/ImageSelect";
 
 interface Props {
   lang: LangEnum;
@@ -56,19 +57,13 @@ export default function Catering({ lang }: Props) {
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-1")}</GenericPageText>
             <GenericPageText>{cateringLang(lang, "catering-text-2")}</GenericPageText>
           </CateringTextBox>
-          <CateringImageBox
-            src="https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg"
-            alt="home-info-image"
-          />
+          <CateringImageBox src={imageSelect.catering.imageBox1.src} alt={imageSelect.catering.imageBox1.alt} />
         </CateringSection>
       </SectionContainer>
       <SectionContainer>
         <GenericPageTitle>{cateringLang(lang, "catering-title-2")}</GenericPageTitle>
         <CateringSection>
-          <CateringImageBox
-            src="https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg"
-            alt="home-info-image"
-          />
+          <CateringImageBox src={imageSelect.catering.imageBox2.src} alt={imageSelect.catering.imageBox2.alt} />
           <CateringTextBox>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3")}</GenericPageText>
           </CateringTextBox>
@@ -80,10 +75,7 @@ export default function Catering({ lang }: Props) {
           <CateringTextBox>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-4")}</GenericPageText>
           </CateringTextBox>
-          <CateringImageBox
-            src="https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg"
-            alt="home-info-image"
-          />
+          <CateringImageBox src={imageSelect.catering.imageBox3.src} alt={imageSelect.catering.imageBox3.alt} />
         </CateringSection>
       </SectionContainer>
       <CTA lang={lang} />

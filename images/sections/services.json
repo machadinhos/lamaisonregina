@@ -1,0 +1,64 @@
+{
+  "highlights": [
+    {
+      "src":"/services/location.webp",
+        "alt": "location"
+    },
+    {
+      "src":"/services/accommodation.webp",
+      "alt": "accommodation"
+    },
+    {
+      "src":"/services/kitchen.webp",
+      "alt": "kitchen"
+    },
+    {
+      "src":"/services/people.webp",
+      "alt": "people"
+    },
+    {
+      "src":"/services/parking.webp",
+      "alt": "parking"
+    },
+    {
+      "src":"/services/pergola.webp",
+      "alt": "pergola"
+    },
+    {
+      "src":"/services/room.webp",
+      "alt": "room"
+    },
+    {
+      "src":"/services/planner.webp",
+      "alt": "planner"
+    },
+    {
+      "src":"/services/ceremony.webp",
+      "alt": "ceremony"
+    },
+    {
+      "src":"/services/bathroom.webp",
+      "alt": "bathroom"
+    },
+    {
+      "src":"/services/sustainability.webp",
+      "alt": "sustainability"
+    },
+    {
+      "src":"/services/church.webp",
+      "alt": "church"
+    }
+  ],
+  "card1": {
+    "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+    "alt": "card1-image"
+  },
+    "card2": {
+        "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+        "alt": "card2-image"
+    },
+    "card3": {
+        "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+        "alt": "card3-image"
+    }
+}
