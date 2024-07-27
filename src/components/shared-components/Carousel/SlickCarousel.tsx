@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import { Box, IconButton, keyframes } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import Image from "next/image";
 import useWindowWidth from "@/hooks/use-window-width";
 import { useEffect, useRef, useState } from "react";
@@ -8,28 +8,25 @@ import imageSelect from "@images/ImageSelect";
 function ImageCard({
   src,
   alt,
-  index,
   setOpenedImage,
 }: {
   src: string;
   alt: string;
-  index: number;
   setOpenedImage: (image: OpenedImage | null) => void;
 }) {
   const imageRef = useRef<HTMLImageElement>(null);
+  const imageBoxRef = useRef<HTMLDivElement>(null);
   const handleImageClick = () => {
-    if (imageRef.current) {
-      let { top, left } = imageRef.current.getBoundingClientRect();
-      top = top - imageRef.current.height / 3;
-      left = left - imageRef.current.width / 2;
+    if (!imageRef.current || !imageBoxRef.current) return;
+    const open = imageRef.current.getBoundingClientRect();
+    const close = imageBoxRef.current.getBoundingClientRect();
 
-      setOpenedImage({
-        coords: { top, left },
-        size: { width: imageRef.current.width, height: imageRef.current.height },
-        src: src,
-        alt: alt,
-      });
-    }
+    setOpenedImage({
+      coords: { open: { top: open.top, left: open.left }, close: { top: close.top, left: close.left } },
+      size: { open: { width: open.width, height: open.height }, close: { width: close.width, height: close.height } },
+      src: src,
+      alt: alt,
+    });
   };
 
   return (
@@ -38,16 +35,22 @@ function ImageCard({
         position={"relative"}
         height={"90%"}
         width={"95%"}
-        m={"1%"}
-        sx={{ "&:hover": { transform: "scale(1.05)" }, transition: "transform 300ms ease-in-out" }}
+        sx={{
+          "&:hover": {
+            "& img": {
+              transform: "scale(1.05)",
+            },
+          },
+        }}
+        onClick={handleImageClick}
+        ref={imageBoxRef}
       >
         <Image
           ref={imageRef}
           src={src}
-          alt={`image${index}`}
-          style={{ cursor: "pointer", objectFit: "cover" }}
+          alt={alt}
+          style={{ cursor: "pointer", objectFit: "contain", transition: "transform 300ms ease-in-out" }}
           fill
-          onClick={handleImageClick}
         />
       </Box>
     </Box>
@@ -89,8 +92,14 @@ const ArrowBox = ({ direction, onClick }: { direction: "left" | "right"; onClick
 };
 
 interface OpenedImage {
-  coords: { top: number; left: number };
-  size: { width: number; height: number };
+  coords: {
+    open: { top: number; left: number };
+    close: { top: number; left: number };
+  };
+  size: {
+    open: { width: number; height: number };
+    close: { width: number; height: number };
+  };
   src: string;
   alt: string;
 }
@@ -102,50 +111,75 @@ const ImageModal = ({
   openedImage: OpenedImage | null;
   setOpenedImage: (image: OpenedImage | null) => void;
 }) => {
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageBoxRef = useRef<HTMLImageElement>(null);
+  const darkenedBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (openedImage && imageRef.current) {
-      imageRef.current.style.top = `${openedImage.coords.top}px`;
-      imageRef.current.style.left = `${openedImage.coords.left}px`;
+    if (!openedImage || !imageBoxRef.current || !darkenedBoxRef.current) return;
+    // force reflow
+    imageBoxRef.current.offsetHeight;
 
-      // force reflow
-      imageRef.current.offsetHeight;
+    imageBoxRef.current.style.width = "100%";
+    imageBoxRef.current.style.height = "100%";
+    imageBoxRef.current.style.top = "0";
+    imageBoxRef.current.style.left = "0";
 
-      imageRef.current.style.top = "0";
-      imageRef.current.style.left = "0";
-    }
+    darkenedBoxRef.current.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
   }, [openedImage]);
 
-  const graduallyDarkenBox = keyframes({
-    "0%": { backgroundColor: "rgba(0, 0, 0, 0)" },
-    "100%": { backgroundColor: "rgba(0, 0, 0, 0.5)" },
-  });
+  const handleClick = () => {
+    if (!imageBoxRef.current || !openedImage || !darkenedBoxRef.current) return;
+    imageBoxRef.current.style.width = openedImage.size.close.width + "px";
+    imageBoxRef.current.style.height = openedImage.size.close.height + "px";
+    imageBoxRef.current.style.top = openedImage.coords.close.top + "px";
+    imageBoxRef.current.style.left = openedImage.coords.close.left + "px";
+
+    darkenedBoxRef.current.style.backgroundColor = "rgba(0, 0, 0, 0)";
+    setTimeout(() => {
+      setOpenedImage(null);
+    }, 500);
+  };
 
   return (
     <>
       {openedImage && (
         <Box
+          ref={darkenedBoxRef}
           position={"fixed"}
           top={0}
           left={0}
           width={"100%"}
           height={"100%"}
-          sx={{ animation: `${graduallyDarkenBox} 0.5s forwards` }}
-          zIndex={100}
+          bgcolor={"rgba(0, 0, 0, 0)"}
+          sx={{
+            transition: "background-color 0.5s ease-in-out",
+          }}
+          zIndex={3000}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
-          onClick={() => setOpenedImage(null)}
+          onClick={handleClick}
         >
-          <Box height={"80%"} width={"80%"} position={"relative"} m={"auto"} display={"flex"}>
+          <Box
+            ref={imageBoxRef}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            position={"fixed"}
+            top={openedImage.coords.open.top}
+            left={openedImage.coords.open.left}
+            height={openedImage.size.open.height}
+            width={openedImage.size.open.width}
+            sx={{
+              transition: "all 0.5s ease-in-out",
+            }}
+          >
             <Image
-              ref={imageRef}
+              style={{
+                objectFit: "contain",
+              }}
               src={openedImage.src}
               alt={openedImage.alt}
-              style={{
-                transition: "all 0.5s ease-in-out",
-              }}
               fill
             />
           </Box>
@@ -203,7 +237,7 @@ export default function SlickCarousel({ images }: { images: { src: string; alt: 
       <Slider ref={sliderRef} {...settings}>
         {images.map(({ src, alt }, index) => (
           <Box key={src + index} height={"350px"} width={`${getMaxWidth()}px`} sx={{ flexShrink: 0 }}>
-            <ImageCard setOpenedImage={setOpenedImage} src={src} alt={alt} index={index} />
+            <ImageCard setOpenedImage={setOpenedImage} src={src} alt={alt} />
           </Box>
         ))}
       </Slider>
