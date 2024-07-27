@@ -12,8 +12,20 @@ interface Props {
   lang: LangEnum;
 }
 
-function CateringSection({ children }: { children: ReactNode[] }) {
-  return <Box sx={{ display: "flex", height: "500px", "& > *": { flex: 1 }, mt: "2rem" }}>{children}</Box>;
+function CateringSection({ children, reverse }: { children: ReactNode[]; reverse?: boolean }) {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: reverse ? "column-reverse" : "column", md: "row" },
+        height: { xs: "auto", md: "500px" },
+        "& > *": { flex: 1 },
+        mt: "2rem",
+      }}
+    >
+      {children}
+    </Box>
+  );
 }
 
 function CateringTextBox({ children }: { children: ReactNode | ReactNode[] }) {
@@ -25,7 +37,7 @@ function CateringTextBox({ children }: { children: ReactNode | ReactNode[] }) {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Box width={"80%"}>{children}</Box>
+      <Box width={{ xs: "100%", md: "80%" }}>{children}</Box>
     </Box>
   );
 }
@@ -38,9 +50,8 @@ function CateringImageBox({ src, alt }: { src: string; alt: string }) {
       alignItems={"center"}
       mt={{ xs: "2rem", md: "0" }}
       width={{ xs: "100%", md: "30%" }}
-      height={{ xs: "20rem", md: "auto" }}
     >
-      <Box height={"80%"} width={"80%"} position={"relative"}>
+      <Box height={{ xs: "25rem", md: "80%" }} width={{ xs: "100%", md: "80%" }} position={"relative"}>
         <Image src={src} alt={alt} style={{ objectFit: "cover" }} fill />
       </Box>
     </Box>
@@ -62,7 +73,7 @@ export default function Catering({ lang }: Props) {
       </SectionContainer>
       <SectionContainer>
         <GenericPageTitle>{cateringLang(lang, "catering-title-2")}</GenericPageTitle>
-        <CateringSection>
+        <CateringSection reverse>
           <CateringImageBox src={imageSelect.catering.imageBox2.src} alt={imageSelect.catering.imageBox2.alt} />
           <CateringTextBox>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3")}</GenericPageText>
