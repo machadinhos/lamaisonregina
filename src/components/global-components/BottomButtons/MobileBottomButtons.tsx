@@ -29,7 +29,7 @@ export default function MobileBottomButtons({ lang }: { lang: LangEnum }) {
           <IconButton
             onClick={() => {}}
             target={"_blank"}
-            href={"https://api.whatsapp.com/send/?phone=351915581629&text&type=phone_number&app_absent=0"}
+            href={"https://api.whatsapp.com/send/?phone=351912411695&text&type=phone_number&app_absent=0"}
           >
             <WhatsappIconButton size={3} />
           </IconButton>
