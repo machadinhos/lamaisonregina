@@ -14,6 +14,7 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
       style={{
         padding: "2rem 5rem 0 5rem",
         position: isHome ? "absolute" : "relative",
+        marginBottom: "2.75rem",
         top: 0,
         left: 0,
         width: "100%",

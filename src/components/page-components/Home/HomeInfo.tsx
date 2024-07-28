@@ -10,12 +10,12 @@ import imageSelect from "@images/ImageSelect";
 export function HomeInfo({ lang }: { lang: LangEnum }) {
   return (
     <SectionContainer>
-      <Box pt={{ xs: "2rem", md: "0" }}>
-        <Box mb={"4rem"}>
-          <GenericPageTitle>{homeLang(lang, "home-welcome")}</GenericPageTitle>
-        </Box>
+      <Box>
         <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }}>
-          <Box pr={{ md: "1.5rem" }} width={{ xs: "100%", md: `${(2 / 3) * 100}%` }}>
+          <Box pr={{ md: "3rem" }} width={{ xs: "100%", md: `${(2 / 3) * 100}%` }}>
+            <Box mb={"4rem"}>
+              <GenericPageTitle>{homeLang(lang, "home-welcome")}</GenericPageTitle>
+            </Box>
             <GenericPageText>{homeLang(lang, "home-text-1")}</GenericPageText>
             <GenericPageText>{homeLang(lang, "home-text-2")}</GenericPageText>
             <GenericPageText>{homeLang(lang, "home-text-3")}</GenericPageText>

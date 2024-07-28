@@ -5,7 +5,7 @@ import SectionContainer from "@/components/shared-components/SectionContainer";
 
 export function ServiceTitleSection({ lang }: { lang: LangEnum }) {
   return (
-    <SectionContainer>
+    <SectionContainer sx={{ mb: 0 }}>
       <Box width={"100%"} display={"flex"} flexDirection={"column"} justifyContent={{ xs: "center", lg: "start" }}>
         <GenericPageText
           sx={{
