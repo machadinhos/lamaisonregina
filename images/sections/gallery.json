@@ -2,39 +2,39 @@
   "carousel1": [
     {
       "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
-        "alt": "carousel1-image1"
+      "alt": "carousel1-image1"
     },
     {
       "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
-        "alt": "carousel1-image2"
+      "alt": "carousel1-image2"
     },
     {
       "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
-        "alt": "carousel1-image3"
+      "alt": "carousel1-image3"
     },
     {
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
-        "alt": "carousel1-image4"
+      "alt": "carousel1-image4"
     }
   ],
-    "carousel2": [
-        {
-        "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
-            "alt": "carousel2-image1"
-        },
-        {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
-            "alt": "carousel2-image2"
-        },
-        {
-        "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
-            "alt": "carousel2-image3"
-        },
-        {
-        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
-            "alt": "carousel2-image4"
-        }
-    ],
+  "carousel2": [
+    {
+      "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+      "alt": "carousel2-image1"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+      "alt": "carousel2-image2"
+    },
+    {
+      "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
+      "alt": "carousel2-image3"
+    },
+    {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
+      "alt": "carousel2-image4"
+    }
+  ],
   "carousel3": [
     {
       "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",

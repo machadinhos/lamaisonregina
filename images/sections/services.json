@@ -1,51 +1,51 @@
 {
   "highlights": [
     {
-      "src":"/services/location.webp",
-        "alt": "location"
+      "src": "/services/location.webp",
+      "alt": "location"
     },
     {
-      "src":"/services/accommodation.webp",
+      "src": "/services/accommodation.webp",
       "alt": "accommodation"
     },
     {
-      "src":"/services/kitchen.webp",
+      "src": "/services/kitchen.webp",
       "alt": "kitchen"
     },
     {
-      "src":"/services/people.webp",
+      "src": "/services/people.webp",
       "alt": "people"
     },
     {
-      "src":"/services/parking.webp",
+      "src": "/services/parking.webp",
       "alt": "parking"
     },
     {
-      "src":"/services/pergola.webp",
+      "src": "/services/pergola.webp",
       "alt": "pergola"
     },
     {
-      "src":"/services/room.webp",
+      "src": "/services/room.webp",
       "alt": "room"
     },
     {
-      "src":"/services/planner.webp",
+      "src": "/services/planner.webp",
       "alt": "planner"
     },
     {
-      "src":"/services/ceremony.webp",
+      "src": "/services/ceremony.webp",
       "alt": "ceremony"
     },
     {
-      "src":"/services/bathroom.webp",
+      "src": "/services/bathroom.webp",
       "alt": "bathroom"
     },
     {
-      "src":"/services/sustainability.webp",
+      "src": "/services/sustainability.webp",
       "alt": "sustainability"
     },
     {
-      "src":"/services/church.webp",
+      "src": "/services/church.webp",
       "alt": "church"
     }
   ],
@@ -53,12 +53,12 @@
     "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
     "alt": "card1-image"
   },
-    "card2": {
-        "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
-        "alt": "card2-image"
-    },
-    "card3": {
-        "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
-        "alt": "card3-image"
-    }
+  "card2": {
+    "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+    "alt": "card2-image"
+  },
+  "card3": {
+    "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+    "alt": "card3-image"
+  }
 }
