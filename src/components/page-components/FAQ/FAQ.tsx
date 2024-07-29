@@ -29,8 +29,10 @@ export default function FAQ({ lang }: Props) {
   return (
     <>
       <SectionContainer>
-        <GenericPageTitle>FAQ</GenericPageTitle>
-        <Box sx={{ mb: "1rem" }}>
+        <Box display={"flex"} justifyContent={"center"}>
+          <GenericPageTitle noLine>FAQ</GenericPageTitle>
+        </Box>
+        <Box sx={{ mt: "1.5rem", mb: "1rem" }}>
           <TextField
             label={searchQuery ? "" : faqLang(lang, "faq-serch-label")}
             fullWidth
