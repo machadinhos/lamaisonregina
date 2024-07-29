@@ -43,6 +43,7 @@ export function HomeCarousel({ lang }: Props) {
             px: "2.5rem",
             fontWeight: "300",
           }}
+          noLine
         >
           {homeLang(lang, "home-slogan")}
         </GenericPageTitle>

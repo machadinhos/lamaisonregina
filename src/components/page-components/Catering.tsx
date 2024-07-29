@@ -64,7 +64,9 @@ export default function Catering({ lang }: Props) {
       <SectionContainer>
         <CateringSection>
           <CateringTextBox>
-            <GenericPageTitle>{cateringLang(lang, "catering-title-1")}</GenericPageTitle>
+            <Box display={"flex"} justifyContent={"center"}>
+              <GenericPageTitle>{cateringLang(lang, "catering-title-1")}</GenericPageTitle>
+            </Box>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-1")}</GenericPageText>
             <GenericPageText>{cateringLang(lang, "catering-text-2")}</GenericPageText>
           </CateringTextBox>
@@ -75,7 +77,9 @@ export default function Catering({ lang }: Props) {
         <CateringSection reverse>
           <CateringImageBox src={imageSelect.catering.imageBox2.src} alt={imageSelect.catering.imageBox2.alt} />
           <CateringTextBox>
-            <GenericPageTitle>{cateringLang(lang, "catering-title-2")}</GenericPageTitle>
+            <Box display={"flex"} justifyContent={"center"}>
+              <GenericPageTitle>{cateringLang(lang, "catering-title-2")}</GenericPageTitle>
+            </Box>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3")}</GenericPageText>
           </CateringTextBox>
         </CateringSection>
@@ -83,7 +87,9 @@ export default function Catering({ lang }: Props) {
       <SectionContainer>
         <CateringSection>
           <CateringTextBox>
-            <GenericPageTitle>{cateringLang(lang, "catering-title-3")}</GenericPageTitle>
+            <Box display={"flex"} justifyContent={"center"}>
+              <GenericPageTitle>{cateringLang(lang, "catering-title-3")}</GenericPageTitle>
+            </Box>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-4")}</GenericPageText>
           </CateringTextBox>
           <CateringImageBox src={imageSelect.catering.imageBox3.src} alt={imageSelect.catering.imageBox3.alt} />

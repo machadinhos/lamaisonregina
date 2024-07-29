@@ -48,6 +48,7 @@ function HeaderListItem({
         <IconButton sx={{ margin: 0, padding: 0, "&:hover": { backgroundColor: "transparent" } }}>
           <Link href={page.href}>
             <GenericPageTitle
+              noLine
               sx={{ mb: 0, ...(fontSize ? { fontSize: fontSize } : {}), color: isHome ? "white" : "auto" }}
             >
               {page.text}

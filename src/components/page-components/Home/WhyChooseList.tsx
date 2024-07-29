@@ -71,7 +71,7 @@ export function WhyChooseList({ lang }: { lang: LangEnum }) {
   return (
     <SectionContainer>
       <Box>
-        <GenericPageTitle sx={{ textAlign: "left" }}>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
+        <GenericPageTitle sx={{ textAlign: "center" }}>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
         <BulletedList>
           <WhyChooseListItems
             toggleSustainability={toggleSustainability}

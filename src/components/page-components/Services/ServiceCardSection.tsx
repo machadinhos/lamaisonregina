@@ -42,7 +42,7 @@ function ServiceCard({
             height: { xs: "fit-content", sm: "5rem", lg: "5rem" },
           }}
         >
-          <GenericPageTitle>{title}</GenericPageTitle>
+          <GenericPageTitle noLine>{title}</GenericPageTitle>
         </Box>
         <Box
           width={"100%"}
