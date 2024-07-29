@@ -49,7 +49,7 @@ function HeaderListItem({
           <Link href={page.href}>
             <GenericPageTitle
               noLine
-              sx={{ mb: 0, ...(fontSize ? { fontSize: fontSize } : {}), color: isHome ? "white" : "auto" }}
+              sx={{ mt: 0, mb: 0, ...(fontSize ? { fontSize: fontSize } : {}), color: isHome ? "white" : "auto" }}
             >
               {page.text}
             </GenericPageTitle>
@@ -83,7 +83,7 @@ export default function PagesList({
   const currentPage = useRouter().asPath.split("/")[2] || "";
 
   return (
-    <List sx={{ ...sx }}>
+    <List sx={{ mt: "1rem", ...sx }}>
       {getPagesList(lang).map((page, index) => (
         <HeaderListItem fontSize={fontSize} isHome={isHome} currentPage={currentPage} key={index} page={page} />
       ))}
