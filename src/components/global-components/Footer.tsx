@@ -24,9 +24,9 @@ function SocialMediaListItem({ href, children }: { href: string; children: React
   );
 }
 
-const ListItemLink = ({ children, href }: { children: string; href: string }) => {
+const PageListItemLink = ({ children, href }: { children: string; href: string }) => {
   return (
-    <IconButton>
+    <IconButton style={{ padding: 0 }}>
       <Link href={href} style={{ fontWeight: 400, color: primaryColor }}>
         <ListItem sx={{ fontSize: { xs: "1.15rem", sm: "1.1rem", lg: "1rem" } }}>{children}</ListItem>
       </Link>
@@ -87,12 +87,12 @@ export default function Footer({ lang }: Props) {
             width: "50px",
           }}
         >
-          <ListItemLink href={`/${lang}/#header`}>{homeLang(lang, "title")}</ListItemLink>
-          <ListItemLink href={`/${lang}/services#header`}>{servicesLang(lang, "title")}</ListItemLink>
-          <ListItemLink href={`/${lang}/gallery#header`}>{galleryLang(lang, "title")}</ListItemLink>
-          <ListItemLink href={`/${lang}/catering#header`}>Catering</ListItemLink>
-          <ListItemLink href={`/${lang}/faq#header`}>FAQ</ListItemLink>
-          <ListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "title")}</ListItemLink>
+          <PageListItemLink href={`/${lang}/#header`}>{homeLang(lang, "title")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/services#header`}>{servicesLang(lang, "title")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/gallery#header`}>{galleryLang(lang, "title")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/catering#header`}>Catering</PageListItemLink>
+          <PageListItemLink href={`/${lang}/faq#header`}>FAQ</PageListItemLink>
+          <PageListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "title")}</PageListItemLink>
         </List>
         <Box mb={"1rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
           <Typography
@@ -122,10 +122,14 @@ export default function Footer({ lang }: Props) {
         </Box>
       </Box>
       <Box>
-        <Typography sx={{ textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}>
-          {`${globalsLang(lang, "footer-rights-reserved-1")} `}
+        <Typography
+          sx={{ fontSize: "0.75rem", textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}
+        >
+          {globalsLang(lang, "footer-rights-reserved-1") + " "}
         </Typography>
-        <Typography sx={{ textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}>
+        <Typography
+          sx={{ fontSize: "0.75rem", textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}
+        >
           {globalsLang(lang, "footer-rights-reserved-2")}
         </Typography>
       </Box>
