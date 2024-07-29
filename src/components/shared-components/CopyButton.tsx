@@ -19,7 +19,7 @@ export default function CopyButton({ textToCopy, lang }: { textToCopy: string; l
   return (
     <>
       <IconButton onClick={handleCopy}>
-        <ContentCopyIcon sx={{ color: primaryColor }} />
+        <ContentCopyIcon sx={{ fontSize: "1.25rem", color: primaryColor }} />
       </IconButton>
       <Snackbar
         open={open}
