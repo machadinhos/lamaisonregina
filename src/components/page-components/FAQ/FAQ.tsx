@@ -35,9 +35,11 @@ export default function FAQ({ lang }: Props) {
         <Box sx={{ mt: "1.5rem", mb: "1rem" }}>
           <TextField
             label={searchQuery ? "" : faqLang(lang, "faq-serch-label")}
+            variant={"standard"}
             fullWidth
             value={searchQuery}
             onChange={handleSearchChange}
+            sx={{ bgcolor: "#e5e7eb" }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
