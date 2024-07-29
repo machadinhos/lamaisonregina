@@ -1,6 +1,6 @@
 import { faqLang, LangEnum } from "@i18n/lang-selector";
 import { Box, InputAdornment, TextField } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CTA from "@/components/shared-components/CTA";
 import SectionContainer from "@/components/shared-components/SectionContainer";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
@@ -13,6 +13,7 @@ interface Props {
 
 export default function FAQ({ lang }: Props) {
   const listRef = useRef<HTMLUListElement>(null);
+  const textFieldRef = useRef<HTMLInputElement>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -26,6 +27,13 @@ export default function FAQ({ lang }: Props) {
     }
   };
 
+  useEffect(() => {
+    if (textFieldRef.current) {
+      const target = textFieldRef.current.children[1].children[1] as HTMLInputElement;
+      target.focus();
+    }
+  }, []);
+
   return (
     <>
       <SectionContainer>
@@ -34,6 +42,7 @@ export default function FAQ({ lang }: Props) {
         </Box>
         <Box sx={{ mt: "1.5rem", mb: "1rem" }}>
           <TextField
+            ref={textFieldRef}
             label={searchQuery ? "" : faqLang(lang, "faq-serch-label")}
             variant={"standard"}
             fullWidth
