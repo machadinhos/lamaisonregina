@@ -16,13 +16,13 @@ interface Props {
   lang: LangEnum;
 }
 
-function ContactTextSection({ children, link }: { children: string; link: string }) {
+function ContactTextSection({ children, link, lang }: { children: string; link: string; lang: LangEnum }) {
   return (
     <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
       <Link href={link} target={"_blank"}>
         <GenericPageText sx={{ m: 0, p: 0 }}>{children}</GenericPageText>
       </Link>
-      <CopyButton textToCopy={children} />
+      <CopyButton lang={lang} textToCopy={children} />
     </Box>
   );
 }
@@ -45,17 +45,19 @@ export default function Contacts({ lang }: Props) {
           <ContactIcon>
             <LocalPhoneRoundedIcon />
           </ContactIcon>
-          <ContactTextSection link={""}>{contactsLang(lang, "contacts-telephone-text")}</ContactTextSection>
+          <ContactTextSection lang={lang} link={""}>
+            {contactsLang(lang, "contacts-telephone-text")}
+          </ContactTextSection>
           <ContactIcon>
             <EmailRoundedIcon />
           </ContactIcon>
-          <ContactTextSection link={`https://mail.google.com/mail?view=cm&fs=1&to=${addressSelect.email}`}>
+          <ContactTextSection lang={lang} link={`https://mail.google.com/mail?view=cm&fs=1&to=${addressSelect.email}`}>
             {addressSelect.email}
           </ContactTextSection>
           <ContactIcon>
             <ExploreRoundedIcon />
           </ContactIcon>
-          <ContactTextSection link={addressSelect.googleMaps}>
+          <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
             {contactsLang(lang, "contacts-address-text")}
           </ContactTextSection>
           <Box width={"100%"} display={"flex"} justifyContent={"center"}>
@@ -72,7 +74,7 @@ export default function Contacts({ lang }: Props) {
             <RoomSharpIcon />
           </ContactIcon>
           <Box display={"flex"} justifyContent={"center"}>
-            <ContactTextSection link={addressSelect.googleMaps}>
+            <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
               {contactsLang(lang, "contacts-gps-text")}
             </ContactTextSection>
           </Box>
