@@ -18,9 +18,15 @@ interface Props {
 
 function ContactTextSection({ children, link, lang }: { children: string; link: string; lang: LangEnum }) {
   return (
-    <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+    <Box
+      display={"flex"}
+      justifyContent={"center"}
+      alignContent={"center"}
+      alignItems={"center"}
+      justifyItems={"center"}
+    >
       <Link href={link} target={"_blank"}>
-        <GenericPageText sx={{ m: 0, p: 0 }}>{children}</GenericPageText>
+        <GenericPageText sx={{ textAlign: "center", m: 0, p: 0 }}>{children}</GenericPageText>
       </Link>
       <CopyButton lang={lang} textToCopy={children} />
     </Box>
@@ -64,7 +70,7 @@ export default function Contacts({ lang }: Props) {
             <Box width={{ xs: "100%", md: "70%" }} sx={{ aspectRatio: "2/1" }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d763.2969855168978!2d-8.804499708003998!3d40.071219679959604!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e0!3m2!1spt-PT!2spt!4v1719874529334!5m2!1spt-PT!2spt"
-                style={{ border: 0, width: "100%", height: "100%" }}
+                style={{ marginTop: "1rem", border: 0, width: "100%", height: "100%" }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
