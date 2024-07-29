@@ -6,11 +6,22 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { primaryColor, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
 import imageSelect from "@images/image-select";
+import addressSelect from "../../../addresses/address-select";
 
 interface Props {
   lang: LangEnum;
+}
+
+function SocialMediaListItem({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <ListItem sx={{ p: 0 }}>
+      <IconButton>
+        <Link href={href}>{children}</Link>
+      </IconButton>
+    </ListItem>
+  );
 }
 
 const ListItemLink = ({ children, href }: { children: string; href: string }) => {
@@ -94,31 +105,19 @@ export default function Footer({ lang }: Props) {
             sx={{
               display: "flex",
               flexDirection: { sm: "column", md: "row" },
-              justifyContent: "space-evenly",
+              // justifyContent: "center",
               alignItems: "center",
             }}
           >
-            <ListItem>
-              <IconButton>
-                <Link href={"https://www.facebook.com/"}>
-                  <FacebookIcon sx={{ color: primaryColor }} />
-                </Link>
-              </IconButton>
-            </ListItem>
-            <ListItem>
-              <IconButton>
-                <Link href={"https://api.whatsapp.com/send/?phone=351915581629&text&type=phone_number&app_absent=0"}>
-                  <WhatsappIcon sx={{ color: primaryColor }} />
-                </Link>
-              </IconButton>
-            </ListItem>
-            <ListItem>
-              <IconButton>
-                <Link href={"https://www.instagram.com/?hl=pt"}>
-                  <InstagramIcon sx={{ color: primaryColor }} />
-                </Link>
-              </IconButton>
-            </ListItem>
+            <SocialMediaListItem href={addressSelect.facebook}>
+              <FacebookIcon sx={{ color: primaryColor }} />
+            </SocialMediaListItem>
+            <SocialMediaListItem href={addressSelect.whatsapp}>
+              <WhatsappIcon sx={{ color: primaryColor }} />
+            </SocialMediaListItem>
+            <SocialMediaListItem href={addressSelect.instagram}>
+              <InstagramIcon sx={{ color: primaryColor }} />
+            </SocialMediaListItem>
           </List>
         </Box>
       </Box>
