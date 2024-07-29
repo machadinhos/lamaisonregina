@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import PagesList from "@/components/global-components/Header/PagesList";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 import Link from "next/link";
 
 export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {

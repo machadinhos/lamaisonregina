@@ -5,7 +5,7 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import Image from "next/image";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import SectionContainer from "@/components/shared-components/SectionContainer";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 export function HomeInfo({ lang }: { lang: LangEnum }) {
   return (

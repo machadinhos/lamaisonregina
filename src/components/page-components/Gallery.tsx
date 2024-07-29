@@ -5,7 +5,7 @@ import CTA from "@/components/shared-components/CTA";
 import React from "react";
 import SlickCarousel from "@/components/shared-components/Carousel/SlickCarousel";
 import SectionContainer from "@/components/shared-components/SectionContainer";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 interface Props {
   lang: LangEnum;

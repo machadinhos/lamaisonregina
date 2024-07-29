@@ -1,7 +1,7 @@
 import { SxProps } from "@mui/material/styles";
 import { Box, Theme } from "@mui/material";
 import Image from "next/image";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 export default function ArrowUpwardIcon({ sx }: { sx: SxProps<Theme> }) {
   return (

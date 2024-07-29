@@ -7,7 +7,7 @@ import { primaryColor, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 interface Props {
   lang: LangEnum;

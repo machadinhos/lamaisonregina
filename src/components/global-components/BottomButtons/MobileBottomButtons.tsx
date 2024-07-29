@@ -3,10 +3,11 @@ import ScrollTriggeredElement from "@/components/global-components/BottomButtons
 import { Box, IconButton } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 import ArrowUpwardIcon from "@/components/global-components/BottomButtons/ArrowUpwardIcon";
 import WhatsappIconButton from "@/components/global-components/BottomButtons/WhatsappIconButton";
 import { primaryColor } from "@/styles/globals";
+import addressSelect from "../../../../addresses/address-select";
 
 export default function MobileBottomButtons({ lang }: { lang: LangEnum }) {
   return (
@@ -26,11 +27,7 @@ export default function MobileBottomButtons({ lang }: { lang: LangEnum }) {
           </IconButton>
         </Box>
         <Box sx={{ position: "absolute", bottom: "0.5rem", left: "1rem" }}>
-          <IconButton
-            onClick={() => {}}
-            target={"_blank"}
-            href={"https://api.whatsapp.com/send/?phone=351912411695&text&type=phone_number&app_absent=0"}
-          >
+          <IconButton onClick={() => {}} target={"_blank"} href={addressSelect.whatsapp}>
             <WhatsappIconButton size={3} />
           </IconButton>
         </Box>

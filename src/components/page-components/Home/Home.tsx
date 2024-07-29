@@ -5,7 +5,7 @@ import { HomeInfo } from "@/components/page-components/Home/HomeInfo";
 import CTA from "@/components/shared-components/CTA";
 import ImagesDiv from "@/components/shared-components/ImagesDiv";
 import { HomeCarousel } from "@/components/page-components/Home/HomeCarousel";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 interface Props {
   lang: LangEnum;

@@ -9,13 +9,22 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import ExploreRoundedIcon from "@mui/icons-material/ExploreRounded";
 import RoomSharpIcon from "@mui/icons-material/RoomSharp";
 import { primaryColor } from "@/styles/globals";
+import CopyButton from "@/components/shared-components/CopyButton";
+import addressSelect from "../../../addresses/address-select";
 
 interface Props {
   lang: LangEnum;
 }
 
-function ContactTypography({ children }: { children: string }) {
-  return <GenericPageText sx={{ textAlign: "center", mb: "2rem" }}>{children}</GenericPageText>;
+function ContactTextSection({ children, link }: { children: string; link: string }) {
+  return (
+    <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+      <Link href={link} target={"_blank"}>
+        <GenericPageText sx={{ m: 0, p: 0 }}>{children}</GenericPageText>
+      </Link>
+      <CopyButton textToCopy={children} />
+    </Box>
+  );
 }
 
 function ContactIcon({ children }: { children: ReactNode }) {
@@ -30,23 +39,25 @@ export default function Contacts({ lang }: Props) {
   return (
     <>
       <SectionContainer>
-        <ContactTypography>{contactsLang(lang, "contacts-text-1")}</ContactTypography>
-        <ContactTypography>{contactsLang(lang, "contacts-text-2")}</ContactTypography>
+        <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-1")}</GenericPageText>
+        <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-2")}</GenericPageText>
         <Box mt={"2rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
           <ContactIcon>
             <LocalPhoneRoundedIcon />
           </ContactIcon>
-          <ContactTypography>{contactsLang(lang, "contacts-telephone-text")}</ContactTypography>
+          <ContactTextSection link={""}>{contactsLang(lang, "contacts-telephone-text")}</ContactTextSection>
           <ContactIcon>
             <EmailRoundedIcon />
           </ContactIcon>
-          <ContactTypography>{contactsLang(lang, "contacts-email-text")}</ContactTypography>
+          <ContactTextSection link={`https://mail.google.com/mail?view=cm&fs=1&to=${addressSelect.email}`}>
+            {addressSelect.email}
+          </ContactTextSection>
           <ContactIcon>
             <ExploreRoundedIcon />
           </ContactIcon>
-          <Link href={"https://maps.app.goo.gl/hX1nFLUwRSRbtCS29"}>
-            <ContactTypography>{contactsLang(lang, "contacts-address-text")}</ContactTypography>
-          </Link>
+          <ContactTextSection link={addressSelect.googleMaps}>
+            {contactsLang(lang, "contacts-address-text")}
+          </ContactTextSection>
           <Box width={"100%"} display={"flex"} justifyContent={"center"}>
             <Box width={{ xs: "100%", md: "70%" }} sx={{ aspectRatio: "2/1" }}>
               <iframe
@@ -61,9 +72,9 @@ export default function Contacts({ lang }: Props) {
             <RoomSharpIcon />
           </ContactIcon>
           <Box display={"flex"} justifyContent={"center"}>
-            <Link style={{ width: "fit-content" }} href={"https://maps.app.goo.gl/hX1nFLUwRSRbtCS29"}>
-              <ContactTypography>{contactsLang(lang, "contacts-gps-text")}</ContactTypography>
-            </Link>
+            <ContactTextSection link={addressSelect.googleMaps}>
+              {contactsLang(lang, "contacts-gps-text")}
+            </ContactTextSection>
           </Box>
         </Box>
       </SectionContainer>

@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
 import SectionContainer from "@/components/shared-components/SectionContainer";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
   return (

@@ -3,7 +3,7 @@ import { Box, IconButton } from "@mui/material";
 import Image from "next/image";
 import useWindowWidth from "@/hooks/use-window-width";
 import { useRef } from "react";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 import BaseImage from "@/components/shared-components/ImageModal/BaseImage";
 import ImageModalWrapper from "@/components/shared-components/ImageModal/ImageModalWrapper";
 

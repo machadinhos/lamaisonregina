@@ -3,17 +3,14 @@ import { Box, IconButton } from "@mui/material";
 import { primaryColor, secondaryColor } from "@/styles/globals";
 import ArrowUpwardIcon from "@/components/global-components/BottomButtons/ArrowUpwardIcon";
 import WhatsappIconButton from "@/components/global-components/BottomButtons/WhatsappIconButton";
+import addressSelect from "../../../../addresses/address-select";
 
 export default function DesktopBottomButtons() {
   return (
     <ScrollTriggeredElement threshold={50}>
       <>
         <Box position={"absolute"} bottom={"1.5rem"} left={"1rem"}>
-          <IconButton
-            onClick={() => {}}
-            target={"_blank"}
-            href={"https://api.whatsapp.com/send/?phone=351912411695&text&type=phone_number&app_absent=0"}
-          >
+          <IconButton onClick={() => {}} target={"_blank"} href={addressSelect.whatsapp}>
             <WhatsappIconButton size={4} />
           </IconButton>
         </Box>

@@ -3,7 +3,7 @@ import InfiniteArrowCarousel from "@/components/shared-components/Carousel/Infin
 import { homeLang, LangEnum } from "@i18n/lang-selector";
 import React from "react";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 interface Props {
   lang: LangEnum;

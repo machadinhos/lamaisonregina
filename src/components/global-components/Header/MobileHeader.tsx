@@ -7,7 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LangSelector from "@/components/global-components/Header/LangSelector";
 import Image from "next/image";
 import Link from "next/link";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
   const [open, setOpen] = useState<boolean>(false);

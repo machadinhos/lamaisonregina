@@ -6,7 +6,7 @@ import GenericPageTitle from "@/components/shared-components/Typography/GenericP
 import SectionContainer from "@/components/shared-components/SectionContainer";
 import { Box } from "@mui/material";
 import Image from "next/image";
-import imageSelect from "@images/ImageSelect";
+import imageSelect from "@images/image-select";
 
 interface Props {
   lang: LangEnum;
