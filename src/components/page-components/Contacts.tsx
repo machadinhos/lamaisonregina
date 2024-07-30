@@ -43,49 +43,47 @@ function ContactIcon({ children }: { children: ReactNode }) {
 
 export default function Contacts({ lang }: Props) {
   return (
-    <>
-      <SectionContainer>
-        <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-1")}</GenericPageText>
-        <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-2")}</GenericPageText>
-        <Box mt={"2rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
-          <ContactIcon>
-            <LocalPhoneRoundedIcon />
-          </ContactIcon>
-          <ContactTextSection lang={lang} link={""}>
-            {contactsLang(lang, "contacts-telephone-text")}
-          </ContactTextSection>
-          <ContactIcon>
-            <EmailRoundedIcon />
-          </ContactIcon>
-          <ContactTextSection lang={lang} link={`https://mail.google.com/mail?view=cm&fs=1&to=${addressSelect.email}`}>
-            {addressSelect.email}
-          </ContactTextSection>
-          <ContactIcon>
-            <ExploreRoundedIcon />
-          </ContactIcon>
-          <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
-            {contactsLang(lang, "contacts-address-text")}
-          </ContactTextSection>
-          <Box width={"100%"} display={"flex"} justifyContent={"center"}>
-            <Box width={{ xs: "100%", md: "70%" }} sx={{ aspectRatio: "2/1" }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d763.2969855168978!2d-8.804499708003998!3d40.071219679959604!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e0!3m2!1spt-PT!2spt!4v1719874529334!5m2!1spt-PT!2spt"
-                style={{ marginTop: "1rem", border: 0, width: "100%", height: "100%" }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </Box>
-          </Box>
-          <ContactIcon>
-            <RoomSharpIcon />
-          </ContactIcon>
-          <Box display={"flex"} justifyContent={"center"}>
-            <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
-              {contactsLang(lang, "contacts-gps-text")}
-            </ContactTextSection>
+    <SectionContainer>
+      <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-1")}</GenericPageText>
+      <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-2")}</GenericPageText>
+      <Box mt={"2rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
+        <ContactIcon>
+          <LocalPhoneRoundedIcon />
+        </ContactIcon>
+        <ContactTextSection lang={lang} link={""}>
+          {contactsLang(lang, "contacts-telephone-text")}
+        </ContactTextSection>
+        <ContactIcon>
+          <EmailRoundedIcon />
+        </ContactIcon>
+        <ContactTextSection lang={lang} link={`https://mail.google.com/mail?view=cm&fs=1&to=${addressSelect.email}`}>
+          {addressSelect.email}
+        </ContactTextSection>
+        <ContactIcon>
+          <ExploreRoundedIcon />
+        </ContactIcon>
+        <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
+          {contactsLang(lang, "contacts-address-text")}
+        </ContactTextSection>
+        <Box width={"100%"} display={"flex"} justifyContent={"center"}>
+          <Box width={{ xs: "100%", md: "70%" }} sx={{ aspectRatio: "2/1" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d763.2969855168978!2d-8.804499708003998!3d40.071219679959604!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e0!3m2!1spt-PT!2spt!4v1719874529334!5m2!1spt-PT!2spt"
+              style={{ marginTop: "1rem", border: 0, width: "100%", height: "100%" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </Box>
         </Box>
-      </SectionContainer>
-    </>
+        <ContactIcon>
+          <RoomSharpIcon />
+        </ContactIcon>
+        <Box display={"flex"} justifyContent={"center"}>
+          <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
+            {contactsLang(lang, "contacts-gps-text")}
+          </ContactTextSection>
+        </Box>
+      </Box>
+    </SectionContainer>
   );
 }
