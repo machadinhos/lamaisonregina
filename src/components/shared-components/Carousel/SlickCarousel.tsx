@@ -7,17 +7,18 @@ import imageSelect from "@images/image-select";
 import BaseImage from "@/components/shared-components/ImageModal/BaseImage";
 import ImageModalWrapper from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
-function ImageCard({ src, alt }: { src: string; alt: string }) {
+function ImageCard({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
   return (
     <Box height={"100%"} width={"100%"} display={"flex"} alignItems={"center"} justifyContent={"center"}>
-      <BaseImage src={src} alt={alt} />
+      <BaseImage priority={priority} src={src} alt={alt} />
     </Box>
   );
 }
 
-const Arrow = ({ direction }: { direction: "left" | "right" }) => {
+const Arrow = ({ direction, priority }: { direction: "left" | "right"; priority?: boolean }) => {
   return (
     <Image
+      priority={priority}
       src={imageSelect.globals.carouselArrow.src}
       alt={`${direction}-arrow`}
       fill
@@ -28,7 +29,15 @@ const Arrow = ({ direction }: { direction: "left" | "right" }) => {
   );
 };
 
-const ArrowBox = ({ direction, onClick }: { direction: "left" | "right"; onClick: () => void }) => {
+const ArrowBox = ({
+  direction,
+  onClick,
+  priority,
+}: {
+  direction: "left" | "right";
+  onClick: () => void;
+  priority?: boolean;
+}) => {
   return (
     <IconButton
       sx={{
@@ -43,13 +52,19 @@ const ArrowBox = ({ direction, onClick }: { direction: "left" | "right"; onClick
       onClick={onClick}
     >
       <Box width={"2.5rem"} height={"2rem"} position={"relative"} alignItems={"center"}>
-        <Arrow direction={direction} />
+        <Arrow priority={priority} direction={direction} />
       </Box>
     </IconButton>
   );
 };
 
-export default function SlickCarousel({ images }: { images: { src: string; alt: string }[] }) {
+export default function SlickCarousel({
+  images,
+  priority,
+}: {
+  images: { src: string; alt: string }[];
+  priority?: boolean;
+}) {
   const screenWidth = useWindowWidth();
   const sliderRef = useRef<Slider>(null);
   if (screenWidth === null) return null;
@@ -97,13 +112,13 @@ export default function SlickCarousel({ images }: { images: { src: string; alt: 
         <Slider ref={sliderRef} {...settings}>
           {images.map(({ src, alt }, index) => (
             <Box key={src + index} height={"350px"} width={`${getMaxWidth()}px`} sx={{ flexShrink: 0 }}>
-              <ImageCard src={src} alt={alt} />
+              <ImageCard priority={priority} src={src} alt={alt} />
             </Box>
           ))}
         </Slider>
         <Box mt={"2rem"} display="flex" justifyContent="center" gap={"1rem"}>
-          <ArrowBox onClick={prevSlide} direction={"left"} />
-          <ArrowBox onClick={nextSlide} direction={"right"} />
+          <ArrowBox priority={priority} onClick={prevSlide} direction={"left"} />
+          <ArrowBox priority={priority} onClick={nextSlide} direction={"right"} />
         </Box>
       </Box>
     </ImageModalWrapper>

@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import { ImageModalContext } from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
-export default function BaseImage({ src, alt }: { src: string; alt: string }) {
+export default function BaseImage({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
   const { setOpenedImage } = useContext(ImageModalContext);
   const imageRef = useRef<HTMLImageElement>(null);
   const imageBoxRef = useRef<HTMLDivElement>(null);
@@ -37,6 +37,7 @@ export default function BaseImage({ src, alt }: { src: string; alt: string }) {
       ref={imageBoxRef}
     >
       <Image
+        priority={priority}
         ref={imageRef}
         src={src}
         alt={alt}

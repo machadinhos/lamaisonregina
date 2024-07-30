@@ -34,7 +34,7 @@ export function HomeCarousel({ lang }: Props) {
           paddingRight: "1rem",
         }}
       >
-        <InfiniteArrowCarousel sources={imageSelect.home.carouselImages} />
+        <InfiniteArrowCarousel priority sources={imageSelect.home.carouselImages} />
         <GenericPageTitle
           sx={{
             color: "white",

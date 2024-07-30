@@ -19,7 +19,7 @@ export default function Gallery({ lang }: Props) {
         <Box display={"flex"} justifyContent={"center"} mb={"1rem"}>
           <GenericPageTitle>{galleryLang(lang, "gallery-title-1")}</GenericPageTitle>
         </Box>
-        <SlickCarousel images={imageSelect.gallery.carousel1} />
+        <SlickCarousel priority images={imageSelect.gallery.carousel1} />
         <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
       </SectionContainer>
       <SectionContainer>

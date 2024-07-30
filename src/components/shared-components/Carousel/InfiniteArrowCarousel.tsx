@@ -5,6 +5,7 @@ import Image from "next/image";
 
 interface Props {
   sources: { src: string; alt: string }[];
+  priority?: boolean;
 }
 
 const generateImages = (sources: { src: string; alt: string }[]) => {
@@ -15,7 +16,7 @@ const generateImages = (sources: { src: string; alt: string }[]) => {
   }));
 };
 
-export default function InfiniteArrowCarousel({ sources }: Props) {
+export default function InfiniteArrowCarousel({ sources, priority }: Props) {
   const [images] = useState(generateImages(sources));
   const [leftImage, setLeftImage] = useState(images.length - 1);
   const [rightImage, setRightImage] = useState(1);
@@ -115,7 +116,7 @@ export default function InfiniteArrowCarousel({ sources }: Props) {
               zIndex={-1}
             >
               <Box width={"100%"} height={"100%"} position={"relative"}>
-                <Image priority fill src={src} alt={alt} style={{ objectFit: "cover" }} />
+                <Image priority={priority} fill src={src} alt={alt} style={{ objectFit: "cover" }} />
               </Box>
             </Box>
           ))}
