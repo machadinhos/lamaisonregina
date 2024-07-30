@@ -6,6 +6,9 @@ import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"], style: ["normal", "italic"] });
 
 const theme: Theme = createTheme({
   palette: {
@@ -56,6 +59,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${montserrat.style.fontFamily};
+        }
+      `}</style>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AnimatePresence mode="wait">
