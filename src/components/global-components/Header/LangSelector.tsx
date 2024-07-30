@@ -70,12 +70,14 @@ const LangOption = ({
     if (option === lang) return;
     window.location.href = href;
   };
+
   return (
-    <IconButton sx={{ m: 0, p: 0 }}>
+    <IconButton sx={{ m: 0, p: 0, height: "fit-content" }}>
       <Typography
         onClick={() => refreshLang(href)}
         variant={"body1"}
         sx={{
+          mx: "0.25rem",
           color: isHome ? (open ? "auto" : "white") : "auto",
           transition: "color 0.3s ease-in-out",
           fontWeight: option === lang ? 600 : 300,
