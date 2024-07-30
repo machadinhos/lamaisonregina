@@ -72,9 +72,8 @@ const LangOption = ({
   };
 
   return (
-    <IconButton sx={{ m: 0, p: 0, height: "fit-content" }}>
+    <IconButton onClick={() => refreshLang(href)} sx={{ m: 0, p: 0, height: "fit-content" }}>
       <Typography
-        onClick={() => refreshLang(href)}
         variant={"body1"}
         sx={{
           mx: "0.25rem",

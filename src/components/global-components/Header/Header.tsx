@@ -9,10 +9,10 @@ interface Props {
 
 function Header({ lang, isHome }: Props) {
   return (
-    <>
+    <header id={"header"}>
       <MobileHeader isHome={isHome} lang={lang} />
       <DesktopHeader isHome={isHome} lang={lang} />
-    </>
+    </header>
   );
 }
 

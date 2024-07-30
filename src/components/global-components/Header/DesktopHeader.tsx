@@ -9,10 +9,9 @@ import Link from "next/link";
 
 export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
   return (
-    <header
-      id={"header"}
+    <Box
       className={"desktop-header"}
-      style={{
+      sx={{
         padding: "2rem 5rem 0 5rem",
         position: isHome ? "absolute" : "relative",
         marginBottom: "2.75rem",
@@ -53,6 +52,6 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
           isHome={isHome}
         />
       </Box>
-    </header>
+    </Box>
   );
 }

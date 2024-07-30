@@ -17,10 +17,9 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
   };
 
   return (
-    <header
-      id={"header"}
+    <Box
       className={"mobile-header"}
-      style={{
+      sx={{
         padding: "1rem",
         position: isHome ? "absolute" : "relative",
         top: 0,
@@ -31,7 +30,7 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
     >
       <HeaderTop lang={lang} isHome={isHome} toggleDrawer={toggleDrawer} open={open} />
       <DrawerMenu lang={lang} open={open} toggleDrawer={toggleDrawer} />
-    </header>
+    </Box>
   );
 }
 
