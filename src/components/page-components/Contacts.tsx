@@ -16,7 +16,9 @@ interface Props {
   lang: LangEnum;
 }
 
-function ContactTextSection({ children, link, lang }: { children: string; link: string; lang: LangEnum }) {
+function ContactTextSection({ children, link, lang }: { children: string; link?: string; lang: LangEnum }) {
+  const gPText = <GenericPageText sx={{ textAlign: "center", m: 0, p: 0 }}>{children}</GenericPageText>;
+
   return (
     <Box
       display={"flex"}
@@ -25,9 +27,14 @@ function ContactTextSection({ children, link, lang }: { children: string; link: 
       alignItems={"center"}
       justifyItems={"center"}
     >
-      <Link href={link} target={"_blank"}>
-        <GenericPageText sx={{ textAlign: "center", m: 0, p: 0 }}>{children}</GenericPageText>
-      </Link>
+      {link ? (
+        <Link href={link} target={"_blank"}>
+          {gPText}
+        </Link>
+      ) : (
+        gPText
+      )}
+
       <CopyButton lang={lang} textToCopy={children} />
     </Box>
   );
@@ -50,9 +57,11 @@ export default function Contacts({ lang }: Props) {
         <ContactIcon>
           <LocalPhoneRoundedIcon />
         </ContactIcon>
+
         <ContactTextSection lang={lang} link={""}>
           {contactsLang(lang, "contacts-telephone-text")}
         </ContactTextSection>
+
         <ContactIcon>
           <EmailRoundedIcon />
         </ContactIcon>
