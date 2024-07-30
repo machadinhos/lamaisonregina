@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import { ImageModalContext } from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
-export default function ImageModal({}: {}) {
+export default function ImageModal() {
   const imageBoxRef = useRef<HTMLImageElement>(null);
   const darkenedBoxRef = useRef<HTMLDivElement>(null);
   const { openedImage, setOpenedImage } = useContext(ImageModalContext);
