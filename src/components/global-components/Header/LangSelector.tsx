@@ -1,6 +1,6 @@
 import { LangEnum } from "@i18n/lang-selector";
 import { useRouter } from "next/router";
-import { Box, Theme, Typography } from "@mui/material";
+import { Box, IconButton, Theme, Typography } from "@mui/material";
 import { SxProps } from "@mui/material/styles";
 
 export default function LangSelector({
@@ -71,18 +71,20 @@ const LangOption = ({
     window.location.href = href;
   };
   return (
-    <Typography
-      onClick={() => refreshLang(href)}
-      variant={"body1"}
-      sx={{
-        color: isHome ? (open ? "auto" : "white") : "auto",
-        transition: "color 0.3s ease-in-out",
-        fontWeight: option === lang ? 600 : 300,
-        cursor: option === lang ? "default" : "pointer",
-        ...(fontSize && { fontSize }),
-      }}
-    >
-      {option.toUpperCase()}
-    </Typography>
+    <IconButton sx={{ m: 0, p: 0 }}>
+      <Typography
+        onClick={() => refreshLang(href)}
+        variant={"body1"}
+        sx={{
+          color: isHome ? (open ? "auto" : "white") : "auto",
+          transition: "color 0.3s ease-in-out",
+          fontWeight: option === lang ? 600 : 300,
+          cursor: option === lang ? "default" : "pointer",
+          ...(fontSize && { fontSize }),
+        }}
+      >
+        {option.toUpperCase()}
+      </Typography>
+    </IconButton>
   );
 };
