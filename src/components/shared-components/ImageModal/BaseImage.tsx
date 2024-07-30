@@ -4,9 +4,10 @@ import Image from "next/image";
 import { ImageModalContext } from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
 export default function BaseImage({ src, alt }: { src: string; alt: string }) {
-  const setOpenedImage = useContext(ImageModalContext).setOpenedImage;
+  const { setOpenedImage } = useContext(ImageModalContext);
   const imageRef = useRef<HTMLImageElement>(null);
   const imageBoxRef = useRef<HTMLDivElement>(null);
+
   const handleImageClick = () => {
     if (!imageRef.current || !imageBoxRef.current) return;
     const open = imageRef.current.getBoundingClientRect();
