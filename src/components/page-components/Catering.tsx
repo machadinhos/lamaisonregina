@@ -64,7 +64,7 @@ export default function Catering({ lang }: Props) {
       <SectionContainer>
         <CateringSection>
           <CateringTextBox>
-            <Box display={"flex"} justifyContent={"center"}>
+            <Box display={"flex"} justifyContent={"center"} mb={"1.5rem"}>
               <GenericPageTitle>{cateringLang(lang, "catering-title-1")}</GenericPageTitle>
             </Box>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-1")}</GenericPageText>
@@ -77,7 +77,7 @@ export default function Catering({ lang }: Props) {
         <CateringSection reverse>
           <CateringImageBox src={imageSelect.catering.imageBox2.src} alt={imageSelect.catering.imageBox2.alt} />
           <CateringTextBox>
-            <Box display={"flex"} justifyContent={"center"}>
+            <Box display={"flex"} justifyContent={"center"} mb={"1.5rem"}>
               <GenericPageTitle>{cateringLang(lang, "catering-title-2")}</GenericPageTitle>
             </Box>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3")}</GenericPageText>
@@ -87,7 +87,7 @@ export default function Catering({ lang }: Props) {
       <SectionContainer>
         <CateringSection>
           <CateringTextBox>
-            <Box display={"flex"} justifyContent={"center"}>
+            <Box display={"flex"} justifyContent={"center"} mb={"1.5rem"}>
               <GenericPageTitle>{cateringLang(lang, "catering-title-3")}</GenericPageTitle>
             </Box>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-4")}</GenericPageText>

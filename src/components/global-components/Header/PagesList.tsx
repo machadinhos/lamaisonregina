@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SxProps } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
+import { primaryColor } from "@/styles/globals";
 
 interface Page {
   href: string;
@@ -30,6 +31,7 @@ function HeaderListItem({
   isHome?: boolean;
   fontSize?: string;
 }) {
+  const isCurrentPage = currentPage === page.href.split("/")[2];
   return (
     <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
       <Box
@@ -49,7 +51,12 @@ function HeaderListItem({
           <Link href={page.href}>
             <GenericPageTitle
               noLine
-              sx={{ mt: 0, mb: 0, ...(fontSize ? { fontSize: fontSize } : {}), color: isHome ? "white" : "auto" }}
+              sx={{
+                mt: 0,
+                mb: 0,
+                ...(fontSize ? { fontSize: fontSize } : {}),
+                color: isCurrentPage ? primaryColor : isHome ? "white" : "auto",
+              }}
             >
               {page.text}
             </GenericPageTitle>
@@ -58,8 +65,8 @@ function HeaderListItem({
         <Box
           sx={{
             height: 2,
-            backgroundColor: isHome ? "white" : "black",
-            width: currentPage === page.href.split("/")[2] ? "100%" : 0,
+            backgroundColor: isCurrentPage ? primaryColor : isHome ? "white" : "black",
+            width: isCurrentPage ? "100%" : 0,
             transition: "width 0.3s",
             marginTop: "2px",
           }}

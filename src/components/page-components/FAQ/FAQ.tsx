@@ -5,7 +5,7 @@ import CTA from "@/components/shared-components/CTA";
 import SectionContainer from "@/components/shared-components/SectionContainer";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import FAQList from "@/components/page-components/FAQ/FAQList";
-import { SearchRounded } from "@mui/icons-material";
+import { CloseRounded, SearchRounded } from "@mui/icons-material";
 
 interface Props {
   lang: LangEnum;
@@ -29,7 +29,8 @@ export default function FAQ({ lang }: Props) {
 
   useEffect(() => {
     if (textFieldRef.current) {
-      const target = textFieldRef.current.children[1].children[1] as HTMLInputElement;
+      console.log(textFieldRef.current);
+      const target = textFieldRef.current.children[0].children[1] as HTMLInputElement;
       target.focus();
     }
   }, []);
@@ -43,25 +44,30 @@ export default function FAQ({ lang }: Props) {
         <Box sx={{ mt: "1.5rem", mb: "1rem" }}>
           <TextField
             ref={textFieldRef}
-            label={searchQuery ? "" : faqLang(lang, "faq-serch-label")}
+            placeholder={searchQuery ? "" : faqLang(lang, "faq-serch-label")}
             variant={"standard"}
             fullWidth
             value={searchQuery}
             onChange={handleSearchChange}
-            sx={{ bgcolor: "#e5e7eb" }}
+            sx={{ bgcolor: "#f6f8fb" }}
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment position="start" sx={{ ml: "0.5rem" }}>
                   <SearchRounded />
                 </InputAdornment>
               ),
-            }}
-            InputLabelProps={{
-              shrink: false,
-              style: {
-                transition: "all 0.3s",
-                paddingLeft: "2.2rem",
-              },
+              endAdornment: (
+                <InputAdornment
+                  position="end"
+                  sx={{ mr: "0.5rem" }}
+                  onClick={() => {
+                    setSearchQuery("");
+                    handleSearchChange({ target: { value: "" } } as React.ChangeEvent<HTMLInputElement>);
+                  }}
+                >
+                  {searchQuery && <CloseRounded />}
+                </InputAdornment>
+              ),
             }}
           />
         </Box>

@@ -16,28 +16,28 @@ export default function Gallery({ lang }: Props) {
   return (
     <>
       <SectionContainer>
-        <Box display={"flex"} justifyContent={"center"}>
+        <Box display={"flex"} justifyContent={"center"} mb={"1rem"}>
           <GenericPageTitle>{galleryLang(lang, "gallery-title-1")}</GenericPageTitle>
         </Box>
         <SlickCarousel images={imageSelect.gallery.carousel1} />
         <GenericPageText>{galleryLang(lang, "gallery-text-1")}</GenericPageText>
       </SectionContainer>
       <SectionContainer>
-        <Box display={"flex"} justifyContent={"center"}>
+        <Box display={"flex"} justifyContent={"center"} mb={"1rem"}>
           <GenericPageTitle>{galleryLang(lang, "gallery-title-2")}</GenericPageTitle>
         </Box>
         <SlickCarousel images={imageSelect.gallery.carousel2} />
         <GenericPageText>{galleryLang(lang, "gallery-text-2")}</GenericPageText>
       </SectionContainer>
       <SectionContainer>
-        <Box display={"flex"} justifyContent={"center"}>
+        <Box display={"flex"} justifyContent={"center"} mb={"1rem"}>
           <GenericPageTitle>{galleryLang(lang, "gallery-title-3")}</GenericPageTitle>
         </Box>
         <SlickCarousel images={imageSelect.gallery.carousel3} />
         <GenericPageText>{galleryLang(lang, "gallery-text-3")}</GenericPageText>
       </SectionContainer>
       <SectionContainer>
-        <Box display={"flex"} justifyContent={"center"}>
+        <Box display={"flex"} justifyContent={"center"} mb={"1rem"}>
           <GenericPageTitle>{galleryLang(lang, "gallery-title-4")}</GenericPageTitle>
         </Box>
         <SlickCarousel images={imageSelect.gallery.carousel4} />

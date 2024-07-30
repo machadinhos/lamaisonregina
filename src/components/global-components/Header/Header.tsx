@@ -12,11 +12,7 @@ interface Props {
 function Header({ lang, isHome }: Props) {
   const isSmallScreen = useMediaQuery(`(max-width:${sizes.sm}px)`);
 
-  return (
-    <header>
-      {isSmallScreen ? <MobileHeader isHome={isHome} lang={lang} /> : <DesktopHeader isHome={isHome} lang={lang} />}
-    </header>
-  );
+  return isSmallScreen ? <MobileHeader isHome={isHome} lang={lang} /> : <DesktopHeader isHome={isHome} lang={lang} />;
 }
 
 export default Header;
