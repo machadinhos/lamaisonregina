@@ -23,7 +23,7 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
     >
       <Box sx={{ display: "flex" }}>
         <Box flex={1} />
-        <Box flex={1} display={"flex"} justifyContent={"center"} position={"relative"} height={"7rem"}>
+        <Box flex={1} display={"flex"} justifyContent={"center"} position={"relative"} height={"9rem"}>
           <Link href={`/${lang}/`}>
             <Image
               priority

@@ -70,7 +70,7 @@ const HeaderTop = ({
           position: "relative",
           justifyContent: "center",
           alignItems: "center",
-          height: "5rem",
+          height: "7rem",
           width: "100%",
         }}
       >
