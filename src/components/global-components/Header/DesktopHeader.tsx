@@ -11,6 +11,7 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
   return (
     <header
       id={"header"}
+      className={"desktop-header"}
       style={{
         padding: "2rem 5rem 0 5rem",
         position: isHome ? "absolute" : "relative",

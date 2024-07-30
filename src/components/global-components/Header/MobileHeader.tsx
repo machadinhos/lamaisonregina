@@ -19,6 +19,7 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
   return (
     <header
       id={"header"}
+      className={"mobile-header"}
       style={{
         padding: "1rem",
         position: isHome ? "absolute" : "relative",
