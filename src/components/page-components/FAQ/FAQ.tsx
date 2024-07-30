@@ -29,7 +29,6 @@ export default function FAQ({ lang }: Props) {
 
   useEffect(() => {
     if (textFieldRef.current) {
-      console.log(textFieldRef.current);
       const target = textFieldRef.current.children[0].children[1] as HTMLInputElement;
       target.focus();
     }
