@@ -105,7 +105,6 @@ export default function Footer({ lang }: Props) {
             sx={{
               display: "flex",
               flexDirection: { sm: "column", md: "row" },
-              // justifyContent: "center",
               alignItems: "center",
             }}
           >
