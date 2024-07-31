@@ -1,12 +1,12 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
-import { rootFontSize, secondaryColor } from "@/styles/globals";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Montserrat } from "next/font/google";
+import { rootFontSize } from "@/styles/globals";
 
 const montserrat = Montserrat({ subsets: ["latin"], style: ["normal", "italic"] });
 
@@ -22,8 +22,7 @@ const theme: Theme = createTheme({
   typography: {
     fontSize: rootFontSize,
     allVariants: {
-      color: secondaryColor,
-      fontFamily: "Montserrat, sans-serif",
+      fontFamily: montserrat.style.fontFamily,
       fontOpticalSizing: "auto",
       fontWeight: 400,
       fontStyle: "normal",
@@ -59,11 +58,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <style jsx global>{`
-        html {
-          font-family: ${montserrat.style.fontFamily};
-        }
-      `}</style>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AnimatePresence mode="wait">

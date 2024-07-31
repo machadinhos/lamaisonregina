@@ -1,15 +1,17 @@
 import { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from "next/document";
+import { globalsLang, LangEnum } from "@i18n/lang-selector";
 
 function Document({ lang }: { lang: string }) {
+  const langEnum = lang === "pt" ? LangEnum.PT : LangEnum.EN;
+
   return (
     <Html lang={lang}>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
+        <meta charSet="utf-8" />
+        <meta name="description" content={globalsLang(langEnum, "meta-description")} />
+        <meta name="keywords" content={globalsLang(langEnum, "meta-keywords")} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Pedro Machado (machadinhos) and Manuel Santos" />
       </Head>
       <body>
         <Main />

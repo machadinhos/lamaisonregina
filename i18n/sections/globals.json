@@ -4,13 +4,17 @@
     "footer-rights-reserved-1": "© 2024 La Maison Regina.",
     "footer-rights-reserved-2": "Todos os direitos reservados.",
     "cta": "Contacte-nos",
-    "copied-message": "Copiado para a área de transferência."
+    "copied-message": "Copiado para a área de transferência.",
+    "meta-description": "A definir",
+    "meta-keywords": "A definir"
   },
   "en": {
     "footer-follow": "Follow us",
     "footer-rights-reserved-1": "© 2024 La Maison Regina.",
     "footer-rights-reserved-2": "All rights reserved.",
     "cta": "Get in contact ",
-    "copied-message": "Copied to clipboard."
+    "copied-message": "Copied to clipboard.",
+    "meta-description": "To be defined",
+    "meta-keywords": "To be defined"
   }
 }
