@@ -1,10 +1,10 @@
 {
   "logoPrimary": {
-    "src": "/logos/logo_primary.png",
+    "src": "/logos/logo_primary.webp",
     "alt": "logo-primary"
   },
   "logo": {
-    "src": "/logos/logo.png",
+    "src": "/logos/logo.webp",
     "alt": "logo"
   },
   "up_arrow": {
