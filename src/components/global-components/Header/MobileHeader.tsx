@@ -46,7 +46,7 @@ const HeaderTop = ({
   open: boolean;
 }) => {
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+    <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "top" }}>
       <Box flex={1}>
         <IconButton
           onClick={toggleDrawer}
@@ -70,21 +70,22 @@ const HeaderTop = ({
           position: "relative",
           justifyContent: "center",
           alignItems: "center",
-          height: "7rem",
-          width: "100%",
         }}
       >
-        <Link href={`/${lang}/`}>
-          <Image
-            priority
-            src={imageSelect.globals.logoPrimary.src}
-            alt={imageSelect.globals.logoPrimary.alt}
-            fill
-            style={{
-              objectFit: "contain",
-            }}
-          />
-        </Link>
+        <IconButton sx={{ "&:hover": { backgroundColor: "transparent" } }}>
+          <Link href={`/${lang}/`}>
+            <Image
+              priority
+              src={imageSelect.globals.logoPrimary.src}
+              alt={imageSelect.globals.logoPrimary.alt}
+              width={412 / 2.6}
+              height={315 / 2.6}
+              style={{
+                objectFit: "contain",
+              }}
+            />
+          </Link>
+        </IconButton>
       </Box>
       <LangSelector
         lang={lang}

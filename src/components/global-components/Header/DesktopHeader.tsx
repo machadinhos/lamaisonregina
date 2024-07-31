@@ -1,6 +1,6 @@
 import { LangEnum } from "@i18n/lang-selector";
 import LangSelector from "@/components/global-components/Header/LangSelector";
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import PagesList from "@/components/global-components/Header/PagesList";
@@ -23,18 +23,21 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
     >
       <Box sx={{ display: "flex" }}>
         <Box flex={1} />
-        <Box flex={1} display={"flex"} justifyContent={"center"} position={"relative"} height={"9rem"}>
-          <Link href={`/${lang}/`}>
-            <Image
-              priority
-              src={imageSelect.globals.logoPrimary.src}
-              alt={imageSelect.globals.logoPrimary.alt}
-              fill
-              style={{
-                objectFit: "contain",
-              }}
-            />
-          </Link>
+        <Box flex={1} display={"flex"} justifyContent={"center"} position={"relative"}>
+          <IconButton sx={{ "&:hover": { backgroundColor: "transparent" } }}>
+            <Link href={`/${lang}/`}>
+              <Image
+                priority
+                src={imageSelect.globals.logoPrimary.src}
+                alt={imageSelect.globals.logoPrimary.alt}
+                width={412 / 1.8}
+                height={315 / 1.8}
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </Link>
+          </IconButton>
         </Box>
         <LangSelector sx={{ flex: 1, justifyContent: "flex-end" }} lang={lang} isHome={isHome} fontSize={"1rem"} />
       </Box>
