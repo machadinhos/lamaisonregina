@@ -18,6 +18,7 @@ export default function BaseImage({ src, alt, priority }: { src: string; alt: st
       size: { open: { width: open.width, height: open.height }, close: { width: close.width, height: close.height } },
       src: src,
       alt: alt,
+      imageRef: imageRef,
     });
   };
 

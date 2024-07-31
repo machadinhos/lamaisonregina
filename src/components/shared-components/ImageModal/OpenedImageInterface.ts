@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 export default interface OpenedImage {
   coords: {
     open: { top: number; left: number };
@@ -9,4 +11,5 @@ export default interface OpenedImage {
   };
   src: string;
   alt: string;
+  imageRef: RefObject<HTMLImageElement>;
 }

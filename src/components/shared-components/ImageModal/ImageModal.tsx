@@ -17,7 +17,10 @@ export default function ImageModal() {
 
     darkenedBoxRef.current.style.backgroundColor = "rgba(0, 0, 0, 0)";
     setTimeout(() => {
+      if (!openedImage.imageRef.current) return;
+      openedImage.imageRef.current.style.opacity = "1";
       setOpenedImage(null);
+      console.log("test");
     }, 500);
   }, [openedImage, setOpenedImage]);
 
@@ -28,7 +31,9 @@ export default function ImageModal() {
       }
     });
 
-    if (!openedImage || !imageBoxRef.current || !darkenedBoxRef.current) return;
+    if (!openedImage || !imageBoxRef.current || !darkenedBoxRef.current || !openedImage.imageRef.current) return;
+    openedImage.imageRef.current.style.opacity = "0";
+
     // force reflow
     imageBoxRef.current.offsetHeight;
 
