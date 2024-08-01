@@ -10,6 +10,10 @@ export default function SectionContainer({ sx, children }: { sx?: SxProps<Theme>
           position: "relative",
           mb: "6rem",
           mt: 0,
+          px: {
+            xs: "12px",
+            sm: "96px",
+          },
           maxWidth: {
             lg: "1536px",
           },
