@@ -1,28 +1,26 @@
 import { SxProps } from "@mui/material/styles";
-import { Container, Theme } from "@mui/material";
+import { Box, Theme } from "@mui/material";
 import { ReactNode } from "react";
 
 export default function SectionContainer({ sx, children }: { sx?: SxProps<Theme>; children: ReactNode | ReactNode[] }) {
   return (
     <section>
-      <Container
+      <Box
         sx={{
           position: "relative",
           mb: "6rem",
           mt: 0,
           px: {
-            xs: "12px",
-            sm: "96px",
-          },
-          maxWidth: {
-            lg: "1536px",
+            xs: "7%",
+            sm: "15%",
+            md: "10%",
           },
           textAlign: "justify",
           ...sx,
         }}
       >
         {children}
-      </Container>
+      </Box>
     </section>
   );
 }
