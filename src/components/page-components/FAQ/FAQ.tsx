@@ -58,7 +58,7 @@ export default function FAQ({ lang }: Props) {
               endAdornment: (
                 <InputAdornment
                   position="end"
-                  sx={{ mr: "0.5rem" }}
+                  sx={{ mr: "0.5rem", cursor: "pointer" }}
                   onClick={() => {
                     setSearchQuery("");
                     handleSearchChange({ target: { value: "" } } as React.ChangeEvent<HTMLInputElement>);
