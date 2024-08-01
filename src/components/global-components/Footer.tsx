@@ -3,12 +3,14 @@ import { Box, IconButton, List, ListItem, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { primaryColor, secondaryColor } from "@/styles/globals";
 import Link from "next/link";
 import Image from "next/image";
 import React, { ReactNode } from "react";
 import imageSelect from "@images/image-select";
+
 import addressSelect from "../../../addresses/address-select";
+
+import { primaryColor, secondaryColor } from "@/styles/globals";
 
 interface Props {
   lang: LangEnum;
@@ -62,8 +64,8 @@ export default function Footer({ lang }: Props) {
         }}
       >
         <Link href={`/${lang}#header`}>
-          <Box position={"relative"} width={"200px"} sx={{ aspectRatio: "1.3/1" }}>
-            <Image alt={imageSelect.globals.logoPrimary.alt} src={imageSelect.globals.logoPrimary.src} fill />
+          <Box position={"relative"} sx={{ aspectRatio: "1.3/1" }} width={"200px"}>
+            <Image fill alt={imageSelect.globals.logoPrimary.alt} src={imageSelect.globals.logoPrimary.src} />
           </Box>
         </Link>
       </Box>
@@ -94,7 +96,7 @@ export default function Footer({ lang }: Props) {
           <PageListItemLink href={`/${lang}/faq#header`}>FAQ</PageListItemLink>
           <PageListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "title")}</PageListItemLink>
         </List>
-        <Box mb={"1rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
+        <Box alignItems={"center"} display={"flex"} flexDirection={"column"} justifyContent={"center"} mb={"1rem"}>
           <Typography
             sx={{ fontSize: "1.25rem", color: primaryColor, display: { xs: "block", sm: "none", md: "block" } }}
             variant={"h4"}

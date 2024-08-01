@@ -1,11 +1,12 @@
 import { LangEnum, servicesLang } from "@i18n/lang-selector";
 import { Box } from "@mui/material";
-import { primaryColor } from "@/styles/globals";
 import { ReactNode } from "react";
-import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
-import SectionContainer from "@/components/shared-components/SectionContainer";
 import imageSelect from "@images/image-select";
+
+import { primaryColor } from "@/styles/globals";
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
+import SectionContainer from "@/components/shared-components/SectionContainer";
 
 export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
   return (
@@ -16,8 +17,8 @@ export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
           gridTemplateColumns={{ xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
         >
           {imageSelect.services.highlights.map(({ src, alt }, index) => (
-            <ServiceHighlight texts={servicesLang(lang, `highlight-${alt}`).split(" | ")} key={index}>
-              <Image src={src} alt={alt} fill />
+            <ServiceHighlight key={index} texts={servicesLang(lang, `highlight-${alt}`).split(" | ")}>
+              <Image fill alt={alt} src={src} />
             </ServiceHighlight>
           ))}
         </Box>
@@ -28,7 +29,7 @@ export function ServiceHighlightsSection({ lang }: { lang: LangEnum }) {
 
 function ServiceHighlight({ texts, children }: { texts: string[]; children: ReactNode }) {
   return (
-    <Box display={"flex"} flexDirection={"column"} alignItems={"center"} mb={"4rem"}>
+    <Box alignItems={"center"} display={"flex"} flexDirection={"column"} mb={"4rem"}>
       <ServiceHighlightIcon>{children}</ServiceHighlightIcon>
       <GenericPageText sx={{ textAlign: "center" }}>{texts[0]}</GenericPageText>
       <GenericPageText sx={{ width: "80%", textAlign: "center", fontSize: "100%" }}>{texts[1]}</GenericPageText>
@@ -38,13 +39,13 @@ function ServiceHighlight({ texts, children }: { texts: string[]; children: Reac
 
 function ServiceHighlightIcon({ children }: { children: ReactNode }) {
   return (
-    <Box display={"flex"} justifyContent={"center"} alignItems={"center"} height={"100px"} width={"100px"}>
+    <Box alignItems={"center"} display={"flex"} height={"100px"} justifyContent={"center"} width={"100px"}>
       <Box
-        display={"flex"}
-        position={"relative"}
-        border={`1.5rem solid ${primaryColor}`}
-        justifyContent={"center"}
         alignItems={"center"}
+        border={`1.5rem solid ${primaryColor}`}
+        display={"flex"}
+        justifyContent={"center"}
+        position={"relative"}
         sx={{ backgroundColor: primaryColor, height: "100%", aspectRatio: "1/1", borderRadius: "50%" }}
       >
         {children}

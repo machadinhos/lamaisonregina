@@ -1,11 +1,12 @@
 import { homeLang, LangEnum } from "@i18n/lang-selector";
 import React from "react";
 import { Box } from "@mui/material";
-import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
+import imageSelect from "@images/image-select";
+
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import SectionContainer from "@/components/shared-components/SectionContainer";
-import imageSelect from "@images/image-select";
 
 export function HomeInfo({ lang }: { lang: LangEnum }) {
   return (
@@ -24,16 +25,16 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
             <GenericPageText>{homeLang(lang, "home-text-6")}</GenericPageText>
           </Box>
           <Box
+            height={{ xs: "20rem", md: "auto" }}
             mt={{ xs: "2rem", md: "0" }}
             width={{ xs: "100%", md: `${(1 / 3) * 100}%` }}
-            height={{ xs: "20rem", md: "auto" }}
           >
-            <Box height={"100%"} width={"100%"} position={"relative"}>
+            <Box height={"100%"} position={"relative"} width={"100%"}>
               <Image
-                src={imageSelect.home.infoImage.src}
-                alt={imageSelect.home.infoImage.alt}
-                style={{ objectFit: "cover" }}
                 fill
+                alt={imageSelect.home.infoImage.alt}
+                src={imageSelect.home.infoImage.src}
+                style={{ objectFit: "cover" }}
               />
             </Box>
           </Box>

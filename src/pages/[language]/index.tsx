@@ -1,7 +1,8 @@
 import { LangEnum } from "@i18n/lang-selector";
+import Head from "next/head";
+
 import Home from "@/components/page-components/Home/Home";
 import PageContent from "@/components/global-components/PageContent";
-import Head from "next/head";
 
 export default function HomePage({ language }: { language: LangEnum }) {
   return (

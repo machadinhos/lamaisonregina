@@ -15,8 +15,8 @@ const ScrollTriggeredElement = ({ threshold, children }: { threshold: number; ch
 
   return (
     <Box
-      position={"sticky"}
       bottom={trigger ? 0 : "-6rem"}
+      position={"sticky"}
       sx={{
         transition: "bottom 0.25s ease-in-out",
       }}

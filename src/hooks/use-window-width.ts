@@ -11,6 +11,7 @@ function useWindowWidth(): number | null {
     if (typeof window !== "undefined") {
       setWidth(window.innerWidth);
       window.addEventListener("resize", handleResize);
+
       return () => window.removeEventListener("resize", handleResize);
     }
   }, []);

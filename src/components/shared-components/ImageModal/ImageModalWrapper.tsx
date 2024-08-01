@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
+
 import OpenedImage from "@/components/shared-components/ImageModal/OpenedImageInterface";
 import ImageModal from "@/components/shared-components/ImageModal/ImageModal";
 

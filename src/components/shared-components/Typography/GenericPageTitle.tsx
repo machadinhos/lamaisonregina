@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { SxProps, Theme } from "@mui/material/styles";
+
 import processChildren from "@/components/shared-components/Typography/childrenProcessor";
 import { primaryColor } from "@/styles/globals";
 
@@ -13,7 +14,6 @@ export default function GenericPageTitle({ children, sx, noLine }: Props) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "fit-content" }}>
       <Typography
-        variant={"h3"}
         sx={{
           textAlign: "center",
           fontWeight: "400",
@@ -22,6 +22,7 @@ export default function GenericPageTitle({ children, sx, noLine }: Props) {
           mb: "0.5rem",
           ...sx,
         }}
+        variant={"h3"}
       >
         {processChildren(children)}
       </Typography>

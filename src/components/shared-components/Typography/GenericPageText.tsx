@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { SxProps, Theme } from "@mui/material/styles";
 import { ReactNode } from "react";
+
 import processChildren from "@/components/shared-components/Typography/childrenProcessor";
 
 type childrenType = string | ReactNode;
@@ -13,7 +14,6 @@ interface Props {
 export default function GenericPageText({ children, sx }: Props) {
   return (
     <Typography
-      variant={"body1"}
       sx={{
         textAlign: "justify",
         fontSize: { xs: "1.15rem", sm: "1.1rem", lg: "1rem" },
@@ -22,6 +22,7 @@ export default function GenericPageText({ children, sx }: Props) {
         mt: "1rem",
         ...sx,
       }}
+      variant={"body1"}
     >
       {processChildren(children)}
     </Typography>

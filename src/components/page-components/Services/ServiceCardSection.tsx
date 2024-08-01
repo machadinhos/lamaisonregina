@@ -1,10 +1,11 @@
 import { Box } from "@mui/material";
 import { LangEnum, servicesLang } from "@i18n/lang-selector";
-import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Image from "next/image";
+import imageSelect from "@images/image-select";
+
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import SectionContainer from "@/components/shared-components/SectionContainer";
-import imageSelect from "@images/image-select";
 
 function ServiceCard({
   title,
@@ -45,22 +46,22 @@ function ServiceCard({
           <GenericPageTitle noLine>{title}</GenericPageTitle>
         </Box>
         <Box
-          width={"100%"}
-          display={"flex"}
           alignItems={"center"}
+          display={"flex"}
           justifyContent={"center"}
           sx={{ aspectRatio: "1/1" }}
+          width={"100%"}
         >
           <Box
-            width={"100%"}
-            display={"flex"}
             alignItems={"center"}
+            display={"flex"}
             justifyContent={"center"}
             sx={{
               aspectRatio: "1/1",
               "&:hover": { transform: "scale(1.05)" },
               transition: "transform 300ms ease-in-out",
             }}
+            width={"100%"}
           >
             <Box
               sx={{
@@ -69,7 +70,7 @@ function ServiceCard({
                 width: "100%",
               }}
             >
-              <Image src={img.src} alt={img.alt} fill />
+              <Image fill alt={img.alt} src={img.src} />
             </Box>
           </Box>
         </Box>
@@ -97,9 +98,9 @@ export const ServiceCardSection = ({ lang }: { lang: LangEnum }) => {
           mt: "2rem",
         }}
       >
-        <ServiceCard title={card1Title} subTitle={card1Subtitle} text={card1Text} img={imageSelect.services.card1} />
-        <ServiceCard title={card2Title} text={card2Text} img={imageSelect.services.card2} />
-        <ServiceCard title={card3Title} text={card3Text} img={imageSelect.services.card3} />
+        <ServiceCard img={imageSelect.services.card1} subTitle={card1Subtitle} text={card1Text} title={card1Title} />
+        <ServiceCard img={imageSelect.services.card2} text={card2Text} title={card2Title} />
+        <ServiceCard img={imageSelect.services.card3} text={card3Text} title={card3Title} />
       </Box>
     </SectionContainer>
   );

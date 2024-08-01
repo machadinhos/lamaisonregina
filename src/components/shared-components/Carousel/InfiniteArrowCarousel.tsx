@@ -30,11 +30,13 @@ export default function InfiniteArrowCarousel({ sources, priority }: Props) {
         if (position === images.length - 1) {
           return 0;
         }
+
         return position + 1;
       }
       if (position === 0) {
         return images.length - 1;
       }
+
       return position - 1;
     },
     [images],
@@ -82,41 +84,44 @@ export default function InfiniteArrowCarousel({ sources, priority }: Props) {
       return 1;
     } else return 0;
   };
+
   useEffect(() => {
     const interval = setInterval(() => moveImages(true), 5000);
+
     return () => clearInterval(interval);
   }, [moveImages]);
   if (images.length < 1) {
     return <></>;
   }
+
   return (
     <>
-      <Box position={"absolute"} top={0} left={0} width={"100%"} height={"100%"}>
+      <Box height={"100%"} left={0} position={"absolute"} top={0} width={"100%"}>
         <Box
-          width={"100%"}
+          alignItems={"center"}
+          display={"flex"}
           height={"100%"}
           overflow={"hidden"}
           position={"relative"}
-          display={"flex"}
-          alignItems={"center"}
+          width={"100%"}
         >
           {images.map(({ src, alt, _id }) => (
             <Box
               key={_id}
-              width={"100%"}
               height={"100%"}
-              position={"absolute"}
-              top={0}
               left={0}
+              position={"absolute"}
               sx={{
                 transition: "transform 0.5s ease-in-out",
                 opacity: resolveOpacity(_id),
                 transform: resolveTransform(_id),
               }}
+              top={0}
+              width={"100%"}
               zIndex={-1}
             >
-              <Box width={"100%"} height={"100%"} position={"relative"}>
-                <Image priority={priority} fill src={src} alt={alt} style={{ objectFit: "cover" }} />
+              <Box height={"100%"} position={"relative"} width={"100%"}>
+                <Image fill alt={alt} priority={priority} src={src} style={{ objectFit: "cover" }} />
               </Box>
             </Box>
           ))}

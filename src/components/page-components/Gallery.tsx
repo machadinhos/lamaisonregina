@@ -1,12 +1,13 @@
 import { galleryLang, LangEnum } from "@i18n/lang-selector";
+import React from "react";
+import imageSelect from "@images/image-select";
+import { Box } from "@mui/material";
+
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import CTA from "@/components/shared-components/CTA";
-import React from "react";
 import SlickCarousel from "@/components/shared-components/Carousel/SlickCarousel";
 import SectionContainer from "@/components/shared-components/SectionContainer";
-import imageSelect from "@images/image-select";
-import { Box } from "@mui/material";
 
 interface Props {
   lang: LangEnum;

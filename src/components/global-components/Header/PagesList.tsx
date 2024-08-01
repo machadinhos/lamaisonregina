@@ -3,6 +3,7 @@ import { Box, IconButton, List, ListItem, Theme } from "@mui/material";
 import Link from "next/link";
 import { SxProps } from "@mui/material/styles";
 import { useRouter } from "next/router";
+
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import { primaryColor } from "@/styles/globals";
 
@@ -32,12 +33,13 @@ function HeaderListItem({
   fontSize?: string;
 }) {
   const isCurrentPage = currentPage === page.href.split("/")[2];
+
   return (
     <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
       <Box
+        alignItems={"center"}
         display={"flex"}
         flexDirection={"column"}
-        alignItems={"center"}
         justifyContent={"center"}
         sx={{
           "&:hover": {
@@ -92,7 +94,7 @@ export default function PagesList({
   return (
     <List sx={{ mt: "1rem", ...sx }}>
       {getPagesList(lang).map((page, index) => (
-        <HeaderListItem fontSize={fontSize} isHome={isHome} currentPage={currentPage} key={index} page={page} />
+        <HeaderListItem key={index} currentPage={currentPage} fontSize={fontSize} isHome={isHome} page={page} />
       ))}
     </List>
   );

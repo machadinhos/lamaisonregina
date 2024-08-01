@@ -1,11 +1,12 @@
 import { LangEnum } from "@i18n/lang-selector";
-import LangSelector from "@/components/global-components/Header/LangSelector";
 import { Box, IconButton } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import PagesList from "@/components/global-components/Header/PagesList";
 import imageSelect from "@images/image-select";
 import Link from "next/link";
+
+import PagesList from "@/components/global-components/Header/PagesList";
+import LangSelector from "@/components/global-components/Header/LangSelector";
 
 export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
   return (
@@ -23,27 +24,28 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
     >
       <Box sx={{ display: "flex" }}>
         <Box flex={1} />
-        <Box flex={1} display={"flex"} justifyContent={"center"} position={"relative"}>
+        <Box display={"flex"} flex={1} justifyContent={"center"} position={"relative"}>
           <IconButton sx={{ "&:hover": { backgroundColor: "transparent" } }}>
             <Link href={`/${lang}/`}>
               <Image
                 priority
-                src={imageSelect.globals.logoPrimary.src}
                 alt={imageSelect.globals.logoPrimary.alt}
-                width={412 / 1.8}
                 height={315 / 1.8}
+                src={imageSelect.globals.logoPrimary.src}
                 style={{
                   objectFit: "contain",
                 }}
+                width={412 / 1.8}
               />
             </Link>
           </IconButton>
         </Box>
-        <LangSelector sx={{ flex: 1, justifyContent: "flex-end" }} lang={lang} isHome={isHome} fontSize={"1rem"} />
+        <LangSelector fontSize={"1rem"} isHome={isHome} lang={lang} sx={{ flex: 1, justifyContent: "flex-end" }} />
       </Box>
       <Box display={"flex"} justifyContent={"center"}>
         <PagesList
           fontSize={"1rem"}
+          isHome={isHome}
           lang={lang}
           sx={{
             display: "flex",
@@ -52,7 +54,6 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
               flex: 1,
             },
           }}
-          isHome={isHome}
         />
       </Box>
     </Box>

@@ -1,13 +1,14 @@
 import { LangEnum } from "@i18n/lang-selector";
 import { Box, Drawer, IconButton } from "@mui/material";
-import PagesList from "@/components/global-components/Header/PagesList";
 import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
-import LangSelector from "@/components/global-components/Header/LangSelector";
 import Image from "next/image";
 import Link from "next/link";
 import imageSelect from "@images/image-select";
+
+import LangSelector from "@/components/global-components/Header/LangSelector";
+import PagesList from "@/components/global-components/Header/PagesList";
 
 export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
   const [open, setOpen] = useState<boolean>(false);
@@ -28,7 +29,7 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
         zIndex: 1300,
       }}
     >
-      <HeaderTop lang={lang} isHome={isHome} toggleDrawer={toggleDrawer} open={open} />
+      <HeaderTop isHome={isHome} lang={lang} open={open} toggleDrawer={toggleDrawer} />
       <DrawerMenu lang={lang} open={open} toggleDrawer={toggleDrawer} />
     </Box>
   );
@@ -49,7 +50,6 @@ const HeaderTop = ({
     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "top" }}>
       <Box flex={1}>
         <IconButton
-          onClick={toggleDrawer}
           sx={{
             zIndex: 1300,
             color: isHome ? (open ? "auto" : "white") : "auto",
@@ -58,6 +58,7 @@ const HeaderTop = ({
             transform: open ? "rotate(180deg)" : "rotate(0deg)",
             justifyContent: "flex-start",
           }}
+          onClick={toggleDrawer}
         >
           {open ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
@@ -76,22 +77,22 @@ const HeaderTop = ({
           <Link href={`/${lang}/`}>
             <Image
               priority
-              src={imageSelect.globals.logoPrimary.src}
               alt={imageSelect.globals.logoPrimary.alt}
-              width={412 / 2.6}
               height={315 / 2.6}
+              src={imageSelect.globals.logoPrimary.src}
               style={{
                 objectFit: "contain",
               }}
+              width={412 / 2.6}
             />
           </Link>
         </IconButton>
       </Box>
       <LangSelector
-        lang={lang}
-        sx={{ zIndex: 1300, flex: 1, justifyContent: "flex-end" }}
-        open={open}
         isHome={isHome}
+        lang={lang}
+        open={open}
+        sx={{ zIndex: 1300, flex: 1, justifyContent: "flex-end" }}
       />
     </Box>
   );
@@ -100,16 +101,16 @@ const HeaderTop = ({
 const DrawerMenu = ({ lang, open, toggleDrawer }: { lang: LangEnum; open: boolean; toggleDrawer: () => void }) => {
   return (
     <Drawer
-      anchor="left"
-      open={open}
-      onClose={toggleDrawer}
-      transitionDuration={{ enter: 800, exit: 800 }}
       PaperProps={{
         sx: {
           width: "100%",
           height: "100%",
         },
       }}
+      anchor="left"
+      open={open}
+      transitionDuration={{ enter: 800, exit: 800 }}
+      onClose={toggleDrawer}
     >
       <Box
         sx={{
@@ -121,7 +122,7 @@ const DrawerMenu = ({ lang, open, toggleDrawer }: { lang: LangEnum; open: boolea
           justifyContent: "center",
         }}
       >
-        <PagesList sx={{}} lang={lang} />
+        <PagesList lang={lang} sx={{}} />
       </Box>
     </Drawer>
   );

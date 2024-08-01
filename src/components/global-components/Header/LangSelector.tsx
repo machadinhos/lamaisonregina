@@ -23,11 +23,11 @@ export default function LangSelector({
     <Box display={"flex"} sx={sx}>
       <LangOption
         fontSize={fontSize}
-        isHome={isHome}
-        open={open}
-        lang={lang}
-        option={"pt"}
         href={`/pt/${path.substring(4).replace("header", "").replace("#", "")}`}
+        isHome={isHome}
+        lang={lang}
+        open={open}
+        option={"pt"}
       />
       <Typography
         sx={{
@@ -41,11 +41,11 @@ export default function LangSelector({
       </Typography>
       <LangOption
         fontSize={fontSize}
-        isHome={isHome}
-        open={open}
-        lang={lang}
-        option={"en"}
         href={`/en/${path.substring(4).replace("header", "").replace("#", "")}`}
+        isHome={isHome}
+        lang={lang}
+        open={open}
+        option={"en"}
       />
     </Box>
   );
@@ -72,9 +72,8 @@ const LangOption = ({
   };
 
   return (
-    <IconButton onClick={() => refreshLang(href)} sx={{ m: 0, p: 0, height: "fit-content" }}>
+    <IconButton sx={{ m: 0, p: 0, height: "fit-content" }} onClick={() => refreshLang(href)}>
       <Typography
-        variant={"body1"}
         sx={{
           mx: "0.25rem",
           color: isHome ? (open ? "auto" : "white") : "auto",
@@ -83,6 +82,7 @@ const LangOption = ({
           cursor: option === lang ? "default" : "pointer",
           ...(fontSize && { fontSize }),
         }}
+        variant={"body1"}
       >
         {option.toUpperCase()}
       </Typography>

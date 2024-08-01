@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import { SxProps, Theme } from "@mui/material/styles";
+
 import processChildren from "@/components/shared-components/Typography/childrenProcessor";
 
 interface Props {
@@ -10,7 +11,6 @@ interface Props {
 export default function GenericPageSubTitle({ children, sx }: Props) {
   return (
     <Typography
-      variant={"h4"}
       sx={{
         textAlign: "center",
         fontWeight: "400",
@@ -18,6 +18,7 @@ export default function GenericPageSubTitle({ children, sx }: Props) {
         mt: "1rem",
         ...sx,
       }}
+      variant={"h4"}
     >
       {processChildren(children)}
     </Typography>

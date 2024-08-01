@@ -1,7 +1,8 @@
 import { homeLang, LangEnum } from "@i18n/lang-selector";
 import { Box, Button } from "@mui/material";
-import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import React, { useState } from "react";
+
+import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import GenericPageSubTitle from "@/components/shared-components/Typography/GenericPageSubTitle";
 import BulletedList from "@/components/shared-components/BulletList/BulletedList";
@@ -49,7 +50,7 @@ function WhyChooseListItems({
   const items = homeLang(lang, "home-sep-2-list").split(" | ");
   const itemsText = items.map((item, index) => (
     <React.Fragment key={index}>
-      <BulletedListItem sx={{ justifyContent: "left" }} key={`item-${index}`}>
+      <BulletedListItem key={`item-${index}`} sx={{ justifyContent: "left" }}>
         <GenericPageText sx={{ textAlign: "left" }}>{item}</GenericPageText>
       </BulletedListItem>
       {items.length - 1 === index && (
@@ -68,16 +69,17 @@ export function WhyChooseList({ lang }: { lang: LangEnum }) {
   const toggleSustainability = () => {
     setShowSustainability((prevState) => !prevState);
   };
+
   return (
     <SectionContainer>
       <Box>
         <GenericPageTitle sx={{ textAlign: "center" }}>{homeLang(lang, "home-sep-2")}</GenericPageTitle>
         <BulletedList>
           <WhyChooseListItems
-            toggleSustainability={toggleSustainability}
-            showSustainability={showSustainability}
             key={"listItems"}
             lang={lang}
+            showSustainability={showSustainability}
+            toggleSustainability={toggleSustainability}
           />
         </BulletedList>
         {showSustainability && <SustainabilityText lang={lang} />}

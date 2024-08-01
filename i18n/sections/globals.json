@@ -5,6 +5,7 @@
     "footer-rights-reserved-2": "Todos os direitos reservados.",
     "cta": "Contacte-nos",
     "copied-message": "Copiado para a área de transferência.",
+    "copied-error": "Erro ao copiar para a área de transferência.",
     "meta-description": "A definir",
     "meta-keywords": "A definir"
   },
@@ -14,6 +15,7 @@
     "footer-rights-reserved-2": "All rights reserved.",
     "cta": "Get in contact ",
     "copied-message": "Copied to clipboard.",
+    "copied-error": "Error copying to clipboard.",
     "meta-description": "To be defined",
     "meta-keywords": "To be defined"
   }

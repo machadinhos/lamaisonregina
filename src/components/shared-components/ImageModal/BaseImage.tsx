@@ -1,6 +1,7 @@
 import { useContext, useRef } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
+
 import { ImageModalContext } from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
 export default function BaseImage({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
@@ -24,9 +25,9 @@ export default function BaseImage({ src, alt, priority }: { src: string; alt: st
 
   return (
     <Box
-      position={"relative"}
+      ref={imageBoxRef}
       height={"90%"}
-      width={"95%"}
+      position={"relative"}
       sx={{
         "&:hover": {
           "& img": {
@@ -34,16 +35,16 @@ export default function BaseImage({ src, alt, priority }: { src: string; alt: st
           },
         },
       }}
+      width={"95%"}
       onClick={handleImageClick}
-      ref={imageBoxRef}
     >
       <Image
-        priority={priority}
         ref={imageRef}
-        src={src}
-        alt={alt}
-        style={{ cursor: "pointer", objectFit: "contain", transition: "transform 300ms ease-in-out" }}
         fill
+        alt={alt}
+        priority={priority}
+        src={src}
+        style={{ cursor: "pointer", objectFit: "contain", transition: "transform 300ms ease-in-out" }}
       />
     </Box>
   );

@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
+
 import { ImageModalContext } from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
 export default function ImageModal() {
@@ -20,7 +21,6 @@ export default function ImageModal() {
       if (!openedImage.imageRef.current) return;
       openedImage.imageRef.current.style.opacity = "1";
       setOpenedImage(null);
-      console.log("test");
     }, 500);
   }, [openedImage, setOpenedImage]);
 
@@ -50,42 +50,42 @@ export default function ImageModal() {
       {openedImage && (
         <Box
           ref={darkenedBoxRef}
-          position={"fixed"}
-          top={0}
-          left={0}
-          width={"100%"}
-          height={"100%"}
+          alignItems={"center"}
           bgcolor={"rgba(0, 0, 0, 0)"}
+          display={"flex"}
+          height={"100%"}
+          justifyContent={"center"}
+          left={0}
+          position={"fixed"}
           sx={{
             transition: "background-color 0.5s ease-in-out",
           }}
+          top={0}
+          width={"100%"}
           zIndex={3000}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
           onClick={handleClick}
         >
           <Box
             ref={imageBoxRef}
-            display={"flex"}
-            justifyContent={"center"}
             alignItems={"center"}
-            position={"fixed"}
-            top={openedImage.coords.open.top}
-            left={openedImage.coords.open.left}
+            display={"flex"}
             height={openedImage.size.open.height}
-            width={openedImage.size.open.width}
+            justifyContent={"center"}
+            left={openedImage.coords.open.left}
+            position={"fixed"}
             sx={{
               transition: "all 0.5s ease-in-out",
             }}
+            top={openedImage.coords.open.top}
+            width={openedImage.size.open.width}
           >
             <Image
+              fill
+              alt={openedImage.alt}
+              src={openedImage.src}
               style={{
                 objectFit: "contain",
               }}
-              src={openedImage.src}
-              alt={openedImage.alt}
-              fill
             />
           </Box>
         </Box>

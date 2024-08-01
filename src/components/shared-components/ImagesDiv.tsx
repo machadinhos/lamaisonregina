@@ -22,23 +22,23 @@ export default function ImagesDiv({ images }: { images: ImageComp[] }) {
 
   return (
     <Box
-      display="flex"
-      justifyContent="center"
       alignItems="center"
-      height={{ xs: "75rem", md: "25rem" }}
-      width="100%"
+      display="flex"
       flexDirection={{ xs: "column", md: "row" }}
+      height={{ xs: "75rem", md: "25rem" }}
+      justifyContent="center"
+      width="100%"
     >
       {images.map(({ src, alt }, index) => (
         <Box
           key={index}
-          position="relative"
           height="100%"
+          position="relative"
           sx={imageBoxStyle(index)}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
-          <Image src={src} alt={alt} style={{ objectFit: "cover" }} fill />
+          <Image fill alt={alt} src={src} style={{ objectFit: "cover" }} />
         </Box>
       ))}
     </Box>

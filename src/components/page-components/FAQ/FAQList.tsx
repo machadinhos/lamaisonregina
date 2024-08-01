@@ -1,13 +1,14 @@
+import { faqLang, LangEnum } from "@i18n/lang-selector";
+import Link from "next/link";
+import { List } from "@mui/material";
+import React from "react";
+
 import { FAQAccordion, FAQAccordionDetails, FAQAccordionSummary } from "@/components/page-components/FAQ/FAQAccordion";
 import { FAQTitle } from "@/components/page-components/FAQ/FAQTitle";
-import { faqLang, LangEnum } from "@i18n/lang-selector";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
-import Link from "next/link";
 import { primaryColor } from "@/styles/globals";
 import BulletedList from "@/components/shared-components/BulletList/BulletedList";
 import BulletedListItem from "@/components/shared-components/BulletList/BulletedListItem";
-import { List } from "@mui/material";
-import React from "react";
 
 export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: React.RefObject<HTMLUListElement> }) {
   return (
@@ -23,7 +24,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
           <GenericPageText>{faqLang(lang, "faq-where-text-4")}</GenericPageText>
           <GenericPageText>
             {faqLang(lang, "faq-where-text-5-1") + " "}
-            <Link style={{ color: primaryColor }} href={`/${lang}/contacts`}>
+            <Link href={`/${lang}/contacts`} style={{ color: primaryColor }}>
               {faqLang(lang, "faq-where-text-5-2")}
             </Link>
             {" " + faqLang(lang, "faq-where-text-5-3")}
@@ -156,7 +157,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
         <FAQAccordionDetails>
           <GenericPageText>
             {faqLang(lang, "faq-pricing-text-1")}{" "}
-            <Link style={{ color: primaryColor }} href={`/${lang}/contacts`}>
+            <Link href={`/${lang}/contacts`} style={{ color: primaryColor }}>
               {faqLang(lang, "faq-pricing-text-2")}
             </Link>{" "}
             {faqLang(lang, "faq-pricing-text-3")}

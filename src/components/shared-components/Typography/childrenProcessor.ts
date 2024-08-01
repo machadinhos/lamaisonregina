@@ -4,8 +4,10 @@ type childrenType = string | ReactNode;
 
 const processChild = (child: string, array: childrenType[]) => {
   const splitChild = child.split("_");
+
   if (splitChild.length === 1) {
     array.push(child);
+
     return;
   }
   for (let i = 0; i < splitChild.length; i++) {
@@ -21,6 +23,7 @@ const processChild = (child: string, array: childrenType[]) => {
 
 export default function processChildren(children: string | childrenType[]) {
   const finalChildren: childrenType[] = [];
+
   if (Array.isArray(children)) {
     for (const child of children) {
       if (typeof child === "string") {

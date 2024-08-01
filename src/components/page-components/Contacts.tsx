@@ -1,16 +1,18 @@
 import { contactsLang, LangEnum } from "@i18n/lang-selector";
 import { Box } from "@mui/material";
-import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 import Link from "next/link";
-import SectionContainer from "@/components/shared-components/SectionContainer";
 import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 import { ReactNode } from "react";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import ExploreRoundedIcon from "@mui/icons-material/ExploreRounded";
 import RoomSharpIcon from "@mui/icons-material/RoomSharp";
+
+import addressSelect from "../../../addresses/address-select";
+
 import { primaryColor } from "@/styles/globals";
 import CopyButton from "@/components/shared-components/CopyButton";
-import addressSelect from "../../../addresses/address-select";
+import SectionContainer from "@/components/shared-components/SectionContainer";
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 
 interface Props {
   lang: LangEnum;
@@ -21,10 +23,10 @@ function ContactTextSection({ children, link, lang }: { children: string; link?:
 
   return (
     <Box
-      display={"flex"}
-      justifyContent={"center"}
       alignContent={"center"}
       alignItems={"center"}
+      display={"flex"}
+      justifyContent={"center"}
       justifyItems={"center"}
     >
       {link ? (
@@ -42,7 +44,7 @@ function ContactTextSection({ children, link, lang }: { children: string; link?:
 
 function ContactIcon({ children }: { children: ReactNode }) {
   return (
-    <Box color={primaryColor} mt={"3rem"} display={"flex"} justifyContent={"center"}>
+    <Box color={primaryColor} display={"flex"} justifyContent={"center"} mt={"3rem"}>
       {children}
     </Box>
   );
@@ -53,7 +55,7 @@ export default function Contacts({ lang }: Props) {
     <SectionContainer>
       <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-1")}</GenericPageText>
       <GenericPageText sx={{ textAlign: "center" }}>{contactsLang(lang, "contacts-text-2")}</GenericPageText>
-      <Box mt={"2rem"} display={"flex"} flexDirection={"column"} justifyContent={"center"}>
+      <Box display={"flex"} flexDirection={"column"} justifyContent={"center"} mt={"2rem"}>
         <ContactIcon>
           <LocalPhoneRoundedIcon />
         </ContactIcon>
@@ -74,13 +76,14 @@ export default function Contacts({ lang }: Props) {
         <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
           {contactsLang(lang, "contacts-address-text")}
         </ContactTextSection>
-        <Box width={"100%"} display={"flex"} justifyContent={"center"}>
-          <Box width={{ xs: "100%", md: "70%" }} sx={{ aspectRatio: "2/1" }}>
+        <Box display={"flex"} justifyContent={"center"} width={"100%"}>
+          <Box sx={{ aspectRatio: "2/1" }} width={{ xs: "100%", md: "70%" }}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d763.2969855168978!2d-8.804499708003998!3d40.071219679959604!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e0!3m2!1spt-PT!2spt!4v1719874529334!5m2!1spt-PT!2spt"
-              style={{ marginTop: "1rem", border: 0, width: "100%", height: "100%" }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d763.2969855168978!2d-8.804499708003998!3d40.071219679959604!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e0!3m2!1spt-PT!2spt!4v1719874529334!5m2!1spt-PT!2spt"
+              style={{ marginTop: "1rem", border: 0, width: "100%", height: "100%" }}
+              title={"Google Maps"}
             />
           </Box>
         </Box>

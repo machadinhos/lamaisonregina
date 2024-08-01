@@ -8,7 +8,7 @@ export function FAQAccordion({ children }: { children: ReactNode[] }) {
 
 export function FAQAccordionSummary({ children }: { children: ReactNode }) {
   return (
-    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content">
+    <AccordionSummary aria-controls="panel1-content" expandIcon={<ExpandMoreIcon />}>
       {children}
     </AccordionSummary>
   );

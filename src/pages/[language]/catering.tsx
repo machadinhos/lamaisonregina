@@ -1,7 +1,8 @@
 import { LangEnum } from "@i18n/lang-selector";
+import Head from "next/head";
+
 import Catering from "@/components/page-components/Catering";
 import PageContent from "@/components/global-components/PageContent";
-import Head from "next/head";
 
 export default function CateringPage({ language }: { language: LangEnum }) {
   return (

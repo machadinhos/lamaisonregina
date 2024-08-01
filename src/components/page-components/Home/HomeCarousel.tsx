@@ -1,9 +1,10 @@
 import { Box } from "@mui/material";
-import InfiniteArrowCarousel from "@/components/shared-components/Carousel/InfiniteArrowCarousel";
 import { homeLang, LangEnum } from "@i18n/lang-selector";
 import React from "react";
-import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import imageSelect from "@images/image-select";
+
+import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
+import InfiniteArrowCarousel from "@/components/shared-components/Carousel/InfiniteArrowCarousel";
 
 interface Props {
   lang: LangEnum;
@@ -36,6 +37,7 @@ export function HomeCarousel({ lang }: Props) {
       >
         <InfiniteArrowCarousel priority sources={imageSelect.home.carouselImages} />
         <GenericPageTitle
+          noLine
           sx={{
             color: "white",
             textAlign: "left",
@@ -43,7 +45,6 @@ export function HomeCarousel({ lang }: Props) {
             px: "2.5rem",
             fontWeight: "300",
           }}
-          noLine
         >
           {homeLang(lang, "home-slogan")}
         </GenericPageTitle>

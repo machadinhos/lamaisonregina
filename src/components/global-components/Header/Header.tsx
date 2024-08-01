@@ -1,4 +1,5 @@
 import { LangEnum } from "@i18n/lang-selector";
+
 import MobileHeader from "@/components/global-components/Header/MobileHeader";
 import DesktopHeader from "@/components/global-components/Header/DesktopHeader";
 
