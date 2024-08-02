@@ -7,6 +7,8 @@ import { AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Montserrat } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import Head from "next/head";
 
 import { rootFontSize } from "@/styles/globals";
 
@@ -61,6 +63,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <GoogleAnalytics gaId="G-DDBD6FPCJV" />
+      </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AnimatePresence mode="wait">

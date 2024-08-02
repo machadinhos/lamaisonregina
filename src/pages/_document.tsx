@@ -8,7 +8,6 @@ function Document({ lang }: { lang: string }) {
     <Html lang={lang}>
       <Head>
         <meta charSet="utf-8" />
-        <meta content="KK4vxFcOK2imtY2lB7dkMzc3-JBI9vwwfPmaABIprko" name="google-site-verification" />
         <meta content={globalsLang(langEnum, "meta-description")} name="description" />
         <meta content={globalsLang(langEnum, "meta-keywords")} name="keywords" />
         <meta content="index, follow" name="robots" />
