@@ -30,12 +30,12 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
               <Image
                 priority
                 alt={imageSelect.globals.logoPrimary.alt}
-                height={315 / 1.8}
+                height={315 / 2}
                 src={imageSelect.globals.logoPrimary.src}
                 style={{
                   objectFit: "contain",
                 }}
-                width={412 / 1.8}
+                width={412 / 2}
               />
             </Link>
           </IconButton>

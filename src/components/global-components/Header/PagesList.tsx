@@ -92,7 +92,7 @@ export default function PagesList({
   const currentPage = useRouter().asPath.split("/")[2] || "";
 
   return (
-    <List sx={{ mt: "1rem", ...sx }}>
+    <List sx={{ ...sx }}>
       {getPagesList(lang).map((page, index) => (
         <HeaderListItem key={index} currentPage={currentPage} fontSize={fontSize} isHome={isHome} page={page} />
       ))}
