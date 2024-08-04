@@ -12,7 +12,6 @@ export default function CTA({ lang }: { lang: LangEnum }) {
         <Box display={"flex"} justifyContent={"center"} marginTop={"3rem"}>
           <Link href={`/${lang}/contacts/#header`}>
             <Button
-              // href={`/${lang}/contacts/#header`}
               sx={{
                 display: "flex",
                 justifyContent: "center",
