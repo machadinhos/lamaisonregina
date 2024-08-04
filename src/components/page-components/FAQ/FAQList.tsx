@@ -2,6 +2,7 @@ import { faqLang, LangEnum } from "@i18n/lang-selector";
 import Link from "next/link";
 import { List } from "@mui/material";
 import React from "react";
+import dynamic from "next/dynamic";
 
 import { FAQAccordion, FAQAccordionDetails, FAQAccordionSummary } from "@/components/page-components/FAQ/FAQAccordion";
 import { FAQTitle } from "@/components/page-components/FAQ/FAQTitle";
@@ -9,6 +10,8 @@ import GenericPageText from "@/components/shared-components/Typography/GenericPa
 import { primaryColor } from "@/styles/globals";
 import BulletedList from "@/components/shared-components/BulletList/BulletedList";
 import BulletedListItem from "@/components/shared-components/BulletList/BulletedListItem";
+
+const FAQContactsList = dynamic(() => import("@/components/page-components/FAQ/FAQContactsList"), { ssr: false });
 
 export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: React.RefObject<HTMLUListElement> }) {
   return (
@@ -69,14 +72,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
         </FAQAccordionSummary>
         <FAQAccordionDetails>
           <GenericPageText>{faqLang(lang, "faq-contact-text")}</GenericPageText>
-          <BulletedList>
-            <BulletedListItem>
-              <GenericPageText>{faqLang(lang, "faq-contact-list-1")}</GenericPageText>
-            </BulletedListItem>
-            <BulletedListItem>
-              <GenericPageText>{faqLang(lang, "faq-contact-list-2")}</GenericPageText>
-            </BulletedListItem>
-          </BulletedList>
+          <FAQContactsList lang={lang} />
         </FAQAccordionDetails>
       </FAQAccordion>
       <FAQAccordion>

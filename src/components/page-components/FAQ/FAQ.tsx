@@ -2,13 +2,11 @@ import { faqLang, LangEnum } from "@i18n/lang-selector";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { CloseRounded, SearchRounded } from "@mui/icons-material";
-import dynamic from "next/dynamic";
 
 import CTA from "@/components/shared-components/CTA";
 import SectionContainer from "@/components/shared-components/SectionContainer";
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
-
-const FAQList = dynamic(() => import("./FAQList"), { ssr: false });
+import FAQList from "@/components/page-components/FAQ/FAQList";
 
 interface Props {
   lang: LangEnum;
