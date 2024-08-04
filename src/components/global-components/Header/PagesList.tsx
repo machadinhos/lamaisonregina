@@ -32,7 +32,7 @@ function HeaderListItem({
   isHome?: boolean;
   fontSize?: string;
 }) {
-  const isCurrentPage = currentPage === page.href.split("/")[2];
+  const isCurrentPage = currentPage.split("#")[0] === page.href.split("/")[2];
 
   return (
     <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>

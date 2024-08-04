@@ -122,7 +122,7 @@ const DrawerMenu = ({ lang, open, toggleDrawer }: { lang: LangEnum; open: boolea
           justifyContent: "center",
         }}
       >
-        <PagesList lang={lang} sx={{}} />
+        <PagesList lang={lang} />
       </Box>
     </Drawer>
   );
