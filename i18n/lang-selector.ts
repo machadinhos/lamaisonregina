@@ -61,6 +61,7 @@ export const faqLang = (lang: LangEnum, text: string) => {
 
 const selectLang = (lang: LangEnum, section: SectionEnum, text: string) => {
   const key = Object.entries(Lang[section][lang]).find((key) => key[0] === text);
+
   if (key) {
     return key[1];
   } else {
