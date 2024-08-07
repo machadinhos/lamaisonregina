@@ -32,7 +32,7 @@ function ServiceHighlight({ texts, children }: { texts: string[]; children: Reac
     <Box alignItems={"center"} display={"flex"} flexDirection={"column"} mb={"4rem"}>
       <ServiceHighlightIcon>{children}</ServiceHighlightIcon>
       <GenericPageText sx={{ textAlign: "center" }}>{texts[0]}</GenericPageText>
-      <GenericPageText sx={{ width: "80%", textAlign: "center", fontSize: "100%" }}>{texts[1]}</GenericPageText>
+      <GenericPageText sx={{ width: "80%", textAlign: "center" }}>{texts[1]}</GenericPageText>
     </Box>
   );
 }

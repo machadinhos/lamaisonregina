@@ -73,7 +73,7 @@ const HeaderTop = ({
           alignItems: "center",
         }}
       >
-        <IconButton sx={{ "&:hover": { backgroundColor: "transparent" } }}>
+        <IconButton disableRipple>
           <Link href={`/${lang}/`}>
             <Image
               priority

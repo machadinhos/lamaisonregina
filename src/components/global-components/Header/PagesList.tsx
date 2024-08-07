@@ -49,7 +49,7 @@ function HeaderListItem({
           },
         }}
       >
-        <IconButton sx={{ margin: 0, padding: 0, "&:hover": { backgroundColor: "transparent" } }}>
+        <IconButton disableFocusRipple sx={{ margin: 0, padding: 0 }}>
           <Link href={page.href}>
             <GenericPageTitle
               noLine

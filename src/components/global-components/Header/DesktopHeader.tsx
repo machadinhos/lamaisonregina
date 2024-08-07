@@ -25,7 +25,7 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
       <Box sx={{ display: "flex" }}>
         <Box flex={1} />
         <Box display={"flex"} flex={1} justifyContent={"center"} position={"relative"}>
-          <IconButton sx={{ "&:hover": { backgroundColor: "transparent" } }}>
+          <IconButton disableRipple>
             <Link href={`/${lang}/`}>
               <Image
                 priority

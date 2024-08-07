@@ -6,14 +6,16 @@ import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Montserrat } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Montserrat } from "next/font/google";
 
-import { rootFontSize } from "@/styles/globals";
-
-const montserrat = Montserrat({ subsets: ["latin"], style: ["normal", "italic"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 const theme: Theme = createTheme({
   palette: {
@@ -25,7 +27,6 @@ const theme: Theme = createTheme({
     },
   },
   typography: {
-    fontSize: rootFontSize,
     allVariants: {
       fontFamily: montserrat.style.fontFamily,
       fontOpticalSizing: "auto",
