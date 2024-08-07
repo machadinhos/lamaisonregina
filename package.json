@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "serve": "npx serve@latest out",
-    "prepare": "husky"
+    "prepare": "husky",
+    "local": "npm run build && npm run serve"
   },
   "dependencies": {
     "@mui/icons-material": "^5.15.20",
