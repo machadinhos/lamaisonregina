@@ -19,7 +19,7 @@ export default function GenericPageTitle({ children, sx, noLine }: Props) {
           fontWeight: "400",
           fontSize: { xs: "1.7rem", lg: "1.8rem" },
           mt: "1.5rem",
-          mb: "0.5rem",
+          mb: "1.5rem",
           ...sx,
         }}
         variant={"h3"}
@@ -29,7 +29,7 @@ export default function GenericPageTitle({ children, sx, noLine }: Props) {
       {!noLine && (
         <Box
           sx={{
-            width: "80%",
+            width: "30%",
             height: "1px",
             backgroundColor: primaryColor,
           }}
