@@ -27,7 +27,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
           <GenericPageText>{faqLang(lang, "faq-where-text-4")}</GenericPageText>
           <GenericPageText>
             {faqLang(lang, "faq-where-text-5-1") + " "}
-            <Link href={`/${lang}/contacts`} style={{ color: primaryColor }}>
+            <Link href={`/${lang}/contacts#header`} style={{ color: primaryColor }}>
               {faqLang(lang, "faq-where-text-5-2")}
             </Link>
             {" " + faqLang(lang, "faq-where-text-5-3")}
@@ -202,14 +202,6 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
       </FAQAccordion>
       <FAQAccordion>
         <FAQAccordionSummary>
-          <FAQTitle>{faqLang(lang, "faq-mosquitoes-title")}</FAQTitle>
-        </FAQAccordionSummary>
-        <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-mosquitoes-text")}</GenericPageText>
-        </FAQAccordionDetails>
-      </FAQAccordion>
-      <FAQAccordion>
-        <FAQAccordionSummary>
           <FAQTitle>{faqLang(lang, "faq-sustainability-title")}</FAQTitle>
         </FAQAccordionSummary>
         <FAQAccordionDetails>
@@ -221,7 +213,13 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
           <FAQTitle>{faqLang(lang, "faq-other-questions-title")}</FAQTitle>
         </FAQAccordionSummary>
         <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-other-questions-text")}</GenericPageText>
+          <GenericPageText>
+            {faqLang(lang, "faq-other-questions-text-1") + " "}
+            <Link href={`/${lang}/contacts#header`} style={{ color: primaryColor }}>
+              {faqLang(lang, "faq-other-questions-text-2")}
+            </Link>
+            {" " + faqLang(lang, "faq-other-questions-text-3")}
+          </GenericPageText>
         </FAQAccordionDetails>
       </FAQAccordion>
     </List>

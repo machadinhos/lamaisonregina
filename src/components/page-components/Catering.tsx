@@ -21,7 +21,6 @@ function CateringSection({ children, reverse }: { children: ReactNode[]; reverse
         flexDirection: { xs: reverse ? "column-reverse" : "column", md: "row" },
         height: { xs: "auto", md: "500px" },
         "& > *": { flex: 1 },
-        mt: "2rem",
       }}
     >
       {children}
@@ -62,7 +61,7 @@ function CateringImageBox({ src, alt }: { src: string; alt: string }) {
 export default function Catering({ lang }: Props) {
   return (
     <>
-      <SectionContainer>
+      <SectionContainer sx={{ mb: { xs: "3rem", md: "1rem" } }}>
         <CateringSection>
           <CateringTextBox>
             <Box display={"flex"} justifyContent={"center"} mb={"1.5rem"}>
@@ -74,14 +73,15 @@ export default function Catering({ lang }: Props) {
           <CateringImageBox alt={imageSelect.catering.imageBox1.alt} src={imageSelect.catering.imageBox1.src} />
         </CateringSection>
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer sx={{ mb: { xs: "3rem", md: "1rem" } }}>
         <CateringSection reverse>
           <CateringImageBox alt={imageSelect.catering.imageBox2.alt} src={imageSelect.catering.imageBox2.src} />
           <CateringTextBox>
             <Box display={"flex"} justifyContent={"center"} mb={"1.5rem"}>
               <GenericPageTitle>{cateringLang(lang, "catering-title-2")}</GenericPageTitle>
             </Box>
-            <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3")}</GenericPageText>
+            <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3-1")}</GenericPageText>
+            <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3-2")}</GenericPageText>
           </CateringTextBox>
         </CateringSection>
       </SectionContainer>

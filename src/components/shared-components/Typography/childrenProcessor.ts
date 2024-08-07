@@ -28,6 +28,8 @@ export default function processChildren(children: string | childrenType[]) {
     for (const child of children) {
       if (typeof child === "string") {
         processChild(child, finalChildren);
+      } else {
+        finalChildren.push(child);
       }
     }
   } else {

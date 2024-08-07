@@ -1,5 +1,5 @@
 export const primaryColor = "#e0bc7c";
-export const secondaryColor = "#122717";
+export const secondaryColor = "#304835";
 
 export const rootFontSize = 16;
 

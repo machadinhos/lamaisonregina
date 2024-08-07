@@ -21,8 +21,6 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
             <GenericPageText>{homeLang(lang, "home-text-2")}</GenericPageText>
             <GenericPageText>{homeLang(lang, "home-text-3")}</GenericPageText>
             <GenericPageText>{homeLang(lang, "home-text-4")}</GenericPageText>
-            <GenericPageText>{homeLang(lang, "home-text-5")}</GenericPageText>
-            <GenericPageText>{homeLang(lang, "home-text-6")}</GenericPageText>
           </Box>
           <Box
             height={{ xs: "20rem", md: "auto" }}

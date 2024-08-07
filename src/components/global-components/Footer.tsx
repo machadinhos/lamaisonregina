@@ -124,12 +124,12 @@ export default function Footer({ lang }: Props) {
       </Box>
       <Box>
         <Typography
-          sx={{ fontSize: "0.75rem", textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}
+          sx={{ fontSize: "0.55rem", textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}
         >
           {globalsLang(lang, "footer-rights-reserved-1") + " "}
         </Typography>
         <Typography
-          sx={{ fontSize: "0.75rem", textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}
+          sx={{ fontSize: "0.55rem", textAlign: "center", color: primaryColor, display: { xs: "block", sm: "inline" } }}
         >
           {globalsLang(lang, "footer-rights-reserved-2")}
         </Typography>

@@ -4,8 +4,8 @@ import Image from "next/image";
 import imageSelect from "@images/image-select";
 
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
-import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import SectionContainer from "@/components/shared-components/SectionContainer";
+import GenericPageSubTitle from "@/components/shared-components/Typography/GenericPageSubTitle";
 
 function ServiceCard({
   title,
@@ -43,7 +43,7 @@ function ServiceCard({
             height: { xs: "fit-content", sm: "5rem", lg: "5rem" },
           }}
         >
-          <GenericPageTitle noLine>{title}</GenericPageTitle>
+          <GenericPageSubTitle>{title}</GenericPageSubTitle>
         </Box>
         <Box
           alignItems={"center"}
