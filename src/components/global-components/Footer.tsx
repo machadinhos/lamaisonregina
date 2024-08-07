@@ -11,6 +11,7 @@ import imageSelect from "@images/image-select";
 import addressSelect from "../../../addresses/address-select";
 
 import { primaryColor, secondaryColor } from "@/styles/globals";
+import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
 
 interface Props {
   lang: LangEnum;
@@ -48,6 +49,7 @@ export default function Footer({ lang }: Props) {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        fontSize: "0.75rem",
       }}
     >
       <Box
@@ -84,7 +86,7 @@ export default function Footer({ lang }: Props) {
             mb: { xs: "1rem", md: "auto" },
             flexDirection: "column",
             justifyContent: "space-evenly",
-            alignItems: { xs: "center", md: "flex-start" },
+            alignItems: { xs: "center", sm: "flex-start" },
             fontSize: "1.25rem",
             width: "50px",
           }}
@@ -123,16 +125,14 @@ export default function Footer({ lang }: Props) {
         </Box>
       </Box>
       <Box>
-        <Typography
+        <GenericPageText
           sx={{
-            fontSize: 8,
             textAlign: "center",
             color: primaryColor,
           }}
-          variant={"body2"}
         >
           {globalsLang(lang, "footer-rights-reserved-1") + " " + globalsLang(lang, "footer-rights-reserved-2")}
-        </Typography>
+        </GenericPageText>
       </Box>
     </footer>
   );
