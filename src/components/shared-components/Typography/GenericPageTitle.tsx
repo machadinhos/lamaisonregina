@@ -29,8 +29,8 @@ export default function GenericPageTitle({ children, sx, noLine }: Props) {
       {!noLine && (
         <Box
           sx={{
-            width: "30%",
-            height: "1px",
+            width: "100px",
+            height: "2px",
             backgroundColor: primaryColor,
           }}
         />
