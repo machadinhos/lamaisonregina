@@ -155,7 +155,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
             {faqLang(lang, "faq-pricing-text-1")}{" "}
             <Link href={`/${lang}/contacts`} style={{ color: primaryColor }}>
               {faqLang(lang, "faq-pricing-text-2")}
-            </Link>{" "}
+            </Link>
             {faqLang(lang, "faq-pricing-text-3")}
           </GenericPageText>
         </FAQAccordionDetails>

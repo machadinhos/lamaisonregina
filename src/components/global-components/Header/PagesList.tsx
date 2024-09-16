@@ -1,5 +1,5 @@
 import { contactsLang, galleryLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
-import { Box, IconButton, List, ListItem, Theme } from "@mui/material";
+import { Box, List, ListItem, Theme } from "@mui/material";
 import Link from "next/link";
 import { SxProps } from "@mui/material/styles";
 import { useRouter } from "next/router";
@@ -49,21 +49,19 @@ function HeaderListItem({
           },
         }}
       >
-        <IconButton disableFocusRipple sx={{ margin: 0, padding: 0 }}>
-          <Link href={page.href}>
-            <GenericPageTitle
-              noLine
-              sx={{
-                mt: 0,
-                mb: 0,
-                ...(fontSize ? { fontSize: fontSize } : {}),
-                color: isCurrentPage ? primaryColor : isHome ? "white" : "auto",
-              }}
-            >
-              {page.text}
-            </GenericPageTitle>
-          </Link>
-        </IconButton>
+        <Link href={page.href}>
+          <GenericPageTitle
+            noLine
+            sx={{
+              mt: 0,
+              mb: 0,
+              ...(fontSize ? { fontSize: fontSize } : {}),
+              color: isCurrentPage ? primaryColor : isHome ? "white" : "auto",
+            }}
+          >
+            {page.text}
+          </GenericPageTitle>
+        </Link>
         <Box
           sx={{
             height: 2,
