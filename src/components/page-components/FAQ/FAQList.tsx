@@ -4,6 +4,8 @@ import { List } from "@mui/material";
 import React from "react";
 import dynamic from "next/dynamic";
 
+import addressSelect from "../../../../addresses/address-select";
+
 import { FAQAccordion, FAQAccordionDetails, FAQAccordionSummary } from "@/components/page-components/FAQ/FAQAccordion";
 import { FAQTitle } from "@/components/page-components/FAQ/FAQTitle";
 import GenericPageText from "@/components/shared-components/Typography/GenericPageText";
@@ -27,7 +29,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
           <GenericPageText>{faqLang(lang, "faq-where-text-4")}</GenericPageText>
           <GenericPageText>
             {faqLang(lang, "faq-where-text-5-1") + " "}
-            <Link href={`/${lang}/contacts#header`} style={{ color: primaryColor }}>
+            <Link href={addressSelect.googleMaps} style={{ color: primaryColor }} target={"_blank"}>
               {faqLang(lang, "faq-where-text-5-2")}
             </Link>
             {" " + faqLang(lang, "faq-where-text-5-3")}
@@ -173,7 +175,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
           <FAQTitle>{faqLang(lang, "faq-open-space-title")}</FAQTitle>
         </FAQAccordionSummary>
         <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-portugal-text")}</GenericPageText>
+          <GenericPageText>{faqLang(lang, "faq-open-space-text")}</GenericPageText>
         </FAQAccordionDetails>
       </FAQAccordion>
       <FAQAccordion>
