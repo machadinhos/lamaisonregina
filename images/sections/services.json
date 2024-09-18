@@ -50,15 +50,15 @@
     }
   ],
   "card1": {
-    "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+    "src": "https://images.lamaisonregina.com/services/weadings.webp",
     "alt": "card1-image"
   },
   "card2": {
-    "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+    "src": "https://images.lamaisonregina.com/services/parties.webp",
     "alt": "card2-image"
   },
   "card3": {
-    "src": "https://www.petz.com.br/blog//wp-content/uploads/2022/01/cabra-de-estimacao.jpg",
+    "src": "https://images.lamaisonregina.com/services/conferences.webp",
     "alt": "card3-image"
   }
 }

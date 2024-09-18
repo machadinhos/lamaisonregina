@@ -25,7 +25,7 @@ export default function ImagesDiv({ images }: { images: ImageComp[] }) {
       alignItems="center"
       display="flex"
       flexDirection={{ xs: "column", md: "row" }}
-      height={{ xs: "75rem", md: "25rem" }}
+      height={{ xs: "75rem", md: "35rem" }}
       justifyContent="center"
       width="100%"
     >

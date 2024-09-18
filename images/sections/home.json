@@ -1,37 +1,37 @@
 {
   "imagesDiv": [
     {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf9XS3ID9efwKEYMwoN5ERUZihz1ZZYDJj4Q&s",
+      "src": "https://images.lamaisonregina.com/home/split-images/split-1.webp",
       "alt": "imageDiv1"
     },
     {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE0PhDnJ_R3aDOR6PgiaslwczQBFFVbi0jdQ&s",
+      "src": "https://images.lamaisonregina.com/home/split-images/split-2.webp",
       "alt": "imageDiv2"
     },
     {
-      "src": "https://fly.metroimg.com/upload/q_85,w_700/https://uploads.metroimg.com/wp-content/uploads/2024/06/24163743/Shrek-Burro-Spin-Off.jpg",
+      "src": "https://images.lamaisonregina.com/home/split-images/split-3.webp",
       "alt": "imageDiv3"
     }
   ],
   "infoImage": {
-    "src": "https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg",
+    "src": "https://images.lamaisonregina.com/home/text-img/text-img.webp",
     "alt": "home-info-image"
   },
   "carouselImages": [
     {
-      "src": "https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-1.webp",
       "alt": "carouselImage1"
     },
     {
-      "src": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-2.webp",
       "alt": "carouselImage2"
     },
     {
-      "src": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-3.webp",
       "alt": "carouselImage3"
     },
     {
-      "src": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.webp",
       "alt": "carouselImage4"
     }
   ]

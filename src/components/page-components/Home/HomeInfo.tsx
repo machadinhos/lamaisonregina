@@ -32,7 +32,7 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
                 fill
                 alt={imageSelect.home.infoImage.alt}
                 src={imageSelect.home.infoImage.src}
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
               />
             </Box>
           </Box>

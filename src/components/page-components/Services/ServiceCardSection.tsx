@@ -70,7 +70,7 @@ function ServiceCard({
                 width: "100%",
               }}
             >
-              <Image fill alt={img.alt} src={img.src} />
+              <Image fill alt={img.alt} src={img.src} style={{ objectFit: "cover" }} />
             </Box>
           </Box>
         </Box>

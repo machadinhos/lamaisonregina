@@ -1,14 +1,14 @@
 {
   "imageBox1": {
-    "src": "https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg",
+    "src": "https://images.lamaisonregina.com/catering/1.webp",
     "alt": "image-box-1"
   },
   "imageBox2": {
-    "src": "https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg",
+    "src": "https://images.lamaisonregina.com/catering/2.webp",
     "alt": "image-box-2"
   },
   "imageBox3": {
-    "src": "https://cdn.europosters.eu/image/750/posters/noddy-solo-i27845.jpg",
+    "src": "https://images.lamaisonregina.com/catering/3.webp",
     "alt": "image-box-3"
   }
 }

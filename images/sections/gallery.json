@@ -1,74 +1,58 @@
 {
   "carousel1": [
     {
-      "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+      "src": "https://images.lamaisonregina.com/gallery/garden/1.webp",
       "alt": "carousel1-image1"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+      "src": "https://images.lamaisonregina.com/gallery/garden/2.webp",
       "alt": "carousel1-image2"
     },
     {
-      "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
+      "src": "https://images.lamaisonregina.com/gallery/garden/3.webp",
       "alt": "carousel1-image3"
     },
     {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
+      "src": "https://images.lamaisonregina.com/gallery/garden/4.webp",
       "alt": "carousel1-image4"
     }
   ],
   "carousel2": [
     {
-      "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+      "src": "https://images.lamaisonregina.com/gallery/pergola/1.webp",
       "alt": "carousel2-image1"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
-      "alt": "carousel2-image2"
+      "src": "https://images.lamaisonregina.com/gallery/pergola/1.webp",
+      "alt": "carousel2-image1"
     },
     {
-      "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
-      "alt": "carousel2-image3"
-    },
-    {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
-      "alt": "carousel2-image4"
+      "src": "https://images.lamaisonregina.com/gallery/pergola/1.webp",
+      "alt": "carousel2-image1"
     }
   ],
   "carousel3": [
     {
-      "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+      "src": "https://images.lamaisonregina.com/gallery/buffet/1.webp",
       "alt": "carousel3-image1"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+      "src": "https://images.lamaisonregina.com/gallery/buffet/2.webp",
       "alt": "carousel3-image2"
     },
     {
-      "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
+      "src": "https://images.lamaisonregina.com/gallery/buffet/3.webp",
       "alt": "carousel3-image3"
-    },
-    {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
-      "alt": "carousel3-image4"
     }
   ],
   "carousel4": [
     {
-      "src": "https://www.portugalafora.com/wp-content/uploads/2018/09/portugalafora_porto_ponteDluis01.jpg",
+      "src": "https://images.lamaisonregina.com/gallery/disco/1.webp",
       "alt": "carousel4-image1"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg",
+      "src": "https://images.lamaisonregina.com/gallery/disco/2.webp",
       "alt": "carousel4-image2"
-    },
-    {
-      "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/d3/ac/21/ponte-sobre-o-rio-lima.jpg?w=1200&h=1200&s=1",
-      "alt": "carousel4-image3"
-    },
-    {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDAQQbSHOTEKxhOACKv8nIkHn96oNetBXqaw&s",
-      "alt": "carousel4-image4"
     }
   ]
 }
