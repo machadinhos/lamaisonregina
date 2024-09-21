@@ -52,7 +52,7 @@ function CateringImageBox({ src, alt }: { src: string; alt: string }) {
       width={{ xs: "100%", md: "30%" }}
     >
       <Box height={{ xs: "25rem", md: "80%" }} position={"relative"} width={{ xs: "100%", md: "80%" }}>
-        <Image fill alt={alt} src={src} style={{ objectFit: "cover" }} />
+        <Image fill alt={alt} src={src} style={{ objectFit: "contain" }} />
       </Box>
     </Box>
   );
