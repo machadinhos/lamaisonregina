@@ -19,8 +19,6 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
       const rect = mainBoxRef.current.getBoundingClientRect();
 
       setMainBox({
-        top: rect.top,
-        left: rect.left,
         height: rect.height,
       });
     }
@@ -28,7 +26,6 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
 
   return (
     <>
-      <HomeBackFade isHome={isHome} mainBox={mainBox} />
       <Box
         ref={mainBoxRef}
         className={"desktop-header"}
@@ -42,6 +39,7 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
           zIndex: 1300,
         }}
       >
+        <HomeBackFade isHome={isHome} mainBox={mainBox} />
         <Box sx={{ display: "flex" }}>
           <Box flex={1} />
           <Box display={"flex"} flex={1} justifyContent={"center"} position={"relative"}>

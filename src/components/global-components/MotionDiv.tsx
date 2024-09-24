@@ -34,7 +34,4 @@ export default function MotionDiv({ children }: Props) {
       </motion.div>
     </>
   );
-  // return <>
-  //   <Main>{children}</Main>
-  // </>
 }

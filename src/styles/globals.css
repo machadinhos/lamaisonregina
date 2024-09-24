@@ -8,10 +8,6 @@
   display: none;
 }
 
-.desktop-header {
-  display: block;
-}
-
 html {
   overflow: hidden;
   height: 100vh;
