@@ -13,9 +13,15 @@ export default function ImagesDiv({ images }: { images: ImageComp[] }) {
   const imageBoxStyle = (index: number) => ({
     width: {
       xs: "100%",
-      md: hoveredIndex === null ? `${(1 / images.length) * 100}%` : hoveredIndex === index ? "100%" : "0%",
+      md:
+        hoveredIndex === null
+          ? `${(1 / images.length) * 100}%`
+          : hoveredIndex === index
+            ? `${(1 / images.length) * 100 + 10}%`
+            : `${(1 / images.length) * 100 - 5}%`,
     },
-    opacity: { md: hoveredIndex === null || hoveredIndex === index ? 1 : 0 },
+    opacity: 1,
+    // { md: hoveredIndex === null || hoveredIndex === index ? 1 : 0 },
     transition: "all 0.4s ease-in-out",
     overflow: "hidden",
   });
