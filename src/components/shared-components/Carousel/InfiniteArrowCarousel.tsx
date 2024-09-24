@@ -129,13 +129,31 @@ export default function InfiniteArrowCarousel({ sources, priority }: Props) {
             sx={{ position: "absolute", left: 0, "&:hover": { cursor: "pointer" }, color: "white" }}
             onClick={() => moveImages(false)}
           >
-            <ArrowBack />
+            <Box
+              height="24px"
+              sx={{
+                backgroundColor: "rgb(0, 0, 0, 0.5)",
+                borderRadius: "100%",
+              }}
+              width="24px"
+            >
+              <ArrowBack />
+            </Box>
           </IconButton>
           <IconButton
             sx={{ position: "absolute", right: 0, "&:hover": { cursor: "pointer" }, color: "white" }}
             onClick={() => moveImages(true)}
           >
-            <ArrowForward />
+            <Box
+              height="24px"
+              sx={{
+                backgroundColor: "rgb(0, 0, 0, 0.5)",
+                borderRadius: "100%",
+              }}
+              width="24px"
+            >
+              <ArrowForward />
+            </Box>
           </IconButton>
         </Box>
       </Box>
