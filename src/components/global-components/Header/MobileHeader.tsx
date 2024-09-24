@@ -30,7 +30,7 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
           zIndex: 1300,
         }}
       >
-        <HeaderTop isHome={isHome} lang={lang} open={open} toggleDrawer={toggleDrawer} />
+        <HeaderTop isHome={isHome} lang={lang} open={open} setOpen={setOpen} toggleDrawer={toggleDrawer} />
         <DrawerMenu lang={lang} open={open} toggleDrawer={toggleDrawer} />
       </Box>
     </>
@@ -42,11 +42,13 @@ const HeaderTop = ({
   isHome,
   toggleDrawer,
   open,
+  setOpen,
 }: {
   lang: LangEnum;
   isHome?: boolean;
   toggleDrawer: () => void;
   open: boolean;
+  setOpen: (openValue: boolean) => void;
 }) => {
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "top" }}>
@@ -86,6 +88,9 @@ const HeaderTop = ({
                 objectFit: "contain",
               }}
               width={412 / 2.6}
+              onClick={() => {
+                setOpen(false);
+              }}
             />
           </Link>
         </IconButton>
