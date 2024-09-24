@@ -26,11 +26,13 @@ function HeaderListItem({
   currentPage,
   isHome,
   fontSize,
+  toggleMobileDrawer,
 }: {
   page: Page;
   currentPage: string;
   isHome?: boolean;
   fontSize?: string;
+  toggleMobileDrawer?: () => void;
 }) {
   const isCurrentPage = currentPage.split("#")[0] === page.href.split("/")[2];
 
@@ -48,6 +50,7 @@ function HeaderListItem({
             },
           },
         }}
+        onClick={toggleMobileDrawer}
       >
         <Link href={page.href}>
           <GenericPageTitle
@@ -56,6 +59,7 @@ function HeaderListItem({
               mt: 0,
               mb: 0,
               ...(fontSize ? { fontSize: fontSize } : {}),
+              transition: "all 0.5s ease-in-out",
               color: isCurrentPage ? primaryColor : isHome ? "white" : "auto",
             }}
           >
@@ -81,18 +85,27 @@ export default function PagesList({
   sx,
   isHome,
   fontSize,
+  toggleMobileDrawer,
 }: {
   lang: LangEnum;
   sx?: SxProps<Theme>;
   isHome?: boolean;
   fontSize?: string;
+  toggleMobileDrawer?: () => void;
 }) {
   const currentPage = useRouter().asPath.split("/")[2] || "";
 
   return (
     <List sx={{ ...sx }}>
       {getPagesList(lang).map((page, index) => (
-        <HeaderListItem key={index} currentPage={currentPage} fontSize={fontSize} isHome={isHome} page={page} />
+        <HeaderListItem
+          key={index}
+          currentPage={currentPage}
+          fontSize={fontSize}
+          isHome={isHome}
+          page={page}
+          toggleMobileDrawer={toggleMobileDrawer}
+        />
       ))}
     </List>
   );

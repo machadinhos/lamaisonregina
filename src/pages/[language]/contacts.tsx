@@ -2,7 +2,7 @@ import { LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Contacts from "@/components/page-components/Contacts";
-import PageContent from "@/components/global-components/PageContent";
+import MotionDiv from "@/components/global-components/MotionDiv";
 
 export default function ContactsPage({ language }: { language: LangEnum }) {
   return (
@@ -10,9 +10,9 @@ export default function ContactsPage({ language }: { language: LangEnum }) {
       <Head>
         <title>{language === LangEnum.EN ? "Contacts" : "Contactos"}</title>
       </Head>
-      <PageContent lang={language}>
+      <MotionDiv>
         <Contacts lang={language} />
-      </PageContent>
+      </MotionDiv>
     </>
   );
 }

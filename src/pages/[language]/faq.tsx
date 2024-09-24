@@ -2,7 +2,7 @@ import { LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import FAQ from "@/components/page-components/FAQ/FAQ";
-import PageContent from "@/components/global-components/PageContent";
+import MotionDiv from "@/components/global-components/MotionDiv";
 
 export default function FAQPage({ language }: { language: LangEnum }) {
   return (
@@ -10,9 +10,9 @@ export default function FAQPage({ language }: { language: LangEnum }) {
       <Head>
         <title>FAQ</title>
       </Head>
-      <PageContent lang={language}>
+      <MotionDiv>
         <FAQ lang={language} />
-      </PageContent>
+      </MotionDiv>
     </>
   );
 }

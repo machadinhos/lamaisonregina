@@ -2,7 +2,7 @@ import { LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Catering from "@/components/page-components/Catering";
-import PageContent from "@/components/global-components/PageContent";
+import MotionDiv from "@/components/global-components/MotionDiv";
 
 export default function CateringPage({ language }: { language: LangEnum }) {
   return (
@@ -10,9 +10,9 @@ export default function CateringPage({ language }: { language: LangEnum }) {
       <Head>
         <title>Catering</title>
       </Head>
-      <PageContent lang={language}>
+      <MotionDiv>
         <Catering lang={language} />
-      </PageContent>
+      </MotionDiv>
     </>
   );
 }

@@ -1,8 +1,8 @@
 import { LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
-import PageContent from "@/components/global-components/PageContent";
 import Services from "@/components/page-components/Services/Services";
+import MotionDiv from "@/components/global-components/MotionDiv";
 
 export default function ServicesPage({ language }: { language: LangEnum }) {
   return (
@@ -10,9 +10,9 @@ export default function ServicesPage({ language }: { language: LangEnum }) {
       <Head>
         <title>{language === LangEnum.EN ? "Services" : "Serviços"}</title>
       </Head>
-      <PageContent lang={language}>
+      <MotionDiv>
         <Services lang={language} />
-      </PageContent>
+      </MotionDiv>
     </>
   );
 }

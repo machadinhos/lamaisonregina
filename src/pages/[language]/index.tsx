@@ -2,7 +2,7 @@ import { LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Home from "@/components/page-components/Home/Home";
-import PageContent from "@/components/global-components/PageContent";
+import MotionDiv from "@/components/global-components/MotionDiv";
 
 export default function HomePage({ language }: { language: LangEnum }) {
   return (
@@ -10,9 +10,9 @@ export default function HomePage({ language }: { language: LangEnum }) {
       <Head>
         <title>Home</title>
       </Head>
-      <PageContent isHome lang={language}>
+      <MotionDiv>
         <Home lang={language} />
-      </PageContent>
+      </MotionDiv>
     </>
   );
 }
@@ -28,5 +28,5 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { language: LangEnum } }) {
-  return { props: { language: params.language } };
+  return { props: { language: params.language, isHome: true } };
 }

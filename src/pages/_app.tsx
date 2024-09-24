@@ -2,14 +2,15 @@ import type { AppProps } from "next/app";
 
 import "../styles/globals.css";
 import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
-import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Head from "next/head";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { Montserrat } from "next/font/google";
+import Error from "next/error";
+
+import PageContent from "@/components/global-components/PageContent";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -61,7 +62,11 @@ const theme: Theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  if (pageProps.statusCode && pageProps.statusCode === 404) {
+    return <Error statusCode={404} />;
+  } else if (pageProps.statusCode && pageProps.statusCode === 500) {
+    return <Error statusCode={500} />;
+  }
 
   return (
     <>
@@ -70,9 +75,11 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AnimatePresence mode="wait">
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
+        <PageContent isHome={pageProps.isHome} lang={pageProps.language}>
+          <AnimatePresence mode="wait">
+            <Component {...pageProps} />
+          </AnimatePresence>
+        </PageContent>
       </ThemeProvider>
       <GoogleTagManager gtmId="G-DDBD6FPCJV" />
     </>

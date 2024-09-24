@@ -2,7 +2,7 @@ import { LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Gallery from "@/components/page-components/Gallery";
-import PageContent from "@/components/global-components/PageContent";
+import MotionDiv from "@/components/global-components/MotionDiv";
 
 export default function GalleryPage({ language }: { language: LangEnum }) {
   return (
@@ -10,9 +10,9 @@ export default function GalleryPage({ language }: { language: LangEnum }) {
       <Head>
         <title>{language === LangEnum.EN ? "Gallery" : "Galeria"}</title>
       </Head>
-      <PageContent lang={language}>
+      <MotionDiv>
         <Gallery lang={language} />
-      </PageContent>
+      </MotionDiv>
     </>
   );
 }
