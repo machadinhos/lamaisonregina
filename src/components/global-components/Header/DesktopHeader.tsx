@@ -39,7 +39,7 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
           zIndex: 1300,
         }}
       >
-        <HomeBackFade isHome={isHome} mainBox={mainBox} />
+        <HomeBackFade isDesktop isHome={isHome} mainBox={mainBox} />
         <Box sx={{ display: "flex" }}>
           <Box flex={1} />
           <Box display={"flex"} flex={1} justifyContent={"center"} position={"relative"}>

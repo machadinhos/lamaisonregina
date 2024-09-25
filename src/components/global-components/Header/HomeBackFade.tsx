@@ -4,7 +4,15 @@ export type MainBoxType = {
   height: number;
 };
 
-export default function HomeBackFade({ isHome, mainBox }: { isHome?: boolean; mainBox?: MainBoxType }) {
+export default function HomeBackFade({
+  isHome,
+  mainBox,
+  isDesktop,
+}: {
+  isHome?: boolean;
+  mainBox?: MainBoxType;
+  isDesktop?: boolean;
+}) {
   return (
     <Box
       height={mainBox?.height}
@@ -17,6 +25,7 @@ export default function HomeBackFade({ isHome, mainBox }: { isHome?: boolean; ma
       }}
       top={"4px"}
       width={"100%"}
+      zIndex={isDesktop ? 0 : 150}
     />
   );
 }

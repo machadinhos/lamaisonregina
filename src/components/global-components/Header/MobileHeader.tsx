@@ -44,7 +44,6 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
           top: 0,
           left: 0,
           width: "100%",
-          zIndex: 1300,
         }}
       >
         <HomeBackFade isHome={isHome} mainBox={mainBox} />

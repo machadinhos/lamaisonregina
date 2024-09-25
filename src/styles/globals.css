@@ -4,10 +4,6 @@
   text-shadow: none;
 }
 
-.mobile-header {
-  display: none;
-}
-
 html {
   overflow: hidden;
   height: 100vh;
@@ -58,14 +54,4 @@ ul {
 .sticky {
   position: sticky;
   bottom: 0;
-}
-
-@media screen and (max-width: 600px) {
-  .mobile-header {
-    display: block;
-  }
-
-  .desktop-header {
-    display: none;
-  }
 }
