@@ -17,20 +17,10 @@
       "alt": "carousel1-image4"
     }
   ],
-  "carousel2": [
-    {
+  "carousel2": {
       "src": "https://images.lamaisonregina.com/gallery/pergola/1.webp",
       "alt": "carousel2-image1"
-    },
-    {
-      "src": "https://images.lamaisonregina.com/gallery/pergola/1.webp",
-      "alt": "carousel2-image1"
-    },
-    {
-      "src": "https://images.lamaisonregina.com/gallery/pergola/1.webp",
-      "alt": "carousel2-image1"
-    }
-  ],
+  },
   "carousel3": [
     {
       "src": "https://images.lamaisonregina.com/gallery/buffet/1.webp",
@@ -46,6 +36,14 @@
     }
   ],
   "carousel4": [
+    {
+      "src": "https://images.lamaisonregina.com/gallery/disco/1.webp",
+      "alt": "carousel4-image1"
+    },
+    {
+      "src": "https://images.lamaisonregina.com/gallery/disco/2.webp",
+      "alt": "carousel4-image2"
+    },
     {
       "src": "https://images.lamaisonregina.com/gallery/disco/1.webp",
       "alt": "carousel4-image1"
