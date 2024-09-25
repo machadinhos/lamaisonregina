@@ -8,12 +8,14 @@ interface Props {
   children: string;
   sx?: SxProps<Theme>;
   noLine?: boolean;
+  data?: string;
 }
 
-export default function GenericPageTitle({ children, sx, noLine }: Props) {
+export default function GenericPageTitle({ children, sx, noLine, data }: Props) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "fit-content" }}>
       <Typography
+        data-coco={data}
         sx={{
           textAlign: "center",
           fontWeight: "400",

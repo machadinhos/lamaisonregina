@@ -34,5 +34,23 @@
       "src": "https://images.lamaisonregina.com/home/cover/carousel-4.webp",
       "alt": "carouselImage4"
     }
+  ],
+  "smallScreenCarouselImages": [
+    {
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-1.webp",
+      "alt": "carouselImage1"
+    },
+    {
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-2.webp",
+      "alt": "carouselImage2"
+    },
+    {
+      "src": "/1.jpg",
+      "alt": "carouselImage3"
+    },
+    {
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.webp",
+      "alt": "carouselImage4"
+    }
   ]
 }

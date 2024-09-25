@@ -20,7 +20,7 @@ export default function LangSelector({
   const path = router.asPath;
 
   return (
-    <Box display={"flex"} sx={sx}>
+    <Box display={"flex"} height={"fit-content"} sx={sx}>
       <LangOption
         fontSize={fontSize}
         href={`/pt/${path.substring(4).replace("header", "").replace("#", "")}`}

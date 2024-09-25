@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
 import { homeLang, LangEnum } from "@i18n/lang-selector";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import imageSelect from "@images/image-select";
+import { useMediaQuery } from "@mui/system";
 
 import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import InfiniteArrowCarousel from "@/components/shared-components/Carousel/InfiniteArrowCarousel";
@@ -11,6 +12,13 @@ interface Props {
 }
 
 export function HomeCarousel({ lang }: Props) {
+  const isSmallScreen = useMediaQuery("(max-width:1000px)");
+  const [carouselItems, setCarouselItems] = useState<{ src: string; alt: string }[]>([]);
+
+  useEffect(() => {
+    setCarouselItems(isSmallScreen ? imageSelect.home.smallScreenCarouselImages : imageSelect.home.carouselImages);
+  }, [isSmallScreen]);
+
   return (
     <Box
       sx={{
@@ -35,10 +43,14 @@ export function HomeCarousel({ lang }: Props) {
           paddingRight: "1rem",
         }}
       >
-        <InfiniteArrowCarousel priority sources={imageSelect.home.carouselImages} />
+        <Box height={"100%"} left={"0px"} position={"absolute"} top={"4px"} width={"100%"}>
+          <InfiniteArrowCarousel priority images={carouselItems} />
+        </Box>
         <GenericPageTitle
           noLine
           sx={{
+            zIndex: 1000,
+            userSelect: "none",
             color: "white",
             textAlign: "left",
             fontSize: { xs: "1.5rem", sm: "2rem", md: "2.3rem", lg: "2.75rem" },
