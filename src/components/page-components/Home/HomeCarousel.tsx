@@ -56,6 +56,7 @@ export function HomeCarousel({ lang }: Props) {
             fontSize: { xs: "1.5rem", sm: "2rem", md: "2.3rem", lg: "2.75rem" },
             px: "2.5rem",
             fontWeight: "300",
+            textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000",
           }}
         >
           {homeLang(lang, "home-slogan")}
