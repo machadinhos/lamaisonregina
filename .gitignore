@@ -295,3 +295,4 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,node,nextjs,vuejs
 
 .idea/
+public/sitemap.xml
