@@ -1,4 +1,4 @@
-import { LangEnum } from "@i18n/lang-selector";
+import { globalsLang, LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Gallery from "@/components/page-components/Gallery";
@@ -9,6 +9,10 @@ export default function GalleryPage({ language }: { language: LangEnum }) {
     <>
       <Head>
         <title>{language === LangEnum.EN ? "Gallery" : "Galeria"}</title>
+        <meta content={globalsLang(language, "gallery-meta-description")} name="description" />
+        <meta content={globalsLang(language, "gallery-meta-keywords")} name="keywords" />
+        <link href="https://www.lamaisonregina.com/en/gallery" hrefLang="en" rel="alternate" />
+        <link href="https://www.lamaisonregina.com/pt/gallery" hrefLang="pt" rel="alternate" />
       </Head>
       <MotionDiv>
         <Gallery lang={language} />

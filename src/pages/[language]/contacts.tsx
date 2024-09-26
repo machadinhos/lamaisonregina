@@ -1,4 +1,4 @@
-import { LangEnum } from "@i18n/lang-selector";
+import { globalsLang, LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Contacts from "@/components/page-components/Contacts";
@@ -9,6 +9,10 @@ export default function ContactsPage({ language }: { language: LangEnum }) {
     <>
       <Head>
         <title>{language === LangEnum.EN ? "Contacts" : "Contactos"}</title>
+        <meta content={globalsLang(language, "contacts-meta-description")} name="description" />
+        <meta content={globalsLang(language, "contacts-meta-keywords")} name="keywords" />
+        <link href="https://www.lamaisonregina.com/en/contacts" hrefLang="en" rel="alternate" />
+        <link href="https://www.lamaisonregina.com/pt/contacts" hrefLang="pt" rel="alternate" />
       </Head>
       <MotionDiv>
         <Contacts lang={language} />

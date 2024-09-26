@@ -6,8 +6,18 @@
     "cta": "Contacte-nos",
     "copied-message": "Copiado para a área de transferência.",
     "copied-error": "Erro ao copiar para a área de transferência.",
-    "meta-description": "A definir",
-    "meta-keywords": "A definir"
+    "home-meta-description": "A definir",
+    "home-meta-keywords": "A definir",
+    "services-meta-description": "A definir",
+    "services-meta-keywords": "A definir",
+    "gallery-meta-description": "A definir",
+    "gallery-meta-keywords": "A definir",
+    "catering-meta-description": "A definir",
+    "catering-meta-keywords": "A definir",
+    "faq-meta-description": "A definir",
+    "faq-meta-keywords": "A definir",
+    "contacts-meta-description": "A definir",
+    "contacts-meta-keywords": "A definir"
   },
   "en": {
     "footer-follow": "Follow us",
@@ -16,7 +26,17 @@
     "cta": "Get in contact ",
     "copied-message": "Copied to clipboard.",
     "copied-error": "Error copying to clipboard.",
-    "meta-description": "To be defined",
-    "meta-keywords": "To be defined"
+    "home-meta-description": "To be defined",
+    "home-meta-keywords": "To be defined",
+    "services-meta-description": "To be defined",
+    "services-meta-keywords": "To be defined",
+    "gallery-meta-description": "To be defined",
+    "gallery-meta-keywords": "To be defined",
+    "catering-meta-description": "To be defined",
+    "catering-meta-keywords": "To be defined",
+    "faq-meta-description": "To be defined",
+    "faq-meta-keywords": "To be defined",
+    "contacts-meta-description": "To be defined",
+    "contacts-meta-keywords": "To be defined"
   }
 }

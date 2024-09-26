@@ -1,4 +1,4 @@
-import { LangEnum } from "@i18n/lang-selector";
+import { globalsLang, LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Home from "@/components/page-components/Home/Home";
@@ -9,6 +9,10 @@ export default function HomePage({ language }: { language: LangEnum }) {
     <>
       <Head>
         <title>Home</title>
+        <meta content={globalsLang(language, "home-meta-description")} name="description" />
+        <meta content={globalsLang(language, "home-meta-keywords")} name="keywords" />
+        <link href="https://www.lamaisonregina.com/en" hrefLang="en" rel="alternate" />
+        <link href="https://www.lamaisonregina.com/pt" hrefLang="pt" rel="alternate" />
       </Head>
       <MotionDiv>
         <Home lang={language} />

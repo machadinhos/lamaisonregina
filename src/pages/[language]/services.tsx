@@ -1,4 +1,4 @@
-import { LangEnum } from "@i18n/lang-selector";
+import { globalsLang, LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Services from "@/components/page-components/Services/Services";
@@ -9,6 +9,10 @@ export default function ServicesPage({ language }: { language: LangEnum }) {
     <>
       <Head>
         <title>{language === LangEnum.EN ? "Services" : "Serviços"}</title>
+        <meta content={globalsLang(language, "services-meta-description")} name="description" />
+        <meta content={globalsLang(language, "services-meta-keywords")} name="keywords" />
+        <link href="https://www.lamaisonregina.com/en/services" hrefLang="en" rel="alternate" />
+        <link href="https://www.lamaisonregina.com/pt/services" hrefLang="pt" rel="alternate" />
       </Head>
       <MotionDiv>
         <Services lang={language} />
