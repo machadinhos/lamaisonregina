@@ -61,18 +61,20 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
           <LangSelector fontSize={"1rem"} isHome={isHome} lang={lang} sx={{ flex: 1, justifyContent: "flex-end" }} />
         </Box>
         <Box display={"flex"} justifyContent={"center"}>
-          <PagesList
-            fontSize={"1rem"}
-            isHome={isHome}
-            lang={lang}
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              "& > *": {
-                flex: 1,
-              },
-            }}
-          />
+          <nav>
+            <PagesList
+              fontSize={"1rem"}
+              isHome={isHome}
+              lang={lang}
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                "& > *": {
+                  flex: 1,
+                },
+              }}
+            />
+          </nav>
         </Box>
       </Box>
     </>
