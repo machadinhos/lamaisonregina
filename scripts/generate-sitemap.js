@@ -66,7 +66,6 @@ function getSitemapString() {
       str += currentDate;
       str += template.url.lastmod.close;
 
-      // <xhtml:link rel="alternate" hreflang="pt" href="https://lamaisonregina.com/pt/page" />
       // xhtml:link
       for (const langLink of languages) {
         str += template.url["xhtml:link"].open + " ";
