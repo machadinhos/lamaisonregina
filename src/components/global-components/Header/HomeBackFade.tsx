@@ -15,12 +15,13 @@ export default function HomeBackFade({
 }) {
   return (
     <Box
-      height={mainBox?.height}
+      height={mainBox?.height ? mainBox?.height + (isDesktop ? 100 : 0) : 0}
       left={"0px"}
       position={"absolute"}
       sx={{
+        pointerEvents: "none",
         transition: "opacity 0.5s ease-in-out",
-        background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2))",
+        background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0))",
         opacity: isHome ? 1 : 0,
       }}
       top={"4px"}

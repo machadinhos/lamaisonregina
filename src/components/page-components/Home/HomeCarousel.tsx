@@ -12,6 +12,7 @@ interface Props {
 }
 
 export function HomeCarousel({ lang }: Props) {
+  const textShadowColor = "rgba(0, 0, 0, 0.1)";
   const isSmallScreen = useMediaQuery("(max-width:1000px)");
   const [carouselItems, setCarouselItems] = useState<{ src: string; alt: string }[]>([]);
 
@@ -46,7 +47,7 @@ export function HomeCarousel({ lang }: Props) {
         <Box height={"100%"} left={"0px"} position={"absolute"} top={"4px"} width={"100%"}>
           <InfiniteArrowCarousel priority images={carouselItems} />
         </Box>
-        <Box sx={{ zIndex: 1000, backgroundColor: "rgba(0, 0, 0, 0.3)" }} width={"fit-content"}>
+        <Box sx={{ zIndex: 1000, backgroundColor: "rgba(0, 0, 0, 0.2)", pointerEvents: "none" }} width={"fit-content"}>
           <GenericPageTitle
             noLine
             sx={{
@@ -56,6 +57,7 @@ export function HomeCarousel({ lang }: Props) {
               fontSize: { xs: "1.5rem", sm: "2rem", md: "2.3rem", lg: "2.75rem" },
               px: "2.5rem",
               fontWeight: "300",
+              textShadow: `-1px -1px 0 ${textShadowColor}, 1px -1px 0 ${textShadowColor}, -1px 1px 0 ${textShadowColor}, 1px 1px 0 ${textShadowColor}`,
             }}
           >
             {homeLang(lang, "home-slogan")}
