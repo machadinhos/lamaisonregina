@@ -1,9 +1,11 @@
 import { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from "next/document";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 function Document({ lang }: { lang: string }) {
   return (
     <Html lang={lang}>
       <Head>
+        <GoogleAnalytics gaId="G-DDBD6FPCJV" />
         <meta charSet="utf-8" />
         <meta content="index, follow" name="robots" />
         <meta content="Pedro Machado (machadinhos) and Manuel Santos" name="author" />

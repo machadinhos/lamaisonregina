@@ -48,7 +48,7 @@ export default function InfiniteArrowCarousel({
 
   return (
     <Box height={"100%"} position={"relative"} width={"100%"}>
-      <Slider ref={sliderRef} {...settings} data-test={"slider"}>
+      <Slider ref={sliderRef} {...settings}>
         {images.map(({ src, alt }, index) => (
           <ImageCard key={index} alt={alt} priority={priority} src={src} />
         ))}

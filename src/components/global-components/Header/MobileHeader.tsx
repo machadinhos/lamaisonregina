@@ -37,7 +37,6 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
       <Box
         ref={mainBoxRef}
         className={"mobile-header"}
-        id={"test"}
         sx={{
           padding: "1rem",
           position: isHome ? "absolute" : "relative",
