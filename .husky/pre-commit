@@ -1,1 +1,2 @@
-npm run lint
+npm run lint -- --fix
+git diff --name-only --cached --diff-filter=d | xargs git add $1

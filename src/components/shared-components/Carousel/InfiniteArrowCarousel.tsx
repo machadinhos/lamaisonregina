@@ -41,9 +41,11 @@ export default function InfiniteArrowCarousel({
     infinite: true,
     swipeToSlide: true,
     slidesToShow: 1,
-    autoPlay: true,
-    autoplaySpeed: 500,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
     arrows: false,
+    lazyLoad: "ondemand" as const,
   };
 
   return (
