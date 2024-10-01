@@ -21,7 +21,9 @@ function SocialMediaListItem({ href, children }: { href: string; children: React
   return (
     <ListItem sx={{ p: 0 }}>
       <IconButton>
-        <Link href={href}>{children}</Link>
+        <Link href={href} target={"_blank"}>
+          {children}
+        </Link>
       </IconButton>
     </ListItem>
   );
