@@ -6,7 +6,6 @@ function Document({ lang }: { lang: string }) {
     <Html lang={lang}>
       <Head>
         <GoogleAnalytics gaId="G-DDBD6FPCJV" />
-        <meta charSet="utf-8" />
         <meta content="index, follow" name="robots" />
         <meta content="Pedro Machado (machadinhos) and Manuel Santos" name="author" />
         <meta content="06P2RTJNJDrbrG-sT4uv5yNSCbG0iE7EcN8rolF0JOc" name="google-site-verification" />
