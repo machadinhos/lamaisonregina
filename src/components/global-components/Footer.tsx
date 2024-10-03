@@ -1,4 +1,13 @@
-import { contactsLang, galleryLang, globalsLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
+import {
+  cateringLang,
+  contactsLang,
+  faqLang,
+  galleryLang,
+  globalsLang,
+  homeLang,
+  LangEnum,
+  servicesLang,
+} from "@i18n/lang-selector";
 import { Box, IconButton, List, ListItem, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsappIcon from "@mui/icons-material/WhatsApp";
@@ -93,12 +102,12 @@ export default function Footer({ lang }: Props) {
             width: "50px",
           }}
         >
-          <PageListItemLink href={`/${lang}/#header`}>{homeLang(lang, "title")}</PageListItemLink>
-          <PageListItemLink href={`/${lang}/services#header`}>{servicesLang(lang, "title")}</PageListItemLink>
-          <PageListItemLink href={`/${lang}/gallery#header`}>{galleryLang(lang, "title")}</PageListItemLink>
-          <PageListItemLink href={`/${lang}/catering#header`}>Catering</PageListItemLink>
-          <PageListItemLink href={`/${lang}/faq#header`}>FAQ</PageListItemLink>
-          <PageListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "title")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/#header`}>{homeLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/services#header`}>{servicesLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/gallery#header`}>{galleryLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/catering#header`}>{cateringLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/faq#header`}>{faqLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "label")}</PageListItemLink>
         </List>
         <Box alignItems={"center"} display={"flex"} flexDirection={"column"} justifyContent={"center"} mb={"1rem"}>
           <Typography

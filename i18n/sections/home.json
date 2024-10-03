@@ -1,6 +1,7 @@
 {
   "pt": {
     "title": "La Maison Regina",
+    "label": "Home",
     "home-welcome": "Bem-vindo à _La Maison Regina_ - a sua casa de histórias e amor",
     "home-slogan": "A Transformar o 'Sim' em 'Sim-plesmente Mágico’ Desde 1886",
     "home-text-1": "Localizada na encantadora vila do Paião, concelho da Figueira da Foz, _La Maison Regina_ oferece casamentos num ambiente charmoso, intimista e familiar.",
@@ -22,6 +23,7 @@
   },
   "en": {
     "title": "La Maison Regina",
+    "label": "Home",
     "home-welcome": "Welcome to _La Maison Regina_ - your house of stories and love",
     "home-slogan": "Crafting Magical 'I Do's' Since 1886",
     "home-text-1": "Located in the charming village of Paião, in the municipality of Figueira da Foz, _La Maison Regina_ offers weddings in a charming, intimate and family atmosphere.",

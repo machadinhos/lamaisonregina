@@ -1,4 +1,12 @@
-import { contactsLang, galleryLang, homeLang, LangEnum, servicesLang } from "@i18n/lang-selector";
+import {
+  cateringLang,
+  contactsLang,
+  faqLang,
+  galleryLang,
+  homeLang,
+  LangEnum,
+  servicesLang,
+} from "@i18n/lang-selector";
 import { Box, List, ListItem, Theme } from "@mui/material";
 import Link from "next/link";
 import { SxProps } from "@mui/material/styles";
@@ -13,12 +21,12 @@ interface Page {
 }
 
 export const getPagesList = (lang: LangEnum): Page[] => [
-  { text: homeLang(lang, "title"), href: `/${lang}/` },
-  { text: servicesLang(lang, "title"), href: `/${lang}/services/` },
-  { text: galleryLang(lang, "title"), href: `/${lang}/gallery/` },
-  { text: "Catering", href: `/${lang}/catering/` },
-  { text: "FAQ", href: `/${lang}/faq/` },
-  { text: contactsLang(lang, "title"), href: `/${lang}/contacts/` },
+  { text: homeLang(lang, "label"), href: `/${lang}/` },
+  { text: servicesLang(lang, "label"), href: `/${lang}/services/` },
+  { text: galleryLang(lang, "label"), href: `/${lang}/gallery/` },
+  { text: cateringLang(lang, "label"), href: `/${lang}/catering/` },
+  { text: faqLang(lang, "label"), href: `/${lang}/faq/` },
+  { text: contactsLang(lang, "label"), href: `/${lang}/contacts/` },
 ];
 
 function HeaderListItem({
