@@ -1,9 +1,9 @@
 import { LangEnum } from "@i18n/lang-selector";
 import { Box, IconButton } from "@mui/material";
-import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import imageSelect from "@images/image-select";
 import Link from "next/link";
+import imageSelect from "@images/image-select";
+import Image from "next/image";
 
 import PagesList from "@/components/global-components/Header/PagesList";
 import LangSelector from "@/components/global-components/Header/LangSelector";

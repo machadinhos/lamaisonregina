@@ -5,9 +5,10 @@ import { createTheme, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Montserrat } from "next/font/google";
 import Error from "next/error";
+import Head from "next/head";
 
 import PageContent from "@/components/global-components/PageContent";
 
@@ -69,6 +70,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <GoogleAnalytics gaId="G-DDBD6FPCJV" />
+      </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <PageContent isHome={pageProps.isHome} lang={pageProps.language}>
