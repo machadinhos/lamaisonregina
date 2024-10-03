@@ -1,4 +1,4 @@
-import { globalsLang, LangEnum } from "@i18n/lang-selector";
+import { cateringLang, globalsLang, LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import Catering from "@/components/page-components/Catering";
@@ -8,7 +8,7 @@ export default function CateringPage({ language }: { language: LangEnum }) {
   return (
     <>
       <Head>
-        <title>Catering</title>
+        <title>{cateringLang(language, "title")}</title>
         <meta content={globalsLang(language, "catering-meta-description")} name="description" />
         <meta content={globalsLang(language, "catering-meta-keywords")} name="keywords" />
         <link href="https://www.lamaisonregina.com/en/catering" hrefLang="en" rel="alternate" />

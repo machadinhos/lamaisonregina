@@ -1,4 +1,4 @@
-import { globalsLang, LangEnum } from "@i18n/lang-selector";
+import { faqLang, globalsLang, LangEnum } from "@i18n/lang-selector";
 import Head from "next/head";
 
 import FAQ from "@/components/page-components/FAQ/FAQ";
@@ -8,7 +8,7 @@ export default function FAQPage({ language }: { language: LangEnum }) {
   return (
     <>
       <Head>
-        <title>FAQ</title>
+        <title>{faqLang(language, "title")}</title>
         <meta content={globalsLang(language, "faq-meta-description")} name="description" />
         <meta content={globalsLang(language, "faq-meta-keywords")} name="keywords" />
         <link href="https://www.lamaisonregina.com/en/faq" hrefLang="en" rel="alternate" />
