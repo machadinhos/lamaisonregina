@@ -33,6 +33,7 @@ export default function ImagesDiv({ images }: { images: ImageComp[] }) {
       flexDirection={{ xs: "column", md: "row" }}
       height={{ xs: "75rem", md: "35rem" }}
       justifyContent="center"
+      mb={"5rem"}
       width="100%"
     >
       {images.map(({ src, alt }, index) => (
