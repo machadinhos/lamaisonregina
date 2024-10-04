@@ -10,8 +10,8 @@ export default function CTA({ lang }: { lang: LangEnum }) {
   return (
     <>
       <SectionContainer>
-        <Link href={`/${lang}/contacts/#header`}>
-          <Box display={"flex"} justifyContent={"center"} marginTop={"3rem"}>
+        <Box display={"flex"} justifyContent={"center"}>
+          <Link href={`/${lang}/contacts/#header`}>
             <IconButton
               sx={{
                 backgroundColor: primaryColor,
@@ -28,8 +28,8 @@ export default function CTA({ lang }: { lang: LangEnum }) {
             >
               <GenericPageText sx={{ color: "white" }}>{globalsLang(lang, "cta")}</GenericPageText>
             </IconButton>
-          </Box>
-        </Link>
+          </Link>
+        </Box>
       </SectionContainer>
     </>
   );
