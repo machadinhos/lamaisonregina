@@ -29,7 +29,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
           <GenericPageText>{faqLang(lang, "faq-where-text-4")}</GenericPageText>
           <GenericPageText>
             {faqLang(lang, "faq-where-text-5-1") + " "}
-            <Link href={addressSelect.googleMaps} style={{ color: primaryColor }} target={"_blank"}>
+            <Link href={addressSelect.googleMapsAddress} style={{ color: primaryColor }} target={"_blank"}>
               {faqLang(lang, "faq-where-text-5-2")}
             </Link>
             {" " + faqLang(lang, "faq-where-text-5-3")}

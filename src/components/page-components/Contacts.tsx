@@ -73,7 +73,7 @@ export default function Contacts({ lang }: Props) {
         <ContactIcon>
           <ExploreRoundedIcon />
         </ContactIcon>
-        <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
+        <ContactTextSection lang={lang} link={addressSelect.googleMapsAddress}>
           {contactsLang(lang, "contacts-address-text")}
         </ContactTextSection>
         <Box display={"flex"} justifyContent={"center"} width={"100%"}>
@@ -81,7 +81,7 @@ export default function Contacts({ lang }: Props) {
             <iframe
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d763.2969855168978!2d-8.804499708003998!3d40.071219679959604!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDA0JzE2LjEiTiA4wrA0OCcxNS44Ilc!5e0!3m2!1spt-PT!2spt!4v1719874529334!5m2!1spt-PT!2spt"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3052.358403898703!2d-8.807001023470418!3d40.07083457661834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22473b5f2eb8c3%3A0x2f1a52ee0257120!2sR.%20Santinhos%2027%2C%203090-495!5e0!3m2!1sen!2spt!4v1728078872415!5m2!1sen!2spt"
               style={{ marginTop: "1rem", border: 0, width: "100%", height: "100%" }}
               title={"Google Maps"}
             />
@@ -91,7 +91,7 @@ export default function Contacts({ lang }: Props) {
           <RoomSharpIcon />
         </ContactIcon>
         <Box display={"flex"} justifyContent={"center"}>
-          <ContactTextSection lang={lang} link={addressSelect.googleMaps}>
+          <ContactTextSection lang={lang} link={addressSelect.googleMapsCoords}>
             {contactsLang(lang, "contacts-gps-text")}
           </ContactTextSection>
         </Box>
