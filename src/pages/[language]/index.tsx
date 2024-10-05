@@ -10,7 +10,6 @@ export default function HomePage({ language }: { language: LangEnum }) {
       <Head>
         <title>{homeLang(language, "title")}</title>
         <meta content={globalsLang(language, "home-meta-description")} name="description" />
-        <meta content={globalsLang(language, "home-meta-keywords")} name="keywords" />
         <link href="https://www.lamaisonregina.com/en" hrefLang="en" rel="alternate" />
         <link href="https://www.lamaisonregina.com/pt" hrefLang="pt" rel="alternate" />
       </Head>

@@ -10,7 +10,6 @@ export default function GalleryPage({ language }: { language: LangEnum }) {
       <Head>
         <title>{galleryLang(language, "title")}</title>
         <meta content={globalsLang(language, "gallery-meta-description")} name="description" />
-        <meta content={globalsLang(language, "gallery-meta-keywords")} name="keywords" />
         <link href="https://www.lamaisonregina.com/en/gallery" hrefLang="en" rel="alternate" />
         <link href="https://www.lamaisonregina.com/pt/gallery" hrefLang="pt" rel="alternate" />
       </Head>

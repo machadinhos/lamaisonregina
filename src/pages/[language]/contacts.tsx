@@ -10,7 +10,6 @@ export default function ContactsPage({ language }: { language: LangEnum }) {
       <Head>
         <title>{contactsLang(language, "title")}</title>
         <meta content={globalsLang(language, "contacts-meta-description")} name="description" />
-        <meta content={globalsLang(language, "contacts-meta-keywords")} name="keywords" />
         <link href="https://www.lamaisonregina.com/en/contacts" hrefLang="en" rel="alternate" />
         <link href="https://www.lamaisonregina.com/pt/contacts" hrefLang="pt" rel="alternate" />
       </Head>

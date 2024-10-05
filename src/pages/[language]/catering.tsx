@@ -10,7 +10,6 @@ export default function CateringPage({ language }: { language: LangEnum }) {
       <Head>
         <title>{cateringLang(language, "title")}</title>
         <meta content={globalsLang(language, "catering-meta-description")} name="description" />
-        <meta content={globalsLang(language, "catering-meta-keywords")} name="keywords" />
         <link href="https://www.lamaisonregina.com/en/catering" hrefLang="en" rel="alternate" />
         <link href="https://www.lamaisonregina.com/pt/catering" hrefLang="pt" rel="alternate" />
       </Head>

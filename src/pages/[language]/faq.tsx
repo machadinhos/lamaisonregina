@@ -10,7 +10,6 @@ export default function FAQPage({ language }: { language: LangEnum }) {
       <Head>
         <title>{faqLang(language, "title")}</title>
         <meta content={globalsLang(language, "faq-meta-description")} name="description" />
-        <meta content={globalsLang(language, "faq-meta-keywords")} name="keywords" />
         <link href="https://www.lamaisonregina.com/en/faq" hrefLang="en" rel="alternate" />
         <link href="https://www.lamaisonregina.com/pt/faq" hrefLang="pt" rel="alternate" />
       </Head>

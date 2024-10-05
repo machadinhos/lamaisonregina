@@ -6,18 +6,12 @@
     "cta": "Contacte-nos",
     "copied-message": "Copiado para a área de transferência.",
     "copied-error": "Erro ao copiar para a área de transferência.",
-    "home-meta-description": "A definir",
-    "home-meta-keywords": "A definir",
-    "services-meta-description": "A definir",
-    "services-meta-keywords": "A definir",
-    "gallery-meta-description": "A definir",
-    "gallery-meta-keywords": "A definir",
-    "catering-meta-description": "A definir",
-    "catering-meta-keywords": "A definir",
-    "faq-meta-description": "A definir",
-    "faq-meta-keywords": "A definir",
-    "contacts-meta-description": "A definir",
-    "contacts-meta-keywords": "A definir"
+    "home-meta-description": "Localizada na encantadora vila do Paião, concelho da Figueira da Foz - Portugal, La Maison Regina é um espaço para realizar casamentos e batizados que oferece eventos num ambiente charmoso, intimista e familiar, combinando beleza natural com um toque contemporâneo e acolhedor.",
+    "services-meta-description": "La Maison Regina é um local onde as pessoas podem celebrar casamentos, batizados e outros eventos festivos e sociais, de modo intimista, familiar e épico, pois oferece uma ampla gama de serviços personalizados para garantir que cada casamento e evento seja uma celebração única e sem preocupações, desde o planeamento até à execução impecável no dia.",
+    "gallery-meta-description": "La Maison Regina dispõe de um amplo jardim para o evento, com um coreto e um espelho d’água, pérgula ou tenda de vidro para banquete e copo d’água, salão de buffet e discoteca para dj ou banda, onde cada detalhe é cuidadosamente pensado para criar momentos inesquecíveis. Desde cerimónias intimistas nos nossos jardins até receções glamorosas na tenda envidraçada.",
+    "catering-meta-description": "A gastronomia e catering da La Maison Regina combina a riqueza da cozinha portuguesa com uma abordagem sustentável e contemporânea, criando experiências culinárias únicas e memoráveis.",
+    "faq-meta-description": "Encontre respostas às perguntas mais frequentes sobre a organização do seu casamento na La Maison Regina.",
+    "contacts-meta-description": "Entre em contacto connosco para mais informações ou agende uma visita à La Maison Regina para planear o seu casamento de sonho."
   },
   "en": {
     "footer-follow": "Follow us",
@@ -26,17 +20,11 @@
     "cta": "Get in contact ",
     "copied-message": "Copied to clipboard.",
     "copied-error": "Error copying to clipboard.",
-    "home-meta-description": "To be defined",
-    "home-meta-keywords": "To be defined",
-    "services-meta-description": "To be defined",
-    "services-meta-keywords": "To be defined",
-    "gallery-meta-description": "To be defined",
-    "gallery-meta-keywords": "To be defined",
-    "catering-meta-description": "To be defined",
-    "catering-meta-keywords": "To be defined",
-    "faq-meta-description": "To be defined",
-    "faq-meta-keywords": "To be defined",
-    "contacts-meta-description": "To be defined",
-    "contacts-meta-keywords": "To be defined"
+    "home-meta-description": "Located in the charming village of Paião, in the municipality of Figueira da Foz - Portugal, La Maison Regina is a wedding and christening venue that offers events in a charming, intimate and familiar setting, combining natural beauty with a contemporary and cosy touch.",
+    "services-meta-description": "La Maison Regina is a venue where people can celebrate weddings, christenings and other festive and social events in an intimate, family-friendly and epic way, as it offers a wide range of personalised services to ensure that every wedding and event is a unique and worry-free celebration, from planning to flawless execution on the day.",
+    "gallery-meta-description": "La Maison Regina has a large garden for the event, with a bandstand and a water mirror, a pergola or glass tent for the banquet and reception, a buffet hall and a disco for DJs or bands, where every detail is carefully thought out to create unforgettable moments. From intimate ceremonies in our gardens to glamorous receptions in the glass tent.",
+    "catering-meta-description": "La Maison Regina's gastronomy and catering combines the richness of Portuguese cuisine with a sustainable and contemporary approach, creating unique and memorable culinary experiences.",
+    "faq-meta-description": "Find answers to the most frequently asked questions about organising your wedding at La Maison Regina.",
+    "contacts-meta-description": "Contact us for more information or book a visit to La Maison Regina to plan your dream wedding."
   }
 }
