@@ -72,14 +72,16 @@ const LangOption = ({
   };
 
   return (
-    <IconButton sx={{ m: 0, p: 0, height: "fit-content" }} onClick={() => refreshLang(href)}>
+    <IconButton
+      sx={{ m: 0, p: 0, height: "fit-content", cursor: option === lang ? "default" : "pointer" }}
+      onClick={() => refreshLang(href)}
+    >
       <Typography
         sx={{
           mx: "0.25rem",
           color: isHome ? (open ? "auto" : "white") : "auto",
           transition: "color 0.3s ease-in-out",
           fontWeight: option === lang ? 600 : 300,
-          cursor: option === lang ? "default" : "pointer",
           ...(fontSize && { fontSize }),
         }}
         variant={"body1"}
