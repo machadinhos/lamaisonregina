@@ -106,6 +106,7 @@ export default function SlickCarousel({
     swipeToSlide: true,
     slidesToShow: 3,
     responsive,
+    arrows: false,
     lazyLoad: "ondemand" as const,
   };
 
