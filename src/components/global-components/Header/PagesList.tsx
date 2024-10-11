@@ -48,15 +48,6 @@ function HeaderListItem({
   isMobile?: boolean;
 }) {
   const isCurrentPage = currentPage.split("#")[0] === page.href.split("/")[2];
-  const boxSX: SxProps | {} = isMobile
-    ? {
-        "&:hover": {
-          "& > div": {
-            width: "100%",
-          },
-        },
-      }
-    : {};
 
   return (
     <Link
@@ -72,7 +63,6 @@ function HeaderListItem({
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"center"}
-          sx={boxSX}
           onClick={toggleMobileDrawer}
         >
           <GenericPageTitle
@@ -91,7 +81,7 @@ function HeaderListItem({
             <Box
               sx={{
                 height: 2,
-                backgroundColor: isCurrentPage ? primaryColor : isHome ? "white" : "black",
+                backgroundColor: isCurrentPage ? primaryColor : "transparent",
                 width: isCurrentPage ? "100%" : 0,
                 transition: "width 0.3s",
                 marginTop: "2px",
