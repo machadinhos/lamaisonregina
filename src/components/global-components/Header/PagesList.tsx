@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from "react";
 import {
   cateringLang,
   contactsLang,
@@ -35,32 +36,45 @@ function HeaderListItem({
   isHome,
   fontSize,
   toggleMobileDrawer,
+  onHover,
+  isMobile,
 }: {
   page: Page;
   currentPage: string;
   isHome?: boolean;
   fontSize?: string;
   toggleMobileDrawer?: () => void;
+  onHover: (index: number | null) => void;
+  isMobile?: boolean;
 }) {
   const isCurrentPage = currentPage.split("#")[0] === page.href.split("/")[2];
+  const boxSX: SxProps | {} = isMobile
+    ? {
+        "&:hover": {
+          "& > div": {
+            width: "100%",
+          },
+        },
+      }
+    : {};
 
   return (
-    <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <Box
-        alignItems={"center"}
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        sx={{
-          "&:hover": {
-            "& > div": {
-              width: "100%",
-            },
-          },
-        }}
-        onClick={toggleMobileDrawer}
-      >
-        <Link href={page.href}>
+    <Link
+      href={page.href}
+      onMouseEnter={() =>
+        onHover(getPagesList(page.href.split("/")[1] as LangEnum).findIndex((p) => p.href === page.href))
+      }
+      onMouseLeave={() => onHover(null)}
+    >
+      <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <Box
+          alignItems={"center"}
+          display={"flex"}
+          flexDirection={"column"}
+          justifyContent={"center"}
+          sx={boxSX}
+          onClick={toggleMobileDrawer}
+        >
           <GenericPageTitle
             noLine
             sx={{
@@ -73,18 +87,20 @@ function HeaderListItem({
           >
             {page.text}
           </GenericPageTitle>
-        </Link>
-        <Box
-          sx={{
-            height: 2,
-            backgroundColor: isCurrentPage ? primaryColor : isHome ? "white" : "black",
-            width: isCurrentPage ? "100%" : 0,
-            transition: "width 0.3s",
-            marginTop: "2px",
-          }}
-        />
-      </Box>
-    </ListItem>
+          {!isMobile || (
+            <Box
+              sx={{
+                height: 2,
+                backgroundColor: isCurrentPage ? primaryColor : isHome ? "white" : "black",
+                width: isCurrentPage ? "100%" : 0,
+                transition: "width 0.3s",
+                marginTop: "2px",
+              }}
+            />
+          )}
+        </Box>
+      </ListItem>
+    </Link>
   );
 }
 
@@ -94,27 +110,77 @@ export default function PagesList({
   isHome,
   fontSize,
   toggleMobileDrawer,
+  isMobile,
 }: {
   lang: LangEnum;
   sx?: SxProps<Theme>;
   isHome?: boolean;
   fontSize?: string;
   toggleMobileDrawer?: () => void;
+  isMobile?: boolean;
 }) {
-  const currentPage = useRouter().asPath.split("/")[2] || "";
+  const router = useRouter();
+  const currentPage = router.asPath.split("/")[2] || "";
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    const index = getPagesList(lang).findIndex((page) => page.href.split("/")[2] === currentPage);
+
+    setActiveIndex(index !== -1 ? index : 0);
+  }, [currentPage, lang]);
+
+  const handleHover = (index: number | null) => {
+    setHoverIndex(index);
+  };
+
+  const getUnderlineStyle = () => {
+    if (!listRef.current) return {};
+    const items = listRef.current.children;
+    const currentItem = items[hoverIndex !== null ? hoverIndex : activeIndex] as HTMLElement;
+
+    if (!currentItem) return {};
+
+    const itemRect = currentItem.getBoundingClientRect();
+    const listRect = listRef.current.getBoundingClientRect();
+
+    return {
+      left: `${itemRect.left - listRect.left}px`,
+      width: `${itemRect.width}px`,
+    };
+  };
 
   return (
-    <List sx={{ ...sx }}>
-      {getPagesList(lang).map((page, index) => (
-        <HeaderListItem
-          key={index}
-          currentPage={currentPage}
-          fontSize={fontSize}
-          isHome={isHome}
-          page={page}
-          toggleMobileDrawer={toggleMobileDrawer}
+    <Box position="relative">
+      <List ref={listRef} style={{ paddingBottom: 0, marginBottom: 0, userSelect: "none" }} sx={{ ...sx }}>
+        {getPagesList(lang).map((page, index) => (
+          <HeaderListItem
+            key={index}
+            currentPage={currentPage}
+            fontSize={fontSize}
+            isHome={isHome}
+            isMobile={isMobile}
+            page={page}
+            toggleMobileDrawer={toggleMobileDrawer}
+            onHover={handleHover}
+          />
+        ))}
+      </List>
+      {isMobile || (
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            height: 2,
+            backgroundColor: primaryColor,
+            transition: "all 0.3s ease-in-out",
+            p: 0,
+            m: 0,
+            ...getUnderlineStyle(),
+          }}
         />
-      ))}
-    </List>
+      )}
+    </Box>
   );
 }

@@ -145,7 +145,7 @@ const DrawerMenu = ({ lang, open, toggleDrawer }: { lang: LangEnum; open: boolea
           justifyContent: "center",
         }}
       >
-        <PagesList lang={lang} toggleMobileDrawer={toggleDrawer} />
+        <PagesList isMobile lang={lang} toggleMobileDrawer={toggleDrawer} />
       </Box>
     </Drawer>
   );
