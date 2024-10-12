@@ -167,6 +167,7 @@ export default function PagesList({
             transition: "all 0.3s ease-in-out",
             p: 0,
             m: 0,
+            pointerEvents: "none",
             ...getUnderlineStyle(),
           }}
         />
