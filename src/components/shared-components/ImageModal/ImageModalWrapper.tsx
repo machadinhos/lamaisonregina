@@ -13,11 +13,12 @@ export const ImageModalContext = createContext<{
 
 export default function ImageModalWrapper({ children }: { children: ReactNode | ReactNode[] }) {
   const [openedImage, setOpenedImage] = useState<OpenedImage | null>(null);
+  const [canClose, setCanClose] = useState(false);
 
   return (
     <ImageModalContext.Provider value={{ openedImage, setOpenedImage }}>
       {children}
-      <ImageModal />
+      <ImageModal canClose={canClose} setCanClose={setCanClose} />
     </ImageModalContext.Provider>
   );
 }

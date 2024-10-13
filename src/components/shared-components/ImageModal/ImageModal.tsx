@@ -1,14 +1,19 @@
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
 
 import { ImageModalContext } from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
-export default function ImageModal() {
+export default function ImageModal({
+  canClose,
+  setCanClose,
+}: {
+  canClose: boolean;
+  setCanClose: (value: boolean) => void;
+}) {
   const imageBoxRef = useRef<HTMLImageElement>(null);
   const darkenedBoxRef = useRef<HTMLDivElement>(null);
   const { openedImage, setOpenedImage } = useContext(ImageModalContext);
-  const [canClose, setCanClose] = useState(false);
 
   const handleClick = useCallback(() => {
     if (!canClose || !imageBoxRef.current || !openedImage || !darkenedBoxRef.current || !openedImage.imageRef.current)
@@ -22,10 +27,10 @@ export default function ImageModal() {
 
     darkenedBoxRef.current.style.backgroundColor = "rgba(0, 0, 0, 0)";
     setTimeout(() => {
+      setCanClose(false);
       if (!openedImage.imageRef.current) return;
       openedImage.imageRef.current.style.opacity = "1";
       setOpenedImage(null);
-      setCanClose(false); // Reset canClose state
     }, 500);
   }, [canClose, openedImage, setOpenedImage]);
 
