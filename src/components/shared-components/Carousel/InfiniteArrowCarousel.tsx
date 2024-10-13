@@ -45,7 +45,7 @@ export default function InfiniteArrowCarousel({
     autoplaySpeed: 4000,
     pauseOnHover: false,
     arrows: false,
-    lazyLoad: "ondemand" as const,
+    lazyLoad: "progressive" as const,
   };
 
   return (
