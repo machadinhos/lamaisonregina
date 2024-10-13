@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useRef } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
 
@@ -8,9 +8,11 @@ export default function ImageModal() {
   const imageBoxRef = useRef<HTMLImageElement>(null);
   const darkenedBoxRef = useRef<HTMLDivElement>(null);
   const { openedImage, setOpenedImage } = useContext(ImageModalContext);
+  const [canClose, setCanClose] = useState(false);
 
   const handleClick = useCallback(() => {
-    if (!imageBoxRef.current || !openedImage || !darkenedBoxRef.current || !openedImage.imageRef.current) return;
+    if (!canClose || !imageBoxRef.current || !openedImage || !darkenedBoxRef.current || !openedImage.imageRef.current)
+      return;
     const close = openedImage.imageRef.current.getBoundingClientRect();
 
     imageBoxRef.current.style.width = close.width + "px";
@@ -23,17 +25,21 @@ export default function ImageModal() {
       if (!openedImage.imageRef.current) return;
       openedImage.imageRef.current.style.opacity = "1";
       setOpenedImage(null);
+      setCanClose(false); // Reset canClose state
     }, 500);
-  }, [openedImage, setOpenedImage]);
+  }, [canClose, openedImage, setOpenedImage]);
 
   useEffect(() => {
-    document.addEventListener("keydown", (e) => {
+    const handleEscapeKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         handleClick();
       }
-    });
+    };
+
+    document.addEventListener("keydown", handleEscapeKey);
 
     if (!openedImage || !imageBoxRef.current || !darkenedBoxRef.current || !openedImage.imageRef.current) return;
+
     openedImage.imageRef.current.style.opacity = "0";
 
     // force reflow
@@ -45,7 +51,16 @@ export default function ImageModal() {
     imageBoxRef.current.style.left = "0";
 
     darkenedBoxRef.current.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-  }, [handleClick, openedImage]);
+
+    const timer = setTimeout(() => {
+      setCanClose(true);
+    }, 500);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+      clearTimeout(timer);
+    };
+  }, [openedImage, handleClick]);
 
   return (
     <>
@@ -65,7 +80,7 @@ export default function ImageModal() {
           top={0}
           width={"100%"}
           zIndex={3000}
-          onClick={handleClick}
+          onClick={() => canClose && handleClick()}
         >
           <Box
             ref={imageBoxRef}
