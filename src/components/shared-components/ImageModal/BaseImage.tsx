@@ -15,7 +15,7 @@ export default function BaseImage({ src, alt, priority }: { src: string; alt: st
     const close = imageBoxRef.current.getBoundingClientRect();
 
     setOpenedImage({
-      coords: { open: { top: open.top, left: open.left }, close: { top: close.top, left: close.left } },
+      coords: { open: { top: open.top, left: open.left } },
       size: { open: { width: open.width, height: open.height }, close: { width: close.width, height: close.height } },
       src: src,
       alt: alt,

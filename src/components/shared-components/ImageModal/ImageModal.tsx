@@ -10,11 +10,13 @@ export default function ImageModal() {
   const { openedImage, setOpenedImage } = useContext(ImageModalContext);
 
   const handleClick = useCallback(() => {
-    if (!imageBoxRef.current || !openedImage || !darkenedBoxRef.current) return;
-    imageBoxRef.current.style.width = openedImage.size.close.width + "px";
-    imageBoxRef.current.style.height = openedImage.size.close.height + "px";
-    imageBoxRef.current.style.top = openedImage.coords.close.top + "px";
-    imageBoxRef.current.style.left = openedImage.coords.close.left + "px";
+    if (!imageBoxRef.current || !openedImage || !darkenedBoxRef.current || !openedImage.imageRef.current) return;
+    const close = openedImage.imageRef.current.getBoundingClientRect();
+
+    imageBoxRef.current.style.width = close.width + "px";
+    imageBoxRef.current.style.height = close.height + "px";
+    imageBoxRef.current.style.top = close.top + "px";
+    imageBoxRef.current.style.left = close.left + "px";
 
     darkenedBoxRef.current.style.backgroundColor = "rgba(0, 0, 0, 0)";
     setTimeout(() => {
