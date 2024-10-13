@@ -50,19 +50,21 @@ function HeaderListItem({
   const isCurrentPage = currentPage.split("#")[0] === page.href.split("/")[2];
 
   return (
-    <Link
-      href={page.href}
-      onMouseEnter={() =>
-        onHover(getPagesList(page.href.split("/")[1] as LangEnum).findIndex((p) => p.href === page.href))
-      }
-      onMouseLeave={() => onHover(null)}
-    >
-      <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center", p: 0 }}>
+      <Link
+        href={page.href}
+        onMouseEnter={() =>
+          onHover(getPagesList(page.href.split("/")[1] as LangEnum).findIndex((p) => p.href === page.href))
+        }
+        onMouseLeave={() => onHover(null)}
+      >
         <Box
           alignItems={"center"}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"center"}
+          px={"16px"}
+          py={"8px"}
           onClick={toggleMobileDrawer}
         >
           <GenericPageTitle
@@ -89,8 +91,8 @@ function HeaderListItem({
             />
           )}
         </Box>
-      </ListItem>
-    </Link>
+      </Link>
+    </ListItem>
   );
 }
 
