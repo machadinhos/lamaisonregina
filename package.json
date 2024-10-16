@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-sitemap.js && next build",
+    "build:serve": "node scripts/generate-sitemap.js && next build && npx serve@latest out",
     "start": "next start",
     "lint": "next lint --fix",
     "serve": "npx serve@latest out",
