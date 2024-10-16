@@ -34,6 +34,7 @@ export default function LangSelector({
           userSelect: "none",
           color: isHome ? (open ? "auto" : "white") : "auto",
           transition: "color 0.3s ease-in-out",
+          zIndex: 0,
           ...(fontSize && { fontSize }),
         }}
       >
