@@ -1,35 +1,20 @@
 import { LangEnum } from "@i18n/lang-selector";
 import { Box, IconButton } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import imageSelect from "@images/image-select";
 import Image from "next/image";
 
 import PagesList from "@/components/global-components/Header/PagesList";
 import LangSelector from "@/components/global-components/Header/LangSelector";
-import HomeBackFade, { MainBoxType } from "@/components/global-components/Header/HomeBackFade";
 
 export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
-  const mainBoxRef = useRef<HTMLElement>();
-
-  const [mainBox, setMainBox] = useState<MainBoxType>();
-
-  useEffect(() => {
-    if (mainBoxRef.current) {
-      const rect = mainBoxRef.current.getBoundingClientRect();
-
-      setMainBox({
-        height: rect.height,
-      });
-    }
-  }, [mainBoxRef]);
-
   return (
     <>
       <Box
-        ref={mainBoxRef}
         className={"desktop-header"}
         sx={{
+          display: { md: "block", xs: "none" },
           padding: "2rem 5rem 0 5rem",
           position: isHome ? "absolute" : "relative",
           marginBottom: "2.75rem",
@@ -39,7 +24,6 @@ export default function DesktopHeader({ lang, isHome }: { lang: LangEnum; isHome
           zIndex: 1300,
         }}
       >
-        <HomeBackFade isDesktop isHome={isHome} mainBox={mainBox} />
         <Box sx={{ display: "flex" }}>
           <Box flex={1} />
           <Box display={"flex"} flex={1} justifyContent={"center"} position={"relative"}>

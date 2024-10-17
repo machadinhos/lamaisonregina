@@ -1,6 +1,6 @@
 import { LangEnum } from "@i18n/lang-selector";
 import { Box, Drawer, IconButton } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Image from "next/image";
@@ -9,7 +9,6 @@ import imageSelect from "@images/image-select";
 
 import LangSelector from "@/components/global-components/Header/LangSelector";
 import PagesList from "@/components/global-components/Header/PagesList";
-import HomeBackFade, { MainBoxType } from "@/components/global-components/Header/HomeBackFade";
 
 export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?: boolean }) {
   const [open, setOpen] = useState<boolean>(false);
@@ -18,26 +17,12 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
     setOpen(!open);
   };
 
-  const mainBoxRef = useRef<HTMLElement>();
-
-  const [mainBox, setMainBox] = useState<MainBoxType>();
-
-  useEffect(() => {
-    if (mainBoxRef.current) {
-      const rect = mainBoxRef.current.getBoundingClientRect();
-
-      setMainBox({
-        height: rect.height,
-      });
-    }
-  }, [mainBoxRef]);
-
   return (
     <>
       <Box
-        ref={mainBoxRef}
         className={"mobile-header"}
         sx={{
+          display: { xs: "block", md: "none" },
           padding: "1rem",
           position: isHome ? "absolute" : "relative",
           top: 0,
@@ -45,7 +30,6 @@ export default function MobileHeader({ lang, isHome }: { lang: LangEnum; isHome?
           width: "100%",
         }}
       >
-        <HomeBackFade isHome={isHome} mainBox={mainBox} />
         <HeaderTop isHome={isHome} lang={lang} open={open} setOpen={setOpen} toggleDrawer={toggleDrawer} />
         <DrawerMenu lang={lang} open={open} toggleDrawer={toggleDrawer} />
       </Box>
