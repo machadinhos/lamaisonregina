@@ -13,7 +13,7 @@ import ScrollTriggeredElement from "@/components/global-components/BottomButtons
 
 export default function MobileBottomButtons({ lang }: { lang: LangEnum }) {
   return (
-    <ScrollTriggeredElement threshold={50}>
+    <ScrollTriggeredElement screen={"mobile"} threshold={50}>
       <Box bgcolor={primaryColor}>
         <Box alignItems={"center"} display={"flex"} height={"100%"} justifyContent={"center"} width={"100%"}>
           <IconButton>
