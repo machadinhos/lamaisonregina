@@ -9,7 +9,7 @@ function Document({ lang }: { lang: string }) {
         <meta content="06P2RTJNJDrbrG-sT4uv5yNSCbG0iE7EcN8rolF0JOc" name="google-site-verification" />
         <link href="https://www.googletagmanager.com" rel="preconnect" />
       </Head>
-      <body>
+      <body style={{ height: "100dvh" }}>
         <Main />
         <NextScript />
       </body>
