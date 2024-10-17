@@ -79,18 +79,18 @@ function HeaderListItem({
           >
             {page.text}
           </GenericPageTitle>
-          {!isMobile || (
-            <Box
-              sx={{
-                height: 2,
-                backgroundColor: isCurrentPage ? primaryColor : "transparent",
-                width: isCurrentPage ? "100%" : 0,
-                transition: "width 0.3s",
-                marginTop: "2px",
-              }}
-            />
-          )}
         </Box>
+        {!isMobile || (
+          <Box
+            sx={{
+              height: 2,
+              backgroundColor: isCurrentPage ? primaryColor : "transparent",
+              width: isCurrentPage ? "100%" : 0,
+              transition: "width 0.3s",
+              marginTop: "2px",
+            }}
+          />
+        )}
       </Link>
     </ListItem>
   );
