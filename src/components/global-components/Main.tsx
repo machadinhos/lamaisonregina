@@ -5,5 +5,5 @@ interface Props {
 }
 
 export default function Main({ children }: Props) {
-  return <main style={{ minHeight: "100vh" }}>{children}</main>;
+  return <main style={{ minHeight: "100dvh" }}>{children}</main>;
 }

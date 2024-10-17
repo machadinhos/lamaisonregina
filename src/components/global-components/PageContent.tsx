@@ -15,13 +15,13 @@ interface Props {
 
 export default function PageContent({ lang, children, isHome }: Props) {
   return (
-    <>
+    <Box height={"100dvh"}>
       <Box bgcolor={primaryColor} height={"4px"} position={"fixed"} width={"100%"} zIndex={2432} />
       <Header isHome={isHome} lang={lang} />
       {children}
       <BottomButtons lang={lang} />
       <Box bgcolor={primaryColor} height={"5px"} width={"100%"} zIndex={2432} />
       <Footer lang={lang} />
-    </>
+    </Box>
   );
 }
