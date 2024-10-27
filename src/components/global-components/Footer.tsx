@@ -50,104 +50,109 @@ const PageListItemLink = ({ children, href }: { children: string; href: string }
 
 export default function Footer({ lang }: Props) {
   return (
-    <>
-      <Box bgcolor={primaryColor} height={"5px"} width={"100%"} zIndex={2432} />
-      <footer
-        style={{
-          backgroundColor: secondaryColor,
-          color: primaryColor,
-          padding: "2rem",
-          position: "relative",
-          display: "flex",
+    <footer
+      style={{
+        backgroundColor: secondaryColor,
+        color: primaryColor,
+        padding: "2rem",
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "0.75rem",
+      }}
+    >
+      <Box
+        bgcolor={primaryColor}
+        height={"5px"}
+        position={"absolute"}
+        sx={{ inset: 0, display: { xs: "none", md: "block" } }}
+        width={"100%"}
+        zIndex={2432}
+      />
+      <Box
+        sx={{
+          display: { xs: "none", sm: "flex" },
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          fontSize: "0.75rem",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
         }}
       >
-        <Box
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <Link href={`/${lang}#header`}>
-            <Box position={"relative"} sx={{ aspectRatio: "1.3/1" }} width={"200px"}>
-              <Image fill alt={imageSelect.globals.logoPrimary.alt} src={imageSelect.globals.logoPrimary.src} />
-            </Box>
-          </Link>
-        </Box>
-        <Box
+        <Link href={`/${lang}#header`}>
+          <Box position={"relative"} sx={{ aspectRatio: "1.3/1" }} width={"200px"}>
+            <Image fill alt={imageSelect.globals.logoPrimary.alt} src={imageSelect.globals.logoPrimary.src} />
+          </Box>
+        </Link>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          width: { xs: "100%", md: "90%", lg: "80%", xl: "80%" },
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <List
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            width: { xs: "100%", md: "90%", lg: "80%", xl: "80%" },
-            justifyContent: "space-between",
-            alignItems: "center",
+            mb: { xs: "1rem", md: "auto" },
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: { xs: "center", sm: "flex-start" },
+            fontSize: "1.25rem",
+            width: "50px",
           }}
         >
+          <PageListItemLink href={`/${lang}/#header`}>{homeLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/services#header`}>{servicesLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/gallery#header`}>{galleryLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/catering#header`}>{cateringLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/faq#header`}>{faqLang(lang, "label")}</PageListItemLink>
+          <PageListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "label")}</PageListItemLink>
+        </List>
+        <Box alignItems={"center"} display={"flex"} flexDirection={"column"} justifyContent={"center"} mb={"1rem"}>
+          <Typography
+            sx={{ fontSize: "1.25rem", color: primaryColor, display: { xs: "block", sm: "none", md: "block" } }}
+            variant={"h4"}
+          >
+            {globalsLang(lang, "footer-follow")}
+          </Typography>
           <List
             sx={{
               display: "flex",
-              mb: { xs: "1rem", md: "auto" },
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              alignItems: { xs: "center", sm: "flex-start" },
-              fontSize: "1.25rem",
-              width: "50px",
+              flexDirection: { sm: "column", md: "row" },
+              alignItems: "center",
             }}
           >
-            <PageListItemLink href={`/${lang}/#header`}>{homeLang(lang, "label")}</PageListItemLink>
-            <PageListItemLink href={`/${lang}/services#header`}>{servicesLang(lang, "label")}</PageListItemLink>
-            <PageListItemLink href={`/${lang}/gallery#header`}>{galleryLang(lang, "label")}</PageListItemLink>
-            <PageListItemLink href={`/${lang}/catering#header`}>{cateringLang(lang, "label")}</PageListItemLink>
-            <PageListItemLink href={`/${lang}/faq#header`}>{faqLang(lang, "label")}</PageListItemLink>
-            <PageListItemLink href={`/${lang}/contacts#header`}>{contactsLang(lang, "label")}</PageListItemLink>
+            <SocialMediaListItem href={addressSelect.facebook}>
+              <FacebookIcon sx={{ color: primaryColor }} />
+            </SocialMediaListItem>
+            <SocialMediaListItem href={addressSelect.whatsapp}>
+              <WhatsappIcon sx={{ color: primaryColor }} />
+            </SocialMediaListItem>
+            <SocialMediaListItem href={addressSelect.instagram}>
+              <InstagramIcon sx={{ color: primaryColor }} />
+            </SocialMediaListItem>
           </List>
-          <Box alignItems={"center"} display={"flex"} flexDirection={"column"} justifyContent={"center"} mb={"1rem"}>
-            <Typography
-              sx={{ fontSize: "1.25rem", color: primaryColor, display: { xs: "block", sm: "none", md: "block" } }}
-              variant={"h4"}
-            >
-              {globalsLang(lang, "footer-follow")}
-            </Typography>
-            <List
-              sx={{
-                display: "flex",
-                flexDirection: { sm: "column", md: "row" },
-                alignItems: "center",
-              }}
-            >
-              <SocialMediaListItem href={addressSelect.facebook}>
-                <FacebookIcon sx={{ color: primaryColor }} />
-              </SocialMediaListItem>
-              <SocialMediaListItem href={addressSelect.whatsapp}>
-                <WhatsappIcon sx={{ color: primaryColor }} />
-              </SocialMediaListItem>
-              <SocialMediaListItem href={addressSelect.instagram}>
-                <InstagramIcon sx={{ color: primaryColor }} />
-              </SocialMediaListItem>
-            </List>
-          </Box>
         </Box>
-        <Box>
-          <GenericPageText
-            sx={{
-              textAlign: "center",
-              color: primaryColor,
-            }}
-          >
-            {globalsLang(lang, "footer-rights-reserved-1") + " " + globalsLang(lang, "footer-rights-reserved-2")}
-          </GenericPageText>
-        </Box>
-      </footer>
-    </>
+      </Box>
+      <Box>
+        <GenericPageText
+          sx={{
+            textAlign: "center",
+            color: primaryColor,
+          }}
+        >
+          {globalsLang(lang, "footer-rights-reserved-1") + " " + globalsLang(lang, "footer-rights-reserved-2")}
+        </GenericPageText>
+      </Box>
+    </footer>
   );
 }

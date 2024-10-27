@@ -7,7 +7,7 @@ export default function BottomButtons({ lang }: { lang: LangEnum }) {
   return (
     <>
       <MobileBottomButtons lang={lang} />
-      <DesktopBottomButtons />;
+      <DesktopBottomButtons />
     </>
   );
 }
