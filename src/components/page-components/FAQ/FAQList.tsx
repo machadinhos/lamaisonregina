@@ -87,16 +87,6 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
       </FAQAccordion>
       <FAQAccordion>
         <FAQAccordionSummary>
-          <FAQTitle>{faqLang(lang, "faq-catering-title")}</FAQTitle>
-        </FAQAccordionSummary>
-        <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-catering-text-1")}</GenericPageText>
-          <GenericPageText>{faqLang(lang, "faq-catering-text-2")}</GenericPageText>
-          <GenericPageText>{faqLang(lang, "faq-catering-text-3")}</GenericPageText>
-        </FAQAccordionDetails>
-      </FAQAccordion>
-      <FAQAccordion>
-        <FAQAccordionSummary>
           <FAQTitle>{faqLang(lang, "faq-noise-title")}</FAQTitle>
         </FAQAccordionSummary>
         <FAQAccordionDetails>
