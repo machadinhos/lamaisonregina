@@ -1,55 +1,55 @@
 {
   "carousel1": [
     {
-      "src": "https://images.lamaisonregina.com/gallery/garden/1.webp",
+      "src": "https://images.lamaisonregina.com/gallery/garden/1.avif",
       "alt": "carousel1-image1"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/garden/2.webp",
+      "src": "https://images.lamaisonregina.com/gallery/garden/2.avif",
       "alt": "carousel1-image2"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/garden/3.webp",
+      "src": "https://images.lamaisonregina.com/gallery/garden/3.avif",
       "alt": "carousel1-image3"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/garden/4.webp",
+      "src": "https://images.lamaisonregina.com/gallery/garden/4.avif",
       "alt": "carousel1-image4"
     }
   ],
   "carousel2": {
-      "src": "https://images.lamaisonregina.com/gallery/pergola/1.webp",
+      "src": "https://images.lamaisonregina.com/gallery/pergola/1.avif",
       "alt": "carousel2-image1"
   },
   "carousel3": [
     {
-      "src": "https://images.lamaisonregina.com/gallery/buffet/1.webp",
+      "src": "https://images.lamaisonregina.com/gallery/buffet/1.avif",
       "alt": "carousel3-image1"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/buffet/2.webp",
+      "src": "https://images.lamaisonregina.com/gallery/buffet/2.avif",
       "alt": "carousel3-image2"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/buffet/3.webp",
+      "src": "https://images.lamaisonregina.com/gallery/buffet/3.avif",
       "alt": "carousel3-image3"
     }
   ],
   "carousel4": [
     {
-      "src": "https://images.lamaisonregina.com/gallery/disco/1.webp",
+      "src": "https://images.lamaisonregina.com/gallery/disco/1.avif",
       "alt": "carousel4-image1"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/disco/2.webp",
+      "src": "https://images.lamaisonregina.com/gallery/disco/2.avif",
       "alt": "carousel4-image2"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/disco/1.webp",
+      "src": "https://images.lamaisonregina.com/gallery/disco/1.avif",
       "alt": "carousel4-image1"
     },
     {
-      "src": "https://images.lamaisonregina.com/gallery/disco/2.webp",
+      "src": "https://images.lamaisonregina.com/gallery/disco/2.avif",
       "alt": "carousel4-image2"
     }
   ]

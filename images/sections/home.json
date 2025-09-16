@@ -1,55 +1,55 @@
 {
   "imagesDiv": [
     {
-      "src": "https://images.lamaisonregina.com/home/split-images/split-1.webp",
+      "src": "https://images.lamaisonregina.com/home/split-images/split-1.avif",
       "alt": "imageDiv1"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/split-images/split-2.webp",
+      "src": "https://images.lamaisonregina.com/home/split-images/split-2.avif",
       "alt": "imageDiv2"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/split-images/split-3.webp",
+      "src": "https://images.lamaisonregina.com/home/split-images/split-3.avif",
       "alt": "imageDiv3"
     }
   ],
   "infoImage": {
-    "src": "https://images.lamaisonregina.com/home/text-img/text-img.webp",
+    "src": "https://images.lamaisonregina.com/home/text-img/text-img.avif",
     "alt": "home-info-image"
   },
   "carouselImages": [
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-1.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-1.avif",
       "alt": "carouselImage1"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-2.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-2.avif",
       "alt": "carouselImage2"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-3.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-3.avif",
       "alt": "carouselImage3"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.avif",
       "alt": "carouselImage4"
     }
   ],
   "smallScreenCarouselImages": [
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-1.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-1.avif",
       "alt": "carouselImage1"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-2.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-2.avif",
       "alt": "carouselImage2"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-3-mobile.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-3-mobile.avif",
       "alt": "carouselImage3"
     },
     {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.webp",
+      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.avif",
       "alt": "carouselImage4"
     }
   ]

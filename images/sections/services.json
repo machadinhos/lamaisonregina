@@ -50,15 +50,15 @@
     }
   ],
   "card1": {
-    "src": "https://images.lamaisonregina.com/services/weadings.webp",
+    "src": "https://images.lamaisonregina.com/services/weadings.avif",
     "alt": "card1-image"
   },
   "card2": {
-    "src": "https://images.lamaisonregina.com/services/parties.webp",
+    "src": "https://images.lamaisonregina.com/services/parties.avif",
     "alt": "card2-image"
   },
   "card3": {
-    "src": "https://images.lamaisonregina.com/services/conferences.webp",
+    "src": "https://images.lamaisonregina.com/services/conferences.avif",
     "alt": "card3-image"
   }
 }

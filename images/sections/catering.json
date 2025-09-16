@@ -1,14 +1,14 @@
 {
   "imageBox1": {
-    "src": "https://images.lamaisonregina.com/catering/1.webp",
+    "src": "https://images.lamaisonregina.com/catering/1.avif",
     "alt": "image-box-1"
   },
   "imageBox2": {
-    "src": "https://images.lamaisonregina.com/catering/2.webp",
+    "src": "https://images.lamaisonregina.com/catering/2.avif",
     "alt": "image-box-2"
   },
   "imageBox3": {
-    "src": "https://images.lamaisonregina.com/catering/3.webp",
+    "src": "https://images.lamaisonregina.com/catering/3.avif",
     "alt": "image-box-3"
   }
 }
