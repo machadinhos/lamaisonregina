@@ -5,16 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-sitemap.js && next build",
-    "build:serve": "node scripts/generate-sitemap.js && next build && npx serve@latest out",
+    "build:serve": "node scripts/generate-sitemap.js && next build && pnpm dlx serve@latest out",
     "start": "next start",
     "lint": "next lint --fix",
-    "serve": "npx serve@latest out",
+    "serve": "pnpm dlx serve@latest out",
     "prepare": "husky",
-    "local": "npm run build && npm run serve"
+    "local": "pnpm run build && pnpm run serve"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
+    "@mui/system": "^9.3.0",
     "@next/third-parties": "^14.2.5",
     "@types/react-slick": "^0.23.13",
     "framer-motion": "^11.2.13",
