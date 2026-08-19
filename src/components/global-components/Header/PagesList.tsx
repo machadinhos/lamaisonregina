@@ -8,12 +8,11 @@ import {
   LangEnum,
   servicesLang,
 } from "@i18n/lang-selector";
-import { Box, List, ListItem, Theme } from "@mui/material";
+import { Box, List, ListItem, Theme, Typography } from "@mui/material";
 import Link from "next/link";
 import { SxProps } from "@mui/material/styles";
 import { useRouter } from "next/router";
 
-import GenericPageTitle from "@/components/shared-components/Typography/GenericPageTitle";
 import { primaryColor } from "@/styles/globals";
 
 interface Page {
@@ -47,7 +46,7 @@ function HeaderListItem({
   onHover: (index: number | null) => void;
   isMobile?: boolean;
 }) {
-  const isCurrentPage = currentPage.split("#")[0] === page.href.split("/")[2];
+  const isCurrentPage = currentPage === page.href.split("/")[2];
 
   return (
     <ListItem sx={{ display: "flex", justifyContent: "center", alignItems: "center", p: 0 }}>
@@ -67,18 +66,20 @@ function HeaderListItem({
           py={"8px"}
           onClick={toggleMobileDrawer}
         >
-          <GenericPageTitle
-            noLine
+          <Typography
             sx={{
+              textAlign: "center",
+              fontSize: { xs: "1.7rem", lg: "1.8rem" },
               mt: 0,
               mb: 0,
               ...(fontSize ? { fontSize: fontSize } : {}),
               transition: "all 0.5s ease-in-out",
               color: isCurrentPage ? primaryColor : isHome ? "white" : "auto",
             }}
+            variant="h2"
           >
             {page.text}
-          </GenericPageTitle>
+          </Typography>
         </Box>
         {!isMobile || (
           <Box
@@ -112,7 +113,8 @@ export default function PagesList({
   isMobile?: boolean;
 }) {
   const router = useRouter();
-  const currentPage = router.asPath.split("/")[2] || "";
+  const cleanPath = router.asPath.split("#")[0].split("?")[0];
+  const currentPage = cleanPath.split("/")[2] || "";
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const listRef = useRef<HTMLUListElement>(null);

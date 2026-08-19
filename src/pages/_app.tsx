@@ -6,13 +6,20 @@ import { AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { Montserrat } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Error from "next/error";
 
 import PageContent from "@/components/global-components/PageContent";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -33,21 +40,13 @@ const theme: Theme = createTheme({
       fontWeight: 400,
       fontStyle: "normal",
     },
-    h1: {
-      textAlign: "center",
-    },
-    h2: {
-      textAlign: "center",
-    },
     h3: {
-      textAlign: "center",
+      fontFamily: cormorantGaramond.style.fontFamily,
     },
-    h4: {
-      textAlign: "center",
-    },
-    h5: {
-      textAlign: "center",
-    },
+    h1: { textAlign: "center" },
+    h2: { textAlign: "center" },
+    h4: { textAlign: "center" },
+    h5: { textAlign: "center" },
   },
   breakpoints: {
     values: {

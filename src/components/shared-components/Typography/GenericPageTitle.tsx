@@ -5,7 +5,7 @@ import processChildren from "@/components/shared-components/Typography/childrenP
 import { primaryColor } from "@/styles/globals";
 
 interface Props {
-  children: string;
+  children: React.ReactNode;
   sx?: SxProps<Theme>;
   noLine?: boolean;
   data?: string;
@@ -18,15 +18,15 @@ export default function GenericPageTitle({ children, sx, noLine, data }: Props) 
         data-coco={data}
         sx={{
           textAlign: "center",
-          fontWeight: "400",
+          fontWeight: "700",
           fontSize: { xs: "1.7rem", lg: "1.8rem" },
-          mt: "1.5rem",
-          mb: "1.5rem",
+          mt: { xs: "1rem", md: "1.5rem" },
+          mb: { xs: "1rem", md: "1.5rem" },
           ...sx,
         }}
         variant={"h3"}
       >
-        {processChildren(children)}
+        {typeof children === "string" ? processChildren(children) : children}
       </Typography>
       {!noLine && (
         <Box

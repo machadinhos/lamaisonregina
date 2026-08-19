@@ -7,8 +7,7 @@ export default function SectionContainer({ sx, children }: { sx?: SxProps<Theme>
     <section>
       <Box
         sx={{
-          position: "relative",
-          mb: "6rem",
+          mb: { xs: "3rem", md: "6rem" },
           mt: 0,
           px: {
             xs: "7%",

@@ -6,7 +6,7 @@ import Catering from "./sections/catering.json";
 import Contacts from "./sections/contacts.json";
 import Faq from "./sections/faq.json";
 
-export enum SectionEnum {
+enum SectionEnum {
   HOME = "Home",
   GLOBALS = "Globals",
   SERVICES = "Services",

@@ -45,15 +45,25 @@ function CateringTextBox({ children }: { children: ReactNode | ReactNode[] }) {
 function CateringImageBox({ src, alt }: { src: string; alt: string }) {
   return (
     <Box
-      alignItems={"center"}
-      display={"flex"}
-      justifyContent={"center"}
+      alignItems="center"
+      display="flex"
+      justifyContent="center"
       mt={{ xs: "2rem", md: "0" }}
+      sx={{ transform: { md: "scale(0.80)" } }}
       width={{ xs: "100%", md: "30%" }}
     >
-      <Box height={{ xs: "25rem", md: "80%" }} position={"relative"} width={{ xs: "100%", md: "80%" }}>
-        <Image fill alt={alt} src={src} style={{ objectFit: "contain" }} />
-      </Box>
+      <Image
+        alt={alt}
+        height={0}
+        sizes="100vw"
+        src={src}
+        style={{
+          width: "100%",
+          height: "auto",
+          objectFit: "contain",
+        }}
+        width={0}
+      />
     </Box>
   );
 }
@@ -83,17 +93,6 @@ export default function Catering({ lang }: Props) {
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3-1")}</GenericPageText>
             <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-3-2")}</GenericPageText>
           </CateringTextBox>
-        </CateringSection>
-      </SectionContainer>
-      <SectionContainer>
-        <CateringSection>
-          <CateringTextBox>
-            <Box display={"flex"} justifyContent={"center"} mb={"1.5rem"}>
-              <GenericPageTitle>{cateringLang(lang, "catering-title-3")}</GenericPageTitle>
-            </Box>
-            <GenericPageText sx={{ mt: 0 }}>{cateringLang(lang, "catering-text-4")}</GenericPageText>
-          </CateringTextBox>
-          <CateringImageBox alt={imageSelect.catering.imageBox3.alt} src={imageSelect.catering.imageBox3.src} />
         </CateringSection>
       </SectionContainer>
       <CTA lang={lang} />

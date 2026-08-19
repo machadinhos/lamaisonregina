@@ -8,10 +8,20 @@ import useWindowWidth from "@/hooks/use-window-width";
 import BaseImage from "@/components/shared-components/ImageModal/BaseImage";
 import ImageModalWrapper from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
-function ImageCard({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
+function ImageCard({
+  src,
+  alt,
+  priority,
+  clickable,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+  clickable: boolean;
+}) {
   return (
     <Box alignItems={"center"} display={"flex"} height={"100%"} justifyContent={"center"} width={"100%"}>
-      <BaseImage alt={alt} priority={priority} src={src} />
+      <BaseImage alt={alt} clickable={clickable} priority={priority} src={src} />
     </Box>
   );
 }
@@ -62,9 +72,11 @@ const ArrowBox = ({
 export default function SlickCarousel({
   images,
   priority,
+  clickable = true,
 }: {
   images: { src: string; alt: string }[];
   priority?: boolean;
+  clickable?: boolean;
 }) {
   const screenWidth = useWindowWidth();
   const sliderRef = useRef<Slider>(null);
@@ -116,7 +128,7 @@ export default function SlickCarousel({
         <Slider ref={sliderRef} {...settings}>
           {images.map(({ src, alt }, index) => (
             <Box key={src + index} height={"350px"} sx={{ flexShrink: 0 }} width={`${getMaxWidth()}px`}>
-              <ImageCard alt={alt} priority={priority} src={src} />
+              <ImageCard alt={alt} clickable={clickable} priority={priority} src={src} />
             </Box>
           ))}
         </Slider>

@@ -13,7 +13,7 @@ export default function GenericPageSubTitle({ children, sx }: Props) {
     <Typography
       sx={{
         textAlign: "center",
-        fontWeight: "400",
+        fontWeight: "500",
         fontSize: { xs: "1.2rem", lg: "1.25rem" },
         mt: "1rem",
         ...sx,

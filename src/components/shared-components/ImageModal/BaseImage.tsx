@@ -4,12 +4,23 @@ import Image from "next/image";
 
 import { ImageModalContext } from "@/components/shared-components/ImageModal/ImageModalWrapper";
 
-export default function BaseImage({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
+export default function BaseImage({
+  src,
+  alt,
+  priority,
+  clickable,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+  clickable: boolean;
+}) {
   const { setOpenedImage } = useContext(ImageModalContext);
   const imageRef = useRef<HTMLImageElement>(null);
   const imageBoxRef = useRef<HTMLDivElement>(null);
 
   const handleImageClick = () => {
+    if (!clickable) return;
     if (!imageRef.current || !imageBoxRef.current) return;
     const open = imageRef.current.getBoundingClientRect();
     const close = imageBoxRef.current.getBoundingClientRect();
@@ -44,7 +55,11 @@ export default function BaseImage({ src, alt, priority }: { src: string; alt: st
         alt={alt}
         priority={priority}
         src={src}
-        style={{ cursor: "pointer", objectFit: "contain", transition: "transform 300ms ease-in-out" }}
+        style={{
+          cursor: clickable ? "pointer" : "default",
+          objectFit: "contain",
+          transition: "transform 300ms ease-in-out",
+        }}
       />
     </Box>
   );

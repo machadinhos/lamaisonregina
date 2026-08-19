@@ -7,15 +7,29 @@ import { ArrowBack, ArrowForward } from "@mui/icons-material";
 function ImageCard({ src, alt, priority }: { src: string; alt: string; priority?: boolean }) {
   return (
     <Box
-      key={src + alt}
-      alignItems={"center"}
-      display={"flex"}
-      height={"100vh"}
-      justifyContent={"center"}
-      position={"relative"}
-      width={"100%"}
+      alignItems="center"
+      display="flex"
+      height="100%"
+      justifyContent="center"
+      position="relative"
+      sx={{
+        backgroundColor: "black",
+        overflow: "hidden", // Clips any horizontal bleeding
+      }}
+      width="100%"
     >
-      <Image fill alt={alt} priority={priority} src={src} style={{ objectFit: "cover", left: 0, top: 0 }} />
+      <Image
+        fill
+        alt={alt}
+        priority={priority}
+        src={src}
+        style={{
+          objectFit: "cover",
+          left: 0,
+          top: 0,
+          transform: "scaleX(1.01)", // Only stretches horizontally to kill the 1px right gap
+        }}
+      />
     </Box>
   );
 }
@@ -49,14 +63,50 @@ export default function InfiniteArrowCarousel({
   };
 
   return (
-    <Box height={"100%"} position={"relative"} width={"100%"}>
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+
+        "& .slick-slider": {
+          width: "100%",
+          height: "100%",
+        },
+
+        "& .slick-list": {
+          width: "100%",
+          height: "100%",
+        },
+
+        "& .slick-track": {
+          height: "100%",
+        },
+
+        "& .slick-slide": {
+          height: "100%",
+        },
+
+        "& .slick-slide > div": {
+          height: "100%",
+        },
+      }}
+    >
       <Slider ref={sliderRef} {...settings}>
         {images.map(({ src, alt }, index) => (
           <ImageCard key={index} alt={alt} priority={priority} src={src} />
         ))}
       </Slider>
+
       <IconButton
-        sx={{ position: "absolute", top: "50%", left: 0, "&:hover": { cursor: "pointer" }, color: "white" }}
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: 0,
+          transform: "translateY(-50%)",
+          "&:hover": { cursor: "pointer" },
+          color: "white",
+        }}
         onClick={prevSlide}
       >
         <Box
@@ -70,8 +120,16 @@ export default function InfiniteArrowCarousel({
           <ArrowBack />
         </Box>
       </IconButton>
+
       <IconButton
-        sx={{ position: "absolute", top: "50%", right: 0, "&:hover": { cursor: "pointer" }, color: "white" }}
+        sx={{
+          position: "absolute",
+          top: "50%",
+          right: 0,
+          transform: "translateY(-50%)",
+          "&:hover": { cursor: "pointer" },
+          color: "white",
+        }}
         onClick={nextSlide}
       >
         <Box

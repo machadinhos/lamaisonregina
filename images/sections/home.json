@@ -29,10 +29,6 @@
     {
       "src": "https://images.lamaisonregina.com/home/cover/carousel-3.avif",
       "alt": "carouselImage3"
-    },
-    {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.avif",
-      "alt": "carouselImage4"
     }
   ],
   "smallScreenCarouselImages": [
@@ -47,10 +43,6 @@
     {
       "src": "https://images.lamaisonregina.com/home/cover/carousel-3-mobile.avif",
       "alt": "carouselImage3"
-    },
-    {
-      "src": "https://images.lamaisonregina.com/home/cover/carousel-4.avif",
-      "alt": "carouselImage4"
     }
   ]
 }

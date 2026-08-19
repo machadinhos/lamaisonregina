@@ -79,14 +79,6 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
       </FAQAccordion>
       <FAQAccordion>
         <FAQAccordionSummary>
-          <FAQTitle>{faqLang(lang, "faq-suppliers-title")}</FAQTitle>
-        </FAQAccordionSummary>
-        <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-suppliers-text")}</GenericPageText>
-        </FAQAccordionDetails>
-      </FAQAccordion>
-      <FAQAccordion>
-        <FAQAccordionSummary>
           <FAQTitle>{faqLang(lang, "faq-noise-title")}</FAQTitle>
         </FAQAccordionSummary>
         <FAQAccordionDetails>
@@ -145,7 +137,7 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
         <FAQAccordionDetails>
           <GenericPageText>
             {faqLang(lang, "faq-pricing-text-1")}{" "}
-            <Link href={`/${lang}/contacts`} style={{ color: primaryColor }}>
+            <Link href={`/${lang}/contacts#header`} style={{ color: primaryColor }}>
               {faqLang(lang, "faq-pricing-text-2")}
             </Link>
             {faqLang(lang, "faq-pricing-text-3")}
@@ -154,26 +146,10 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
       </FAQAccordion>
       <FAQAccordion>
         <FAQAccordionSummary>
-          <FAQTitle>{faqLang(lang, "faq-portugal-title")}</FAQTitle>
-        </FAQAccordionSummary>
-        <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-portugal-text")}</GenericPageText>
-        </FAQAccordionDetails>
-      </FAQAccordion>
-      <FAQAccordion>
-        <FAQAccordionSummary>
           <FAQTitle>{faqLang(lang, "faq-open-space-title")}</FAQTitle>
         </FAQAccordionSummary>
         <FAQAccordionDetails>
           <GenericPageText>{faqLang(lang, "faq-open-space-text")}</GenericPageText>
-        </FAQAccordionDetails>
-      </FAQAccordion>
-      <FAQAccordion>
-        <FAQAccordionSummary>
-          <FAQTitle>{faqLang(lang, "faq-parking-title")}</FAQTitle>
-        </FAQAccordionSummary>
-        <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-parking-text")}</GenericPageText>
         </FAQAccordionDetails>
       </FAQAccordion>
       <FAQAccordion>
@@ -190,14 +166,6 @@ export default function FAQList({ lang, listRef }: { lang: LangEnum; listRef: Re
         </FAQAccordionSummary>
         <FAQAccordionDetails>
           <GenericPageText>{faqLang(lang, "faq-ceremonies-text")}</GenericPageText>
-        </FAQAccordionDetails>
-      </FAQAccordion>
-      <FAQAccordion>
-        <FAQAccordionSummary>
-          <FAQTitle>{faqLang(lang, "faq-sustainability-title")}</FAQTitle>
-        </FAQAccordionSummary>
-        <FAQAccordionDetails>
-          <GenericPageText>{faqLang(lang, "faq-sustainability-text")}</GenericPageText>
         </FAQAccordionDetails>
       </FAQAccordion>
       <FAQAccordion>

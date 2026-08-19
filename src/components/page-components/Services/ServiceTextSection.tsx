@@ -9,7 +9,7 @@ import SectionContainer from "@/components/shared-components/SectionContainer";
 export function ServiceTextSection({ lang }: { lang: LangEnum }) {
   return (
     <SectionContainer>
-      <Box alignItems={"center"} display={"flex"} flexDirection={"column"} sx={{ mt: "4rem", mb: "4rem" }}>
+      <Box alignItems={"center"} display={"flex"} flexDirection={"column"} sx={{ mt: { md: "4rem" }, mb: "4rem" }}>
         <GenericPageTitle>{servicesLang(lang, "sep-1")}</GenericPageTitle>
         <GenericPageSubTitle>{servicesLang(lang, "sep-2")}</GenericPageSubTitle>
       </Box>

@@ -14,7 +14,7 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
       <Box>
         <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }}>
           <Box pr={{ md: "3rem" }} width={{ xs: "100%", md: `${(2 / 3) * 100}%` }}>
-            <Box mb={"4rem"}>
+            <Box mb={{ xs: "2rem", md: "4rem" }}>
               <GenericPageTitle>{homeLang(lang, "home-welcome")}</GenericPageTitle>
             </Box>
             <GenericPageText>{homeLang(lang, "home-text-1")}</GenericPageText>
@@ -24,7 +24,7 @@ export function HomeInfo({ lang }: { lang: LangEnum }) {
           </Box>
           <Box
             height={{ xs: "20rem", md: "auto" }}
-            mt={{ xs: "2rem", md: "0" }}
+            mt={{ xs: "1rem", md: "0" }}
             width={{ xs: "100%", md: `${(1 / 3) * 100}%` }}
           >
             <Box height={"100%"} position={"relative"} width={"100%"}>

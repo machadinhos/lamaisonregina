@@ -16,7 +16,7 @@ export default function GenericPageText({ children, sx }: Props) {
     <Typography
       sx={{
         textAlign: "justify",
-        fontSize: { xs: "1.15rem", sm: "1.1rem", lg: "1rem" },
+        fontSize: "1rem",
         hyphens: "auto",
         wordBreak: "break-word",
         mt: "1rem",
