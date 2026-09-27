@@ -1,0 +1,104 @@
+"use client";
+
+import { Box, IconButton, Theme, Typography } from "@mui/material";
+import { SxProps } from "@mui/material/styles";
+import { usePathname } from "next/navigation";
+
+import { LangEnum } from "@/i18n";
+
+export default function LangSelector({
+  lang,
+  sx,
+  open,
+  isHome,
+  fontSize,
+}: {
+  lang: LangEnum;
+  sx?: SxProps<Theme>;
+  open?: boolean;
+  isHome?: boolean;
+  fontSize?: string;
+}) {
+  const path = usePathname();
+
+  return (
+    <Box
+      sx={[
+        {
+          display: "flex",
+          height: "fit-content",
+        },
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
+    >
+      <LangOption
+        fontSize={fontSize}
+        href={`/pt/${path.substring(4).replace("header", "").replace("#", "")}`}
+        isHome={isHome}
+        lang={lang}
+        open={open}
+        option={"pt"}
+      />
+      <Typography
+        sx={{
+          userSelect: "none",
+          color: isHome ? (open ? "auto" : "white") : "auto",
+          transition: "color 0.3s ease-in-out",
+          zIndex: 0,
+          ...(fontSize && { fontSize }),
+        }}
+      >
+        |
+      </Typography>
+      <LangOption
+        fontSize={fontSize}
+        href={`/en/${path.substring(4).replace("header", "").replace("#", "")}`}
+        isHome={isHome}
+        lang={lang}
+        open={open}
+        option={"en"}
+      />
+    </Box>
+  );
+}
+
+const LangOption = ({
+  lang,
+  option,
+  href,
+  open,
+  isHome,
+  fontSize,
+}: {
+  lang: LangEnum;
+  option: string;
+  href: string;
+  open?: boolean;
+  isHome?: boolean;
+  fontSize?: string;
+}) => {
+  const refreshLang = (href: string) => {
+    if (option === lang) return;
+    window.location.href = href;
+  };
+
+  return (
+    <IconButton
+      sx={{ m: 0, p: 0, height: "fit-content", cursor: option === lang ? "default" : "pointer" }}
+      onClick={() => refreshLang(href)}
+    >
+      <Typography
+        sx={{
+          mx: "0.25rem",
+          color: isHome ? (open ? "auto" : "white") : "auto",
+          transition: "color 0.3s ease-in-out",
+          fontWeight: option === lang ? 600 : 300,
+          ...(fontSize && { fontSize }),
+        }}
+        variant={"body1"}
+      >
+        {option.toUpperCase()}
+      </Typography>
+    </IconButton>
+  );
+};

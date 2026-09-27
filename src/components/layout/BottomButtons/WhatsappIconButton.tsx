@@ -1,0 +1,10 @@
+import WhatsappIcon from "@mui/icons-material/WhatsApp";
+import { Box } from "@mui/material";
+
+export default function WhatsappIconButton({ size }: { size: number }) {
+  return (
+    <Box sx={{ width: "50px", height: "50px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <WhatsappIcon color={"success"} sx={{ fontSize: `${size}rem` }} />
+    </Box>
+  );
+}

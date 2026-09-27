@@ -1,7 +1,3 @@
-# Created by https://www.toptal.com/developers/gitignore/api/webstorm,node,nextjs,vuejs
-# Edit at https://www.toptal.com/developers/gitignore?templates=webstorm,node,nextjs,vuejs
-
-### NextJS ###
 # dependencies
 /node_modules
 /.pnp
@@ -295,4 +291,3 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,node,nextjs,vuejs
 
 .idea/
-public/sitemap.xml

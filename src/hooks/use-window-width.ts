@@ -1,22 +1,18 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
+const subscribe = (onChange: () => void) => {
+  window.addEventListener("resize", onChange);
+
+  return () => window.removeEventListener("resize", onChange);
+};
+
+// Returns null during prerender and hydration, then the live window width.
 function useWindowWidth(): number | null {
-  const [width, setWidth] = useState<number | null>(null);
-
-  useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-
-    if (typeof window !== "undefined") {
-      setWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
-  return width;
+  return useSyncExternalStore(
+    subscribe,
+    () => window.innerWidth,
+    () => null,
+  );
 }
 
 export default useWindowWidth;

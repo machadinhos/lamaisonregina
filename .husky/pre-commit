@@ -1,2 +1,2 @@
-pnpm run lint --fix
-git diff --name-only --cached --diff-filter=d | xargs git add $1
+pnpm run lint
+git diff --name-only --cached --diff-filter=d | xargs -r git add

@@ -1,40 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# La Maison Regina
 
-## Getting Started
+Static website for [La Maison Regina](https://www.lamaisonregina.com), built with [Next.js](https://nextjs.org) (App Router) and [MUI](https://mui.com), exported as a fully static site (SSG) and deployed to Cloudflare Pages.
 
-First, run the development server:
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/pt](http://localhost:3000/pt).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+| Script            | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| `pnpm dev`        | Start the development server                         |
+| `pnpm build`      | Build the static export into `out/`                  |
+| `pnpm serve`      | Serve the `out/` folder locally                      |
+| `pnpm local`      | Build and serve                                      |
+| `pnpm lint`       | Lint and format with auto-fix (oxlint + oxfmt)       |
+| `pnpm lint:check` | Check lint and formatting without changing files     |
+| `pnpm typecheck`  | Generate Next.js route types and run the TS compiler |
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+src/
+├── app/                   # App Router
+│   ├── [lang]/            # Root layout + one folder per page, prerendered for each locale
+│   ├── globals.css
+│   └── sitemap.ts         # Generates /sitemap.xml at build time
+├── components/
+│   ├── layout/            # Header, footer, bottom buttons, page transition
+│   ├── providers/         # MUI theme + Emotion cache
+│   ├── sections/          # Page-specific sections (home, services, gallery, ...)
+│   └── ui/                # Reusable UI building blocks
+├── config/                # Site config and contact links
+├── data/images/           # Image sources and alt texts
+├── hooks/
+├── i18n/                  # Locales and translation dictionaries
+├── lib/                   # Page helpers (metadata, locale params)
+└── theme/                 # MUI theme, colors and fonts
+```
 
-## Learn More
+## Deployment (Cloudflare Pages)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Build command: `pnpm build`
+- Build output directory: `out`
